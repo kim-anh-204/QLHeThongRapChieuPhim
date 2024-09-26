@@ -29,13 +29,13 @@
         private void InitializeComponent()
         {
             this.tableLayoutPanel1 = new System.Windows.Forms.TableLayoutPanel();
+            this.tbConfirmPassword = new System.Windows.Forms.TextBox();
+            this.label3 = new System.Windows.Forms.Label();
             this.tbPassword = new System.Windows.Forms.TextBox();
             this.label1 = new System.Windows.Forms.Label();
             this.label2 = new System.Windows.Forms.Label();
             this.tbUserName = new System.Windows.Forms.TextBox();
             this.btnRegister = new System.Windows.Forms.Button();
-            this.label3 = new System.Windows.Forms.Label();
-            this.tbConfirmPassword = new System.Windows.Forms.TextBox();
             this.tableLayoutPanel1.SuspendLayout();
             this.SuspendLayout();
             // 
@@ -59,10 +59,30 @@
             this.tableLayoutPanel1.Size = new System.Drawing.Size(243, 72);
             this.tableLayoutPanel1.TabIndex = 4;
             // 
+            // tbConfirmPassword
+            // 
+            this.tbConfirmPassword.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.tbConfirmPassword.Location = new System.Drawing.Point(124, 49);
+            this.tbConfirmPassword.Name = "tbConfirmPassword";
+            this.tbConfirmPassword.Size = new System.Drawing.Size(116, 20);
+            this.tbConfirmPassword.TabIndex = 5;
+            // 
+            // label3
+            // 
+            this.label3.AutoSize = true;
+            this.label3.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.label3.ImeMode = System.Windows.Forms.ImeMode.NoControl;
+            this.label3.Location = new System.Drawing.Point(3, 46);
+            this.label3.Name = "label3";
+            this.label3.Size = new System.Drawing.Size(115, 26);
+            this.label3.TabIndex = 4;
+            this.label3.Text = "Nhập lại mật khẩu";
+            this.label3.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
+            // 
             // tbPassword
             // 
             this.tbPassword.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.tbPassword.Location = new System.Drawing.Point(124, 27);
+            this.tbPassword.Location = new System.Drawing.Point(124, 26);
             this.tbPassword.Name = "tbPassword";
             this.tbPassword.Size = new System.Drawing.Size(116, 20);
             this.tbPassword.TabIndex = 3;
@@ -74,7 +94,7 @@
             this.label1.ImeMode = System.Windows.Forms.ImeMode.NoControl;
             this.label1.Location = new System.Drawing.Point(3, 0);
             this.label1.Name = "label1";
-            this.label1.Size = new System.Drawing.Size(115, 24);
+            this.label1.Size = new System.Drawing.Size(115, 23);
             this.label1.TabIndex = 0;
             this.label1.Text = "Tài khoản";
             this.label1.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
@@ -84,9 +104,9 @@
             this.label2.AutoSize = true;
             this.label2.Dock = System.Windows.Forms.DockStyle.Fill;
             this.label2.ImeMode = System.Windows.Forms.ImeMode.NoControl;
-            this.label2.Location = new System.Drawing.Point(3, 24);
+            this.label2.Location = new System.Drawing.Point(3, 23);
             this.label2.Name = "label2";
-            this.label2.Size = new System.Drawing.Size(115, 24);
+            this.label2.Size = new System.Drawing.Size(115, 23);
             this.label2.TabIndex = 1;
             this.label2.Text = "Mật khẩu";
             this.label2.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
@@ -108,26 +128,6 @@
             this.btnRegister.Text = "Đăng ký";
             this.btnRegister.UseVisualStyleBackColor = true;
             this.btnRegister.Click += new System.EventHandler(this.btnRegister_Click);
-            // 
-            // label3
-            // 
-            this.label3.AutoSize = true;
-            this.label3.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.label3.ImeMode = System.Windows.Forms.ImeMode.NoControl;
-            this.label3.Location = new System.Drawing.Point(3, 48);
-            this.label3.Name = "label3";
-            this.label3.Size = new System.Drawing.Size(115, 24);
-            this.label3.TabIndex = 4;
-            this.label3.Text = "Nhập lại mật khẩu";
-            this.label3.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
-            // 
-            // tbConfirmPassword
-            // 
-            this.tbConfirmPassword.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.tbConfirmPassword.Location = new System.Drawing.Point(124, 51);
-            this.tbConfirmPassword.Name = "tbConfirmPassword";
-            this.tbConfirmPassword.Size = new System.Drawing.Size(116, 20);
-            this.tbConfirmPassword.TabIndex = 5;
             // 
             // RegisterForm
             // 
