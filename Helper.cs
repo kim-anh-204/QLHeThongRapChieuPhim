@@ -9,7 +9,7 @@ namespace QuanLyRapChieuPhim
     {
         private static string userPath = Environment.GetFolderPath(Environment.SpecialFolder.UserProfile);
         private static string databasePath = Path.Combine(userPath, "source", "repos", "QuanLyRapChieuPhim", "QuanLyRapChieuPhim.mdf");
-        public static string connectionString = "Data Source=(LocalDB)\\MSSQLLocalDB;AttachDbFilename=" + databasePath + ";Integrated Security=True";
+        public static string connectionString = @"Data Source=(LocalDB)\MSSQLLocalDB;AttachDbFilename=" + databasePath + ";Integrated Security=True";
 
         public static string HashPassword(string passowrd)
         {
