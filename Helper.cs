@@ -1,4 +1,6 @@
 ﻿using System;
+using System.Drawing.Drawing2D;
+using System.Drawing;
 using System.IO;
 using System.Security.Cryptography;
 using System.Text;
@@ -21,6 +23,23 @@ namespace QuanLyRapChieuPhim
                     builder.Append(b.ToString("x2"));
                 return builder.ToString();
             }
+        }
+        public static Image RoundCorners(Image image, int cornerRadius)
+        {
+            cornerRadius *= 2;
+            Bitmap roundedImage = new Bitmap(image.Width, image.Height);
+            GraphicsPath gp = new GraphicsPath();
+            gp.AddArc(0, 0, cornerRadius, cornerRadius, 180, 90);
+            gp.AddArc(0 + roundedImage.Width - cornerRadius, 0, cornerRadius, cornerRadius, 270, 90);
+            gp.AddArc(0 + roundedImage.Width - cornerRadius, 0 + roundedImage.Height - cornerRadius, cornerRadius, cornerRadius, 0, 90);
+            gp.AddArc(0, 0 + roundedImage.Height - cornerRadius, cornerRadius, cornerRadius, 90, 90);
+            using (Graphics g = Graphics.FromImage(roundedImage))
+            {
+                g.SmoothingMode = SmoothingMode.HighQuality;
+                g.SetClip(gp);
+                g.DrawImage(image, Point.Empty);
+            }
+            return roundedImage;
         }
     }
 }

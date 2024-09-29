@@ -28,8 +28,8 @@ namespace QuanLyRapChieuPhim
                     connection.Open();
                     using (SqlCommand command = new SqlCommand(query, connection))
                     {
-                        command.Parameters.AddWithValue("@UserName", tbUserName.Text.Trim());
-                        string password = Helper.HashPassword(tbPassword.Text.Trim());
+                        command.Parameters.AddWithValue("@UserName", textBoxUserName.Text.Trim());
+                        string password = Helper.HashPassword(textBoxPassword.Text.Trim());
                         command.Parameters.AddWithValue("@Password", password);
 
                         int count = Convert.ToInt32(command.ExecuteScalar());
