@@ -23,33 +23,33 @@ namespace QuanLyRapChieuPhim
         }
         private void LoginForm_SizeChanged(object sender, EventArgs e)
         {
-            textBoxUserName.Width = (int)(this.Width * 0.225);
-            textBoxUserName.Location = new Point(
-                (int)(this.Width * 0.605), 
-                (int)(this.Height * 0.394));
+            //textBoxUserName.Width = (int)(this.Width * 0.225);
+            //textBoxUserName.Location = new Point(
+            //    (int)(this.Width * 0.605), 
+            //    (int)(this.Height * 0.394));
 
-            textBoxPassword.Width = (int)(this.Width * 0.225);
-            textBoxPassword.Location = new Point(
-                (int)(this.Width * 0.605), 
-                (int)(this.Height * 0.556));
+            //textBoxPassword.Width = (int)(this.Width * 0.225);
+            //textBoxPassword.Location = new Point(
+            //    (int)(this.Width * 0.605), 
+            //    (int)(this.Height * 0.556));
 
-            btnLogin.Width = (int)(this.Width * 0.288);
-            btnLogin.Height = (int)(this.Height * 0.09);
-            btnLogin.Location = new Point(
-                (int)(this.Width * 0.55), 
-                (int)(this.Height * 0.701));
+            //btnLogin.Width = (int)(this.Width * 0.288);
+            //btnLogin.Height = (int)(this.Height * 0.09);
+            //btnLogin.Location = new Point(
+            //    (int)(this.Width * 0.55), 
+            //    (int)(this.Height * 0.701));
 
-            btnRegister.Width = (int)(this.Width * 0.123);
-            btnRegister.Height = (int)(this.Height * 0.08);
-            btnRegister.Location = new Point(
-                (int)(this.Width * 0.55),
-                (int)(this.Height * 0.803));
+            //btnRegister.Width = (int)(this.Width * 0.123);
+            //btnRegister.Height = (int)(this.Height * 0.08);
+            //btnRegister.Location = new Point(
+            //    (int)(this.Width * 0.55),
+            //    (int)(this.Height * 0.803));
 
-            btnHelp.Width = (int)(this.Width *0.123);
-            btnHelp.Height = (int)(this.Height *0.08);
-            btnHelp.Location = new Point(
-                (int)(this.Width * 0.725),
-                (int)(this.Height * 0.803));
+            //btnHelp.Width = (int)(this.Width *0.123);
+            //btnHelp.Height = (int)(this.Height *0.08);
+            //btnHelp.Location = new Point(
+            //    (int)(this.Width * 0.725),
+            //    (int)(this.Height * 0.803));
         }
         private void btnLogin_Click(object sender, EventArgs e)
         {
@@ -61,8 +61,8 @@ namespace QuanLyRapChieuPhim
                     connection.Open();
                     using (SqlCommand command = new SqlCommand(query, connection))
                     {
-                        command.Parameters.AddWithValue("@UserName", textBoxUserName.Texts.Trim());
-                        string password = SecurityHelper.HashPassword(textBoxPassword.Texts.Trim());
+                        command.Parameters.AddWithValue("@UserName", textBoxUserName.Text.Trim());
+                        string password = SecurityHelper.HashPassword(textBoxPassword.Text.Trim());
                         command.Parameters.AddWithValue("@Password", password);
 
                         int count = Convert.ToInt32(command.ExecuteScalar());
