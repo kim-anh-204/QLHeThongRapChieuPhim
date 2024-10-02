@@ -246,6 +246,12 @@
     <Compile Include="RegisterAndLogin\LoginAndRegisterForm.Designer.cs">
       <DependentUpon>LoginAndRegisterForm.cs</DependentUpon>
     </Compile>
+    <Compile Include="RegisterAndLogin\RegisterForm.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="RegisterAndLogin\RegisterForm.Designer.cs">
+      <DependentUpon>RegisterForm.cs</DependentUpon>
+    </Compile>
     <Compile Include="Util\Connection.cs" />
     <Compile Include="Util\Helper.cs" />
     <Compile Include="RegisterAndLogin\LoginForm.cs">
@@ -260,12 +266,6 @@
       <AutoGen>True</AutoGen>
       <DesignTime>True</DesignTime>
       <DependentUpon>Resources.resx</DependentUpon>
-    </Compile>
-    <Compile Include="RegisterAndLogin\RegisterForm.cs">
-      <SubType>Form</SubType>
-    </Compile>
-    <Compile Include="RegisterAndLogin\RegisterForm.Designer.cs">
-      <DependentUpon>RegisterForm.cs</DependentUpon>
     </Compile>
     <Compile Include="UserControls\RJTextBox.cs">
       <SubType>UserControl</SubType>
