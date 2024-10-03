@@ -22,7 +22,7 @@ namespace QuanLyRapChieuPhim
         private void OpenLoginForm()
         {
             LoginForm login = new LoginForm();
-            login.Register_Click += LARF_Register_Click;
+            //login.Register_Click += LARF_Register_Click;
             OpenChildForm(login);
         }
 

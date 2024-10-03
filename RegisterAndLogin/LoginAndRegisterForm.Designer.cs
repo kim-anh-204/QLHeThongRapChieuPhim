@@ -34,9 +34,9 @@
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(1350, 729);
+            this.ClientSize = new System.Drawing.Size(960, 540);
             this.IsMdiContainer = true;
-            this.MinimumSize = new System.Drawing.Size(964, 592);
+            this.MinimumSize = new System.Drawing.Size(976, 579);
             this.Name = "LoginAndRegisterForm";
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterParent;
             this.Text = "Chào mừng bạn đến với Beta!";
