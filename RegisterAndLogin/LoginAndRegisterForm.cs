@@ -22,18 +22,26 @@ namespace QuanLyRapChieuPhim
         private void OpenLoginForm()
         {
             LoginForm login = new LoginForm();
-            //login.Register_Click += LARF_Register_Click;
+            login.SwapToRegisterForm += SwapToRegisterForm;
             OpenChildForm(login);
         }
-
-        private void LARF_Register_Click()
+        private void OpenRegisterForm()
         {
-            OpenChildForm(new RegisterForm());
+            RegisterForm register = new RegisterForm();
+            register.SwapToLoginForm += SwapToLoginform;
+            OpenChildForm(register);
         }
-
+        private void SwapToRegisterForm()
+        {
+            OpenRegisterForm();
+        }
+        private void SwapToLoginform()
+        {
+            OpenLoginForm();
+        }
         private void OpenChildForm(Form child)
         {
-            foreach(Form form in this.MdiChildren)
+            foreach (Form form in this.MdiChildren)
                 form.Close();
             child.MdiParent = this;
             child.Dock = DockStyle.Fill;

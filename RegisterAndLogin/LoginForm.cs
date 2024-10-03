@@ -12,9 +12,16 @@ namespace QuanLyRapChieuPhim.RegisterAndLogin
 {
     public partial class LoginForm : Form
     {
+        public delegate void Form_Changed();
+        public Form_Changed SwapToRegisterForm;
         public LoginForm()
         {
             InitializeComponent();
+        }
+
+        private void btnRegister_Click(object sender, EventArgs e)
+        {
+            SwapToRegisterForm?.Invoke();
         }
     }
 }
