@@ -318,6 +318,7 @@
     <Content Include="QuanLyRapChieuPhim_log.ldf">
       <DependentUpon>QuanLyRapChieuPhim.mdf</DependentUpon>
     </Content>
+    <None Include="Resources\home-agreement.png" />
     <None Include="Resources\left_banner.jpg" />
     <None Include="Resources\background_2.png" />
     <None Include="Resources\left_banner_login_form.png" />

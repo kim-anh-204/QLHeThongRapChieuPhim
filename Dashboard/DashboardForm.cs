@@ -23,5 +23,20 @@ namespace QuanLyRapChieuPhim.MainForm
         {
             OnCloseClick?.Invoke();
         }
+
+        private void buttonTrangChu_Click(object sender, EventArgs e)
+        {
+            indicator.Top = ((Control)sender).Top;
+        }
+
+        private void buttonPhim_Click(object sender, EventArgs e)
+        {
+            indicator.Top = ((Control)sender).Top;
+        }
+
+        private void buttonNhanVien_Click(object sender, EventArgs e)
+        {
+            indicator.Top = ((Control)sender).Top;
+        }
     }
 }
