@@ -53,5 +53,13 @@ namespace QuanLyRapChieuPhim.RegisterAndLogin
         {
             SwapToLoginForm?.Invoke();
         }
+
+        private void RegisterForm_Activated(object sender, EventArgs e)
+        {
+            textBoxTenDangNhap.Clear();
+            textBoxEmail.Clear();
+            textBoxMatKhau.Clear();
+            textBoxMatKhau2.Clear();
+        }
     }
 }

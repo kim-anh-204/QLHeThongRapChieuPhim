@@ -1,6 +1,6 @@
-﻿namespace QuanLyRapChieuPhim
+﻿namespace QuanLyRapChieuPhim.MainForm
 {
-    partial class LoginAndRegisterForm
+    partial class DashboardForm
     {
         /// <summary>
         /// Required designer variable.
@@ -30,16 +30,14 @@
         {
             this.SuspendLayout();
             // 
-            // LoginAndRegisterForm
+            // DashboardForm
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(960, 540);
-            this.IsMdiContainer = true;
-            this.MinimumSize = new System.Drawing.Size(976, 579);
-            this.Name = "LoginAndRegisterForm";
-            this.StartPosition = System.Windows.Forms.FormStartPosition.CenterParent;
-            this.Text = "Chào mừng bạn đến với GALA!";
+            this.ClientSize = new System.Drawing.Size(800, 450);
+            this.Name = "DashboardForm";
+            this.Text = "Bảng điều khiển";
+            this.FormClosed += new System.Windows.Forms.FormClosedEventHandler(this.DashboardForm_FormClosed);
             this.ResumeLayout(false);
 
         }
@@ -47,4 +45,3 @@
         #endregion
     }
 }
-

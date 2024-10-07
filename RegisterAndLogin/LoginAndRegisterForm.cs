@@ -1,4 +1,5 @@
-﻿using QuanLyRapChieuPhim.RegisterAndLogin;
+﻿using Microsoft.Win32;
+using QuanLyRapChieuPhim.RegisterAndLogin;
 using System;
 using System.Collections.Generic;
 using System.ComponentModel;
@@ -8,47 +9,58 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
+using QuanLyRapChieuPhim.MainForm;
 
 namespace QuanLyRapChieuPhim
 {
     public partial class LoginAndRegisterForm : Form
     {
+        private LoginForm _loginForm;
+        private RegisterForm _registerForm;
         public LoginAndRegisterForm()
         {
             InitializeComponent();
+            InitializeCustomCoponent();
             OpenLoginForm();
         }
+        private void InitializeCustomCoponent()
+        {
+            _loginForm = new LoginForm();
+            _loginForm.SwapToRegisterForm += SwapToRegisterForm;
+            _loginForm.OnLoginSucceeded += OnLoginSucceeded;
+            SetChildFormConfig(_loginForm);
 
-        private void OpenLoginForm()
-        {
-            LoginForm login = new LoginForm();
-            login.SwapToRegisterForm += SwapToRegisterForm;
-            OpenChildForm(login);
+            _registerForm = new RegisterForm();
+            _registerForm.SwapToLoginForm += SwapToLoginform;
+            SetChildFormConfig(_registerForm);
         }
-        private void OpenRegisterForm()
+        private void OnLoginSucceeded()
         {
-            RegisterForm register = new RegisterForm();
-            register.SwapToLoginForm += SwapToLoginform;
-            OpenChildForm(register);
+            DashboardForm dashboard = new DashboardForm();
+            dashboard.OnCloseClick += OnCloseClick;
+            dashboard.Show();
+            this.Hide();
         }
-        private void SwapToRegisterForm()
+        private void OnCloseClick()
         {
-            OpenRegisterForm();
+            this.Close();
         }
-        private void SwapToLoginform()
-        {
-            OpenLoginForm();
-        }
+        private void OpenLoginForm() { OpenChildForm(_loginForm); }
+        private void OpenRegisterForm() { OpenChildForm(_registerForm); }
+        private void SwapToLoginform() { OpenLoginForm(); }
+        private void SwapToRegisterForm() { OpenRegisterForm(); }
         private void OpenChildForm(Form child)
         {
-            foreach (Form form in this.MdiChildren)
-                form.Close();
+            if (child.IsAccessible == false)
+                child.Show();
+            child.BringToFront();
+            child.Activate();
+        }
+        private void SetChildFormConfig(Form child)
+        {
             child.MdiParent = this;
             child.Dock = DockStyle.Fill;
             child.FormBorderStyle = FormBorderStyle.None;
-            child.Show();
         }
-
-
     }
 }
