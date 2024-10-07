@@ -38,7 +38,7 @@
             this.IsMdiContainer = true;
             this.MinimumSize = new System.Drawing.Size(976, 579);
             this.Name = "LoginAndRegisterForm";
-            this.StartPosition = System.Windows.Forms.FormStartPosition.CenterParent;
+            this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "Chào mừng bạn đến với GALA!";
             this.ResumeLayout(false);
 
