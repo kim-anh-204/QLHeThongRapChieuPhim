@@ -1,9 +1,11 @@
-﻿using System;
+﻿using QuanLyRapChieuPhim.Util;
+using System;
 using System.Collections.Generic;
 using System.ComponentModel;
 using System.Data;
 using System.Drawing;
 using System.Linq;
+using System.Media;
 using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
@@ -60,6 +62,16 @@ namespace QuanLyRapChieuPhim.RegisterAndLogin
             textBoxEmail.Clear();
             textBoxMatKhau.Clear();
             textBoxMatKhau2.Clear();
+        }
+
+        private void buttonDangKy_Click(object sender, EventArgs e)
+        {
+            // Kiểm tra điều kiện các textbox và kết nối với cơ sở dữ liệu
+           
+            //Sau khi đăng ký thành công sẽ chuyển về màn hình đăng nhập.
+            SystemSounds.Beep.Play();
+            MessageBox.Show("Đăng ký thành công!", "Thông báo", MessageBoxButtons.OK, MessageBoxIcon.Information);
+            SwapToLoginForm?.Invoke();
         }
     }
 }

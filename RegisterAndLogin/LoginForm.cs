@@ -1,9 +1,12 @@
-﻿using System;
+﻿using QuanLyRapChieuPhim.Util;
+using System;
 using System.Collections.Generic;
 using System.ComponentModel;
 using System.Data;
+using System.Data.SqlClient;
 using System.Drawing;
 using System.Linq;
+using System.Media;
 using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
@@ -36,8 +39,7 @@ namespace QuanLyRapChieuPhim.RegisterAndLogin
 
         private void buttonDangNhap_Click(object sender, EventArgs e)
         {
-
-            //Khi tài khoản và tên đăng nhập khớp với cơ sở dữ liệu
+            // Kiểm tra điều kiện các textbox và kết nối với cơ sở dữ liệu
             //Tiến hành đăng nhập vào giao diện chính.
             OnLoginSucceeded?.Invoke();
         }

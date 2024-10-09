@@ -169,7 +169,7 @@
             this.buttonDangKy.OnPressedState.IconLeftImage = null;
             this.buttonDangKy.OnPressedState.IconRightImage = null;
             this.buttonDangKy.Size = new System.Drawing.Size(260, 39);
-            this.buttonDangKy.TabIndex = 4;
+            this.buttonDangKy.TabIndex = 5;
             this.buttonDangKy.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
             this.buttonDangKy.TextAlignment = System.Windows.Forms.HorizontalAlignment.Center;
             this.buttonDangKy.TextMarginLeft = 0;
@@ -260,7 +260,7 @@
             this.buttonDangNhap.OnPressedState.IconLeftImage = null;
             this.buttonDangNhap.OnPressedState.IconRightImage = null;
             this.buttonDangNhap.Size = new System.Drawing.Size(260, 39);
-            this.buttonDangNhap.TabIndex = 3;
+            this.buttonDangNhap.TabIndex = 4;
             this.buttonDangNhap.TextAlign = System.Drawing.ContentAlignment.BottomCenter;
             this.buttonDangNhap.TextAlignment = System.Windows.Forms.HorizontalAlignment.Center;
             this.buttonDangNhap.TextMarginLeft = 0;
@@ -335,7 +335,7 @@
             this.textBoxMatKhau.ShortcutsEnabled = true;
             this.textBoxMatKhau.Size = new System.Drawing.Size(260, 39);
             this.textBoxMatKhau.Style = Bunifu.UI.WinForms.BunifuTextBox._Style.Bunifu;
-            this.textBoxMatKhau.TabIndex = 2;
+            this.textBoxMatKhau.TabIndex = 3;
             this.textBoxMatKhau.TextAlign = System.Windows.Forms.HorizontalAlignment.Left;
             this.textBoxMatKhau.TextMarginBottom = 0;
             this.textBoxMatKhau.TextMarginLeft = 3;
@@ -411,7 +411,7 @@
             this.textBoxTenDangNhap.ShortcutsEnabled = true;
             this.textBoxTenDangNhap.Size = new System.Drawing.Size(260, 39);
             this.textBoxTenDangNhap.Style = Bunifu.UI.WinForms.BunifuTextBox._Style.Bunifu;
-            this.textBoxTenDangNhap.TabIndex = 1;
+            this.textBoxTenDangNhap.TabIndex = 2;
             this.textBoxTenDangNhap.TextAlign = System.Windows.Forms.HorizontalAlignment.Left;
             this.textBoxTenDangNhap.TextMarginBottom = 0;
             this.textBoxTenDangNhap.TextMarginLeft = 3;
@@ -440,7 +440,7 @@
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.BackColor = System.Drawing.Color.WhiteSmoke;
+            this.BackColor = System.Drawing.Color.Gainsboro;
             this.ClientSize = new System.Drawing.Size(960, 540);
             this.Controls.Add(this.buttonDangKy);
             this.Controls.Add(this.bunifuLabel3);

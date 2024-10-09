@@ -19,7 +19,7 @@ namespace QuanLyRapChieuPhim.MainForm
         public DashboardForm()
         {
             InitializeComponent();
-            this.DoubleBuffered = true;
+            //this.DoubleBuffered = true;
         }
 
         private void DashboardForm_FormClosed(object sender, FormClosedEventArgs e)
@@ -105,6 +105,16 @@ namespace QuanLyRapChieuPhim.MainForm
         {
             if (!buttonPhim.ClientRectangle.Contains(buttonPhim.PointToClient(Cursor.Position)))
                 MoveIndicatorToDefault();
+        }
+
+        private void DashboardForm_Load(object sender, EventArgs e)
+        {
+            //buttonTrangChu.PerformClick();
+            //buttonPhim.PerformClick();
+            //buttonPhim.Focus();
+              buttonTrangChu.GetCurrentState();
+            //buttonTrangChu.
+
         }
 
         private void buttonNhanVien_MouseLeave(object sender, EventArgs e)
