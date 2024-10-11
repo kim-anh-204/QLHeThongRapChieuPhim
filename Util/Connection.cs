@@ -15,9 +15,14 @@ namespace QuanLyRapChieuPhim.Util
         private static string databasePath = Path.Combine(userPath, "source", "repos", "QuanLyRapChieuPhim", "QuanLyRapChieuPhim.mdf");
         public static string connectionString = @"Data Source=(LocalDB)\MSSQLLocalDB;AttachDbFilename=" + databasePath + ";Integrated Security=True";
 
+        /// <summary>
+        /// 
+        /// </summary>
+        /// <param name="query"></param>
+        /// <param name="parameters"></param>
+        /// <returns>Trả về số lượng bản ghi được tìm thấy từ câu lệnh SELECT</returns>
         public static int ExecuteScalarInt32(string query, (string, object)[] parameters = null)
         {
-            int log_count = 0;
             using (SqlConnection conn = new SqlConnection(connectionString))
             {
                 try
@@ -30,7 +35,7 @@ namespace QuanLyRapChieuPhim.Util
                             foreach (var param in parameters)
                                 cmd.Parameters.AddWithValue(param.Item1, param.Item2);
                         }
-                        log_count = Convert.ToInt32(cmd.ExecuteScalar());
+                        return Convert.ToInt32(cmd.ExecuteScalar());
                     }
                 }
                 catch (Exception ex)
@@ -38,10 +43,16 @@ namespace QuanLyRapChieuPhim.Util
                     MessageBox.Show("Lỗi: " + ex.Message, "Lỗi", MessageBoxButtons.OK, MessageBoxIcon.Error);
                 }
             }
-            return log_count;
+            return 0;
         }
 
-        public static void ExcuteNonQuery(string query, (string, object)[] parameters = null)
+        /// <summary>
+        /// 
+        /// </summary>
+        /// <param name="query"></param>
+        /// <param name="parameters"></param>
+        /// <returns>Trả về TRUE nếu câu lệnh thực thi thành công và ngược lại.</returns>
+        public static bool ExcuteNonQuery(string query, (string, object)[] parameters = null)
         {
             using (SqlConnection conn = new SqlConnection(connectionString))
             {
@@ -56,6 +67,7 @@ namespace QuanLyRapChieuPhim.Util
                                 cmd.Parameters.AddWithValue(param.Item1, param.Item2);
                         }
                         cmd.ExecuteNonQuery();
+                        return true;
                     }
                 }
                 catch (Exception ex)
@@ -63,6 +75,7 @@ namespace QuanLyRapChieuPhim.Util
                     MessageBox.Show("Lỗi: " + ex.Message, "Lỗi", MessageBoxButtons.OK, MessageBoxIcon.Error);
                 }
             }
+            return false;
         }
     }
 }

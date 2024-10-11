@@ -34,9 +34,9 @@ namespace QuanLyRapChieuPhim
             _registerForm.SwapToLoginForm += SwapToLoginform;
             SetChildFormConfig(_registerForm);
         }
-        private void OnLoginSucceeded()
+        private void OnLoginSucceeded(string username)
         {
-            DashboardForm dashboard = new DashboardForm();
+            DashboardForm dashboard = new DashboardForm(username);
             dashboard.OnCloseClick += OnCloseClick;
             dashboard.Show();
             this.Hide();

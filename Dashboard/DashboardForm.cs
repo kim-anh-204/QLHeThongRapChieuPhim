@@ -16,10 +16,10 @@ namespace QuanLyRapChieuPhim.MainForm
     {
         public delegate void CloseEvent();
         public CloseEvent OnCloseClick;
-        public DashboardForm()
+        public DashboardForm(string username)
         {
             InitializeComponent();
-            //this.DoubleBuffered = true;
+            labelTenDangNhap.Text = username;
         }
 
         private void DashboardForm_FormClosed(object sender, FormClosedEventArgs e)
@@ -29,56 +29,22 @@ namespace QuanLyRapChieuPhim.MainForm
 
         private void buttonTrangChu_Click(object sender, EventArgs e)
         {
-            defaultY = buttonTrangChu.Location.Y;
-            //indicator.Top = ((Control)sender).Top;
+      
         }
 
         private void buttonPhim_Click(object sender, EventArgs e)
         {
-            defaultY = buttonPhim.Location.Y;
-            //indicator.Top = ((Control)sender).Top;
+
         }
 
         private void buttonNhanVien_Click(object sender, EventArgs e)
         {
-            defaultY = buttonNhanVien.Location.Y;
-            //indicator.Top = ((Control)sender).Top;
+
         }
 
-        private int defaultY, currentY, targetY;
-        private int indicatorSpeed = 5;
-        private void Indicator_Animation_Tick(object sender, EventArgs e)
-        {
-            if (currentY < targetY)
-                currentY = Math.Min(currentY + indicatorSpeed, targetY);
-            else if (currentY > targetY)
-                currentY = Math.Max(currentY - indicatorSpeed, targetY);
-
-            indicator.Location = new Point(indicator.Location.X, currentY);
-            if (currentY == targetY)
-            {
-                Indicator_Animation.Stop();
-            }
-        }
-
-        private void ButtonPhim_MouseEnter(object sender, EventArgs e)
-        {
-            MoveIndicatorToButton(buttonPhim);
-        }
-
-        private void ButtonNhanVien_MouseEnter(object sender, EventArgs e)
-        {
-            MoveIndicatorToButton(buttonNhanVien);
-        }
 
         private void MoveIndicatorToButton(BunifuButton2 button)
         {
-            targetY = button.Location.Y;
-            if (!Indicator_Animation.Enabled)
-            {
-                currentY = indicator.Location.Y;
-                Indicator_Animation.Start();
-            }
         }
 
         private void buttonTrangChu_MouseMove(object sender, MouseEventArgs e)
@@ -109,12 +75,6 @@ namespace QuanLyRapChieuPhim.MainForm
 
         private void DashboardForm_Load(object sender, EventArgs e)
         {
-            //buttonTrangChu.PerformClick();
-            //buttonPhim.PerformClick();
-            //buttonPhim.Focus();
-              buttonTrangChu.GetCurrentState();
-            //buttonTrangChu.
-
         }
 
         private void buttonNhanVien_MouseLeave(object sender, EventArgs e)
@@ -124,12 +84,6 @@ namespace QuanLyRapChieuPhim.MainForm
         }
         private void MoveIndicatorToDefault()
         {
-            targetY = defaultY;
-            if (!Indicator_Animation.Enabled)
-            {
-                currentY = indicator.Location.Y;
-                Indicator_Animation.Start();
-            }
         }
     }
 }

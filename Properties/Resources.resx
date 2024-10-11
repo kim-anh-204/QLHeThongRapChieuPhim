@@ -118,6 +118,9 @@
     <value>System.Resources.ResXResourceWriter, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
   </resheader>
   <assembly alias="System.Windows.Forms" name="System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089" />
+  <data name="Dashboard_ON" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\Dashboard_ON.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
   <data name="home-agreement" type="System.Resources.ResXFileRef, System.Windows.Forms">
     <value>..\Resources\home-agreement.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
   </data>
@@ -127,7 +130,40 @@
   <data name="left_banner" type="System.Resources.ResXFileRef, System.Windows.Forms">
     <value>..\Resources\left_banner.jpg;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
   </data>
-  <data name="Dashboard_ON" type="System.Resources.ResXFileRef, System.Windows.Forms">
-    <value>..\Resources\Dashboard_ON.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  <data name="BaoCao_ON" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\BaoCao_ON.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
+  <data name="BaoCao_OFF" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\BaoCao_OFF.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
+  <data name="QuanLyPhongChieu_ON" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\QuanLyPhongChieu_ON.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
+  <data name="QuanLyPhongChieu_OFF" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\QuanLyPhongChieu_OFF.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
+  <data name="QuanLyTaiKhoan_ON" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\QuanLyTaiKhoan_ON.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
+  <data name="QuanLyTaiKhoan_OFF" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\QuanLyTaiKhoan_OFF.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
+  <data name="QuanLySuatChieu_ON" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\QuanLySuatChieu_ON.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
+  <data name="QuanLySuatChieu_OFF" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\QuanLySuatChieu_OFF.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
+  <data name="QuanLyPhim_ON" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\QuanLyPhim_ON.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
+  <data name="QuanLyPhim_OFF" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\QuanLyPhim_OFF.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
+  <data name="DoanhThu_ON" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\DoanhThu_ON.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
+  <data name="DoanhThu_OFF" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\DoanhThu_OFF.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
   </data>
 </root>
