@@ -1,5 +1,6 @@
 ﻿using System;
 using System.Collections.Generic;
+using System.Data;
 using System.Data.SqlClient;
 using System.IO;
 using System.Linq;
@@ -76,6 +77,43 @@ namespace QuanLyRapChieuPhim.Util
                 }
             }
             return false;
+        }
+
+        /// <summary>
+        /// 
+        /// </summary>
+        /// <param name="query"></param>
+        /// <param name="parameters"></param>
+        /// <returns>Trả về một bảng với câu truy vấn đã gửi. Nếu lỗi sẽ trả về null</returns>
+        public static DataTable GetDataTable(string query, (string, object)[] parameters = null)
+        {
+            using (SqlConnection conn = new SqlConnection(connectionString))
+            {
+                try
+                {
+                    conn.Open();
+                    using (SqlCommand command = new SqlCommand(query, conn))
+                    {
+                        if (parameters != null)
+                        {
+                            foreach (var param in parameters)
+                                command.Parameters.AddWithValue(param.Item1, param.Item2);
+                        }
+                        using (SqlDataAdapter adapter = new SqlDataAdapter(command))
+                        {
+                            DataTable dt = new DataTable();
+                            adapter.Fill(dt);
+                            return dt;
+                        }
+
+                    }
+                }
+                catch (Exception ex)
+                {
+                    MessageBox.Show("Lỗi: " + ex.Message, "Lỗi", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                }
+            }
+            return null;
         }
     }
 }

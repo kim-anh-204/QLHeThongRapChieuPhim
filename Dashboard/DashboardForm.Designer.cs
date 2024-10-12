@@ -35,6 +35,18 @@
             Bunifu.UI.WinForms.BunifuButton.BunifuButton2.BorderEdges borderEdges4 = new Bunifu.UI.WinForms.BunifuButton.BunifuButton2.BorderEdges();
             Bunifu.UI.WinForms.BunifuButton.BunifuButton2.BorderEdges borderEdges5 = new Bunifu.UI.WinForms.BunifuButton.BunifuButton2.BorderEdges();
             Bunifu.UI.WinForms.BunifuButton.BunifuButton2.BorderEdges borderEdges6 = new Bunifu.UI.WinForms.BunifuButton.BunifuButton2.BorderEdges();
+            Bunifu.UI.WinForms.BunifuTextBox.StateProperties stateProperties1 = new Bunifu.UI.WinForms.BunifuTextBox.StateProperties();
+            Bunifu.UI.WinForms.BunifuTextBox.StateProperties stateProperties2 = new Bunifu.UI.WinForms.BunifuTextBox.StateProperties();
+            Bunifu.UI.WinForms.BunifuTextBox.StateProperties stateProperties3 = new Bunifu.UI.WinForms.BunifuTextBox.StateProperties();
+            Bunifu.UI.WinForms.BunifuTextBox.StateProperties stateProperties4 = new Bunifu.UI.WinForms.BunifuTextBox.StateProperties();
+            Bunifu.UI.WinForms.BunifuTextBox.StateProperties stateProperties5 = new Bunifu.UI.WinForms.BunifuTextBox.StateProperties();
+            Bunifu.UI.WinForms.BunifuTextBox.StateProperties stateProperties6 = new Bunifu.UI.WinForms.BunifuTextBox.StateProperties();
+            Bunifu.UI.WinForms.BunifuTextBox.StateProperties stateProperties7 = new Bunifu.UI.WinForms.BunifuTextBox.StateProperties();
+            Bunifu.UI.WinForms.BunifuTextBox.StateProperties stateProperties8 = new Bunifu.UI.WinForms.BunifuTextBox.StateProperties();
+            Bunifu.UI.WinForms.BunifuButton.BunifuButton.BorderEdges borderEdges7 = new Bunifu.UI.WinForms.BunifuButton.BunifuButton.BorderEdges();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle1 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle2 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle3 = new System.Windows.Forms.DataGridViewCellStyle();
             this.bunifuPanel1 = new Bunifu.UI.WinForms.BunifuPanel();
             this.bunifuLabel1 = new Bunifu.UI.WinForms.BunifuLabel();
             this.tableLayoutPanel1 = new System.Windows.Forms.TableLayoutPanel();
@@ -50,12 +62,23 @@
             this.labelQuyen = new System.Windows.Forms.Label();
             this.labelTenDangNhap = new System.Windows.Forms.Label();
             this.bunifuPictureBox1 = new Bunifu.UI.WinForms.BunifuPictureBox();
+            this.textboxTenNV = new Bunifu.UI.WinForms.BunifuTextBox();
+            this.textboxSDT = new Bunifu.UI.WinForms.BunifuTextBox();
+            this.buttonInsert = new Bunifu.UI.WinForms.BunifuButton.BunifuButton();
+            this.dataGridViewKhachHang = new Bunifu.UI.WinForms.BunifuDataGridView();
+            this.MaKhachHang = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.TenKhachHang = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.SDT = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.NgayTao = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.Sua = new System.Windows.Forms.DataGridViewButtonColumn();
+            this.Xoa = new System.Windows.Forms.DataGridViewButtonColumn();
             this.bunifuPanel1.SuspendLayout();
             this.tableLayoutPanel1.SuspendLayout();
             this.bunifuPanel2.SuspendLayout();
             this.tableLayoutPanel2.SuspendLayout();
             this.tableLayoutPanel3.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.bunifuPictureBox1)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.dataGridViewKhachHang)).BeginInit();
             this.SuspendLayout();
             // 
             // bunifuPanel1
@@ -752,12 +775,370 @@
             this.bunifuPictureBox1.TabStop = false;
             this.bunifuPictureBox1.Type = Bunifu.UI.WinForms.BunifuPictureBox.Types.Circle;
             // 
+            // textboxTenNV
+            // 
+            this.textboxTenNV.AcceptsReturn = false;
+            this.textboxTenNV.AcceptsTab = false;
+            this.textboxTenNV.AnimationSpeed = 200;
+            this.textboxTenNV.AutoCompleteMode = System.Windows.Forms.AutoCompleteMode.None;
+            this.textboxTenNV.AutoCompleteSource = System.Windows.Forms.AutoCompleteSource.None;
+            this.textboxTenNV.AutoSizeHeight = true;
+            this.textboxTenNV.BackColor = System.Drawing.Color.Transparent;
+            this.textboxTenNV.BackgroundImage = ((System.Drawing.Image)(resources.GetObject("textboxTenNV.BackgroundImage")));
+            this.textboxTenNV.BorderColorActive = System.Drawing.Color.DodgerBlue;
+            this.textboxTenNV.BorderColorDisabled = System.Drawing.Color.FromArgb(((int)(((byte)(204)))), ((int)(((byte)(204)))), ((int)(((byte)(204)))));
+            this.textboxTenNV.BorderColorHover = System.Drawing.Color.FromArgb(((int)(((byte)(105)))), ((int)(((byte)(181)))), ((int)(((byte)(255)))));
+            this.textboxTenNV.BorderColorIdle = System.Drawing.Color.Silver;
+            this.textboxTenNV.BorderRadius = 1;
+            this.textboxTenNV.BorderThickness = 1;
+            this.textboxTenNV.CharacterCasing = System.Windows.Forms.CharacterCasing.Normal;
+            this.textboxTenNV.Cursor = System.Windows.Forms.Cursors.IBeam;
+            this.textboxTenNV.DefaultFont = new System.Drawing.Font("Segoe UI", 9.25F);
+            this.textboxTenNV.DefaultText = "";
+            this.textboxTenNV.FillColor = System.Drawing.Color.White;
+            this.textboxTenNV.HideSelection = true;
+            this.textboxTenNV.IconLeft = null;
+            this.textboxTenNV.IconLeftCursor = System.Windows.Forms.Cursors.IBeam;
+            this.textboxTenNV.IconPadding = 10;
+            this.textboxTenNV.IconRight = null;
+            this.textboxTenNV.IconRightCursor = System.Windows.Forms.Cursors.IBeam;
+            this.textboxTenNV.Lines = new string[0];
+            this.textboxTenNV.Location = new System.Drawing.Point(385, 185);
+            this.textboxTenNV.MaxLength = 32767;
+            this.textboxTenNV.MinimumSize = new System.Drawing.Size(1, 1);
+            this.textboxTenNV.Modified = false;
+            this.textboxTenNV.Multiline = false;
+            this.textboxTenNV.Name = "textboxTenNV";
+            stateProperties1.BorderColor = System.Drawing.Color.DodgerBlue;
+            stateProperties1.FillColor = System.Drawing.Color.Empty;
+            stateProperties1.ForeColor = System.Drawing.Color.Empty;
+            stateProperties1.PlaceholderForeColor = System.Drawing.Color.Empty;
+            this.textboxTenNV.OnActiveState = stateProperties1;
+            stateProperties2.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(204)))), ((int)(((byte)(204)))), ((int)(((byte)(204)))));
+            stateProperties2.FillColor = System.Drawing.Color.FromArgb(((int)(((byte)(240)))), ((int)(((byte)(240)))), ((int)(((byte)(240)))));
+            stateProperties2.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(109)))), ((int)(((byte)(109)))), ((int)(((byte)(109)))));
+            stateProperties2.PlaceholderForeColor = System.Drawing.Color.DarkGray;
+            this.textboxTenNV.OnDisabledState = stateProperties2;
+            stateProperties3.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(105)))), ((int)(((byte)(181)))), ((int)(((byte)(255)))));
+            stateProperties3.FillColor = System.Drawing.Color.Empty;
+            stateProperties3.ForeColor = System.Drawing.Color.Empty;
+            stateProperties3.PlaceholderForeColor = System.Drawing.Color.Empty;
+            this.textboxTenNV.OnHoverState = stateProperties3;
+            stateProperties4.BorderColor = System.Drawing.Color.Silver;
+            stateProperties4.FillColor = System.Drawing.Color.White;
+            stateProperties4.ForeColor = System.Drawing.Color.Empty;
+            stateProperties4.PlaceholderForeColor = System.Drawing.Color.Empty;
+            this.textboxTenNV.OnIdleState = stateProperties4;
+            this.textboxTenNV.Padding = new System.Windows.Forms.Padding(3);
+            this.textboxTenNV.PasswordChar = '\0';
+            this.textboxTenNV.PlaceholderForeColor = System.Drawing.Color.Silver;
+            this.textboxTenNV.PlaceholderText = "Enter text";
+            this.textboxTenNV.ReadOnly = false;
+            this.textboxTenNV.ScrollBars = System.Windows.Forms.ScrollBars.None;
+            this.textboxTenNV.SelectedText = "";
+            this.textboxTenNV.SelectionLength = 0;
+            this.textboxTenNV.SelectionStart = 0;
+            this.textboxTenNV.ShortcutsEnabled = true;
+            this.textboxTenNV.Size = new System.Drawing.Size(260, 39);
+            this.textboxTenNV.Style = Bunifu.UI.WinForms.BunifuTextBox._Style.Bunifu;
+            this.textboxTenNV.TabIndex = 3;
+            this.textboxTenNV.TextAlign = System.Windows.Forms.HorizontalAlignment.Left;
+            this.textboxTenNV.TextMarginBottom = 0;
+            this.textboxTenNV.TextMarginLeft = 3;
+            this.textboxTenNV.TextMarginTop = 1;
+            this.textboxTenNV.TextPlaceholder = "Enter text";
+            this.textboxTenNV.UseSystemPasswordChar = false;
+            this.textboxTenNV.WordWrap = true;
+            // 
+            // textboxSDT
+            // 
+            this.textboxSDT.AcceptsReturn = false;
+            this.textboxSDT.AcceptsTab = false;
+            this.textboxSDT.AnimationSpeed = 200;
+            this.textboxSDT.AutoCompleteMode = System.Windows.Forms.AutoCompleteMode.None;
+            this.textboxSDT.AutoCompleteSource = System.Windows.Forms.AutoCompleteSource.None;
+            this.textboxSDT.AutoSizeHeight = true;
+            this.textboxSDT.BackColor = System.Drawing.Color.Transparent;
+            this.textboxSDT.BackgroundImage = ((System.Drawing.Image)(resources.GetObject("textboxSDT.BackgroundImage")));
+            this.textboxSDT.BorderColorActive = System.Drawing.Color.DodgerBlue;
+            this.textboxSDT.BorderColorDisabled = System.Drawing.Color.FromArgb(((int)(((byte)(204)))), ((int)(((byte)(204)))), ((int)(((byte)(204)))));
+            this.textboxSDT.BorderColorHover = System.Drawing.Color.FromArgb(((int)(((byte)(105)))), ((int)(((byte)(181)))), ((int)(((byte)(255)))));
+            this.textboxSDT.BorderColorIdle = System.Drawing.Color.Silver;
+            this.textboxSDT.BorderRadius = 1;
+            this.textboxSDT.BorderThickness = 1;
+            this.textboxSDT.CharacterCasing = System.Windows.Forms.CharacterCasing.Normal;
+            this.textboxSDT.Cursor = System.Windows.Forms.Cursors.IBeam;
+            this.textboxSDT.DefaultFont = new System.Drawing.Font("Segoe UI", 9.25F);
+            this.textboxSDT.DefaultText = "";
+            this.textboxSDT.FillColor = System.Drawing.Color.White;
+            this.textboxSDT.HideSelection = true;
+            this.textboxSDT.IconLeft = null;
+            this.textboxSDT.IconLeftCursor = System.Windows.Forms.Cursors.IBeam;
+            this.textboxSDT.IconPadding = 10;
+            this.textboxSDT.IconRight = null;
+            this.textboxSDT.IconRightCursor = System.Windows.Forms.Cursors.IBeam;
+            this.textboxSDT.Lines = new string[0];
+            this.textboxSDT.Location = new System.Drawing.Point(385, 230);
+            this.textboxSDT.MaxLength = 32767;
+            this.textboxSDT.MinimumSize = new System.Drawing.Size(1, 1);
+            this.textboxSDT.Modified = false;
+            this.textboxSDT.Multiline = false;
+            this.textboxSDT.Name = "textboxSDT";
+            stateProperties5.BorderColor = System.Drawing.Color.DodgerBlue;
+            stateProperties5.FillColor = System.Drawing.Color.Empty;
+            stateProperties5.ForeColor = System.Drawing.Color.Empty;
+            stateProperties5.PlaceholderForeColor = System.Drawing.Color.Empty;
+            this.textboxSDT.OnActiveState = stateProperties5;
+            stateProperties6.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(204)))), ((int)(((byte)(204)))), ((int)(((byte)(204)))));
+            stateProperties6.FillColor = System.Drawing.Color.FromArgb(((int)(((byte)(240)))), ((int)(((byte)(240)))), ((int)(((byte)(240)))));
+            stateProperties6.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(109)))), ((int)(((byte)(109)))), ((int)(((byte)(109)))));
+            stateProperties6.PlaceholderForeColor = System.Drawing.Color.DarkGray;
+            this.textboxSDT.OnDisabledState = stateProperties6;
+            stateProperties7.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(105)))), ((int)(((byte)(181)))), ((int)(((byte)(255)))));
+            stateProperties7.FillColor = System.Drawing.Color.Empty;
+            stateProperties7.ForeColor = System.Drawing.Color.Empty;
+            stateProperties7.PlaceholderForeColor = System.Drawing.Color.Empty;
+            this.textboxSDT.OnHoverState = stateProperties7;
+            stateProperties8.BorderColor = System.Drawing.Color.Silver;
+            stateProperties8.FillColor = System.Drawing.Color.White;
+            stateProperties8.ForeColor = System.Drawing.Color.Empty;
+            stateProperties8.PlaceholderForeColor = System.Drawing.Color.Empty;
+            this.textboxSDT.OnIdleState = stateProperties8;
+            this.textboxSDT.Padding = new System.Windows.Forms.Padding(3);
+            this.textboxSDT.PasswordChar = '\0';
+            this.textboxSDT.PlaceholderForeColor = System.Drawing.Color.Silver;
+            this.textboxSDT.PlaceholderText = "Enter text";
+            this.textboxSDT.ReadOnly = false;
+            this.textboxSDT.ScrollBars = System.Windows.Forms.ScrollBars.None;
+            this.textboxSDT.SelectedText = "";
+            this.textboxSDT.SelectionLength = 0;
+            this.textboxSDT.SelectionStart = 0;
+            this.textboxSDT.ShortcutsEnabled = true;
+            this.textboxSDT.Size = new System.Drawing.Size(260, 39);
+            this.textboxSDT.Style = Bunifu.UI.WinForms.BunifuTextBox._Style.Bunifu;
+            this.textboxSDT.TabIndex = 4;
+            this.textboxSDT.TextAlign = System.Windows.Forms.HorizontalAlignment.Left;
+            this.textboxSDT.TextMarginBottom = 0;
+            this.textboxSDT.TextMarginLeft = 3;
+            this.textboxSDT.TextMarginTop = 1;
+            this.textboxSDT.TextPlaceholder = "Enter text";
+            this.textboxSDT.UseSystemPasswordChar = false;
+            this.textboxSDT.WordWrap = true;
+            // 
+            // buttonInsert
+            // 
+            this.buttonInsert.AllowAnimations = true;
+            this.buttonInsert.AllowMouseEffects = true;
+            this.buttonInsert.AllowToggling = false;
+            this.buttonInsert.AnimationSpeed = 200;
+            this.buttonInsert.AutoGenerateColors = false;
+            this.buttonInsert.AutoRoundBorders = false;
+            this.buttonInsert.AutoSizeLeftIcon = true;
+            this.buttonInsert.AutoSizeRightIcon = true;
+            this.buttonInsert.BackColor = System.Drawing.Color.Transparent;
+            this.buttonInsert.BackColor1 = System.Drawing.Color.FromArgb(((int)(((byte)(51)))), ((int)(((byte)(122)))), ((int)(((byte)(183)))));
+            this.buttonInsert.BackgroundImage = ((System.Drawing.Image)(resources.GetObject("buttonInsert.BackgroundImage")));
+            this.buttonInsert.BorderStyle = Bunifu.UI.WinForms.BunifuButton.BunifuButton.BorderStyles.Solid;
+            this.buttonInsert.ButtonText = "Insert";
+            this.buttonInsert.ButtonTextMarginLeft = 0;
+            this.buttonInsert.ColorContrastOnClick = 45;
+            this.buttonInsert.ColorContrastOnHover = 45;
+            this.buttonInsert.Cursor = System.Windows.Forms.Cursors.Default;
+            borderEdges7.BottomLeft = true;
+            borderEdges7.BottomRight = true;
+            borderEdges7.TopLeft = true;
+            borderEdges7.TopRight = true;
+            this.buttonInsert.CustomizableEdges = borderEdges7;
+            this.buttonInsert.DialogResult = System.Windows.Forms.DialogResult.None;
+            this.buttonInsert.DisabledBorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(191)))), ((int)(((byte)(191)))), ((int)(((byte)(191)))));
+            this.buttonInsert.DisabledFillColor = System.Drawing.Color.Empty;
+            this.buttonInsert.DisabledForecolor = System.Drawing.Color.Empty;
+            this.buttonInsert.FocusState = Bunifu.UI.WinForms.BunifuButton.BunifuButton.ButtonStates.Pressed;
+            this.buttonInsert.Font = new System.Drawing.Font("Segoe UI", 9F);
+            this.buttonInsert.ForeColor = System.Drawing.Color.White;
+            this.buttonInsert.IconLeft = null;
+            this.buttonInsert.IconLeftAlign = System.Drawing.ContentAlignment.MiddleLeft;
+            this.buttonInsert.IconLeftCursor = System.Windows.Forms.Cursors.Default;
+            this.buttonInsert.IconLeftPadding = new System.Windows.Forms.Padding(11, 3, 3, 3);
+            this.buttonInsert.IconMarginLeft = 11;
+            this.buttonInsert.IconPadding = 10;
+            this.buttonInsert.IconRight = null;
+            this.buttonInsert.IconRightAlign = System.Drawing.ContentAlignment.MiddleRight;
+            this.buttonInsert.IconRightCursor = System.Windows.Forms.Cursors.Default;
+            this.buttonInsert.IconRightPadding = new System.Windows.Forms.Padding(3, 3, 7, 3);
+            this.buttonInsert.IconSize = 25;
+            this.buttonInsert.IdleBorderColor = System.Drawing.Color.Empty;
+            this.buttonInsert.IdleBorderRadius = 0;
+            this.buttonInsert.IdleBorderThickness = 0;
+            this.buttonInsert.IdleFillColor = System.Drawing.Color.Empty;
+            this.buttonInsert.IdleIconLeftImage = null;
+            this.buttonInsert.IdleIconRightImage = null;
+            this.buttonInsert.IndicateFocus = false;
+            this.buttonInsert.Location = new System.Drawing.Point(385, 275);
+            this.buttonInsert.Name = "buttonInsert";
+            this.buttonInsert.OnDisabledState.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(191)))), ((int)(((byte)(191)))), ((int)(((byte)(191)))));
+            this.buttonInsert.OnDisabledState.BorderRadius = 1;
+            this.buttonInsert.OnDisabledState.BorderStyle = Bunifu.UI.WinForms.BunifuButton.BunifuButton.BorderStyles.Solid;
+            this.buttonInsert.OnDisabledState.BorderThickness = 1;
+            this.buttonInsert.OnDisabledState.FillColor = System.Drawing.Color.FromArgb(((int)(((byte)(204)))), ((int)(((byte)(204)))), ((int)(((byte)(204)))));
+            this.buttonInsert.OnDisabledState.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(168)))), ((int)(((byte)(160)))), ((int)(((byte)(168)))));
+            this.buttonInsert.OnDisabledState.IconLeftImage = null;
+            this.buttonInsert.OnDisabledState.IconRightImage = null;
+            this.buttonInsert.onHoverState.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(30)))), ((int)(((byte)(150)))), ((int)(((byte)(255)))));
+            this.buttonInsert.onHoverState.BorderRadius = 1;
+            this.buttonInsert.onHoverState.BorderStyle = Bunifu.UI.WinForms.BunifuButton.BunifuButton.BorderStyles.Solid;
+            this.buttonInsert.onHoverState.BorderThickness = 1;
+            this.buttonInsert.onHoverState.FillColor = System.Drawing.Color.FromArgb(((int)(((byte)(30)))), ((int)(((byte)(150)))), ((int)(((byte)(255)))));
+            this.buttonInsert.onHoverState.ForeColor = System.Drawing.Color.White;
+            this.buttonInsert.onHoverState.IconLeftImage = null;
+            this.buttonInsert.onHoverState.IconRightImage = null;
+            this.buttonInsert.OnIdleState.BorderColor = System.Drawing.Color.DodgerBlue;
+            this.buttonInsert.OnIdleState.BorderRadius = 1;
+            this.buttonInsert.OnIdleState.BorderStyle = Bunifu.UI.WinForms.BunifuButton.BunifuButton.BorderStyles.Solid;
+            this.buttonInsert.OnIdleState.BorderThickness = 1;
+            this.buttonInsert.OnIdleState.FillColor = System.Drawing.Color.DodgerBlue;
+            this.buttonInsert.OnIdleState.ForeColor = System.Drawing.Color.White;
+            this.buttonInsert.OnIdleState.IconLeftImage = null;
+            this.buttonInsert.OnIdleState.IconRightImage = null;
+            this.buttonInsert.OnPressedState.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(40)))), ((int)(((byte)(96)))), ((int)(((byte)(144)))));
+            this.buttonInsert.OnPressedState.BorderRadius = 1;
+            this.buttonInsert.OnPressedState.BorderStyle = Bunifu.UI.WinForms.BunifuButton.BunifuButton.BorderStyles.Solid;
+            this.buttonInsert.OnPressedState.BorderThickness = 1;
+            this.buttonInsert.OnPressedState.FillColor = System.Drawing.Color.FromArgb(((int)(((byte)(40)))), ((int)(((byte)(96)))), ((int)(((byte)(144)))));
+            this.buttonInsert.OnPressedState.ForeColor = System.Drawing.Color.White;
+            this.buttonInsert.OnPressedState.IconLeftImage = null;
+            this.buttonInsert.OnPressedState.IconRightImage = null;
+            this.buttonInsert.Size = new System.Drawing.Size(260, 39);
+            this.buttonInsert.TabIndex = 5;
+            this.buttonInsert.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
+            this.buttonInsert.TextAlignment = System.Windows.Forms.HorizontalAlignment.Center;
+            this.buttonInsert.TextMarginLeft = 0;
+            this.buttonInsert.TextPadding = new System.Windows.Forms.Padding(0);
+            this.buttonInsert.UseDefaultRadiusAndThickness = true;
+            this.buttonInsert.Click += new System.EventHandler(this.buttonInsert_Click);
+            // 
+            // dataGridViewKhachHang
+            // 
+            this.dataGridViewKhachHang.AllowCustomTheming = true;
+            this.dataGridViewKhachHang.AllowUserToDeleteRows = false;
+            this.dataGridViewKhachHang.AllowUserToOrderColumns = true;
+            dataGridViewCellStyle1.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(248)))), ((int)(((byte)(251)))), ((int)(((byte)(255)))));
+            dataGridViewCellStyle1.ForeColor = System.Drawing.Color.Black;
+            this.dataGridViewKhachHang.AlternatingRowsDefaultCellStyle = dataGridViewCellStyle1;
+            this.dataGridViewKhachHang.AutoSizeColumnsMode = System.Windows.Forms.DataGridViewAutoSizeColumnsMode.Fill;
+            this.dataGridViewKhachHang.BorderStyle = System.Windows.Forms.BorderStyle.None;
+            this.dataGridViewKhachHang.CellBorderStyle = System.Windows.Forms.DataGridViewCellBorderStyle.SingleHorizontal;
+            this.dataGridViewKhachHang.ColumnHeadersBorderStyle = System.Windows.Forms.DataGridViewHeaderBorderStyle.None;
+            dataGridViewCellStyle2.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
+            dataGridViewCellStyle2.BackColor = System.Drawing.Color.Pink;
+            dataGridViewCellStyle2.Font = new System.Drawing.Font("Segoe UI Semibold", 11.75F, System.Drawing.FontStyle.Bold);
+            dataGridViewCellStyle2.ForeColor = System.Drawing.Color.White;
+            dataGridViewCellStyle2.SelectionBackColor = System.Drawing.Color.Crimson;
+            dataGridViewCellStyle2.SelectionForeColor = System.Drawing.Color.White;
+            dataGridViewCellStyle2.WrapMode = System.Windows.Forms.DataGridViewTriState.True;
+            this.dataGridViewKhachHang.ColumnHeadersDefaultCellStyle = dataGridViewCellStyle2;
+            this.dataGridViewKhachHang.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
+            this.dataGridViewKhachHang.Columns.AddRange(new System.Windows.Forms.DataGridViewColumn[] {
+            this.MaKhachHang,
+            this.TenKhachHang,
+            this.SDT,
+            this.NgayTao,
+            this.Sua,
+            this.Xoa});
+            this.dataGridViewKhachHang.CurrentTheme.AlternatingRowsStyle.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(248)))), ((int)(((byte)(251)))), ((int)(((byte)(255)))));
+            this.dataGridViewKhachHang.CurrentTheme.AlternatingRowsStyle.Font = new System.Drawing.Font("Segoe UI Semibold", 9.75F, System.Drawing.FontStyle.Bold);
+            this.dataGridViewKhachHang.CurrentTheme.AlternatingRowsStyle.ForeColor = System.Drawing.Color.Black;
+            this.dataGridViewKhachHang.CurrentTheme.AlternatingRowsStyle.SelectionBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(210)))), ((int)(((byte)(232)))), ((int)(((byte)(255)))));
+            this.dataGridViewKhachHang.CurrentTheme.AlternatingRowsStyle.SelectionForeColor = System.Drawing.Color.Black;
+            this.dataGridViewKhachHang.CurrentTheme.BackColor = System.Drawing.Color.White;
+            this.dataGridViewKhachHang.CurrentTheme.GridColor = System.Drawing.Color.FromArgb(((int)(((byte)(221)))), ((int)(((byte)(238)))), ((int)(((byte)(255)))));
+            this.dataGridViewKhachHang.CurrentTheme.HeaderStyle.BackColor = System.Drawing.Color.Pink;
+            this.dataGridViewKhachHang.CurrentTheme.HeaderStyle.Font = new System.Drawing.Font("Segoe UI Semibold", 11.75F, System.Drawing.FontStyle.Bold);
+            this.dataGridViewKhachHang.CurrentTheme.HeaderStyle.ForeColor = System.Drawing.Color.White;
+            this.dataGridViewKhachHang.CurrentTheme.HeaderStyle.SelectionBackColor = System.Drawing.Color.Crimson;
+            this.dataGridViewKhachHang.CurrentTheme.HeaderStyle.SelectionForeColor = System.Drawing.Color.White;
+            this.dataGridViewKhachHang.CurrentTheme.Name = null;
+            this.dataGridViewKhachHang.CurrentTheme.RowsStyle.BackColor = System.Drawing.Color.White;
+            this.dataGridViewKhachHang.CurrentTheme.RowsStyle.Font = new System.Drawing.Font("Segoe UI Semibold", 9.75F, System.Drawing.FontStyle.Bold);
+            this.dataGridViewKhachHang.CurrentTheme.RowsStyle.ForeColor = System.Drawing.Color.Black;
+            this.dataGridViewKhachHang.CurrentTheme.RowsStyle.SelectionBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(192)))), ((int)(((byte)(192)))));
+            this.dataGridViewKhachHang.CurrentTheme.RowsStyle.SelectionForeColor = System.Drawing.Color.Black;
+            dataGridViewCellStyle3.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
+            dataGridViewCellStyle3.BackColor = System.Drawing.Color.White;
+            dataGridViewCellStyle3.Font = new System.Drawing.Font("Segoe UI Semibold", 9.75F, System.Drawing.FontStyle.Bold);
+            dataGridViewCellStyle3.ForeColor = System.Drawing.Color.Black;
+            dataGridViewCellStyle3.SelectionBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(192)))), ((int)(((byte)(192)))));
+            dataGridViewCellStyle3.SelectionForeColor = System.Drawing.Color.Black;
+            dataGridViewCellStyle3.WrapMode = System.Windows.Forms.DataGridViewTriState.False;
+            this.dataGridViewKhachHang.DefaultCellStyle = dataGridViewCellStyle3;
+            this.dataGridViewKhachHang.EnableHeadersVisualStyles = false;
+            this.dataGridViewKhachHang.GridColor = System.Drawing.Color.FromArgb(((int)(((byte)(221)))), ((int)(((byte)(238)))), ((int)(((byte)(255)))));
+            this.dataGridViewKhachHang.HeaderBackColor = System.Drawing.Color.Pink;
+            this.dataGridViewKhachHang.HeaderBgColor = System.Drawing.Color.Empty;
+            this.dataGridViewKhachHang.HeaderForeColor = System.Drawing.Color.White;
+            this.dataGridViewKhachHang.Location = new System.Drawing.Point(385, 320);
+            this.dataGridViewKhachHang.Name = "dataGridViewKhachHang";
+            this.dataGridViewKhachHang.ReadOnly = true;
+            this.dataGridViewKhachHang.RowHeadersVisible = false;
+            this.dataGridViewKhachHang.RowTemplate.Height = 40;
+            this.dataGridViewKhachHang.SelectionMode = System.Windows.Forms.DataGridViewSelectionMode.FullRowSelect;
+            this.dataGridViewKhachHang.Size = new System.Drawing.Size(940, 269);
+            this.dataGridViewKhachHang.TabIndex = 6;
+            this.dataGridViewKhachHang.Theme = Bunifu.UI.WinForms.BunifuDataGridView.PresetThemes.Light;
+            this.dataGridViewKhachHang.CellContentClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.dataGridViewKhachHang_CellContentClick);
+            // 
+            // MaKhachHang
+            // 
+            this.MaKhachHang.HeaderText = "Mã Khách Hàng";
+            this.MaKhachHang.Name = "MaKhachHang";
+            this.MaKhachHang.ReadOnly = true;
+            // 
+            // TenKhachHang
+            // 
+            this.TenKhachHang.HeaderText = "Tên Khách Hàng";
+            this.TenKhachHang.Name = "TenKhachHang";
+            this.TenKhachHang.ReadOnly = true;
+            // 
+            // SDT
+            // 
+            this.SDT.HeaderText = "Số điện thoại";
+            this.SDT.Name = "SDT";
+            this.SDT.ReadOnly = true;
+            // 
+            // NgayTao
+            // 
+            this.NgayTao.HeaderText = "Ngày tạo";
+            this.NgayTao.Name = "NgayTao";
+            this.NgayTao.ReadOnly = true;
+            // 
+            // Sua
+            // 
+            this.Sua.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.Sua.HeaderText = "Sửa";
+            this.Sua.Name = "Sua";
+            this.Sua.ReadOnly = true;
+            this.Sua.Resizable = System.Windows.Forms.DataGridViewTriState.True;
+            this.Sua.Text = "Sửa";
+            this.Sua.UseColumnTextForButtonValue = true;
+            // 
+            // Xoa
+            // 
+            this.Xoa.HeaderText = "Xoá";
+            this.Xoa.Name = "Xoa";
+            this.Xoa.ReadOnly = true;
+            this.Xoa.Text = "Xoá";
+            this.Xoa.UseColumnTextForButtonValue = true;
+            // 
             // DashboardForm
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackColor = System.Drawing.SystemColors.ControlLightLight;
             this.ClientSize = new System.Drawing.Size(1360, 768);
+            this.Controls.Add(this.dataGridViewKhachHang);
+            this.Controls.Add(this.buttonInsert);
+            this.Controls.Add(this.textboxSDT);
+            this.Controls.Add(this.textboxTenNV);
             this.Controls.Add(this.bunifuPanel2);
             this.Controls.Add(this.bunifuPanel1);
             this.IsMdiContainer = true;
@@ -774,6 +1155,7 @@
             this.tableLayoutPanel3.ResumeLayout(false);
             this.tableLayoutPanel3.PerformLayout();
             ((System.ComponentModel.ISupportInitialize)(this.bunifuPictureBox1)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.dataGridViewKhachHang)).EndInit();
             this.ResumeLayout(false);
 
         }
@@ -795,5 +1177,15 @@
         private System.Windows.Forms.TableLayoutPanel tableLayoutPanel3;
         private System.Windows.Forms.Label labelQuyen;
         private System.Windows.Forms.Label labelTenDangNhap;
+        private Bunifu.UI.WinForms.BunifuTextBox textboxTenNV;
+        private Bunifu.UI.WinForms.BunifuTextBox textboxSDT;
+        private Bunifu.UI.WinForms.BunifuButton.BunifuButton buttonInsert;
+        private Bunifu.UI.WinForms.BunifuDataGridView dataGridViewKhachHang;
+        private System.Windows.Forms.DataGridViewTextBoxColumn MaKhachHang;
+        private System.Windows.Forms.DataGridViewTextBoxColumn TenKhachHang;
+        private System.Windows.Forms.DataGridViewTextBoxColumn SDT;
+        private System.Windows.Forms.DataGridViewTextBoxColumn NgayTao;
+        private System.Windows.Forms.DataGridViewButtonColumn Sua;
+        private System.Windows.Forms.DataGridViewButtonColumn Xoa;
     }
 }

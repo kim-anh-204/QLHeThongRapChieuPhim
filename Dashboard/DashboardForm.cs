@@ -1,8 +1,10 @@
 ﻿using Bunifu.UI.WinForms.BunifuButton;
+using QuanLyRapChieuPhim.Util;
 using System;
 using System.Collections.Generic;
 using System.ComponentModel;
 using System.Data;
+using System.Data.SqlClient;
 using System.Drawing;
 using System.Linq;
 using System.Text;
@@ -75,6 +77,7 @@ namespace QuanLyRapChieuPhim.MainForm
 
         private void DashboardForm_Load(object sender, EventArgs e)
         {
+            DisplayData();
         }
 
         private void buttonNhanVien_MouseLeave(object sender, EventArgs e)
@@ -84,6 +87,56 @@ namespace QuanLyRapChieuPhim.MainForm
         }
         private void MoveIndicatorToDefault()
         {
+        }
+
+        private void buttonInsert_Click(object sender, EventArgs e)
+        {
+            if (textboxTenNV.Text == "" || textboxSDT.Text == "")
+            {
+                MessageBox.Show("Trống!");
+                return;
+            }
+
+            string countQuery = "SELECT COUNT(*) FROM NHANVIEN";
+            int id_count = Connection.ExecuteScalarInt32(countQuery);
+
+            string current_id = "NV" + id_count;
+            DateTime today = DateTime.Now;
+
+            string insertQuery = "INSERT INTO NHANVIEN VALUES (@MaNV, @TenNV, @SDT, @NgayTao)";
+            bool flag = Connection.ExcuteNonQuery(insertQuery, new (string, object)[]
+            {
+                ("@MaNV", current_id),
+                ("@TenNV", textboxTenNV.Text),
+                ("@SDT", textboxSDT.Text),
+                ("@NgayTao", today)
+            });
+            if (flag == false)
+            {
+                MessageBox.Show("Lỗi");
+            }
+            else
+            {
+                DisplayData();
+                MessageBox.Show("Thành công");
+            }
+        }
+
+        private void DisplayData()
+        {
+            string dataQuery = "SELECT * FROM NHANVIEN";
+            DataTable khachHang = Connection.GetDataTable(dataQuery);
+            dataGridViewKhachHang.Rows.Clear();
+            //dataGridViewKhachHang.DataSource = khachHang;
+            foreach (DataRow row in khachHang.Rows)
+            {
+                dataGridViewKhachHang.Rows.Add(row["MaNV"], row["TenNV"], row["SDT"], row["NgayTao"]);
+            }
+        }
+
+        private void dataGridViewKhachHang_CellContentClick(object sender, DataGridViewCellEventArgs e)
+        {
+
         }
     }
 }

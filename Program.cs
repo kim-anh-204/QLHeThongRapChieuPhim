@@ -18,7 +18,7 @@ namespace QuanLyRapChieuPhim
         {
             Application.EnableVisualStyles();
             Application.SetCompatibleTextRenderingDefault(false);
-            Application.Run(new LoginAndRegisterForm());
+            Application.Run(new DashboardForm("Tran Van Giap"));
         }
     }
 }
