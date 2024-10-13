@@ -102,7 +102,7 @@
             this.NameBtn.Padding = new System.Windows.Forms.Padding(4);
             this.NameBtn.PasswordChar = '\0';
             this.NameBtn.PlaceholderForeColor = System.Drawing.Color.Silver;
-            this.NameBtn.PlaceholderText = "Nhập tên ";
+            this.NameBtn.PlaceholderText = "Nhập tên nhân viên";
             this.NameBtn.ReadOnly = false;
             this.NameBtn.ScrollBars = System.Windows.Forms.ScrollBars.None;
             this.NameBtn.SelectedText = "";
@@ -116,9 +116,10 @@
             this.NameBtn.TextMarginBottom = 0;
             this.NameBtn.TextMarginLeft = 3;
             this.NameBtn.TextMarginTop = 1;
-            this.NameBtn.TextPlaceholder = "Nhập tên ";
+            this.NameBtn.TextPlaceholder = "Nhập tên nhân viên";
             this.NameBtn.UseSystemPasswordChar = false;
             this.NameBtn.WordWrap = true;
+            this.NameBtn.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.NameBtn_KeyPress);
             // 
             // SdtBtn
             // 
@@ -179,7 +180,7 @@
             this.SdtBtn.Padding = new System.Windows.Forms.Padding(4);
             this.SdtBtn.PasswordChar = '\0';
             this.SdtBtn.PlaceholderForeColor = System.Drawing.Color.Silver;
-            this.SdtBtn.PlaceholderText = "Nhập SDt";
+            this.SdtBtn.PlaceholderText = "Nhập số điện thoại";
             this.SdtBtn.ReadOnly = false;
             this.SdtBtn.ScrollBars = System.Windows.Forms.ScrollBars.None;
             this.SdtBtn.SelectedText = "";
@@ -193,9 +194,10 @@
             this.SdtBtn.TextMarginBottom = 0;
             this.SdtBtn.TextMarginLeft = 3;
             this.SdtBtn.TextMarginTop = 1;
-            this.SdtBtn.TextPlaceholder = "Nhập SDt";
+            this.SdtBtn.TextPlaceholder = "Nhập số điện thoại";
             this.SdtBtn.UseSystemPasswordChar = false;
             this.SdtBtn.WordWrap = true;
+            this.SdtBtn.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.SdtBtn_KeyPress);
             // 
             // bunifuButton1
             // 
@@ -300,7 +302,6 @@
             this.Name = "Add";
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "Them nhan vien";
-            this.Load += new System.EventHandler(this.Add_Load);
             this.ResumeLayout(false);
 
         }

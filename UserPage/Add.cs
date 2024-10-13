@@ -23,49 +23,73 @@ namespace QuanLyRapChieuPhim.UserPage
         private void bunifuButton1_Click(object sender, EventArgs e)
         {
 
-            string query = "SELECT TOP 1 Makhach FROM KHACHHANG ORDER BY CAST(Makhach AS INT) DESC;";
-            int maKhach;
-            // Gọi phương thức để lấy dữ liệu
-            DataTable result = Connection.GetDataTable(query);
-            if (result != null && result.Rows.Count > 0)
-            {
-                // Lấy mã khách hàng từ hàng đầu tiên
-                maKhach = Convert.ToInt32(result.Rows[0]["Makhach"]);
-                maKhach += 1;
-            }
-            else
-            {
-                // Nếu không có dữ liệu, đặt mã khách hàng mặc định là "1"
-                maKhach = 1;
-            }
-            //int maKhachHang = Convert.ToInt32(result.Rows[0]["Makhach"]); // Chuyển đổi sang kiểu int
-            
-            // Cộng thêm 1 vào mã khách hàng
-            //maKhachHang += 1;
+            string queryID = "SELECT TOP 1 MaNV FROM NHANVIEN ORDER BY MaNV DESC;";
+            DataTable result = Connection.GetDataTable(queryID);
+            string maNV = result.Rows[0]["MaNV"].ToString();
+           
+            string prefix = maNV.Substring(0, 1); // Lấy chữ cái 'E'
+            string numberPart = maNV.Substring(1); // Lấy phần số
+            int number = int.Parse(numberPart); // Chuyển đổi thành số nguyên
 
-            //string maKhachHang = result.Rows[0]["Makhach"].ToString();
-            string MaKhach = maKhach.ToString();
-            MessageBox.Show($"{maKhach}");
-            string title = NameBtn.Text; // Thay bằng dữ liệu thực tế từ người dùng
-            string genre = SdtBtn.Text;  // Thay bằng dữ liệu thực tế từ người dùng
-            string formattedDate = DateTime.Now.ToString("MM/dd/yyyy");   // Hoặc lấy từ một DatePicker hoặc TextBox
+            // Tăng số lên 1 và xử lý các quy tắc khác như đã nêu ở phần trước
+            number += 1;
+
+            // Chuyển lại thành chuỗi và kiểm tra độ dài
+            string newNumberPart = number.ToString();
+            if (newNumberPart.Length == 1)
+            {
+                newNumberPart = "00" + newNumberPart; // Nếu chỉ có 1 chữ số, thêm 2 số 0
+            }
+            else if (newNumberPart.Length == 2)
+            {
+                newNumberPart = "0" + newNumberPart; // Nếu có 2 chữ số, thêm 1 số 0
+            }
+
+            // Ghép lại với prefix
+            string newMaNV = prefix + newNumberPart;
+
+            //if (result != null && result.Rows.Count > 0)
+            //{
+            //    maNV = Convert.ToInt32(result.Rows[0]["MaNV"]);
+            //    maNV += 1;
+            //}
+            //else
+            //{
+            //    maNV = 1;
+            //}
+            string name = NameBtn.Text;
+            string phoneNumber = SdtBtn.Text;  
+            string formattedDate = DateTime.Now.ToString("MM/dd/yyyy");   
             DateTime NgayTao = DateTime.Now.Date;
-            string query1 = "INSERT INTO KHACHHANG (MaKhach,TenKhach, SDT, NgayTao) VALUES (@MaKhach,@TenKhach, @SDT, @NgayTao)";
+            string queryInsert = "INSERT INTO NHANVIEN (MaNV,TenNV, SDT, NgayVao) VALUES (@MaNV,@TenNV, @SDT, @NgayVao)";
 
-            bool result1 = Connection.ExcuteNonQuery(query1, new (string, object)[]
+           Connection.ExcuteNonQuery(queryInsert, new (string, object)[]
             {
-            ("@MaKhach", MaKhach),
-            ("@TenKhach", title),
-            ("@SDT", genre),
-            ("@NgayTao", NgayTao)
+            ("@MaNV", newMaNV),
+            ("@TenNV", name),
+            ("@SDT", phoneNumber),
+            ("@NgayVao", NgayTao)
             });
             this.Close();
-            userManager.LoadKhachHangData();
+            userManager.LoadNhanVienData();
         }
 
-        private void Add_Load(object sender, EventArgs e)
-        {
 
+        private void NameBtn_KeyPress(object sender, KeyPressEventArgs e)
+        {
+            if (!char.IsLetter(e.KeyChar) && e.KeyChar != ' ' && !char.IsControl(e.KeyChar))
+            {
+                e.Handled = true; 
+            }
+        }
+       
+
+        private void SdtBtn_KeyPress(object sender, KeyPressEventArgs e)
+        {
+            if (!char.IsDigit(e.KeyChar) && !char.IsControl(e.KeyChar))
+            {
+                e.Handled = true; 
+            }
         }
     }
 }

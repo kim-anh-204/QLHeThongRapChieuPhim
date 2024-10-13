@@ -13,28 +13,28 @@ namespace QuanLyRapChieuPhim.UserPage
 {
     public partial class Update : Form
     {
-        private string maKhach;
-        private string tenKhach;
+        private string maNV;
+        private string tenNV;
         private string sdt;
         private UserManager userManager;
-        public Update(UserManager userManager,string maKhach, string tenKhach, string sdt)
+        public Update(UserManager userManager,string maNV, string tenNV, string sdt)
         {
             InitializeComponent();
             this.userManager = userManager;
-            NameBtn.Text = tenKhach;
+            NameBtn.Text = tenNV;
             SdtBtn.Text = sdt;
-            this.maKhach=maKhach;
-            this.tenKhach=tenKhach;
+            this.maNV = maNV;
+            this.tenNV = tenNV;
             this.sdt=sdt;
         }
-        private bool UpdateKhachHang(string maKhach, string tenKhach, string sdt)
+        private bool UpdateNV(string maNV, string tenNV, string sdt)
         {
-            string query = "UPDATE KHACHHANG SET TenKhach = @tenKhach, SDT = @sdt WHERE MaKhach = @maKhach";
+            string query = "UPDATE NHANVIEN SET TenNV = @TenNV, SDT = @SDT WHERE MaNV = @MaNV";
 
             return Connection.ExcuteNonQuery(query, new (string, object)[]
             {
-             ("@MaKhach", maKhach),
-            ("@TenKhach", tenKhach),
+             ("@MaNV", maNV),
+            ("@TenNV", tenNV),
             ("@SDT", sdt),
           
             });
@@ -46,20 +46,35 @@ namespace QuanLyRapChieuPhim.UserPage
 
         private void bunifuButton1_Click(object sender, EventArgs e)
         {
-            string newTenKhach = NameBtn.Text;
+            string newTenNV = NameBtn.Text;
             string newSDT = SdtBtn.Text;
 
-            // Gọi phương thức cập nhật cơ sở dữ liệu
-            bool result = UpdateKhachHang(maKhach, newTenKhach, newSDT);
+            bool result = UpdateNV(maNV, newTenNV, newSDT);
             if (result)
             {
                 MessageBox.Show("Cập nhật thành công!", "Thông báo", MessageBoxButtons.OK, MessageBoxIcon.Information);
-                this.Close(); // Đóng form sau khi cập nhật thành công
-                userManager.LoadKhachHangData();
+                this.Close(); 
+                userManager.LoadNhanVienData();
             }
             else
             {
                 MessageBox.Show("Cập nhật thất bại!", "Lỗi", MessageBoxButtons.OK, MessageBoxIcon.Error);
+            }
+        }
+
+        private void NameBtn_KeyPress(object sender, KeyPressEventArgs e)
+        {
+            if (!char.IsLetter(e.KeyChar) && e.KeyChar != ' ' && !char.IsControl(e.KeyChar))
+            {
+                e.Handled = true; 
+            }
+        }
+
+        private void SdtBtn_KeyPress(object sender, KeyPressEventArgs e)
+        {
+            if (!char.IsDigit(e.KeyChar) && !char.IsControl(e.KeyChar))
+            {
+                e.Handled = true;
             }
         }
     }
