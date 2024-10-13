@@ -117,6 +117,16 @@ namespace QuanLyRapChieuPhim.MainForm
 
         }
 
+        private void bunifuPanel1_Click(object sender, EventArgs e)
+        {
+
+        }
+
+        private void bunifuButton21_Click(object sender, EventArgs e)
+        {
+
+        }
+
         private void buttonNhanVien_MouseLeave(object sender, EventArgs e)
         {
             if (!buttonNhanVien.ClientRectangle.Contains(buttonNhanVien.PointToClient(Cursor.Position)))

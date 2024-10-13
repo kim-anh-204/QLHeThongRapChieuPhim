@@ -1,4 +1,6 @@
-﻿using QuanLyRapChieuPhim.RegisterAndLogin;
+﻿using QuanLyRapChieuPhim.MainForm;
+using QuanLyRapChieuPhim.UserPage;
+using QuanLyRapChieuPhim.RegisterAndLogin;
 using System;
 using System.Collections.Generic;
 using System.Linq;
@@ -17,7 +19,8 @@ namespace QuanLyRapChieuPhim
         {
             Application.EnableVisualStyles();
             Application.SetCompatibleTextRenderingDefault(false);
-            Application.Run(new LoginAndRegisterForm());
+            Application.Run(new UserManager());
+
         }
     }
 }
