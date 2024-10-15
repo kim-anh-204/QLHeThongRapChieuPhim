@@ -7,6 +7,7 @@ using System.Linq;
 using System.Threading.Tasks;
 using System.Windows.Forms;
 using QuanLyRapChieuPhim.ScreeningPage;
+using QuanLyRapChieuPhim.UserPage;
 
 namespace QuanLyRapChieuPhim
 {
@@ -20,7 +21,9 @@ namespace QuanLyRapChieuPhim
         {
             Application.EnableVisualStyles();
             Application.SetCompatibleTextRenderingDefault(false);
-            Application.Run(new DashboardForm("Tran Van Giap"));
+            //Application.Run(new DashboardForm("Tran Van Giap"));
+            Application.Run(new Screening());
+
             //Application.Run(new LoginAndRegisterForm());
             //Application.Run(new ChonChoNgoi());
         }

@@ -54,10 +54,10 @@ namespace QuanLyRapChieuPhim.ScreeningPage
                     string tenPhong = row["TenPhong"]?.ToString();
                     string ngayChieu = row["NgayChieu"]?.ToString();
                     string gioBatDau = row["GioBatDau"]?.ToString();
-                    string giaVe = row["GiaVe"]?.ToString();
+                    int giaVe = Convert.ToInt32(row["GiaVe"]);
                     if (DateTime.TryParse(ngayChieu, out DateTime parsedNgayChieu))
                     {
-                        ngayChieu = parsedNgayChieu.ToString("MM/dd/yyyy"); // Định dạng lại chỉ lấy phần ngày
+                        ngayChieu = parsedNgayChieu.ToString("MM/dd/yyyy"); 
                     }
                     bunifuDataGridView1.Rows.Add(maSc,tenPhim, tenPhong, ngayChieu, gioBatDau, giaVe);
                 }

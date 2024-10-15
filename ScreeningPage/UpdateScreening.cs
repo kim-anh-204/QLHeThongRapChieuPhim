@@ -44,6 +44,26 @@ namespace QuanLyRapChieuPhim.ScreeningPage
 
         private void bunifuButton1_Click(object sender, EventArgs e)
         {
+            if (comboBoxMovies.SelectedIndex == -1)
+            {
+                MessageBox.Show("Bạn cần chọn phim");
+                return;
+            }
+            else if (comboBoxRoom.SelectedIndex == -1)
+            {
+                MessageBox.Show("Bạn cần chọn phòng");
+                return;
+            }
+            else if (movieType.SelectedIndex == -1)
+            {
+                MessageBox.Show("Bạn cần chọn loại chiếu");
+                return;
+            }
+            else if (priceTextBox.Text.Trim() == "")
+            {
+                MessageBox.Show("Bạn cần nhập giá vé");
+                return;
+            }
             var selectedMovie = (KeyValuePair<string, string>)comboBoxMovies.SelectedItem;
             this.maPhim = selectedMovie.Key;
             var selectedRoom = (KeyValuePair<string, string>)comboBoxRoom.SelectedItem;
@@ -55,18 +75,6 @@ namespace QuanLyRapChieuPhim.ScreeningPage
             this.giaVe = priceTextBox.Text;
 
             string query = "UPDATE SUATCHIEU SET MaPhim = @MaPhim, LoaiChieu = @LoaiChieu,GioBatDau = @GioBatDau,NgayChieu = @NgayChieu,GiaVe=@GiaVe WHERE MaSuatChieu = @MaSuatChieu";
-    //        MessageBox.Show(
-    //$"Mã Phim: {maPhim}\n" +
-    //$"Mã Phòng: {maPhong}\n" +
-    //$"Giờ Bắt Đầu: {gioBatDau}\n" +
-    //$"Ngày Chiếu: {ngayChieu.ToString("dd/MM/yyyy")}\n" +
-    //$"Số Vé Tối Đa: {soVeToida}\n" +
-    //$"Loại Chiếu: {loaiChieu}\n" +
-    //$"Giá Vé: {giaVe}",
-    //"Thông Tin Chi Tiết",
-    //MessageBoxButtons.OK,
-    //MessageBoxIcon.Information
-//);
             var result=Connection.ExcuteNonQuery(query, new (string, object)[]
            {
             ("@MaSuatChieu", maSc),

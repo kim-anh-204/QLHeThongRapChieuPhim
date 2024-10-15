@@ -46,8 +46,18 @@ namespace QuanLyRapChieuPhim.UserPage
 
         private void bunifuButton1_Click(object sender, EventArgs e)
         {
-            string newTenNV = NameBtn.Text;
-            string newSDT = SdtBtn.Text;
+            if (NameBtn.Text.Trim() == "")
+            {
+                MessageBox.Show("Bạn cần nhập tên nhân viên");
+                return;
+            }
+            else if (SdtBtn.Text.Trim() == "")
+            {
+                MessageBox.Show("Bạn cần nhập số điện thoại");
+                return;
+            }
+            string newTenNV = NameBtn.Text.Trim();
+            string newSDT = SdtBtn.Text.Trim();
 
             bool result = UpdateNV(maNV, newTenNV, newSDT);
             if (result)
