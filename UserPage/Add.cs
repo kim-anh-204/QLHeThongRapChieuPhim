@@ -91,5 +91,10 @@ namespace QuanLyRapChieuPhim.UserPage
                 e.Handled = true; 
             }
         }
+
+        private void Add_Load(object sender, EventArgs e)
+        {
+
+        }
     }
 }

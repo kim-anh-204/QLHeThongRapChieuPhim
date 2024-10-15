@@ -1,10 +1,22 @@
-﻿using System.Drawing;
+﻿using QuanLyRapChieuPhim.UserPage;
+using System.Drawing;
 using System.Windows.Forms;
 
-namespace QuanLyRapChieuPhim.UserPage
+namespace QuanLyRapChieuPhim.ScreeningPage
 {
-    partial class UserManager
+    partial class Screening
     {
+        /// <summary>
+        /// Required designer variable.
+        /// </summary>
+      
+
+        #region Windows Form Designer generated code
+
+        /// <summary>
+        /// Required method for Designer support - do not modify
+        /// the contents of this method with the code editor.
+        /// </summary>
         /// <summary>
         /// Required designer variable.
         /// </summary>
@@ -34,12 +46,15 @@ namespace QuanLyRapChieuPhim.UserPage
             System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle1 = new System.Windows.Forms.DataGridViewCellStyle();
             System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle2 = new System.Windows.Forms.DataGridViewCellStyle();
             System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle3 = new System.Windows.Forms.DataGridViewCellStyle();
-            System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(UserManager));
+            System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(Screening));
             Bunifu.UI.WinForms.BunifuButton.BunifuButton2.BorderEdges borderEdges1 = new Bunifu.UI.WinForms.BunifuButton.BunifuButton2.BorderEdges();
             this.bunifuDataGridView1 = new Bunifu.UI.WinForms.BunifuDataGridView();
-            this.MaNV = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.TenNV = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.SoDienThoai = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.maSC = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.tenPhim = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.tenPhong = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.ngayChieu = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.gioBatDau = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.giaVe = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.Sua = new System.Windows.Forms.DataGridViewButtonColumn();
             this.Xoa = new System.Windows.Forms.DataGridViewButtonColumn();
             this.dataGridViewTextBoxColumn1 = new System.Windows.Forms.DataGridViewTextBoxColumn();
@@ -74,9 +89,12 @@ namespace QuanLyRapChieuPhim.UserPage
             this.bunifuDataGridView1.ColumnHeadersDefaultCellStyle = dataGridViewCellStyle2;
             this.bunifuDataGridView1.ColumnHeadersHeight = 40;
             this.bunifuDataGridView1.Columns.AddRange(new System.Windows.Forms.DataGridViewColumn[] {
-            this.MaNV,
-            this.TenNV,
-            this.SoDienThoai,
+            this.maSC,
+            this.tenPhim,
+            this.tenPhong,
+            this.ngayChieu,
+            this.gioBatDau,
+            this.giaVe,
             this.Sua,
             this.Xoa});
             this.bunifuDataGridView1.CurrentTheme.AlternatingRowsStyle.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(248)))), ((int)(((byte)(251)))), ((int)(((byte)(255)))));
@@ -119,27 +137,53 @@ namespace QuanLyRapChieuPhim.UserPage
             this.bunifuDataGridView1.Size = new System.Drawing.Size(1059, 414);
             this.bunifuDataGridView1.TabIndex = 0;
             this.bunifuDataGridView1.Theme = Bunifu.UI.WinForms.BunifuDataGridView.PresetThemes.Light;
+            this.bunifuDataGridView1.CellContentClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.bunifuDataGridView1_CellContentClick);
             // 
-            // MaNV
+            // maSC
             // 
-            this.MaNV.HeaderText = "Mã Nhân Viên";
-            this.MaNV.MinimumWidth = 6;
-            this.MaNV.Name = "MaNV";
+            this.maSC.FillWeight = 7F;
+            this.maSC.HeaderText = "Mã SC";
+            this.maSC.MinimumWidth = 2;
+            this.maSC.Name = "maSC";
             // 
-            // TenNV
+            // tenPhim
             // 
-            this.TenNV.HeaderText = "Tên Nhân Viên";
-            this.TenNV.MinimumWidth = 6;
-            this.TenNV.Name = "TenNV";
+            this.tenPhim.FillWeight = 10.31674F;
+            this.tenPhim.HeaderText = "Tên Phim";
+            this.tenPhim.MinimumWidth = 6;
+            this.tenPhim.Name = "tenPhim";
             // 
-            // SoDienThoai
+            // tenPhong
             // 
-            this.SoDienThoai.HeaderText = "Số Điện Thoại";
-            this.SoDienThoai.MinimumWidth = 6;
-            this.SoDienThoai.Name = "SoDienThoai";
+            this.tenPhong.FillWeight = 10.31674F;
+            this.tenPhong.HeaderText = "Tên Phòng";
+            this.tenPhong.MinimumWidth = 6;
+            this.tenPhong.Name = "tenPhong";
+            // 
+            // ngayChieu
+            // 
+            this.ngayChieu.FillWeight = 10.31674F;
+            this.ngayChieu.HeaderText = "Ngày Chiếu";
+            this.ngayChieu.MinimumWidth = 6;
+            this.ngayChieu.Name = "ngayChieu";
+            // 
+            // gioBatDau
+            // 
+            this.gioBatDau.FillWeight = 10.31674F;
+            this.gioBatDau.HeaderText = "Giờ Bắt Đầu";
+            this.gioBatDau.MinimumWidth = 6;
+            this.gioBatDau.Name = "gioBatDau";
+            // 
+            // giaVe
+            // 
+            this.giaVe.FillWeight = 10.31674F;
+            this.giaVe.HeaderText = "Giá Vé";
+            this.giaVe.MinimumWidth = 6;
+            this.giaVe.Name = "giaVe";
             // 
             // Sua
             // 
+            this.Sua.FillWeight = 10.31674F;
             this.Sua.HeaderText = "";
             this.Sua.MinimumWidth = 6;
             this.Sua.Name = "Sua";
@@ -148,6 +192,7 @@ namespace QuanLyRapChieuPhim.UserPage
             // 
             // Xoa
             // 
+            this.Xoa.FillWeight = 10.31674F;
             this.Xoa.HeaderText = "";
             this.Xoa.MinimumWidth = 6;
             this.Xoa.Name = "Xoa";
@@ -210,6 +255,9 @@ namespace QuanLyRapChieuPhim.UserPage
             this.bunifuButton1.ColorContrastOnClick = 45;
             this.bunifuButton1.ColorContrastOnHover = 45;
             this.bunifuButton1.Cursor = System.Windows.Forms.Cursors.Default;
+            //this.bunifuButton1.onHoverState.BackColor = Color.Blue; // Màu nền khi hover
+            this.bunifuButton1.onHoverState.BorderColor = Color.Red; // Màu viền khi hover
+            this.bunifuButton1.onHoverState.ForeColor = Color.White;
             borderEdges1.BottomLeft = true;
             borderEdges1.BottomRight = true;
             borderEdges1.TopLeft = true;
@@ -273,7 +321,7 @@ namespace QuanLyRapChieuPhim.UserPage
             this.bunifuButton1.OnPressedState.ForeColor = System.Drawing.Color.White;
             this.bunifuButton1.OnPressedState.IconLeftImage = null;
             this.bunifuButton1.OnPressedState.IconRightImage = null;
-            this.bunifuButton1.Size = new System.Drawing.Size(139, 46);
+            this.bunifuButton1.Size = new System.Drawing.Size(174, 46);
             this.bunifuButton1.TabIndex = 5;
             this.bunifuButton1.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
             this.bunifuButton1.TextAlignment = System.Windows.Forms.HorizontalAlignment.Center;
@@ -282,7 +330,7 @@ namespace QuanLyRapChieuPhim.UserPage
             this.bunifuButton1.UseDefaultRadiusAndThickness = true;
             this.bunifuButton1.Click += new System.EventHandler(this.bunifuButton1_Click);
             // 
-            // UserManager
+            // Screening
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
@@ -290,7 +338,7 @@ namespace QuanLyRapChieuPhim.UserPage
             this.Controls.Add(this.bunifuButton1);
             this.Controls.Add(this.bunifuDataGridView1);
             this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.None;
-            this.Name = "UserManager";
+            this.Name = "Screening";
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "Form1";
             this.Load += new System.EventHandler(this.UserManager_Load);
@@ -309,9 +357,15 @@ namespace QuanLyRapChieuPhim.UserPage
         private DataGridViewButtonColumn Edit;
         private DataGridViewButtonColumn Delete;
         private Bunifu.UI.WinForms.BunifuButton.BunifuButton2 bunifuButton1;
-        private DataGridViewTextBoxColumn MaNV;
-        private DataGridViewTextBoxColumn TenNV;
-        private DataGridViewTextBoxColumn SoDienThoai;
+
+        #endregion
+
+        private DataGridViewTextBoxColumn maSC;
+        private DataGridViewTextBoxColumn tenPhim;
+        private DataGridViewTextBoxColumn tenPhong;
+        private DataGridViewTextBoxColumn ngayChieu;
+        private DataGridViewTextBoxColumn gioBatDau;
+        private DataGridViewTextBoxColumn giaVe;
         private DataGridViewButtonColumn Sua;
         private DataGridViewButtonColumn Xoa;
     }

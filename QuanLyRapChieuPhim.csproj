@@ -294,6 +294,24 @@
     <Compile Include="UserControls\FilmCard.Designer.cs">
       <DependentUpon>FilmCard.cs</DependentUpon>
     </Compile>
+    <Compile Include="ScreeningPage\AddScreening.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="ScreeningPage\AddScreening.Designer.cs">
+      <DependentUpon>AddScreening.cs</DependentUpon>
+    </Compile>
+    <Compile Include="ScreeningPage\UpdateScreening.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="ScreeningPage\UpdateScreening.Designer.cs">
+      <DependentUpon>UpdateScreening.cs</DependentUpon>
+    </Compile>
+    <Compile Include="ScreeningPage\ScreeningManagement.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="ScreeningPage\ScreeningManagement.Designer.cs">
+      <DependentUpon>ScreeningManagement.cs</DependentUpon>
+    </Compile>
     <Compile Include="UserPage\Add.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -353,6 +371,18 @@
     </EmbeddedResource>
     <EmbeddedResource Include="UserControls\FilmCard.resx">
       <DependentUpon>FilmCard.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="ScreeningPage\AddScreening.resx">
+      <DependentUpon>AddScreening.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="ScreeningPage\ScreeningManagement.resx">
+      <DependentUpon>ScreeningManagement.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="ScreeningPage\UpdateScreening.resx">
+      <DependentUpon>UpdateScreening.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="UserControls\RJTextBox.resx">
+      <DependentUpon>RJTextBox.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="UserPage\Add.resx">
       <DependentUpon>Add.cs</DependentUpon>
