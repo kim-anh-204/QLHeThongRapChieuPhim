@@ -293,6 +293,23 @@
     </Compile>
     <Compile Include="UserControls\FilmCard.Designer.cs">
       <DependentUpon>FilmCard.cs</DependentUpon>
+    <Compile Include="UserPage\Add.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="UserPage\Add.Designer.cs">
+      <DependentUpon>Add.cs</DependentUpon>
+    </Compile>
+    <Compile Include="UserPage\Update.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="UserPage\Update.Designer.cs">
+      <DependentUpon>Update.cs</DependentUpon>
+    </Compile>
+    <Compile Include="UserPage\UserManager.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="UserPage\UserManager.Designer.cs">
+      <DependentUpon>UserManager.cs</DependentUpon>
     </Compile>
     <Compile Include="Util\Connection.cs" />
     <Compile Include="Util\Helper.cs" />
@@ -335,6 +352,15 @@
     </EmbeddedResource>
     <EmbeddedResource Include="UserControls\FilmCard.resx">
       <DependentUpon>FilmCard.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="UserPage\Add.resx">
+      <DependentUpon>Add.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="UserPage\Update.resx">
+      <DependentUpon>Update.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="UserPage\UserManager.resx">
+      <DependentUpon>UserManager.cs</DependentUpon>
     </EmbeddedResource>
     <None Include="packages.config" />
     <None Include="Properties\Settings.settings">
