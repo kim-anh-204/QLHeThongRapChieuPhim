@@ -37,6 +37,11 @@ namespace QuanLyRapChieuPhim.UserPage
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(UserManager));
             Bunifu.UI.WinForms.BunifuButton.BunifuButton2.BorderEdges borderEdges1 = new Bunifu.UI.WinForms.BunifuButton.BunifuButton2.BorderEdges();
             this.bunifuDataGridView1 = new Bunifu.UI.WinForms.BunifuDataGridView();
+            this.MaNV = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.TenNV = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.SoDienThoai = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.Sua = new System.Windows.Forms.DataGridViewButtonColumn();
+            this.Xoa = new System.Windows.Forms.DataGridViewButtonColumn();
             this.dataGridViewTextBoxColumn1 = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.dataGridViewTextBoxColumn2 = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.dataGridViewTextBoxColumn3 = new System.Windows.Forms.DataGridViewTextBoxColumn();
@@ -44,11 +49,6 @@ namespace QuanLyRapChieuPhim.UserPage
             this.Edit = new System.Windows.Forms.DataGridViewButtonColumn();
             this.Delete = new System.Windows.Forms.DataGridViewButtonColumn();
             this.bunifuButton1 = new Bunifu.UI.WinForms.BunifuButton.BunifuButton2();
-            this.MaNV = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.TenNV = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.SoDienThoai = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.Sua = new System.Windows.Forms.DataGridViewButtonColumn();
-            this.Xoa = new System.Windows.Forms.DataGridViewButtonColumn();
             ((System.ComponentModel.ISupportInitialize)(this.bunifuDataGridView1)).BeginInit();
             this.SuspendLayout();
             // 
@@ -60,6 +60,7 @@ namespace QuanLyRapChieuPhim.UserPage
             dataGridViewCellStyle1.ForeColor = System.Drawing.Color.Black;
             this.bunifuDataGridView1.AlternatingRowsDefaultCellStyle = dataGridViewCellStyle1;
             this.bunifuDataGridView1.AutoSizeColumnsMode = System.Windows.Forms.DataGridViewAutoSizeColumnsMode.Fill;
+            this.bunifuDataGridView1.BackgroundColor = System.Drawing.Color.White;
             this.bunifuDataGridView1.BorderStyle = System.Windows.Forms.BorderStyle.None;
             this.bunifuDataGridView1.CellBorderStyle = System.Windows.Forms.DataGridViewCellBorderStyle.SingleHorizontal;
             this.bunifuDataGridView1.ColumnHeadersBorderStyle = System.Windows.Forms.DataGridViewHeaderBorderStyle.None;
@@ -119,6 +120,40 @@ namespace QuanLyRapChieuPhim.UserPage
             this.bunifuDataGridView1.TabIndex = 0;
             this.bunifuDataGridView1.Theme = Bunifu.UI.WinForms.BunifuDataGridView.PresetThemes.Light;
             // 
+            // MaNV
+            // 
+            this.MaNV.HeaderText = "Mã Nhân Viên";
+            this.MaNV.MinimumWidth = 6;
+            this.MaNV.Name = "MaNV";
+            // 
+            // TenNV
+            // 
+            this.TenNV.HeaderText = "Tên Nhân Viên";
+            this.TenNV.MinimumWidth = 6;
+            this.TenNV.Name = "TenNV";
+            // 
+            // SoDienThoai
+            // 
+            this.SoDienThoai.HeaderText = "Số Điện Thoại";
+            this.SoDienThoai.MinimumWidth = 6;
+            this.SoDienThoai.Name = "SoDienThoai";
+            // 
+            // Sua
+            // 
+            this.Sua.HeaderText = "";
+            this.Sua.MinimumWidth = 6;
+            this.Sua.Name = "Sua";
+            this.Sua.Text = "Sửa";
+            this.Sua.UseColumnTextForButtonValue = true;
+            // 
+            // Xoa
+            // 
+            this.Xoa.HeaderText = "";
+            this.Xoa.MinimumWidth = 6;
+            this.Xoa.Name = "Xoa";
+            this.Xoa.Text = "Xóa";
+            this.Xoa.UseColumnTextForButtonValue = true;
+            // 
             // dataGridViewTextBoxColumn1
             // 
             this.dataGridViewTextBoxColumn1.MinimumWidth = 6;
@@ -167,7 +202,7 @@ namespace QuanLyRapChieuPhim.UserPage
             this.bunifuButton1.AutoSizeLeftIcon = true;
             this.bunifuButton1.AutoSizeRightIcon = true;
             this.bunifuButton1.BackColor = System.Drawing.Color.Transparent;
-            this.bunifuButton1.BackColor1 = System.Drawing.Color.Salmon;
+            this.bunifuButton1.BackColor1 = System.Drawing.Color.PaleGreen;
             this.bunifuButton1.BackgroundImage = ((System.Drawing.Image)(resources.GetObject("bunifuButton1.BackgroundImage")));
             this.bunifuButton1.BorderStyle = Bunifu.UI.WinForms.BunifuButton.BunifuButton2.BorderStyles.Solid;
             this.bunifuButton1.ButtonText = "Thêm";
@@ -186,7 +221,7 @@ namespace QuanLyRapChieuPhim.UserPage
             this.bunifuButton1.DisabledForecolor = System.Drawing.Color.FromArgb(((int)(((byte)(168)))), ((int)(((byte)(160)))), ((int)(((byte)(168)))));
             this.bunifuButton1.FocusState = Bunifu.UI.WinForms.BunifuButton.BunifuButton2.ButtonStates.Pressed;
             this.bunifuButton1.Font = new System.Drawing.Font("Segoe UI", 20.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.bunifuButton1.ForeColor = System.Drawing.Color.White;
+            this.bunifuButton1.ForeColor = System.Drawing.Color.Black;
             this.bunifuButton1.IconLeftAlign = System.Drawing.ContentAlignment.MiddleLeft;
             this.bunifuButton1.IconLeftCursor = System.Windows.Forms.Cursors.Default;
             this.bunifuButton1.IconLeftPadding = new System.Windows.Forms.Padding(11, 3, 3, 3);
@@ -199,7 +234,7 @@ namespace QuanLyRapChieuPhim.UserPage
             this.bunifuButton1.IdleBorderColor = System.Drawing.Color.RosyBrown;
             this.bunifuButton1.IdleBorderRadius = 20;
             this.bunifuButton1.IdleBorderThickness = 1;
-            this.bunifuButton1.IdleFillColor = System.Drawing.Color.Salmon;
+            this.bunifuButton1.IdleFillColor = System.Drawing.Color.PaleGreen;
             this.bunifuButton1.IdleIconLeftImage = null;
             this.bunifuButton1.IdleIconRightImage = null;
             this.bunifuButton1.IndicateFocus = false;
@@ -226,8 +261,8 @@ namespace QuanLyRapChieuPhim.UserPage
             this.bunifuButton1.OnIdleState.BorderRadius = 20;
             this.bunifuButton1.OnIdleState.BorderStyle = Bunifu.UI.WinForms.BunifuButton.BunifuButton2.BorderStyles.Solid;
             this.bunifuButton1.OnIdleState.BorderThickness = 1;
-            this.bunifuButton1.OnIdleState.FillColor = System.Drawing.Color.Salmon;
-            this.bunifuButton1.OnIdleState.ForeColor = System.Drawing.Color.White;
+            this.bunifuButton1.OnIdleState.FillColor = System.Drawing.Color.PaleGreen;
+            this.bunifuButton1.OnIdleState.ForeColor = System.Drawing.Color.Black;
             this.bunifuButton1.OnIdleState.IconLeftImage = null;
             this.bunifuButton1.OnIdleState.IconRightImage = null;
             this.bunifuButton1.OnPressedState.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(40)))), ((int)(((byte)(96)))), ((int)(((byte)(144)))));
@@ -238,7 +273,7 @@ namespace QuanLyRapChieuPhim.UserPage
             this.bunifuButton1.OnPressedState.ForeColor = System.Drawing.Color.White;
             this.bunifuButton1.OnPressedState.IconLeftImage = null;
             this.bunifuButton1.OnPressedState.IconRightImage = null;
-            this.bunifuButton1.Size = new System.Drawing.Size(131, 46);
+            this.bunifuButton1.Size = new System.Drawing.Size(139, 46);
             this.bunifuButton1.TabIndex = 5;
             this.bunifuButton1.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
             this.bunifuButton1.TextAlignment = System.Windows.Forms.HorizontalAlignment.Center;
@@ -246,40 +281,6 @@ namespace QuanLyRapChieuPhim.UserPage
             this.bunifuButton1.TextPadding = new System.Windows.Forms.Padding(0);
             this.bunifuButton1.UseDefaultRadiusAndThickness = true;
             this.bunifuButton1.Click += new System.EventHandler(this.bunifuButton1_Click);
-            // 
-            // MaNV
-            // 
-            this.MaNV.HeaderText = "Mã Nhân Viên";
-            this.MaNV.MinimumWidth = 6;
-            this.MaNV.Name = "MaNV";
-            // 
-            // TenNV
-            // 
-            this.TenNV.HeaderText = "Tên Nhân Viên";
-            this.TenNV.MinimumWidth = 6;
-            this.TenNV.Name = "TenNV";
-            // 
-            // SoDienThoai
-            // 
-            this.SoDienThoai.HeaderText = "Số Điện Thoại";
-            this.SoDienThoai.MinimumWidth = 6;
-            this.SoDienThoai.Name = "SoDienThoai";
-            // 
-            // Sua
-            // 
-            this.Sua.HeaderText = "";
-            this.Sua.MinimumWidth = 6;
-            this.Sua.Name = "Sua";
-            this.Sua.Text = "Sửa";
-            this.Sua.UseColumnTextForButtonValue = true;
-            // 
-            // Xoa
-            // 
-            this.Xoa.HeaderText = "";
-            this.Xoa.MinimumWidth = 6;
-            this.Xoa.Name = "Xoa";
-            this.Xoa.Text = "Xóa";
-            this.Xoa.UseColumnTextForButtonValue = true;
             // 
             // UserManager
             // 

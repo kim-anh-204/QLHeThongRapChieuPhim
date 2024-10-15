@@ -6,6 +6,7 @@ using System.Collections.Generic;
 using System.Linq;
 using System.Threading.Tasks;
 using System.Windows.Forms;
+using QuanLyRapChieuPhim.ScreeningPage;
 
 namespace QuanLyRapChieuPhim
 {
@@ -19,7 +20,7 @@ namespace QuanLyRapChieuPhim
         {
             Application.EnableVisualStyles();
             Application.SetCompatibleTextRenderingDefault(false);
-            Application.Run(new UserManager());
+            Application.Run(new Screening());
 
         }
     }
