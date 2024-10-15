@@ -381,9 +381,6 @@
     <EmbeddedResource Include="ScreeningPage\UpdateScreening.resx">
       <DependentUpon>UpdateScreening.cs</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="UserControls\RJTextBox.resx">
-      <DependentUpon>RJTextBox.cs</DependentUpon>
-    </EmbeddedResource>
     <EmbeddedResource Include="UserPage\Add.resx">
       <DependentUpon>Add.cs</DependentUpon>
     </EmbeddedResource>

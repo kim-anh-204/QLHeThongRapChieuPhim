@@ -91,8 +91,7 @@
             this.bunifuButton1.IdleIconLeftImage = null;
             this.bunifuButton1.IdleIconRightImage = null;
             this.bunifuButton1.IndicateFocus = false;
-            this.bunifuButton1.Location = new System.Drawing.Point(91, 231);
-            this.bunifuButton1.Margin = new System.Windows.Forms.Padding(4);
+            this.bunifuButton1.Location = new System.Drawing.Point(68, 188);
             this.bunifuButton1.Name = "bunifuButton1";
             this.bunifuButton1.OnDisabledState.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(191)))), ((int)(((byte)(191)))), ((int)(((byte)(191)))));
             this.bunifuButton1.OnDisabledState.BorderRadius = 20;
@@ -126,7 +125,7 @@
             this.bunifuButton1.OnPressedState.ForeColor = System.Drawing.Color.White;
             this.bunifuButton1.OnPressedState.IconLeftImage = null;
             this.bunifuButton1.OnPressedState.IconRightImage = null;
-            this.bunifuButton1.Size = new System.Drawing.Size(347, 46);
+            this.bunifuButton1.Size = new System.Drawing.Size(260, 37);
             this.bunifuButton1.TabIndex = 10;
             this.bunifuButton1.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
             this.bunifuButton1.TextAlignment = System.Windows.Forms.HorizontalAlignment.Center;
@@ -164,8 +163,7 @@
             this.SdtBtn.IconRight = null;
             this.SdtBtn.IconRightCursor = System.Windows.Forms.Cursors.IBeam;
             this.SdtBtn.Lines = new string[0];
-            this.SdtBtn.Location = new System.Drawing.Point(91, 124);
-            this.SdtBtn.Margin = new System.Windows.Forms.Padding(4);
+            this.SdtBtn.Location = new System.Drawing.Point(68, 101);
             this.SdtBtn.MaxLength = 32767;
             this.SdtBtn.MinimumSize = new System.Drawing.Size(1, 1);
             this.SdtBtn.Modified = false;
@@ -191,7 +189,7 @@
             stateProperties4.ForeColor = System.Drawing.Color.Empty;
             stateProperties4.PlaceholderForeColor = System.Drawing.Color.Empty;
             this.SdtBtn.OnIdleState = stateProperties4;
-            this.SdtBtn.Padding = new System.Windows.Forms.Padding(4);
+            this.SdtBtn.Padding = new System.Windows.Forms.Padding(3, 3, 3, 3);
             this.SdtBtn.PasswordChar = '\0';
             this.SdtBtn.PlaceholderForeColor = System.Drawing.Color.Silver;
             this.SdtBtn.PlaceholderText = "Nhập số điện thoại";
@@ -201,7 +199,7 @@
             this.SdtBtn.SelectionLength = 0;
             this.SdtBtn.SelectionStart = 0;
             this.SdtBtn.ShortcutsEnabled = true;
-            this.SdtBtn.Size = new System.Drawing.Size(347, 48);
+            this.SdtBtn.Size = new System.Drawing.Size(260, 39);
             this.SdtBtn.Style = Bunifu.UI.WinForms.BunifuTextBox._Style.Bunifu;
             this.SdtBtn.TabIndex = 9;
             this.SdtBtn.TextAlign = System.Windows.Forms.HorizontalAlignment.Left;
@@ -242,8 +240,7 @@
             this.NameBtn.IconRight = null;
             this.NameBtn.IconRightCursor = System.Windows.Forms.Cursors.IBeam;
             this.NameBtn.Lines = new string[0];
-            this.NameBtn.Location = new System.Drawing.Point(91, 51);
-            this.NameBtn.Margin = new System.Windows.Forms.Padding(4);
+            this.NameBtn.Location = new System.Drawing.Point(68, 41);
             this.NameBtn.MaxLength = 32767;
             this.NameBtn.MinimumSize = new System.Drawing.Size(1, 1);
             this.NameBtn.Modified = false;
@@ -269,7 +266,7 @@
             stateProperties8.ForeColor = System.Drawing.Color.Empty;
             stateProperties8.PlaceholderForeColor = System.Drawing.Color.Empty;
             this.NameBtn.OnIdleState = stateProperties8;
-            this.NameBtn.Padding = new System.Windows.Forms.Padding(4);
+            this.NameBtn.Padding = new System.Windows.Forms.Padding(3, 3, 3, 3);
             this.NameBtn.PasswordChar = '\0';
             this.NameBtn.PlaceholderForeColor = System.Drawing.Color.Silver;
             this.NameBtn.PlaceholderText = "Nhập tên nhân viên";
@@ -279,7 +276,7 @@
             this.NameBtn.SelectionLength = 0;
             this.NameBtn.SelectionStart = 0;
             this.NameBtn.ShortcutsEnabled = true;
-            this.NameBtn.Size = new System.Drawing.Size(347, 48);
+            this.NameBtn.Size = new System.Drawing.Size(260, 39);
             this.NameBtn.Style = Bunifu.UI.WinForms.BunifuTextBox._Style.Bunifu;
             this.NameBtn.TabIndex = 8;
             this.NameBtn.TextAlign = System.Windows.Forms.HorizontalAlignment.Left;
@@ -293,12 +290,13 @@
             // 
             // Update
             // 
-            this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
+            this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(528, 328);
+            this.ClientSize = new System.Drawing.Size(396, 266);
             this.Controls.Add(this.bunifuButton1);
             this.Controls.Add(this.SdtBtn);
             this.Controls.Add(this.NameBtn);
+            this.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
             this.Name = "Update";
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "Sua thong tin";
