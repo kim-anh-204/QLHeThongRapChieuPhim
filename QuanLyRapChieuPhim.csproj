@@ -293,6 +293,7 @@
     </Compile>
     <Compile Include="UserControls\FilmCard.Designer.cs">
       <DependentUpon>FilmCard.cs</DependentUpon>
+    </Compile>
     <Compile Include="UserPage\Add.cs">
       <SubType>Form</SubType>
     </Compile>
