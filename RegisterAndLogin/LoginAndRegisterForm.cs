@@ -10,6 +10,7 @@ using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
 using QuanLyRapChieuPhim.MainForm;
+using QuanLyRapChieuPhim.Util;
 
 namespace QuanLyRapChieuPhim
 {
@@ -20,19 +21,22 @@ namespace QuanLyRapChieuPhim
         public LoginAndRegisterForm()
         {
             InitializeComponent();
-            InitializeCustomCoponent();
+        }
+        private void LoginAndRegisterForm_Load(object sender, EventArgs e)
+        {
+            LoadForm();
             OpenLoginForm();
         }
-        private void InitializeCustomCoponent()
+        private void LoadForm()
         {
             _loginForm = new LoginForm();
+            Helper.HideUI(_loginForm, this);
             _loginForm.SwapToRegisterForm += SwapToRegisterForm;
             _loginForm.OnLoginSucceeded += OnLoginSucceeded;
-            SetChildFormConfig(_loginForm);
 
             _registerForm = new RegisterForm();
+            Helper.HideUI(_registerForm, this);
             _registerForm.SwapToLoginForm += SwapToLoginform;
-            SetChildFormConfig(_registerForm);
         }
         private void OnLoginSucceeded(string username)
         {
@@ -45,22 +49,9 @@ namespace QuanLyRapChieuPhim
         {
             this.Close();
         }
-        private void OpenLoginForm() { OpenChildForm(_loginForm); }
-        private void OpenRegisterForm() { OpenChildForm(_registerForm); }
+        private void OpenLoginForm() { Helper.OpenMdiChildForm(_loginForm); }
+        private void OpenRegisterForm() { Helper.OpenMdiChildForm(_registerForm); }
         private void SwapToLoginform() { OpenLoginForm(); }
         private void SwapToRegisterForm() { OpenRegisterForm(); }
-        private void OpenChildForm(Form child)
-        {
-            if (child.IsAccessible == false)
-                child.Show();
-            child.BringToFront();
-            child.Activate();
-        }
-        private void SetChildFormConfig(Form child)
-        {
-            child.MdiParent = this;
-            child.Dock = DockStyle.Fill;
-            child.FormBorderStyle = FormBorderStyle.None;
-        }
     }
 }

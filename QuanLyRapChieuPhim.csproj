@@ -246,6 +246,30 @@
     <Compile Include="Dashboard\DashboardForm.Designer.cs">
       <DependentUpon>DashboardForm.cs</DependentUpon>
     </Compile>
+    <Compile Include="Dashboard\DatVeForms\ChonChoNgoi.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Dashboard\DatVeForms\ChonChoNgoi.Designer.cs">
+      <DependentUpon>ChonChoNgoi.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Dashboard\DatVeForms\ChonGioChieu.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Dashboard\DatVeForms\ChonGioChieu.Designer.cs">
+      <DependentUpon>ChonGioChieu.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Dashboard\DatVeForms\DatVe.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Dashboard\DatVeForms\DatVe.Designer.cs">
+      <DependentUpon>DatVe.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Dashboard\DatVeForms\DatVeForm.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Dashboard\DatVeForms\DatVeForm.Designer.cs">
+      <DependentUpon>DatVeForm.cs</DependentUpon>
+    </Compile>
     <Compile Include="RegisterAndLogin\LoginAndRegisterForm.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -264,7 +288,14 @@
     <Compile Include="RegisterAndLogin\RegisterForm.Designer.cs">
       <DependentUpon>RegisterForm.cs</DependentUpon>
     </Compile>
+    <Compile Include="UserControls\FilmCard.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="UserControls\FilmCard.Designer.cs">
+      <DependentUpon>FilmCard.cs</DependentUpon>
+    </Compile>
     <Compile Include="Util\Connection.cs" />
+    <Compile Include="Util\Helper.cs" />
     <Compile Include="Util\RegexPatternHelper.cs" />
     <Compile Include="Program.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
@@ -273,15 +304,21 @@
       <DesignTime>True</DesignTime>
       <DependentUpon>Resources.resx</DependentUpon>
     </Compile>
-    <Compile Include="UserControls\RJTextBox.cs">
-      <SubType>UserControl</SubType>
-    </Compile>
-    <Compile Include="UserControls\RJTextBox.Designer.cs">
-      <DependentUpon>RJTextBox.cs</DependentUpon>
-    </Compile>
     <Compile Include="Util\SecurityHelper.cs" />
     <EmbeddedResource Include="Dashboard\DashboardForm.resx">
       <DependentUpon>DashboardForm.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Dashboard\DatVeForms\ChonChoNgoi.resx">
+      <DependentUpon>ChonChoNgoi.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Dashboard\DatVeForms\ChonGioChieu.resx">
+      <DependentUpon>ChonGioChieu.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Dashboard\DatVeForms\DatVe.resx">
+      <DependentUpon>DatVe.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Dashboard\DatVeForms\DatVeForm.resx">
+      <DependentUpon>DatVeForm.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="RegisterAndLogin\LoginAndRegisterForm.resx">
       <DependentUpon>LoginAndRegisterForm.cs</DependentUpon>
@@ -296,8 +333,8 @@
     <EmbeddedResource Include="RegisterAndLogin\RegisterForm.resx">
       <DependentUpon>RegisterForm.cs</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="UserControls\RJTextBox.resx">
-      <DependentUpon>RJTextBox.cs</DependentUpon>
+    <EmbeddedResource Include="UserControls\FilmCard.resx">
+      <DependentUpon>FilmCard.cs</DependentUpon>
     </EmbeddedResource>
     <None Include="packages.config" />
     <None Include="Properties\Settings.settings">
@@ -314,6 +351,22 @@
     <None Include="App.config" />
   </ItemGroup>
   <ItemGroup>
+    <Content Include="Images\P01.jpg" />
+    <Content Include="Images\P02.jpg" />
+    <Content Include="Images\P03.jpg" />
+    <Content Include="Images\P04.jpg" />
+    <Content Include="Images\P05.jpg" />
+    <Content Include="Images\P06.jpg" />
+    <Content Include="Images\P07.jpg" />
+    <Content Include="Images\P08.jpg" />
+    <Content Include="Images\P09.jpg" />
+    <Content Include="Images\P10.jpg" />
+    <Content Include="Images\P11.jpg" />
+    <Content Include="Images\P12.jpg" />
+    <Content Include="Images\P13.jpg" />
+    <Content Include="Images\P14.jpg" />
+    <Content Include="Images\P15.jpg" />
+    <Content Include="Images\P16.jpg" />
     <Content Include="QuanLyRapChieuPhim.mdf" />
     <Content Include="QuanLyRapChieuPhim_log.ldf">
       <DependentUpon>QuanLyRapChieuPhim.mdf</DependentUpon>

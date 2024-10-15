@@ -40,6 +40,7 @@
             this.Name = "LoginAndRegisterForm";
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "Chào mừng bạn đến với GALA!";
+            this.Load += new System.EventHandler(this.LoginAndRegisterForm_Load);
             this.ResumeLayout(false);
 
         }

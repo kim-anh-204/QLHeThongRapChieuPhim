@@ -1,4 +1,5 @@
-﻿using QuanLyRapChieuPhim.MainForm;
+﻿using QuanLyRapChieuPhim.Dashboard.DatVeForms;
+using QuanLyRapChieuPhim.MainForm;
 using QuanLyRapChieuPhim.RegisterAndLogin;
 using System;
 using System.Collections.Generic;
@@ -19,6 +20,8 @@ namespace QuanLyRapChieuPhim
             Application.EnableVisualStyles();
             Application.SetCompatibleTextRenderingDefault(false);
             Application.Run(new DashboardForm("Tran Van Giap"));
+            //Application.Run(new LoginAndRegisterForm());
+            //Application.Run(new ChonChoNgoi());
         }
     }
 }

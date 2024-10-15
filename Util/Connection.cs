@@ -47,6 +47,32 @@ namespace QuanLyRapChieuPhim.Util
             return 0;
         }
 
+        public static object ExecuteScalar(string query, (string, object)[] parameters = null)
+        {
+            using (SqlConnection conn = new SqlConnection(connectionString))
+            {
+                try
+                {
+                    conn.Open();
+                    using (SqlCommand cmd = new SqlCommand(query, conn))
+                    {
+                        if (parameters != null)
+                        {
+                            foreach (var param in parameters)
+                                cmd.Parameters.AddWithValue(param.Item1, param.Item2);
+                        }
+                        return cmd.ExecuteScalar();
+                    }
+                }
+                catch (Exception ex)
+                {
+                    MessageBox.Show("Lỗi: " + ex.Message, "Lỗi", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                }
+            }
+            return null;
+        }
+
+
         /// <summary>
         /// 
         /// </summary>
