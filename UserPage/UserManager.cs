@@ -67,6 +67,7 @@ namespace QuanLyRapChieuPhim.UserPage
                     string sdtEdit = bunifuDataGridView1.Rows[rowIndex].Cells["SoDienThoai"].Value.ToString();
                     Update update = new Update(this, maNVEdit, tenNVEdit, sdtEdit);
                     update.Show();
+                    bunifuTextBox1.Text = "";
                 }
                 else if (bunifuDataGridView1.Columns[e.ColumnIndex].Name == "Xoa")
                 {
@@ -80,6 +81,8 @@ namespace QuanLyRapChieuPhim.UserPage
                         {
                             bunifuDataGridView1.Rows.RemoveAt(e.RowIndex);
                             MessageBox.Show("Xóa thành công!", "Thành công", MessageBoxButtons.OK, MessageBoxIcon.Information);
+                            bunifuTextBox1.Text = "";
+                            LoadNhanVienData();
                         }
                         else
                         {
@@ -106,7 +109,36 @@ namespace QuanLyRapChieuPhim.UserPage
         {
             Add add = new Add(this);
             add.Show();
+            bunifuTextBox1.Text = "";
         }
 
+        private void timkiembtn_Click(object sender, EventArgs e)
+        {
+            string searchText = bunifuTextBox1.Text;
+            string query = @"SELECT * FROM NHANVIEN              
+                 WHERE TenNV LIKE @searchText";
+
+            // Thêm phần trăm (%) ở trước và sau từ khóa để tìm kiếm bất kỳ chuỗi nào có chứa từ khóa
+            var parameters = new (string, object)[] { ("@searchText", "%" + searchText + "%") };
+            bunifuDataGridView1.Rows.Clear();
+            bunifuDataGridView1.DataSource = null;
+            // Gọi hàm GetDataTable để lấy dữ liệu từ database
+            DataTable result = Connection.GetDataTable(query, parameters);
+            if (result != null && result.Rows.Count > 0)
+            {
+                foreach (DataRow row in result.Rows)
+                {
+                    string maNV = row["MaNV"]?.ToString();
+                    string tenNV = row["TenNV"]?.ToString();
+                    string sdt = row["SDT"]?.ToString();
+
+                    bunifuDataGridView1.Rows.Add(maNV, tenNV, sdt);
+                }
+            }
+            else
+            {
+
+            }
+        }
     }
 }

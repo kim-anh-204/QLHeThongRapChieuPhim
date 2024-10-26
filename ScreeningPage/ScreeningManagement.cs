@@ -97,6 +97,7 @@ namespace QuanLyRapChieuPhim.ScreeningPage
                     string giaVe =screeningData.Rows[0]["GiaVe"].ToString();
                     UpdateScreening updateScreening = new UpdateScreening(this, maSc, maPhim, maPhong, gioBatDau, ngayChieu, loaiChieu, giaVe);
                     updateScreening.Show();
+                    bunifuTextBox1.Text = "";
                 }
                 else if (bunifuDataGridView1.Columns[e.ColumnIndex].Name == "Xoa")
                 {
@@ -112,6 +113,7 @@ namespace QuanLyRapChieuPhim.ScreeningPage
                         {
                             bunifuDataGridView1.Rows.RemoveAt(e.RowIndex);
                             MessageBox.Show("Xóa thành công!", "Thành công", MessageBoxButtons.OK, MessageBoxIcon.Information);
+                            bunifuTextBox1.Text = "";
                         }
                         else
                         {
@@ -138,9 +140,53 @@ namespace QuanLyRapChieuPhim.ScreeningPage
         {
             AddScreening addScreening = new AddScreening(this);
             addScreening.Show();
+            bunifuTextBox1.Text = "";
         }
 
         private void bunifuDataGridView1_CellContentClick(object sender, DataGridViewCellEventArgs e)
+        {
+
+        }
+
+        private void bunifuButton2_Click(object sender, EventArgs e)
+        {
+            string searchText= bunifuTextBox1.Text;
+            string query = @"SELECT * FROM SUATCHIEU
+                 join PHIM on PHIM.MaPhim=SUATCHIEU.MaPhim
+                join PHONGCHIEUPHIM on PHONGCHIEUPHIM.MaPhong= SUATCHIEU.MaPhong
+                 WHERE TenPhim LIKE @searchText";
+
+            // Thêm phần trăm (%) ở trước và sau từ khóa để tìm kiếm bất kỳ chuỗi nào có chứa từ khóa
+            var parameters = new (string, object)[] { ("@searchText", "%" + searchText + "%") };
+            bunifuDataGridView1.Rows.Clear();
+            bunifuDataGridView1.DataSource = null;
+            // Gọi hàm GetDataTable để lấy dữ liệu từ database
+            DataTable result = Connection.GetDataTable(query, parameters);
+            if (result != null && result.Rows.Count > 0)
+            {
+                foreach (DataRow row in result.Rows)
+                {
+                    string maSc = row["MaSuatChieu"]?.ToString();
+                    string tenPhim = row["TenPhim"]?.ToString();
+                    string tenPhong = row["TenPhong"]?.ToString();
+                    string ngayChieu = row["NgayChieu"]?.ToString();
+                    string gioBatDau = row["GioBatDau"]?.ToString();
+                    int giaVe = Convert.ToInt32(row["GiaVe"]);
+                    if (DateTime.TryParse(ngayChieu, out DateTime parsedNgayChieu))
+                    {
+                        ngayChieu = parsedNgayChieu.ToString("MM/dd/yyyy");
+                    }
+                    bunifuDataGridView1.Rows.Add(maSc, tenPhim, tenPhong, ngayChieu, gioBatDau, giaVe);
+                }
+            }
+            else
+            {
+
+            }
+           
+        }
+
+        private void bunifuTextBox1_TextChanged(object sender, EventArgs e)
         {
 
         }
