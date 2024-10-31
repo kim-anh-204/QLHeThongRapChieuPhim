@@ -8,7 +8,8 @@ using System.Threading.Tasks;
 using System.Windows.Forms;
 using QuanLyRapChieuPhim.ScreeningPage;
 using QuanLyRapChieuPhim.UserPage;
-
+using QuanLyRapChieuPhim.BaoCao;
+using QuanLyRapChieuPhim.QLPhongChieu; 
 namespace QuanLyRapChieuPhim
 {
     internal static class Program
@@ -21,8 +22,9 @@ namespace QuanLyRapChieuPhim
         {
             Application.EnableVisualStyles();
             Application.SetCompatibleTextRenderingDefault(false);
-            Application.Run(new DashboardForm("Tran Van Giap"));
-            //Application.Run(new Screening());
+            //Application.Run(new DashboardForm("Tran Van Giap"));
+            Application.Run(new ReportManagement());
+            //Application.Run(new ScreeningRoomManagement());
 
             //Application.Run(new LoginAndRegisterForm());
             //Application.Run(new ChonChoNgoi());
