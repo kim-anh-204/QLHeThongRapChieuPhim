@@ -73,11 +73,10 @@
             this.bunifuPanel1.Controls.Add(this.tableLayoutPanel1);
             this.bunifuPanel1.Dock = System.Windows.Forms.DockStyle.Left;
             this.bunifuPanel1.Location = new System.Drawing.Point(0, 0);
-            this.bunifuPanel1.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
             this.bunifuPanel1.Name = "bunifuPanel1";
-            this.bunifuPanel1.Padding = new System.Windows.Forms.Padding(43, 39, 43, 39);
+            this.bunifuPanel1.Padding = new System.Windows.Forms.Padding(32, 32, 32, 32);
             this.bunifuPanel1.ShowBorders = false;
-            this.bunifuPanel1.Size = new System.Drawing.Size(327, 945);
+            this.bunifuPanel1.Size = new System.Drawing.Size(245, 768);
             this.bunifuPanel1.TabIndex = 0;
             // 
             // buttonDatVe
@@ -128,8 +127,7 @@
             this.buttonDatVe.IdleIconLeftImage = global::QuanLyRapChieuPhim.Properties.Resources.BaoCao_OFF;
             this.buttonDatVe.IdleIconRightImage = null;
             this.buttonDatVe.IndicateFocus = true;
-            this.buttonDatVe.Location = new System.Drawing.Point(29, 884);
-            this.buttonDatVe.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.buttonDatVe.Location = new System.Drawing.Point(22, 718);
             this.buttonDatVe.Name = "buttonDatVe";
             this.buttonDatVe.OnDisabledState.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(191)))), ((int)(((byte)(191)))), ((int)(((byte)(191)))));
             this.buttonDatVe.OnDisabledState.BorderRadius = 1;
@@ -163,7 +161,7 @@
             this.buttonDatVe.OnPressedState.ForeColor = System.Drawing.Color.Red;
             this.buttonDatVe.OnPressedState.IconLeftImage = global::QuanLyRapChieuPhim.Properties.Resources.BaoCao_ON;
             this.buttonDatVe.OnPressedState.IconRightImage = null;
-            this.buttonDatVe.Size = new System.Drawing.Size(297, 47);
+            this.buttonDatVe.Size = new System.Drawing.Size(223, 38);
             this.buttonDatVe.TabIndex = 16;
             this.buttonDatVe.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
             this.buttonDatVe.TextAlignment = System.Windows.Forms.HorizontalAlignment.Center;
@@ -180,11 +178,10 @@
             this.bunifuLabel1.CursorType = System.Windows.Forms.Cursors.Default;
             this.bunifuLabel1.Font = new System.Drawing.Font("Segoe UI", 30F, System.Drawing.FontStyle.Bold);
             this.bunifuLabel1.ForeColor = System.Drawing.Color.Red;
-            this.bunifuLabel1.Location = new System.Drawing.Point(43, 39);
-            this.bunifuLabel1.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.bunifuLabel1.Location = new System.Drawing.Point(32, 32);
             this.bunifuLabel1.Name = "bunifuLabel1";
             this.bunifuLabel1.RightToLeft = System.Windows.Forms.RightToLeft.No;
-            this.bunifuLabel1.Size = new System.Drawing.Size(132, 67);
+            this.bunifuLabel1.Size = new System.Drawing.Size(104, 54);
             this.bunifuLabel1.TabIndex = 4;
             this.bunifuLabel1.Text = "GALA";
             this.bunifuLabel1.TextAlignment = System.Drawing.ContentAlignment.TopLeft;
@@ -200,10 +197,9 @@
             this.tableLayoutPanel1.Controls.Add(this.buttonTaiKhoan, 0, 3);
             this.tableLayoutPanel1.Controls.Add(this.buttonSuatChieu, 0, 2);
             this.tableLayoutPanel1.Controls.Add(this.buttonTrangChu, 0, 0);
-            this.tableLayoutPanel1.Location = new System.Drawing.Point(0, 170);
-            this.tableLayoutPanel1.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.tableLayoutPanel1.Location = new System.Drawing.Point(0, 138);
             this.tableLayoutPanel1.Name = "tableLayoutPanel1";
-            this.tableLayoutPanel1.Padding = new System.Windows.Forms.Padding(21, 0, 0, 0);
+            this.tableLayoutPanel1.Padding = new System.Windows.Forms.Padding(16, 0, 0, 0);
             this.tableLayoutPanel1.RowCount = 6;
             this.tableLayoutPanel1.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 16.66667F));
             this.tableLayoutPanel1.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 16.66667F));
@@ -211,7 +207,7 @@
             this.tableLayoutPanel1.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 16.66667F));
             this.tableLayoutPanel1.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 16.66667F));
             this.tableLayoutPanel1.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 16.66667F));
-            this.tableLayoutPanel1.Size = new System.Drawing.Size(327, 325);
+            this.tableLayoutPanel1.Size = new System.Drawing.Size(245, 264);
             this.tableLayoutPanel1.TabIndex = 3;
             // 
             // buttonBaoCao
@@ -262,8 +258,7 @@
             this.buttonBaoCao.IdleIconLeftImage = global::QuanLyRapChieuPhim.Properties.Resources.BaoCao_OFF;
             this.buttonBaoCao.IdleIconRightImage = null;
             this.buttonBaoCao.IndicateFocus = true;
-            this.buttonBaoCao.Location = new System.Drawing.Point(25, 274);
-            this.buttonBaoCao.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.buttonBaoCao.Location = new System.Drawing.Point(19, 223);
             this.buttonBaoCao.Name = "buttonBaoCao";
             this.buttonBaoCao.OnDisabledState.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(191)))), ((int)(((byte)(191)))), ((int)(((byte)(191)))));
             this.buttonBaoCao.OnDisabledState.BorderRadius = 1;
@@ -297,7 +292,7 @@
             this.buttonBaoCao.OnPressedState.ForeColor = System.Drawing.Color.Red;
             this.buttonBaoCao.OnPressedState.IconLeftImage = global::QuanLyRapChieuPhim.Properties.Resources.BaoCao_ON;
             this.buttonBaoCao.OnPressedState.IconRightImage = null;
-            this.buttonBaoCao.Size = new System.Drawing.Size(298, 47);
+            this.buttonBaoCao.Size = new System.Drawing.Size(223, 38);
             this.buttonBaoCao.TabIndex = 15;
             this.buttonBaoCao.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
             this.buttonBaoCao.TextAlignment = System.Windows.Forms.HorizontalAlignment.Center;
@@ -354,8 +349,7 @@
             this.buttonPhongChieu.IdleIconLeftImage = global::QuanLyRapChieuPhim.Properties.Resources.QuanLyPhongChieu_OFF;
             this.buttonPhongChieu.IdleIconRightImage = null;
             this.buttonPhongChieu.IndicateFocus = true;
-            this.buttonPhongChieu.Location = new System.Drawing.Point(25, 220);
-            this.buttonPhongChieu.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.buttonPhongChieu.Location = new System.Drawing.Point(19, 179);
             this.buttonPhongChieu.Name = "buttonPhongChieu";
             this.buttonPhongChieu.OnDisabledState.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(191)))), ((int)(((byte)(191)))), ((int)(((byte)(191)))));
             this.buttonPhongChieu.OnDisabledState.BorderRadius = 1;
@@ -389,13 +383,14 @@
             this.buttonPhongChieu.OnPressedState.ForeColor = System.Drawing.Color.Red;
             this.buttonPhongChieu.OnPressedState.IconLeftImage = global::QuanLyRapChieuPhim.Properties.Resources.QuanLyPhongChieu_ON;
             this.buttonPhongChieu.OnPressedState.IconRightImage = null;
-            this.buttonPhongChieu.Size = new System.Drawing.Size(298, 46);
+            this.buttonPhongChieu.Size = new System.Drawing.Size(223, 38);
             this.buttonPhongChieu.TabIndex = 14;
             this.buttonPhongChieu.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
             this.buttonPhongChieu.TextAlignment = System.Windows.Forms.HorizontalAlignment.Center;
             this.buttonPhongChieu.TextMarginLeft = 0;
             this.buttonPhongChieu.TextPadding = new System.Windows.Forms.Padding(45, 0, 0, 0);
             this.buttonPhongChieu.UseDefaultRadiusAndThickness = true;
+            this.buttonPhongChieu.Click += new System.EventHandler(this.buttonPhongChieu_Click);
             // 
             // buttonPhim
             // 
@@ -445,8 +440,7 @@
             this.buttonPhim.IdleIconLeftImage = global::QuanLyRapChieuPhim.Properties.Resources.QuanLyPhim_OFF;
             this.buttonPhim.IdleIconRightImage = null;
             this.buttonPhim.IndicateFocus = true;
-            this.buttonPhim.Location = new System.Drawing.Point(25, 58);
-            this.buttonPhim.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.buttonPhim.Location = new System.Drawing.Point(19, 47);
             this.buttonPhim.Name = "buttonPhim";
             this.buttonPhim.OnDisabledState.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(191)))), ((int)(((byte)(191)))), ((int)(((byte)(191)))));
             this.buttonPhim.OnDisabledState.BorderRadius = 1;
@@ -480,7 +474,7 @@
             this.buttonPhim.OnPressedState.ForeColor = System.Drawing.Color.Red;
             this.buttonPhim.OnPressedState.IconLeftImage = global::QuanLyRapChieuPhim.Properties.Resources.QuanLyPhim_ON;
             this.buttonPhim.OnPressedState.IconRightImage = null;
-            this.buttonPhim.Size = new System.Drawing.Size(298, 46);
+            this.buttonPhim.Size = new System.Drawing.Size(223, 38);
             this.buttonPhim.TabIndex = 11;
             this.buttonPhim.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
             this.buttonPhim.TextAlignment = System.Windows.Forms.HorizontalAlignment.Center;
@@ -537,8 +531,7 @@
             this.buttonTaiKhoan.IdleIconLeftImage = global::QuanLyRapChieuPhim.Properties.Resources.QuanLyTaiKhoan_OFF;
             this.buttonTaiKhoan.IdleIconRightImage = null;
             this.buttonTaiKhoan.IndicateFocus = true;
-            this.buttonTaiKhoan.Location = new System.Drawing.Point(25, 166);
-            this.buttonTaiKhoan.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.buttonTaiKhoan.Location = new System.Drawing.Point(19, 135);
             this.buttonTaiKhoan.Name = "buttonTaiKhoan";
             this.buttonTaiKhoan.OnDisabledState.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(191)))), ((int)(((byte)(191)))), ((int)(((byte)(191)))));
             this.buttonTaiKhoan.OnDisabledState.BorderRadius = 1;
@@ -572,7 +565,7 @@
             this.buttonTaiKhoan.OnPressedState.ForeColor = System.Drawing.Color.Red;
             this.buttonTaiKhoan.OnPressedState.IconLeftImage = global::QuanLyRapChieuPhim.Properties.Resources.QuanLyTaiKhoan_ON;
             this.buttonTaiKhoan.OnPressedState.IconRightImage = null;
-            this.buttonTaiKhoan.Size = new System.Drawing.Size(298, 46);
+            this.buttonTaiKhoan.Size = new System.Drawing.Size(223, 38);
             this.buttonTaiKhoan.TabIndex = 13;
             this.buttonTaiKhoan.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
             this.buttonTaiKhoan.TextAlignment = System.Windows.Forms.HorizontalAlignment.Center;
@@ -629,8 +622,7 @@
             this.buttonSuatChieu.IdleIconLeftImage = global::QuanLyRapChieuPhim.Properties.Resources.QuanLySuatChieu_OFF;
             this.buttonSuatChieu.IdleIconRightImage = null;
             this.buttonSuatChieu.IndicateFocus = true;
-            this.buttonSuatChieu.Location = new System.Drawing.Point(25, 112);
-            this.buttonSuatChieu.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.buttonSuatChieu.Location = new System.Drawing.Point(19, 91);
             this.buttonSuatChieu.Name = "buttonSuatChieu";
             this.buttonSuatChieu.OnDisabledState.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(191)))), ((int)(((byte)(191)))), ((int)(((byte)(191)))));
             this.buttonSuatChieu.OnDisabledState.BorderRadius = 1;
@@ -664,7 +656,7 @@
             this.buttonSuatChieu.OnPressedState.ForeColor = System.Drawing.Color.Red;
             this.buttonSuatChieu.OnPressedState.IconLeftImage = global::QuanLyRapChieuPhim.Properties.Resources.QuanLySuatChieu_ON;
             this.buttonSuatChieu.OnPressedState.IconRightImage = null;
-            this.buttonSuatChieu.Size = new System.Drawing.Size(298, 46);
+            this.buttonSuatChieu.Size = new System.Drawing.Size(223, 38);
             this.buttonSuatChieu.TabIndex = 12;
             this.buttonSuatChieu.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
             this.buttonSuatChieu.TextAlignment = System.Windows.Forms.HorizontalAlignment.Center;
@@ -721,8 +713,7 @@
             this.buttonTrangChu.IdleIconLeftImage = global::QuanLyRapChieuPhim.Properties.Resources.DoanhThu_OFF;
             this.buttonTrangChu.IdleIconRightImage = null;
             this.buttonTrangChu.IndicateFocus = true;
-            this.buttonTrangChu.Location = new System.Drawing.Point(25, 4);
-            this.buttonTrangChu.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.buttonTrangChu.Location = new System.Drawing.Point(19, 3);
             this.buttonTrangChu.Name = "buttonTrangChu";
             this.buttonTrangChu.OnDisabledState.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(191)))), ((int)(((byte)(191)))), ((int)(((byte)(191)))));
             this.buttonTrangChu.OnDisabledState.BorderRadius = 1;
@@ -756,7 +747,7 @@
             this.buttonTrangChu.OnPressedState.ForeColor = System.Drawing.Color.Red;
             this.buttonTrangChu.OnPressedState.IconLeftImage = global::QuanLyRapChieuPhim.Properties.Resources.DoanhThu_ON;
             this.buttonTrangChu.OnPressedState.IconRightImage = null;
-            this.buttonTrangChu.Size = new System.Drawing.Size(298, 46);
+            this.buttonTrangChu.Size = new System.Drawing.Size(223, 38);
             this.buttonTrangChu.TabIndex = 10;
             this.buttonTrangChu.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
             this.buttonTrangChu.TextAlignment = System.Windows.Forms.HorizontalAlignment.Center;
@@ -775,28 +766,26 @@
             this.bunifuPanel2.BorderThickness = 0;
             this.bunifuPanel2.Controls.Add(this.tableLayoutPanel2);
             this.bunifuPanel2.Dock = System.Windows.Forms.DockStyle.Top;
-            this.bunifuPanel2.Location = new System.Drawing.Point(327, 0);
-            this.bunifuPanel2.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.bunifuPanel2.Location = new System.Drawing.Point(245, 0);
             this.bunifuPanel2.Name = "bunifuPanel2";
-            this.bunifuPanel2.Padding = new System.Windows.Forms.Padding(43, 20, 43, 20);
+            this.bunifuPanel2.Padding = new System.Windows.Forms.Padding(32, 16, 32, 16);
             this.bunifuPanel2.ShowBorders = false;
-            this.bunifuPanel2.Size = new System.Drawing.Size(1486, 106);
+            this.bunifuPanel2.Size = new System.Drawing.Size(1115, 86);
             this.bunifuPanel2.TabIndex = 1;
             // 
             // tableLayoutPanel2
             // 
             this.tableLayoutPanel2.ColumnCount = 2;
-            this.tableLayoutPanel2.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Absolute, 72F));
+            this.tableLayoutPanel2.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Absolute, 54F));
             this.tableLayoutPanel2.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 100F));
             this.tableLayoutPanel2.Controls.Add(this.tableLayoutPanel3, 1, 0);
             this.tableLayoutPanel2.Controls.Add(this.bunifuPictureBox1, 0, 0);
             this.tableLayoutPanel2.Dock = System.Windows.Forms.DockStyle.Right;
-            this.tableLayoutPanel2.Location = new System.Drawing.Point(1110, 20);
-            this.tableLayoutPanel2.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.tableLayoutPanel2.Location = new System.Drawing.Point(833, 16);
             this.tableLayoutPanel2.Name = "tableLayoutPanel2";
             this.tableLayoutPanel2.RowCount = 1;
             this.tableLayoutPanel2.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 100F));
-            this.tableLayoutPanel2.Size = new System.Drawing.Size(333, 66);
+            this.tableLayoutPanel2.Size = new System.Drawing.Size(250, 54);
             this.tableLayoutPanel2.TabIndex = 3;
             // 
             // tableLayoutPanel3
@@ -806,13 +795,12 @@
             this.tableLayoutPanel3.Controls.Add(this.labelQuyen, 0, 1);
             this.tableLayoutPanel3.Controls.Add(this.labelTenDangNhap, 0, 0);
             this.tableLayoutPanel3.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.tableLayoutPanel3.Location = new System.Drawing.Point(76, 4);
-            this.tableLayoutPanel3.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.tableLayoutPanel3.Location = new System.Drawing.Point(57, 3);
             this.tableLayoutPanel3.Name = "tableLayoutPanel3";
             this.tableLayoutPanel3.RowCount = 2;
             this.tableLayoutPanel3.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 50F));
             this.tableLayoutPanel3.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 50F));
-            this.tableLayoutPanel3.Size = new System.Drawing.Size(253, 58);
+            this.tableLayoutPanel3.Size = new System.Drawing.Size(190, 48);
             this.tableLayoutPanel3.TabIndex = 3;
             // 
             // labelQuyen
@@ -821,10 +809,9 @@
             this.labelQuyen.BackColor = System.Drawing.Color.Transparent;
             this.labelQuyen.Font = new System.Drawing.Font("Segoe UI Semibold", 10F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.labelQuyen.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(126)))), ((int)(((byte)(126)))), ((int)(((byte)(126)))));
-            this.labelQuyen.Location = new System.Drawing.Point(4, 29);
-            this.labelQuyen.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
+            this.labelQuyen.Location = new System.Drawing.Point(3, 24);
             this.labelQuyen.Name = "labelQuyen";
-            this.labelQuyen.Size = new System.Drawing.Size(109, 23);
+            this.labelQuyen.Size = new System.Drawing.Size(90, 19);
             this.labelQuyen.TabIndex = 4;
             this.labelQuyen.Text = "Super Admin";
             // 
@@ -834,10 +821,9 @@
             this.labelTenDangNhap.AutoSize = true;
             this.labelTenDangNhap.BackColor = System.Drawing.Color.Transparent;
             this.labelTenDangNhap.Font = new System.Drawing.Font("Segoe UI Semibold", 13F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.labelTenDangNhap.Location = new System.Drawing.Point(4, 0);
-            this.labelTenDangNhap.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
+            this.labelTenDangNhap.Location = new System.Drawing.Point(3, 0);
             this.labelTenDangNhap.Name = "labelTenDangNhap";
-            this.labelTenDangNhap.Size = new System.Drawing.Size(133, 29);
+            this.labelTenDangNhap.Size = new System.Drawing.Size(113, 24);
             this.labelTenDangNhap.TabIndex = 3;
             this.labelTenDangNhap.Text = "@Username";
             // 
@@ -846,13 +832,12 @@
             this.bunifuPictureBox1.AllowFocused = false;
             this.bunifuPictureBox1.Anchor = System.Windows.Forms.AnchorStyles.None;
             this.bunifuPictureBox1.AutoSizeHeight = true;
-            this.bunifuPictureBox1.BorderRadius = 32;
+            this.bunifuPictureBox1.BorderRadius = 24;
             this.bunifuPictureBox1.Image = ((System.Drawing.Image)(resources.GetObject("bunifuPictureBox1.Image")));
             this.bunifuPictureBox1.IsCircle = true;
-            this.bunifuPictureBox1.Location = new System.Drawing.Point(4, 4);
-            this.bunifuPictureBox1.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.bunifuPictureBox1.Location = new System.Drawing.Point(3, 3);
             this.bunifuPictureBox1.Name = "bunifuPictureBox1";
-            this.bunifuPictureBox1.Size = new System.Drawing.Size(64, 64);
+            this.bunifuPictureBox1.Size = new System.Drawing.Size(48, 48);
             this.bunifuPictureBox1.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom;
             this.bunifuPictureBox1.TabIndex = 0;
             this.bunifuPictureBox1.TabStop = false;
@@ -860,14 +845,13 @@
             // 
             // DashboardForm
             // 
-            this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
+            this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackColor = System.Drawing.SystemColors.ControlLightLight;
-            this.ClientSize = new System.Drawing.Size(1813, 945);
+            this.ClientSize = new System.Drawing.Size(1360, 768);
             this.Controls.Add(this.bunifuPanel2);
             this.Controls.Add(this.bunifuPanel1);
             this.IsMdiContainer = true;
-            this.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
             this.Name = "DashboardForm";
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "Bảng điều khiển";

@@ -253,10 +253,10 @@
     <Reference Include="WindowsFormsIntegration" />
   </ItemGroup>
   <ItemGroup>
-    <Compile Include="BaoCao\ReportManagement.cs">
+    <Compile Include="Dashboard\BaoCao\ReportManagement.cs">
       <SubType>Form</SubType>
     </Compile>
-    <Compile Include="BaoCao\ReportManagement.Designer.cs">
+    <Compile Include="Dashboard\BaoCao\ReportManagement.Designer.cs">
       <DependentUpon>ReportManagement.cs</DependentUpon>
     </Compile>
     <Compile Include="Dashboard\DashboardForm.cs">
@@ -289,22 +289,22 @@
     <Compile Include="Dashboard\DatVeForms\DatVeForm.Designer.cs">
       <DependentUpon>DatVeForm.cs</DependentUpon>
     </Compile>
-    <Compile Include="QLPhongChieu\AddScreeningRoom.cs">
+    <Compile Include="Dashboard\QLPhongChieu\AddScreeningRoom.cs">
       <SubType>Form</SubType>
     </Compile>
-    <Compile Include="QLPhongChieu\AddScreeningRoom.Designer.cs">
+    <Compile Include="Dashboard\QLPhongChieu\AddScreeningRoom.Designer.cs">
       <DependentUpon>AddScreeningRoom.cs</DependentUpon>
     </Compile>
-    <Compile Include="QLPhongChieu\ScreeningRoomManagement .cs">
+    <Compile Include="Dashboard\QLPhongChieu\ScreeningRoomManagement .cs">
       <SubType>Form</SubType>
     </Compile>
-    <Compile Include="QLPhongChieu\ScreeningRoomManagement .Designer.cs">
+    <Compile Include="Dashboard\QLPhongChieu\ScreeningRoomManagement .Designer.cs">
       <DependentUpon>ScreeningRoomManagement .cs</DependentUpon>
     </Compile>
-    <Compile Include="QLPhongChieu\UpdateScreeningRoom.cs">
+    <Compile Include="Dashboard\QLPhongChieu\UpdateScreeningRoom.cs">
       <SubType>Form</SubType>
     </Compile>
-    <Compile Include="QLPhongChieu\UpdateScreeningRoom.Designer.cs">
+    <Compile Include="Dashboard\QLPhongChieu\UpdateScreeningRoom.Designer.cs">
       <DependentUpon>UpdateScreeningRoom.cs</DependentUpon>
     </Compile>
     <Compile Include="RegisterAndLogin\LoginAndRegisterForm.cs">
@@ -331,40 +331,40 @@
     <Compile Include="UserControls\FilmCard.Designer.cs">
       <DependentUpon>FilmCard.cs</DependentUpon>
     </Compile>
-    <Compile Include="ScreeningPage\AddScreening.cs">
+    <Compile Include="Dashboard\ScreeningPage\AddScreening.cs">
       <SubType>Form</SubType>
     </Compile>
-    <Compile Include="ScreeningPage\AddScreening.Designer.cs">
+    <Compile Include="Dashboard\ScreeningPage\AddScreening.Designer.cs">
       <DependentUpon>AddScreening.cs</DependentUpon>
     </Compile>
-    <Compile Include="ScreeningPage\UpdateScreening.cs">
+    <Compile Include="Dashboard\ScreeningPage\UpdateScreening.cs">
       <SubType>Form</SubType>
     </Compile>
-    <Compile Include="ScreeningPage\UpdateScreening.Designer.cs">
+    <Compile Include="Dashboard\ScreeningPage\UpdateScreening.Designer.cs">
       <DependentUpon>UpdateScreening.cs</DependentUpon>
     </Compile>
-    <Compile Include="ScreeningPage\ScreeningManagement.cs">
+    <Compile Include="Dashboard\ScreeningPage\ScreeningManagement.cs">
       <SubType>Form</SubType>
     </Compile>
-    <Compile Include="ScreeningPage\ScreeningManagement.Designer.cs">
+    <Compile Include="Dashboard\ScreeningPage\ScreeningManagement.Designer.cs">
       <DependentUpon>ScreeningManagement.cs</DependentUpon>
     </Compile>
-    <Compile Include="UserPage\Add.cs">
+    <Compile Include="Dashboard\UserPage\Add.cs">
       <SubType>Form</SubType>
     </Compile>
-    <Compile Include="UserPage\Add.Designer.cs">
+    <Compile Include="Dashboard\UserPage\Add.Designer.cs">
       <DependentUpon>Add.cs</DependentUpon>
     </Compile>
-    <Compile Include="UserPage\Update.cs">
+    <Compile Include="Dashboard\UserPage\Update.cs">
       <SubType>Form</SubType>
     </Compile>
-    <Compile Include="UserPage\Update.Designer.cs">
+    <Compile Include="Dashboard\UserPage\Update.Designer.cs">
       <DependentUpon>Update.cs</DependentUpon>
     </Compile>
-    <Compile Include="UserPage\UserManager.cs">
+    <Compile Include="Dashboard\UserPage\UserManager.cs">
       <SubType>Form</SubType>
     </Compile>
-    <Compile Include="UserPage\UserManager.Designer.cs">
+    <Compile Include="Dashboard\UserPage\UserManager.Designer.cs">
       <DependentUpon>UserManager.cs</DependentUpon>
     </Compile>
     <Compile Include="Util\Connection.cs" />
@@ -378,7 +378,7 @@
       <DependentUpon>Resources.resx</DependentUpon>
     </Compile>
     <Compile Include="Util\SecurityHelper.cs" />
-    <EmbeddedResource Include="BaoCao\ReportManagement.resx">
+    <EmbeddedResource Include="Dashboard\BaoCao\ReportManagement.resx">
       <DependentUpon>ReportManagement.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="Dashboard\DashboardForm.resx">
@@ -396,13 +396,13 @@
     <EmbeddedResource Include="Dashboard\DatVeForms\DatVeForm.resx">
       <DependentUpon>DatVeForm.cs</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="QLPhongChieu\AddScreeningRoom.resx">
+    <EmbeddedResource Include="Dashboard\QLPhongChieu\AddScreeningRoom.resx">
       <DependentUpon>AddScreeningRoom.cs</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="QLPhongChieu\ScreeningRoomManagement .resx">
+    <EmbeddedResource Include="Dashboard\QLPhongChieu\ScreeningRoomManagement .resx">
       <DependentUpon>ScreeningRoomManagement .cs</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="QLPhongChieu\UpdateScreeningRoom.resx">
+    <EmbeddedResource Include="Dashboard\QLPhongChieu\UpdateScreeningRoom.resx">
       <DependentUpon>UpdateScreeningRoom.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="RegisterAndLogin\LoginAndRegisterForm.resx">
@@ -421,22 +421,22 @@
     <EmbeddedResource Include="UserControls\FilmCard.resx">
       <DependentUpon>FilmCard.cs</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="ScreeningPage\AddScreening.resx">
+    <EmbeddedResource Include="Dashboard\ScreeningPage\AddScreening.resx">
       <DependentUpon>AddScreening.cs</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="ScreeningPage\ScreeningManagement.resx">
+    <EmbeddedResource Include="Dashboard\ScreeningPage\ScreeningManagement.resx">
       <DependentUpon>ScreeningManagement.cs</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="ScreeningPage\UpdateScreening.resx">
+    <EmbeddedResource Include="Dashboard\ScreeningPage\UpdateScreening.resx">
       <DependentUpon>UpdateScreening.cs</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="UserPage\Add.resx">
+    <EmbeddedResource Include="Dashboard\UserPage\Add.resx">
       <DependentUpon>Add.cs</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="UserPage\Update.resx">
+    <EmbeddedResource Include="Dashboard\UserPage\Update.resx">
       <DependentUpon>Update.cs</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="UserPage\UserManager.resx">
+    <EmbeddedResource Include="Dashboard\UserPage\UserManager.resx">
       <DependentUpon>UserManager.cs</DependentUpon>
     </EmbeddedResource>
     <None Include="packages.config" />

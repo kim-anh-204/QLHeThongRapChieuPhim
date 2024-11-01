@@ -113,8 +113,9 @@ namespace QuanLyRapChieuPhim.RegisterAndLogin
                 return;
             }
 
-            string getIdQuery = "SELECT ISNULL(MAX(MaNguoiDung), 0) + 1 FROM NGUOIDUNG";
-            int userId = Connection.ExecuteScalarInt32(getIdQuery, null);
+            string getIdQuery = "SELECT MAX(MaNguoiDung) FROM NGUOIDUNG";
+            string userId = (string)Connection.ExecuteScalar(getIdQuery, null);
+            userId = Helper.GenerateNextId(userId, "U", 3);
             password = SecurityHelper.HashPassword(password);
             string insertQuery = "INSERT INTO NGUOIDUNG VALUES (@MaNguoiDung, @TenNguoiDung, @Matkhau)";
             bool is_success = Connection.ExcuteNonQuery(insertQuery,

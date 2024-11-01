@@ -1,4 +1,6 @@
-﻿using QuanLyRapChieuPhim.Dashboard.DatVeForms;
+﻿using QuanLyRapChieuPhim.BaoCao;
+using QuanLyRapChieuPhim.Dashboard.DatVeForms;
+using QuanLyRapChieuPhim.QLPhongChieu;
 using QuanLyRapChieuPhim.ScreeningPage;
 using QuanLyRapChieuPhim.UserPage;
 using QuanLyRapChieuPhim.Util;
@@ -9,10 +11,12 @@ namespace QuanLyRapChieuPhim.MainForm
 {
     public partial class DashboardForm : Form
     {
-        private DatVeForm _datVeForm;
+        private DatVeForm _datVeFormManager;
         private UserManager _userManager;
-        private Screening _screening;
-
+        private Screening _screeningManager;
+        private ScreeningRoomManagement _roomManager;
+        private ReportManagement _reportManager;
+        
         public delegate void CloseEvent();
         public CloseEvent OnCloseClick;
         public DashboardForm(string username)
@@ -27,14 +31,21 @@ namespace QuanLyRapChieuPhim.MainForm
 
         private void LoadForm()
         {
-            _datVeForm = new DatVeForm();
-            Helper.HideUI(_datVeForm, this);
+            _datVeFormManager = new DatVeForm();
+            Helper.HideUI(_datVeFormManager, this);
 
             _userManager = new UserManager();
             Helper.HideUI(_userManager, this);
 
-            _screening = new Screening();
-            Helper.HideUI(_screening, this);
+            _screeningManager = new Screening();
+            Helper.HideUI(_screeningManager, this);
+
+            _roomManager = new ScreeningRoomManagement();
+            Helper.HideUI(_roomManager, this);
+
+            _reportManager = new ReportManagement();
+            Helper.HideUI(_reportManager, this);
+
         }
         private void DashboardForm_FormClosed(object sender, FormClosedEventArgs e)
         {
@@ -48,23 +59,28 @@ namespace QuanLyRapChieuPhim.MainForm
         {
 
         }
-        private void buttonBaoCao_Click(object sender, EventArgs e)
-        {
-
-        }
         private void buttonDatVe_Click(object sender, EventArgs e)
         {
-            Helper.OpenMdiChildForm(_datVeForm);
+            Helper.OpenMdiChildForm(_datVeFormManager);
         }
 
+        private void buttonSuatChieu_Click(object sender, EventArgs e)
+        {
+            Helper.OpenMdiChildForm(_screeningManager);
+        }
         private void buttonTaiKhoan_Click(object sender, EventArgs e)
         {
             Helper.OpenMdiChildForm(_userManager);
         }
 
-        private void buttonSuatChieu_Click(object sender, EventArgs e)
+        private void buttonPhongChieu_Click(object sender, EventArgs e)
         {
-            Helper.OpenMdiChildForm(_screening);
+            Helper.OpenMdiChildForm(_roomManager);
+        }
+
+        private void buttonBaoCao_Click(object sender, EventArgs e)
+        {
+            Helper.OpenMdiChildForm(_reportManager);
         }
     }
 }

@@ -98,7 +98,8 @@
             this.bunifuButton21.IdleIconLeftImage = null;
             this.bunifuButton21.IdleIconRightImage = null;
             this.bunifuButton21.IndicateFocus = true;
-            this.bunifuButton21.Location = new System.Drawing.Point(55, 83);
+            this.bunifuButton21.Location = new System.Drawing.Point(37, 54);
+            this.bunifuButton21.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
             this.bunifuButton21.Name = "bunifuButton21";
             this.bunifuButton21.OnDisabledState.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(191)))), ((int)(((byte)(191)))), ((int)(((byte)(191)))));
             this.bunifuButton21.OnDisabledState.BorderRadius = 35;
@@ -132,7 +133,7 @@
             this.bunifuButton21.OnPressedState.ForeColor = System.Drawing.Color.Black;
             this.bunifuButton21.OnPressedState.IconLeftImage = null;
             this.bunifuButton21.OnPressedState.IconRightImage = null;
-            this.bunifuButton21.Size = new System.Drawing.Size(208, 52);
+            this.bunifuButton21.Size = new System.Drawing.Size(139, 34);
             this.bunifuButton21.TabIndex = 2;
             this.bunifuButton21.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
             this.bunifuButton21.TextAlignment = System.Windows.Forms.HorizontalAlignment.Center;
@@ -146,7 +147,6 @@
             this.btnSearch.AllowAnimations = false;
             this.btnSearch.AllowMouseEffects = true;
             this.btnSearch.AllowToggling = true;
-            this.btnSearch.Anchor = System.Windows.Forms.AnchorStyles.None;
             this.btnSearch.AnimationSpeed = 200;
             this.btnSearch.AutoGenerateColors = false;
             this.btnSearch.AutoRoundBorders = true;
@@ -183,13 +183,14 @@
             this.btnSearch.IconRightPadding = new System.Windows.Forms.Padding(3, 3, 7, 3);
             this.btnSearch.IconSize = 25;
             this.btnSearch.IdleBorderColor = System.Drawing.Color.Gainsboro;
-            this.btnSearch.IdleBorderRadius = 50;
+            this.btnSearch.IdleBorderRadius = 32;
             this.btnSearch.IdleBorderThickness = 1;
             this.btnSearch.IdleFillColor = System.Drawing.Color.White;
             this.btnSearch.IdleIconLeftImage = null;
             this.btnSearch.IdleIconRightImage = null;
             this.btnSearch.IndicateFocus = true;
-            this.btnSearch.Location = new System.Drawing.Point(662, 83);
+            this.btnSearch.Location = new System.Drawing.Point(441, 54);
+            this.btnSearch.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
             this.btnSearch.Name = "btnSearch";
             this.btnSearch.OnDisabledState.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(191)))), ((int)(((byte)(191)))), ((int)(((byte)(191)))));
             this.btnSearch.OnDisabledState.BorderRadius = 35;
@@ -223,7 +224,7 @@
             this.btnSearch.OnPressedState.ForeColor = System.Drawing.Color.Black;
             this.btnSearch.OnPressedState.IconLeftImage = null;
             this.btnSearch.OnPressedState.IconRightImage = null;
-            this.btnSearch.Size = new System.Drawing.Size(124, 52);
+            this.btnSearch.Size = new System.Drawing.Size(83, 34);
             this.btnSearch.TabIndex = 3;
             this.btnSearch.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
             this.btnSearch.TextAlignment = System.Windows.Forms.HorizontalAlignment.Center;
@@ -240,8 +241,8 @@
             dataGridViewCellStyle1.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(248)))), ((int)(((byte)(251)))), ((int)(((byte)(255)))));
             dataGridViewCellStyle1.ForeColor = System.Drawing.Color.Black;
             this.bunifuDataGridView1.AlternatingRowsDefaultCellStyle = dataGridViewCellStyle1;
-            this.bunifuDataGridView1.Anchor = ((System.Windows.Forms.AnchorStyles)((((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom)
-            | System.Windows.Forms.AnchorStyles.Left)
+            this.bunifuDataGridView1.Anchor = ((System.Windows.Forms.AnchorStyles)((((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
+            | System.Windows.Forms.AnchorStyles.Left) 
             | System.Windows.Forms.AnchorStyles.Right)));
             this.bunifuDataGridView1.AutoSizeColumnsMode = System.Windows.Forms.DataGridViewAutoSizeColumnsMode.Fill;
             this.bunifuDataGridView1.BackgroundColor = System.Drawing.Color.White;
@@ -295,13 +296,14 @@
             this.bunifuDataGridView1.HeaderBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(216)))), ((int)(((byte)(216)))));
             this.bunifuDataGridView1.HeaderBgColor = System.Drawing.Color.Empty;
             this.bunifuDataGridView1.HeaderForeColor = System.Drawing.Color.Black;
-            this.bunifuDataGridView1.Location = new System.Drawing.Point(55, 202);
+            this.bunifuDataGridView1.Location = new System.Drawing.Point(37, 131);
+            this.bunifuDataGridView1.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
             this.bunifuDataGridView1.Name = "bunifuDataGridView1";
             this.bunifuDataGridView1.RowHeadersVisible = false;
             this.bunifuDataGridView1.RowHeadersWidth = 51;
             this.bunifuDataGridView1.RowTemplate.Height = 40;
             this.bunifuDataGridView1.SelectionMode = System.Windows.Forms.DataGridViewSelectionMode.FullRowSelect;
-            this.bunifuDataGridView1.Size = new System.Drawing.Size(1013, 418);
+            this.bunifuDataGridView1.Size = new System.Drawing.Size(1047, 511);
             this.bunifuDataGridView1.TabIndex = 5;
             this.bunifuDataGridView1.Theme = Bunifu.UI.WinForms.BunifuDataGridView.PresetThemes.Light;
             this.bunifuDataGridView1.CellClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.bunifuDataGridView1_CellClick_1);
@@ -386,7 +388,8 @@
             this.txtSearch.IconRightCursor = System.Windows.Forms.Cursors.IBeam;
             this.txtSearch.Lines = new string[] {
         "Tìm kiếm"};
-            this.txtSearch.Location = new System.Drawing.Point(298, 83);
+            this.txtSearch.Location = new System.Drawing.Point(199, 54);
+            this.txtSearch.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
             this.txtSearch.MaxLength = 32767;
             this.txtSearch.MinimumSize = new System.Drawing.Size(1, 1);
             this.txtSearch.Modified = false;
@@ -412,7 +415,7 @@
             stateProperties4.ForeColor = System.Drawing.Color.Empty;
             stateProperties4.PlaceholderForeColor = System.Drawing.Color.Empty;
             this.txtSearch.OnIdleState = stateProperties4;
-            this.txtSearch.Padding = new System.Windows.Forms.Padding(3);
+            this.txtSearch.Padding = new System.Windows.Forms.Padding(2, 2, 2, 2);
             this.txtSearch.PasswordChar = '\0';
             this.txtSearch.PlaceholderForeColor = System.Drawing.Color.Silver;
             this.txtSearch.PlaceholderText = "Enter text";
@@ -422,7 +425,7 @@
             this.txtSearch.SelectionLength = 0;
             this.txtSearch.SelectionStart = 8;
             this.txtSearch.ShortcutsEnabled = true;
-            this.txtSearch.Size = new System.Drawing.Size(324, 52);
+            this.txtSearch.Size = new System.Drawing.Size(216, 34);
             this.txtSearch.Style = Bunifu.UI.WinForms.BunifuTextBox._Style.Bunifu;
             this.txtSearch.TabIndex = 6;
             this.txtSearch.TextAlign = System.Windows.Forms.HorizontalAlignment.Left;
@@ -437,7 +440,7 @@
             // 
             // ScreeningRoomManagement
             // 
-            this.AutoScaleDimensions = new System.Drawing.SizeF(9F, 20F);
+            this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackColor = System.Drawing.SystemColors.InactiveBorder;
             this.ClientSize = new System.Drawing.Size(1115, 682);
@@ -446,6 +449,7 @@
             this.Controls.Add(this.btnSearch);
             this.Controls.Add(this.bunifuButton21);
             this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.None;
+            this.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
             this.Name = "ScreeningRoomManagement";
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Load += new System.EventHandler(this.QLPC_Load);
