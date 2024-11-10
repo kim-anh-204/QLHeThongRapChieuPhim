@@ -79,6 +79,12 @@ namespace QuanLyRapChieuPhim.RegisterAndLogin
                 MessageBox.Show("Tài khoản hoặc mật khẩu sai!", "Thông báo", MessageBoxButtons.OK, MessageBoxIcon.Error);
                 return;
             }
+            string userIdQuery = "SELECT MaNguoiDung FROM NGUOIDUNG WHERE TenDangNhap = @TenDangNhap";
+            string userId = (string)Connection.ExecuteScalar(userIdQuery, new (string, object)[] {
+                ("@TenDangNhap", username)
+            });
+            // Lưu tên đăng nhập vào dữ liệu chia sẻ
+            SharedData.SetValue("MaNguoiDung", userId);
             //Tiến hành đăng nhập vào giao diện chính.
             OnLoginSucceeded?.Invoke(username);
         }

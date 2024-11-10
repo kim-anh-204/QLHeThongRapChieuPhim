@@ -378,6 +378,7 @@
       <DependentUpon>Resources.resx</DependentUpon>
     </Compile>
     <Compile Include="Util\SecurityHelper.cs" />
+    <Compile Include="Util\SharedData.cs" />
     <EmbeddedResource Include="Dashboard\BaoCao\ReportManagement.resx">
       <DependentUpon>ReportManagement.cs</DependentUpon>
     </EmbeddedResource>

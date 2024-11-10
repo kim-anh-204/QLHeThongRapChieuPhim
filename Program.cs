@@ -22,12 +22,7 @@ namespace QuanLyRapChieuPhim
         {
             Application.EnableVisualStyles();
             Application.SetCompatibleTextRenderingDefault(false);
-            //Application.Run(new DashboardForm("Tran Van Giap"));
-            //Application.Run(new ReportManagement());
-            //Application.Run(new ScreeningRoomManagement());
-
             Application.Run(new LoginAndRegisterForm());
-            //Application.Run(new ChonChoNgoi());
         }
     }
 }
