@@ -1,4 +1,5 @@
-﻿
+﻿--create database QLRapChieuPhim
+--USE QLRapChieuPhim
 GO
 /****** Object:  Table [dbo].[GHE]    Script Date: 15/10/2024 4:48:12 CH ******/
 SET ANSI_NULLS ON
@@ -50,6 +51,7 @@ CREATE TABLE [dbo].[NHANVIEN](
 	[TenNV] [nvarchar](50) NOT NULL,
 	[SDT] [int] NULL,
 	[NgayVao] [datetime] NULL,
+	[TrangThai] NVARCHAR(50) NOT NULL DEFAULT 'DANGLAM',
  CONSTRAINT [PK_KHACH] PRIMARY KEY CLUSTERED 
 (
 	[MaNV] ASC
