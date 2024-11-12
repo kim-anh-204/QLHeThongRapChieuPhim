@@ -117,29 +117,4 @@
   <resheader name="writer">
     <value>System.Resources.ResXResourceWriter, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
   </resheader>
-  <assembly alias="System.Drawing" name="System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a" />
-  <data name="bunifuPanel2.BackgroundImage" type="System.Drawing.Bitmap, System.Drawing" mimetype="application/x-microsoft.net.object.bytearray.base64">
-    <value>
-        iVBORw0KGgoAAAANSUhEUgAAADwAAAAYCAYAAACmwZ5SAAAAAXNSR0IArs4c6QAAAARnQU1BAACxjwv8
-        YQUAAAAJcEhZcwAADsMAAA7DAcdvqGQAAAFUSURBVFhH7ZivjgIxEMYrkSeRSORJJI+ARJ5Enjx5b4Hk
-        MZBIJBI5aYfkJLluL0iYWQaWhQEO1HbCl/yyyWba9Ouf6ey6lxRBhC4W2PfJf9Dzu0nImPqrtHqX4T4v
-        X/jPkMISE26zoEDgSYAttMTC/8QrSmbnaqcZUC7SL/bEzm2VWyTiRusoN3z0X2JLV3lWjZg9Qudb7F0q
-        5218lYg/sIY3sViJE5TawAJ/OBGblcoMpwVbgI5pbZX5DlMDDRFiGIhd50IRhlqQJWoZ2/T5PUAFidgl
-        w+ReDbJEzTAXG1qQJU4NcxmmBhmC85TYpQqLim16uT4PsgRsoCN296IZGGuBFqActRCblSBBm8swrUHW
-        UNFx9VuZL2e1Ucbc/WIytbUjTsXWbck1lW8So218d2XPxWeajM/UDhvMQ387NHE6p9ka8cXdZLg85h8Y
-        MuyX9nJuBwMJ3JV5ehbGAAAAAElFTkSuQmCC
-</value>
-  </data>
-  <data name="bunifuPanel1.BackgroundImage" type="System.Drawing.Bitmap, System.Drawing" mimetype="application/x-microsoft.net.object.bytearray.base64">
-    <value>
-        iVBORw0KGgoAAAANSUhEUgAAADwAAAAYCAYAAACmwZ5SAAAAAXNSR0IArs4c6QAAAARnQU1BAACxjwv8
-        YQUAAAAJcEhZcwAADsMAAA7DAcdvqGQAAAFUSURBVFhH7ZivjgIxEMYrkSeRSORJJI+ARJ5Enjx5b4Hk
-        MZBIJBI5aYfkJLluL0iYWQaWhQEO1HbCl/yyyWba9Ouf6ey6lxRBhC4W2PfJf9Dzu0nImPqrtHqX4T4v
-        X/jPkMISE26zoEDgSYAttMTC/8QrSmbnaqcZUC7SL/bEzm2VWyTiRusoN3z0X2JLV3lWjZg9Qudb7F0q
-        5218lYg/sIY3sViJE5TawAJ/OBGblcoMpwVbgI5pbZX5DlMDDRFiGIhd50IRhlqQJWoZ2/T5PUAFidgl
-        w+ReDbJEzTAXG1qQJU4NcxmmBhmC85TYpQqLim16uT4PsgRsoCN296IZGGuBFqActRCblSBBm8swrUHW
-        UNFx9VuZL2e1Ucbc/WIytbUjTsXWbck1lW8So218d2XPxWeajM/UDhvMQ387NHE6p9ka8cXdZLg85h8Y
-        MuyX9nJuBwMJ3JV5ehbGAAAAAElFTkSuQmCC
-</value>
-  </data>
 </root>
