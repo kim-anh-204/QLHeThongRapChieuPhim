@@ -1,4 +1,4 @@
-﻿namespace QuanLyRapChieuPhim.MainForm
+﻿namespace QuanLyRapChieuPhim.DashBoard
 {
     partial class DashboardForm
     {

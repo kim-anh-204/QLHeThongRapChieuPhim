@@ -308,16 +308,16 @@
     <Compile Include="Dashboard\QLPhongChieu\UpdateScreeningRoom.Designer.cs">
       <DependentUpon>UpdateScreeningRoom.cs</DependentUpon>
     </Compile>
-    <Compile Include="QuanLyPhim\AddFilmForm.cs">
+    <Compile Include="Dashboard\QuanLyPhim\AddFilmForm.cs">
       <SubType>Form</SubType>
     </Compile>
-    <Compile Include="QuanLyPhim\AddFilmForm.Designer.cs">
+    <Compile Include="Dashboard\QuanLyPhim\AddFilmForm.Designer.cs">
       <DependentUpon>AddFilmForm.cs</DependentUpon>
     </Compile>
-    <Compile Include="QuanLyPhim\FilmManagementForm.cs">
+    <Compile Include="Dashboard\QuanLyPhim\FilmManagementForm.cs">
       <SubType>Form</SubType>
     </Compile>
-    <Compile Include="QuanLyPhim\FilmManagementForm.Designer.cs">
+    <Compile Include="Dashboard\QuanLyPhim\FilmManagementForm.Designer.cs">
       <DependentUpon>FilmManagementForm.cs</DependentUpon>
     </Compile>
     <Compile Include="RegisterAndLogin\LoginAndRegisterForm.cs">
@@ -380,13 +380,13 @@
     <Compile Include="Dashboard\UserPage\UserManager.Designer.cs">
       <DependentUpon>UserManager.cs</DependentUpon>
     </Compile>
-    <Compile Include="ThongKe\ThongKe.cs">
+    <Compile Include="Dashboard\ThongKe\ThongKe.cs">
       <SubType>Form</SubType>
     </Compile>
-    <Compile Include="ThongKe\ThongKe.Designer.cs">
+    <Compile Include="Dashboard\ThongKe\ThongKe.Designer.cs">
       <DependentUpon>ThongKe.cs</DependentUpon>
     </Compile>
-    <Compile Include="ThongKe\ThongKeDoanhThu.cs" />
+    <Compile Include="Dashboard\ThongKe\ThongKeDoanhThu.cs" />
     <Compile Include="Util\Connection.cs" />
     <Compile Include="Util\Helper.cs" />
     <Compile Include="Util\RegexPatternHelper.cs" />
@@ -426,10 +426,10 @@
     <EmbeddedResource Include="Dashboard\QLPhongChieu\UpdateScreeningRoom.resx">
       <DependentUpon>UpdateScreeningRoom.cs</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="QuanLyPhim\AddFilmForm.resx">
+    <EmbeddedResource Include="Dashboard\QuanLyPhim\AddFilmForm.resx">
       <DependentUpon>AddFilmForm.cs</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="QuanLyPhim\FilmManagementForm.resx">
+    <EmbeddedResource Include="Dashboard\QuanLyPhim\FilmManagementForm.resx">
       <DependentUpon>FilmManagementForm.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="RegisterAndLogin\LoginAndRegisterForm.resx">
@@ -438,6 +438,7 @@
     <EmbeddedResource Include="Properties\Resources.resx">
       <Generator>ResXFileCodeGenerator</Generator>
       <LastGenOutput>Resources.Designer.cs</LastGenOutput>
+      <SubType>Designer</SubType>
     </EmbeddedResource>
     <EmbeddedResource Include="RegisterAndLogin\LoginForm.resx">
       <DependentUpon>LoginForm.cs</DependentUpon>
@@ -465,11 +466,9 @@
     </EmbeddedResource>
     <EmbeddedResource Include="Dashboard\UserPage\UserManager.resx">
       <DependentUpon>UserManager.cs</DependentUpon>
-    <EmbeddedResource Include="ThongKe\ThongKe.resx">
-      <DependentUpon>ThongKe.cs</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="UserControls\RJTextBox.resx">
-      <DependentUpon>RJTextBox.cs</DependentUpon>
+    <EmbeddedResource Include="Dashboard\ThongKe\ThongKe.resx">
+      <DependentUpon>ThongKe.cs</DependentUpon>
     </EmbeddedResource>
     <None Include="packages.config" />
     <None Include="Properties\Settings.settings">

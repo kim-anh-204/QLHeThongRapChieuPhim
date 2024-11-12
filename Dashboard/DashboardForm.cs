@@ -1,22 +1,25 @@
 ﻿using QuanLyRapChieuPhim.BaoCao;
 using QuanLyRapChieuPhim.Dashboard.DatVeForms;
 using QuanLyRapChieuPhim.QLPhongChieu;
+using QuanLyRapChieuPhim.QuanLyPhim;
 using QuanLyRapChieuPhim.ScreeningPage;
 using QuanLyRapChieuPhim.UserPage;
 using QuanLyRapChieuPhim.Util;
 using System;
 using System.Windows.Forms;
 
-namespace QuanLyRapChieuPhim.MainForm
+namespace QuanLyRapChieuPhim.DashBoard
 {
     public partial class DashboardForm : Form
     {
         private DatVeForm _datVeFormManager;
+        private ThongKe.ThongKe _thongKe;
         private UserManager _userManager;
         private Screening _screeningManager;
         private ScreeningRoomManagement _roomManager;
         private ReportManagement _reportManager;
-        
+        private FilmManagementForm _filmManager;
+
         public delegate void CloseEvent();
         public CloseEvent OnCloseClick;
         public DashboardForm(string username)
@@ -31,20 +34,26 @@ namespace QuanLyRapChieuPhim.MainForm
 
         private void LoadForm()
         {
-            _datVeFormManager = new DatVeForm();
-            Helper.HideUI(_datVeFormManager, this);
+            _thongKe = new ThongKe.ThongKe();
+            Helper.HideUI(_thongKe, this);
 
-            _userManager = new UserManager();
-            Helper.HideUI(_userManager, this);
+            _filmManager = new FilmManagementForm();
+            Helper.HideUI(_filmManager, this);
 
             _screeningManager = new Screening();
             Helper.HideUI(_screeningManager, this);
+
+            _userManager = new UserManager();
+            Helper.HideUI(_userManager, this);
 
             _roomManager = new ScreeningRoomManagement();
             Helper.HideUI(_roomManager, this);
 
             _reportManager = new ReportManagement();
             Helper.HideUI(_reportManager, this);
+
+            _datVeFormManager = new DatVeForm();
+            Helper.HideUI(_datVeFormManager, this);
 
         }
         private void DashboardForm_FormClosed(object sender, FormClosedEventArgs e)
@@ -53,11 +62,11 @@ namespace QuanLyRapChieuPhim.MainForm
         }
         private void buttonTrangChu_Click(object sender, EventArgs e)
         {
-
+            Helper.OpenMdiChildForm(_thongKe);
         }
         private void buttonPhim_Click(object sender, EventArgs e)
         {
-
+            Helper.OpenMdiChildForm(_filmManager);
         }
         private void buttonDatVe_Click(object sender, EventArgs e)
         {

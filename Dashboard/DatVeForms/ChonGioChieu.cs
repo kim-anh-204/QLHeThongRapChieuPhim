@@ -1,5 +1,4 @@
 ﻿using Bunifu.UI.WinForms.BunifuButton;
-using QuanLyRapChieuPhim.UserControls;
 using QuanLyRapChieuPhim.Util;
 using System;
 using System.Data;

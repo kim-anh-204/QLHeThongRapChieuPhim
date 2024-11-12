@@ -142,43 +142,6 @@ namespace QuanLyRapChieuPhim.Util
             return null;
         }
 
-        /// <summary>
-        /// 
-        /// </summary>
-        /// <param name="query"></param>
-        /// <param name="parameters"></param>
-        /// <returns>Trả về một bảng với câu truy vấn đã gửi. Nếu lỗi sẽ trả về null</returns>
-        public static DataTable GetDataTable(string query, (string, object)[] parameters = null)
-        {
-            using (SqlConnection conn = new SqlConnection(connectionString))
-            {
-                try
-                {
-                    conn.Open();
-                    using (SqlCommand command = new SqlCommand(query, conn))// bắt đầu truy vấn
-                    {
-                        if (parameters != null)
-                        {
-                            foreach (var param in parameters)
-                                command.Parameters.AddWithValue(param.Item1, param.Item2);
-                        }
-                        using (SqlDataAdapter adapter = new SqlDataAdapter(command)) //chuyển dữ liệu về
-                        {
-                            DataTable dt = new DataTable(); // tạo kho dữ liệu ảo
-                            adapter.Fill(dt); // đổ dữ liệu từ dt vào kho
-                            return dt; // trả về kho dữ liệu
-                        }
-
-                    }
-                }
-                catch (Exception ex)
-                {
-                    MessageBox.Show("Lỗi: " + ex.Message, "Lỗi", MessageBoxButtons.OK, MessageBoxIcon.Error);
-                }
-            }
-            return null;
-        }
-
 		public static SqlTransaction BeginTransaction(out SqlConnection connection)
 		{
 			connection = new SqlConnection(connectionString);

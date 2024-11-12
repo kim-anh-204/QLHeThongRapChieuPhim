@@ -1,5 +1,5 @@
 ﻿using QuanLyRapChieuPhim.Dashboard.DatVeForms;
-using QuanLyRapChieuPhim.MainForm;
+using QuanLyRapChieuPhim.DashBoard;
 using QuanLyRapChieuPhim.RegisterAndLogin;
 ﻿using QuanLyRapChieuPhim.QuanLyPhim;
 using QuanLyRapChieuPhim.RegisterAndLogin;
@@ -25,7 +25,7 @@ namespace QuanLyRapChieuPhim
         {
             Application.EnableVisualStyles();
             Application.SetCompatibleTextRenderingDefault(false);
-            Application.Run(new ThongKe.ThongKe());
+            Application.Run(new LoginAndRegisterForm());
         }
     }
 }
