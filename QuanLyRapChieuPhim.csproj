@@ -13,6 +13,10 @@
     <FileAlignment>512</FileAlignment>
     <AutoGenerateBindingRedirects>true</AutoGenerateBindingRedirects>
     <Deterministic>true</Deterministic>
+    <IsWebBootstrapper>false</IsWebBootstrapper>
+    <TargetFrameworkProfile />
+    <NuGetPackageImportStamp>
+    </NuGetPackageImportStamp>
     <PublishUrl>publish\</PublishUrl>
     <Install>true</Install>
     <InstallFrom>Disk</InstallFrom>
@@ -25,12 +29,8 @@
     <MapFileExtensions>true</MapFileExtensions>
     <ApplicationRevision>0</ApplicationRevision>
     <ApplicationVersion>1.0.0.%2a</ApplicationVersion>
-    <IsWebBootstrapper>false</IsWebBootstrapper>
     <UseApplicationTrust>false</UseApplicationTrust>
     <BootstrapperEnabled>true</BootstrapperEnabled>
-    <TargetFrameworkProfile />
-    <NuGetPackageImportStamp>
-    </NuGetPackageImportStamp>
   </PropertyGroup>
   <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Debug|AnyCPU' ">
     <PlatformTarget>AnyCPU</PlatformTarget>
@@ -240,6 +240,7 @@
       <HintPath>packages\System.Web.Services.Description.4.10.0\lib\net461\System.Web.Services.Description.dll</HintPath>
     </Reference>
     <Reference Include="System.Xaml" />
+    <Reference Include="System.Windows.Forms.DataVisualization" />
     <Reference Include="System.Xml.Linq" />
     <Reference Include="System.Data.DataSetExtensions" />
     <Reference Include="Microsoft.CSharp" />
@@ -307,6 +308,18 @@
     <Compile Include="Dashboard\QLPhongChieu\UpdateScreeningRoom.Designer.cs">
       <DependentUpon>UpdateScreeningRoom.cs</DependentUpon>
     </Compile>
+    <Compile Include="QuanLyPhim\AddFilmForm.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="QuanLyPhim\AddFilmForm.Designer.cs">
+      <DependentUpon>AddFilmForm.cs</DependentUpon>
+    </Compile>
+    <Compile Include="QuanLyPhim\FilmManagementForm.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="QuanLyPhim\FilmManagementForm.Designer.cs">
+      <DependentUpon>FilmManagementForm.cs</DependentUpon>
+    </Compile>
     <Compile Include="RegisterAndLogin\LoginAndRegisterForm.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -367,6 +380,13 @@
     <Compile Include="Dashboard\UserPage\UserManager.Designer.cs">
       <DependentUpon>UserManager.cs</DependentUpon>
     </Compile>
+    <Compile Include="ThongKe\ThongKe.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="ThongKe\ThongKe.Designer.cs">
+      <DependentUpon>ThongKe.cs</DependentUpon>
+    </Compile>
+    <Compile Include="ThongKe\ThongKeDoanhThu.cs" />
     <Compile Include="Util\Connection.cs" />
     <Compile Include="Util\Helper.cs" />
     <Compile Include="Util\RegexPatternHelper.cs" />
@@ -406,6 +426,12 @@
     <EmbeddedResource Include="Dashboard\QLPhongChieu\UpdateScreeningRoom.resx">
       <DependentUpon>UpdateScreeningRoom.cs</DependentUpon>
     </EmbeddedResource>
+    <EmbeddedResource Include="QuanLyPhim\AddFilmForm.resx">
+      <DependentUpon>AddFilmForm.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="QuanLyPhim\FilmManagementForm.resx">
+      <DependentUpon>FilmManagementForm.cs</DependentUpon>
+    </EmbeddedResource>
     <EmbeddedResource Include="RegisterAndLogin\LoginAndRegisterForm.resx">
       <DependentUpon>LoginAndRegisterForm.cs</DependentUpon>
     </EmbeddedResource>
@@ -439,6 +465,11 @@
     </EmbeddedResource>
     <EmbeddedResource Include="Dashboard\UserPage\UserManager.resx">
       <DependentUpon>UserManager.cs</DependentUpon>
+    <EmbeddedResource Include="ThongKe\ThongKe.resx">
+      <DependentUpon>ThongKe.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="UserControls\RJTextBox.resx">
+      <DependentUpon>RJTextBox.cs</DependentUpon>
     </EmbeddedResource>
     <None Include="packages.config" />
     <None Include="Properties\Settings.settings">
@@ -473,6 +504,7 @@
     <Content Include="Images\P16.jpg" />
     <Content Include="QuanLyRapChieuPhim.mdf" />
     <Content Include="QuanLyRapChieuPhim_log.ldf">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
       <DependentUpon>QuanLyRapChieuPhim.mdf</DependentUpon>
     </Content>
     <None Include="Resources\DoanhThu_OFF.png" />
@@ -487,6 +519,10 @@
     <None Include="Resources\QuanLyPhongChieu_ON.png" />
     <None Include="Resources\BaoCao_OFF.png" />
     <None Include="Resources\BaoCao_ON.png" />
+    <Content Include="SQLQueryDoanhThu.sql" />
+    <None Include="Resources\Images\Chọn poster %28Nếu có%29.png" />
+    <None Include="Resources\Images\P01.jpg" />
+    <None Include="Resources\search.png" />
     <None Include="Resources\Dashboard_ON.png" />
     <None Include="Resources\Dashboard_OFF.png" />
     <None Include="Resources\home-agreement.png" />

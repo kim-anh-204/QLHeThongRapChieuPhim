@@ -76,6 +76,9 @@ namespace QuanLyRapChieuPhim.Properties {
         internal static System.Drawing.Bitmap BaoCao_ON {
             get {
                 object obj = ResourceManager.GetObject("BaoCao_ON", resourceCulture);
+        internal static System.Drawing.Bitmap Chọn_poster__Nếu_có_ {
+            get {
+                object obj = ResourceManager.GetObject("Chọn poster (Nếu có)", resourceCulture);
                 return ((System.Drawing.Bitmap)(obj));
             }
         }
@@ -146,6 +149,9 @@ namespace QuanLyRapChieuPhim.Properties {
         internal static System.Drawing.Bitmap QuanLyPhim_OFF {
             get {
                 object obj = ResourceManager.GetObject("QuanLyPhim_OFF", resourceCulture);
+        internal static System.Drawing.Bitmap P01 {
+            get {
+                object obj = ResourceManager.GetObject("P01", resourceCulture);
                 return ((System.Drawing.Bitmap)(obj));
             }
         }
@@ -156,6 +162,9 @@ namespace QuanLyRapChieuPhim.Properties {
         internal static System.Drawing.Bitmap QuanLyPhim_ON {
             get {
                 object obj = ResourceManager.GetObject("QuanLyPhim_ON", resourceCulture);
+        internal static System.Drawing.Bitmap search {
+            get {
+                object obj = ResourceManager.GetObject("search", resourceCulture);
                 return ((System.Drawing.Bitmap)(obj));
             }
         }
@@ -216,6 +225,9 @@ namespace QuanLyRapChieuPhim.Properties {
         internal static System.Drawing.Bitmap QuanLyTaiKhoan_ON {
             get {
                 object obj = ResourceManager.GetObject("QuanLyTaiKhoan_ON", resourceCulture);
+        internal static System.Drawing.Bitmap search1 {
+            get {
+                object obj = ResourceManager.GetObject("search1", resourceCulture);
                 return ((System.Drawing.Bitmap)(obj));
             }
         }
