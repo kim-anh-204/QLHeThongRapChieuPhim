@@ -14,6 +14,7 @@ namespace QuanLyRapChieuPhim.ScreeningPage
             InitializeComponent();
             this.screening = screening;
             this.ActiveControl = null;
+            bunifuDatePicker1.Value = DateTime.Now;
             getMovies();
             LoadRoom();
         }
@@ -115,7 +116,7 @@ namespace QuanLyRapChieuPhim.ScreeningPage
             string price = priceTextBox.Text;
             string type = movieType.SelectedItem.ToString();
             DateTime selectedTime = dateTimePicker1.Value;
-            string formattedDate = DateTime.Now.ToString("MM/dd/yyyy");
+            string formattedDate = bunifuDatePicker1.Value.ToString("MM/dd/yyyy");
             DateTime NgayTao = DateTime.Now.Date;
             string queryInsert = "INSERT INTO SUATCHIEU (MaSuatChieu,MaPhim, MaPhong,MaNguoiDung,NgayChieu,GioBatDau,SoVeToiDa,LoaiChieu, GiaVe) VALUES (@MaSuatChieu,@MaPhim, @MaPhong,@MaNguoiDung,@NgayChieu,@GioBatDau,@SoVeToiDa,@LoaiChieu, @GiaVe)";
 
@@ -132,7 +133,7 @@ namespace QuanLyRapChieuPhim.ScreeningPage
             ("@GiaVe", price)
              });
             List<string> gheList = new List<string>();
-            char[] hang = { 'A', 'B', 'C', 'D', 'E','F' }; // Các hàng ghế
+            char[] hang = { 'A', 'B', 'C', 'D', 'E', 'F' }; // Các hàng ghế
             int soGhe = 8; // Số ghế mỗi hàng
 
             // Tạo tên ghế
@@ -153,7 +154,7 @@ namespace QuanLyRapChieuPhim.ScreeningPage
                 {
                     ("@TenGhe", tenGhe),
                     ("@MaSuatChieu", newMaSC),
-                    ("@TrangThai", false) 
+                    ("@TrangThai", false)
                 });
             }
             this.Close();
