@@ -56,7 +56,11 @@ namespace QuanLyRapChieuPhim.QuanLyPhim
 				MessageBox.Show("Tên phim không hợp lệ", "Thông báo", MessageBoxButtons.OK, MessageBoxIcon.Error);
 				return false;
 			}
-
+			if (string.IsNullOrWhiteSpace(TBNsx.Text) || TBNsx.Text.Any(char.IsDigit))
+			{
+				MessageBox.Show("Nhà sản xuất không được chứa số hoặc để trống.", "Thông báo", MessageBoxButtons.OK, MessageBoxIcon.Error);
+				return false;
+			}
 			if (string.IsNullOrWhiteSpace(TBHsx.Text) || TBHsx.Text.Any(char.IsDigit))
 			{
 				MessageBox.Show("Hãng sản xuất không được chứa số hoặc để trống.", "Thông báo", MessageBoxButtons.OK, MessageBoxIcon.Error);
@@ -75,7 +79,7 @@ namespace QuanLyRapChieuPhim.QuanLyPhim
 				return false;
 			}
 
-			if (DatePickerNgaykc.Value <= DateTime.Today.Date)
+			if (DatePickerNgaykc.Value < DateTime.Today.Date)
 			{
 				MessageBox.Show($"Ngày khởi chiếu bắt đầu phải sau ngày {DateTime.Today.Date}", "Thông báo");
 				return false;
