@@ -29,6 +29,7 @@ namespace QuanLyRapChieuPhim.DashBoard
         private void DashboardForm_Load(object sender, EventArgs e)
         {
             LoadForm();
+            buttonTrangChu.PerformClick();
         }
 
         private void LoadForm()
@@ -51,7 +52,6 @@ namespace QuanLyRapChieuPhim.DashBoard
             _reportManager = new ReportManagement();
             Helper.HideUI(_reportManager, this);
 
-            Helper.OpenMdiChildForm(_thongKe);
         }
         private void DashboardForm_FormClosed(object sender, FormClosedEventArgs e)
         {
