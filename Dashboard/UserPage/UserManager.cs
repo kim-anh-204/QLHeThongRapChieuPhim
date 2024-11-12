@@ -32,7 +32,7 @@ namespace QuanLyRapChieuPhim.UserPage
         {
             bunifuDataGridView1.Rows.Clear();
             bunifuDataGridView1.DataSource = null;
-            string query = "SELECT * FROM NHANVIEN ORDER BY MaNV ;"; 
+            string query = "SELECT * FROM NHANVIEN WHERE TRANGTHAI = 'DANGLAM' ORDER BY MaNV;";
 
             DataTable nhanVienData = Connection.GetDataTable(query); 
             if (nhanVienData != null && nhanVienData.Rows.Count > 0) 
@@ -74,19 +74,19 @@ namespace QuanLyRapChieuPhim.UserPage
                     var confirmResult = MessageBox.Show($"Bạn có chắc muốn xóa nhân viên với mã: {maNV}?", "Xác nhận xóa", MessageBoxButtons.YesNo, MessageBoxIcon.Warning);
                     if (confirmResult == DialogResult.Yes)
                     {
-                        string deleteQuery = "DELETE FROM NHANVIEN WHERE MaNV = @MaNV";
-                        bool isDeleted = Connection.ExcuteNonQuery(deleteQuery, new (string, object)[] { ("@MaNV", maNV) });
+                        string updateQuery = "UPDATE NHANVIEN SET TRANGTHAI = 'SATHAI' WHERE MaNV = @MaNV";
+                        bool isUpdated = Connection.ExcuteNonQuery(updateQuery, new (string, object)[] { ("@MaNV", maNV) });
 
-                        if (isDeleted)
+                        if (isUpdated)
                         {
                             bunifuDataGridView1.Rows.RemoveAt(e.RowIndex);
-                            MessageBox.Show("Xóa thành công!", "Thành công", MessageBoxButtons.OK, MessageBoxIcon.Information);
+                            MessageBox.Show("Cập nhật trạng thái thành công!", "Thành công", MessageBoxButtons.OK, MessageBoxIcon.Information);
                             bunifuTextBox1.Text = "";
                             LoadNhanVienData();
                         }
                         else
                         {
-                            MessageBox.Show("Xóa không thành công!", "Lỗi", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                            MessageBox.Show("Cập nhật trạng thái không thành công!", "Lỗi", MessageBoxButtons.OK, MessageBoxIcon.Error);
                         }
                     }
                 }

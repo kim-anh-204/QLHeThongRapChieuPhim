@@ -27,7 +27,7 @@ namespace QuanLyRapChieuPhim.ScreeningPage
         private void getMovies()
         {
             string query = "SELECT MaPhim, TenPhim FROM PHIM"; 
-            DataTable moviesTable = QuanLyRapChieuPhim.Util.Connection.GetDataTable(query);
+            DataTable moviesTable = Connection.GetDataTable(query);
 
             if (moviesTable != null)
             {
@@ -49,7 +49,7 @@ namespace QuanLyRapChieuPhim.ScreeningPage
         private void LoadRoom()
         {
             string query = "SELECT MaPhong, TenPhong FROM PHONGCHIEUPHIM"; 
-            DataTable moviesTable = QuanLyRapChieuPhim.Util.Connection.GetDataTable(query);
+            DataTable moviesTable = Connection.GetDataTable(query);
 
             if (moviesTable != null)
             {
