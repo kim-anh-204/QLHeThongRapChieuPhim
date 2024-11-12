@@ -250,15 +250,6 @@
   <metadata name="pHIMBindingSource1.TrayLocation" type="System.Drawing.Point, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a">
     <value>425, 54</value>
   </metadata>
-  <data name="bunifuButton1.BackgroundImage" type="System.Drawing.Bitmap, System.Drawing" mimetype="application/x-microsoft.net.object.bytearray.base64">
-    <value>
-        iVBORw0KGgoAAAANSUhEUgAAAHcAAAAnCAYAAAA1t9d9AAAAAXNSR0IArs4c6QAAAARnQU1BAACxjwv8
-        YQUAAAAJcEhZcwAADsMAAA7DAcdvqGQAAACHSURBVHhe7dExEYAwAMBAlNQy9YcM9hYEYIDcDz9lzDHm
-        usbcm5p1vXO/AgXmhpkbZm6YuWHmhpkbZm6YuWHmhpkbZm6YuWHmhpkbZm6YuWHmhpkbZm6YuWHmhpkb
-        Zm6YuWHmhpkbZm6YuWHmhpkbZm6YuWHmhpkbZm6YuWHHONf9Ffi5c90PZyhyl9p3g9oAAAAASUVORK5C
-        YII=
-</value>
-  </data>
   <metadata name="$this.TrayHeight" type="System.Int32, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089">
     <value>43</value>
   </metadata>

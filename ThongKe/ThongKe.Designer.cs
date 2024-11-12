@@ -28,26 +28,22 @@
 		/// </summary>
 		private void InitializeComponent()
 		{
-			System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(ThongKe));
 			System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle1 = new System.Windows.Forms.DataGridViewCellStyle();
 			System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle2 = new System.Windows.Forms.DataGridViewCellStyle();
 			System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle3 = new System.Windows.Forms.DataGridViewCellStyle();
 			System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle4 = new System.Windows.Forms.DataGridViewCellStyle();
 			System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle5 = new System.Windows.Forms.DataGridViewCellStyle();
 			System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle6 = new System.Windows.Forms.DataGridViewCellStyle();
+			System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle7 = new System.Windows.Forms.DataGridViewCellStyle();
 			this.panel1 = new System.Windows.Forms.Panel();
 			this.tableLayoutPanel1 = new System.Windows.Forms.TableLayoutPanel();
 			this.tableLayoutPanel2 = new System.Windows.Forms.TableLayoutPanel();
 			this.flowLayoutPanel2 = new System.Windows.Forms.FlowLayoutPanel();
 			this.label3 = new System.Windows.Forms.Label();
 			this.labelDtHomnay = new System.Windows.Forms.Label();
-			this.bunifuPanel2 = new Bunifu.UI.WinForms.BunifuPanel();
-			this.label6 = new System.Windows.Forms.Label();
 			this.flowLayoutPanel1 = new System.Windows.Forms.FlowLayoutPanel();
 			this.label1 = new System.Windows.Forms.Label();
 			this.labelTongDoanhthu = new System.Windows.Forms.Label();
-			this.bunifuPanel1 = new Bunifu.UI.WinForms.BunifuPanel();
-			this.label5 = new System.Windows.Forms.Label();
 			this.tableLayoutPanel3 = new System.Windows.Forms.TableLayoutPanel();
 			this.tabControl1 = new System.Windows.Forms.TabControl();
 			this.tabPage1 = new System.Windows.Forms.TabPage();
@@ -63,10 +59,8 @@
 			this.RBThang = new Bunifu.UI.WinForms.BunifuRadioButton();
 			this.RBNgay = new Bunifu.UI.WinForms.BunifuRadioButton();
 			this.panel3 = new System.Windows.Forms.Panel();
-			this.label10 = new System.Windows.Forms.Label();
-			this.label9 = new System.Windows.Forms.Label();
-			this.label8 = new System.Windows.Forms.Label();
-			this.label7 = new System.Windows.Forms.Label();
+			this.labelTien = new System.Windows.Forms.Label();
+			this.lbDoanhthu = new System.Windows.Forms.Label();
 			this.dtGridviewThongKe = new Bunifu.UI.WinForms.BunifuDataGridView();
 			this.tabPage2 = new System.Windows.Forms.TabPage();
 			this.dtgvDtTheoPhim = new Bunifu.UI.WinForms.BunifuDataGridView();
@@ -74,9 +68,7 @@
 			this.tableLayoutPanel1.SuspendLayout();
 			this.tableLayoutPanel2.SuspendLayout();
 			this.flowLayoutPanel2.SuspendLayout();
-			this.bunifuPanel2.SuspendLayout();
 			this.flowLayoutPanel1.SuspendLayout();
-			this.bunifuPanel1.SuspendLayout();
 			this.tableLayoutPanel3.SuspendLayout();
 			this.tabControl1.SuspendLayout();
 			this.tabPage1.SuspendLayout();
@@ -94,6 +86,7 @@
 			this.panel1.Controls.Add(this.tableLayoutPanel1);
 			this.panel1.Dock = System.Windows.Forms.DockStyle.Fill;
 			this.panel1.Location = new System.Drawing.Point(0, 0);
+			this.panel1.Margin = new System.Windows.Forms.Padding(0);
 			this.panel1.Name = "panel1";
 			this.panel1.Padding = new System.Windows.Forms.Padding(32);
 			this.panel1.Size = new System.Drawing.Size(1115, 682);
@@ -111,7 +104,7 @@
 			this.tableLayoutPanel1.Name = "tableLayoutPanel1";
 			this.tableLayoutPanel1.RowCount = 3;
 			this.tableLayoutPanel1.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Absolute, 120F));
-			this.tableLayoutPanel1.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Absolute, 54F));
+			this.tableLayoutPanel1.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Absolute, 40F));
 			this.tableLayoutPanel1.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Absolute, 444F));
 			this.tableLayoutPanel1.Size = new System.Drawing.Size(1051, 618);
 			this.tableLayoutPanel1.TabIndex = 1;
@@ -137,7 +130,6 @@
 			this.flowLayoutPanel2.BackColor = System.Drawing.Color.White;
 			this.flowLayoutPanel2.Controls.Add(this.label3);
 			this.flowLayoutPanel2.Controls.Add(this.labelDtHomnay);
-			this.flowLayoutPanel2.Controls.Add(this.bunifuPanel2);
 			this.flowLayoutPanel2.Dock = System.Windows.Forms.DockStyle.Fill;
 			this.flowLayoutPanel2.FlowDirection = System.Windows.Forms.FlowDirection.TopDown;
 			this.flowLayoutPanel2.Location = new System.Drawing.Point(537, 0);
@@ -165,43 +157,13 @@
 			this.labelDtHomnay.Name = "labelDtHomnay";
 			this.labelDtHomnay.Size = new System.Drawing.Size(469, 24);
 			this.labelDtHomnay.TabIndex = 1;
-			this.labelDtHomnay.Text = "VNĐ";
-			// 
-			// bunifuPanel2
-			// 
-			this.bunifuPanel2.BackgroundColor = System.Drawing.Color.FromArgb(((int)(((byte)(227)))), ((int)(((byte)(244)))), ((int)(((byte)(227)))));
-			this.bunifuPanel2.BackgroundImage = ((System.Drawing.Image)(resources.GetObject("bunifuPanel2.BackgroundImage")));
-			this.bunifuPanel2.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
-			this.bunifuPanel2.BorderColor = System.Drawing.Color.Transparent;
-			this.bunifuPanel2.BorderRadius = 20;
-			this.bunifuPanel2.BorderThickness = 1;
-			this.bunifuPanel2.Controls.Add(this.label6);
-			this.bunifuPanel2.Location = new System.Drawing.Point(20, 84);
-			this.bunifuPanel2.Margin = new System.Windows.Forms.Padding(20, 5, 3, 3);
-			this.bunifuPanel2.Name = "bunifuPanel2";
-			this.bunifuPanel2.ShowBorders = true;
-			this.bunifuPanel2.Size = new System.Drawing.Size(60, 24);
-			this.bunifuPanel2.TabIndex = 2;
-			// 
-			// label6
-			// 
-			this.label6.BackColor = System.Drawing.Color.Transparent;
-			this.label6.Dock = System.Windows.Forms.DockStyle.Fill;
-			this.label6.Font = new System.Drawing.Font("Segoe UI Semibold", 14F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Pixel, ((byte)(0)));
-			this.label6.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(101)))), ((int)(((byte)(197)))), ((int)(((byte)(101)))));
-			this.label6.Location = new System.Drawing.Point(0, 0);
-			this.label6.Name = "label6";
-			this.label6.Size = new System.Drawing.Size(60, 24);
-			this.label6.TabIndex = 0;
-			this.label6.Text = "label6";
-			this.label6.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
+			this.labelDtHomnay.Text = "0 VNĐ";
 			// 
 			// flowLayoutPanel1
 			// 
 			this.flowLayoutPanel1.BackColor = System.Drawing.Color.White;
 			this.flowLayoutPanel1.Controls.Add(this.label1);
 			this.flowLayoutPanel1.Controls.Add(this.labelTongDoanhthu);
-			this.flowLayoutPanel1.Controls.Add(this.bunifuPanel1);
 			this.flowLayoutPanel1.Dock = System.Windows.Forms.DockStyle.Fill;
 			this.flowLayoutPanel1.FlowDirection = System.Windows.Forms.FlowDirection.TopDown;
 			this.flowLayoutPanel1.Location = new System.Drawing.Point(0, 0);
@@ -229,36 +191,7 @@
 			this.labelTongDoanhthu.Name = "labelTongDoanhthu";
 			this.labelTongDoanhthu.Size = new System.Drawing.Size(469, 24);
 			this.labelTongDoanhthu.TabIndex = 1;
-			this.labelTongDoanhthu.Text = "VNĐ";
-			// 
-			// bunifuPanel1
-			// 
-			this.bunifuPanel1.BackgroundColor = System.Drawing.Color.FromArgb(((int)(((byte)(227)))), ((int)(((byte)(244)))), ((int)(((byte)(227)))));
-			this.bunifuPanel1.BackgroundImage = ((System.Drawing.Image)(resources.GetObject("bunifuPanel1.BackgroundImage")));
-			this.bunifuPanel1.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
-			this.bunifuPanel1.BorderColor = System.Drawing.Color.Transparent;
-			this.bunifuPanel1.BorderRadius = 20;
-			this.bunifuPanel1.BorderThickness = 1;
-			this.bunifuPanel1.Controls.Add(this.label5);
-			this.bunifuPanel1.Location = new System.Drawing.Point(20, 84);
-			this.bunifuPanel1.Margin = new System.Windows.Forms.Padding(20, 5, 3, 3);
-			this.bunifuPanel1.Name = "bunifuPanel1";
-			this.bunifuPanel1.ShowBorders = true;
-			this.bunifuPanel1.Size = new System.Drawing.Size(60, 24);
-			this.bunifuPanel1.TabIndex = 2;
-			// 
-			// label5
-			// 
-			this.label5.BackColor = System.Drawing.Color.Transparent;
-			this.label5.Dock = System.Windows.Forms.DockStyle.Fill;
-			this.label5.Font = new System.Drawing.Font("Segoe UI Semibold", 14F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Pixel, ((byte)(0)));
-			this.label5.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(101)))), ((int)(((byte)(197)))), ((int)(((byte)(101)))));
-			this.label5.Location = new System.Drawing.Point(0, 0);
-			this.label5.Name = "label5";
-			this.label5.Size = new System.Drawing.Size(60, 24);
-			this.label5.TabIndex = 0;
-			this.label5.Text = "label5";
-			this.label5.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
+			this.labelTongDoanhthu.Text = "0 VNĐ";
 			// 
 			// tableLayoutPanel3
 			// 
@@ -266,13 +199,13 @@
 			this.tableLayoutPanel3.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 100F));
 			this.tableLayoutPanel3.Controls.Add(this.tabControl1, 0, 0);
 			this.tableLayoutPanel3.Dock = System.Windows.Forms.DockStyle.Fill;
-			this.tableLayoutPanel3.Location = new System.Drawing.Point(0, 174);
+			this.tableLayoutPanel3.Location = new System.Drawing.Point(0, 160);
 			this.tableLayoutPanel3.Margin = new System.Windows.Forms.Padding(0);
 			this.tableLayoutPanel3.Name = "tableLayoutPanel3";
 			this.tableLayoutPanel3.RowCount = 1;
 			this.tableLayoutPanel3.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 100F));
 			this.tableLayoutPanel3.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Absolute, 444F));
-			this.tableLayoutPanel3.Size = new System.Drawing.Size(1051, 444);
+			this.tableLayoutPanel3.Size = new System.Drawing.Size(1051, 458);
 			this.tableLayoutPanel3.TabIndex = 1;
 			// 
 			// tabControl1
@@ -284,7 +217,7 @@
 			this.tabControl1.Margin = new System.Windows.Forms.Padding(0);
 			this.tabControl1.Name = "tabControl1";
 			this.tabControl1.SelectedIndex = 0;
-			this.tabControl1.Size = new System.Drawing.Size(1051, 444);
+			this.tabControl1.Size = new System.Drawing.Size(1051, 458);
 			this.tabControl1.TabIndex = 5;
 			// 
 			// tabPage1
@@ -293,7 +226,7 @@
 			this.tabPage1.Location = new System.Drawing.Point(4, 22);
 			this.tabPage1.Name = "tabPage1";
 			this.tabPage1.Padding = new System.Windows.Forms.Padding(3);
-			this.tabPage1.Size = new System.Drawing.Size(1043, 418);
+			this.tabPage1.Size = new System.Drawing.Size(1043, 432);
 			this.tabPage1.TabIndex = 0;
 			this.tabPage1.Text = "Doanh thu theo thời gian";
 			this.tabPage1.UseVisualStyleBackColor = true;
@@ -311,7 +244,7 @@
 			this.tableLayoutPanel4.RowCount = 2;
 			this.tableLayoutPanel4.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 20F));
 			this.tableLayoutPanel4.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 80F));
-			this.tableLayoutPanel4.Size = new System.Drawing.Size(1037, 412);
+			this.tableLayoutPanel4.Size = new System.Drawing.Size(1037, 426);
 			this.tableLayoutPanel4.TabIndex = 0;
 			// 
 			// panel2
@@ -322,7 +255,7 @@
 			this.panel2.Location = new System.Drawing.Point(0, 0);
 			this.panel2.Margin = new System.Windows.Forms.Padding(0);
 			this.panel2.Name = "panel2";
-			this.panel2.Size = new System.Drawing.Size(1037, 82);
+			this.panel2.Size = new System.Drawing.Size(1037, 85);
 			this.panel2.TabIndex = 5;
 			// 
 			// tableLayoutPanel5
@@ -351,7 +284,7 @@
 			this.tableLayoutPanel5.Name = "tableLayoutPanel5";
 			this.tableLayoutPanel5.RowCount = 1;
 			this.tableLayoutPanel5.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 100F));
-			this.tableLayoutPanel5.Size = new System.Drawing.Size(302, 82);
+			this.tableLayoutPanel5.Size = new System.Drawing.Size(302, 85);
 			this.tableLayoutPanel5.TabIndex = 1;
 			// 
 			// label14
@@ -472,58 +405,37 @@
 			// 
 			// panel3
 			// 
-			this.panel3.Controls.Add(this.label10);
-			this.panel3.Controls.Add(this.label9);
-			this.panel3.Controls.Add(this.label8);
-			this.panel3.Controls.Add(this.label7);
+			this.panel3.Controls.Add(this.labelTien);
+			this.panel3.Controls.Add(this.lbDoanhthu);
 			this.panel3.Dock = System.Windows.Forms.DockStyle.Left;
 			this.panel3.Location = new System.Drawing.Point(0, 0);
 			this.panel3.Margin = new System.Windows.Forms.Padding(0, 0, 501, 0);
 			this.panel3.Name = "panel3";
-			this.panel3.Size = new System.Drawing.Size(200, 82);
+			this.panel3.Size = new System.Drawing.Size(200, 85);
 			this.panel3.TabIndex = 0;
 			// 
-			// label10
+			// labelTien
 			// 
-			this.label10.AutoSize = true;
-			this.label10.Location = new System.Drawing.Point(44, 56);
-			this.label10.Margin = new System.Windows.Forms.Padding(0);
-			this.label10.Name = "label10";
-			this.label10.Size = new System.Drawing.Size(76, 13);
-			this.label10.TabIndex = 3;
-			this.label10.Text = "so với kỳ trước";
+			this.labelTien.Dock = System.Windows.Forms.DockStyle.Top;
+			this.labelTien.Font = new System.Drawing.Font("Segoe UI Semibold", 22F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Pixel, ((byte)(0)));
+			this.labelTien.Location = new System.Drawing.Point(0, 17);
+			this.labelTien.Margin = new System.Windows.Forms.Padding(0);
+			this.labelTien.Name = "labelTien";
+			this.labelTien.Size = new System.Drawing.Size(200, 28);
+			this.labelTien.TabIndex = 1;
+			this.labelTien.Text = "0 VNĐ";
 			// 
-			// label9
+			// lbDoanhthu
 			// 
-			this.label9.Location = new System.Drawing.Point(2, 56);
-			this.label9.Margin = new System.Windows.Forms.Padding(0);
-			this.label9.Name = "label9";
-			this.label9.Size = new System.Drawing.Size(42, 16);
-			this.label9.TabIndex = 2;
-			this.label9.Text = "+3,4%";
-			// 
-			// label8
-			// 
-			this.label8.Dock = System.Windows.Forms.DockStyle.Top;
-			this.label8.Font = new System.Drawing.Font("Segoe UI Semibold", 22F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Pixel, ((byte)(0)));
-			this.label8.Location = new System.Drawing.Point(0, 17);
-			this.label8.Margin = new System.Windows.Forms.Padding(0);
-			this.label8.Name = "label8";
-			this.label8.Size = new System.Drawing.Size(200, 28);
-			this.label8.TabIndex = 1;
-			this.label8.Text = "$11.642";
-			// 
-			// label7
-			// 
-			this.label7.AutoSize = true;
-			this.label7.Dock = System.Windows.Forms.DockStyle.Top;
-			this.label7.Font = new System.Drawing.Font("Segoe UI", 13F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Pixel, ((byte)(0)));
-			this.label7.Location = new System.Drawing.Point(0, 0);
-			this.label7.Margin = new System.Windows.Forms.Padding(0);
-			this.label7.Name = "label7";
-			this.label7.Size = new System.Drawing.Size(68, 17);
-			this.label7.TabIndex = 0;
-			this.label7.Text = "Doanh thu";
+			this.lbDoanhthu.AutoSize = true;
+			this.lbDoanhthu.Dock = System.Windows.Forms.DockStyle.Top;
+			this.lbDoanhthu.Font = new System.Drawing.Font("Segoe UI", 13F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Pixel, ((byte)(0)));
+			this.lbDoanhthu.Location = new System.Drawing.Point(0, 0);
+			this.lbDoanhthu.Margin = new System.Windows.Forms.Padding(0);
+			this.lbDoanhthu.Name = "lbDoanhthu";
+			this.lbDoanhthu.Size = new System.Drawing.Size(68, 17);
+			this.lbDoanhthu.TabIndex = 0;
+			this.lbDoanhthu.Text = "Doanh thu";
 			// 
 			// dtGridviewThongKe
 			// 
@@ -554,7 +466,7 @@
 			this.dtGridviewThongKe.CurrentTheme.AlternatingRowsStyle.SelectionForeColor = System.Drawing.Color.Black;
 			this.dtGridviewThongKe.CurrentTheme.BackColor = System.Drawing.Color.White;
 			this.dtGridviewThongKe.CurrentTheme.GridColor = System.Drawing.Color.FromArgb(((int)(((byte)(221)))), ((int)(((byte)(238)))), ((int)(((byte)(255)))));
-			this.dtGridviewThongKe.CurrentTheme.HeaderStyle.BackColor = System.Drawing.Color.DodgerBlue;
+			this.dtGridviewThongKe.CurrentTheme.HeaderStyle.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(187)))), ((int)(((byte)(187)))));
 			this.dtGridviewThongKe.CurrentTheme.HeaderStyle.Font = new System.Drawing.Font("Segoe UI Semibold", 11.75F, System.Drawing.FontStyle.Bold);
 			this.dtGridviewThongKe.CurrentTheme.HeaderStyle.ForeColor = System.Drawing.Color.White;
 			this.dtGridviewThongKe.CurrentTheme.HeaderStyle.SelectionBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(24)))), ((int)(((byte)(115)))), ((int)(((byte)(204)))));
@@ -576,16 +488,17 @@
 			this.dtGridviewThongKe.Dock = System.Windows.Forms.DockStyle.Fill;
 			this.dtGridviewThongKe.EnableHeadersVisualStyles = false;
 			this.dtGridviewThongKe.GridColor = System.Drawing.Color.FromArgb(((int)(((byte)(221)))), ((int)(((byte)(238)))), ((int)(((byte)(255)))));
-			this.dtGridviewThongKe.HeaderBackColor = System.Drawing.Color.DodgerBlue;
+			this.dtGridviewThongKe.HeaderBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(187)))), ((int)(((byte)(187)))));
 			this.dtGridviewThongKe.HeaderBgColor = System.Drawing.Color.Empty;
 			this.dtGridviewThongKe.HeaderForeColor = System.Drawing.Color.White;
-			this.dtGridviewThongKe.Location = new System.Drawing.Point(3, 85);
+			this.dtGridviewThongKe.Location = new System.Drawing.Point(0, 85);
+			this.dtGridviewThongKe.Margin = new System.Windows.Forms.Padding(0);
 			this.dtGridviewThongKe.Name = "dtGridviewThongKe";
 			this.dtGridviewThongKe.ReadOnly = true;
 			this.dtGridviewThongKe.RowHeadersVisible = false;
 			this.dtGridviewThongKe.RowTemplate.Height = 40;
 			this.dtGridviewThongKe.SelectionMode = System.Windows.Forms.DataGridViewSelectionMode.FullRowSelect;
-			this.dtGridviewThongKe.Size = new System.Drawing.Size(1031, 324);
+			this.dtGridviewThongKe.Size = new System.Drawing.Size(1037, 341);
 			this.dtGridviewThongKe.TabIndex = 6;
 			this.dtGridviewThongKe.Theme = Bunifu.UI.WinForms.BunifuDataGridView.PresetThemes.Light;
 			// 
@@ -595,14 +508,14 @@
 			this.tabPage2.Location = new System.Drawing.Point(4, 22);
 			this.tabPage2.Name = "tabPage2";
 			this.tabPage2.Padding = new System.Windows.Forms.Padding(3);
-			this.tabPage2.Size = new System.Drawing.Size(1043, 418);
+			this.tabPage2.Size = new System.Drawing.Size(1043, 432);
 			this.tabPage2.TabIndex = 1;
 			this.tabPage2.Text = "Doanh thu theo phim";
 			this.tabPage2.UseVisualStyleBackColor = true;
 			// 
 			// dtgvDtTheoPhim
 			// 
-			this.dtgvDtTheoPhim.AllowCustomTheming = false;
+			this.dtgvDtTheoPhim.AllowCustomTheming = true;
 			this.dtgvDtTheoPhim.AllowUserToAddRows = false;
 			this.dtgvDtTheoPhim.AllowUserToDeleteRows = false;
 			dataGridViewCellStyle4.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(248)))), ((int)(((byte)(251)))), ((int)(((byte)(255)))));
@@ -614,10 +527,10 @@
 			this.dtgvDtTheoPhim.CellBorderStyle = System.Windows.Forms.DataGridViewCellBorderStyle.SingleHorizontal;
 			this.dtgvDtTheoPhim.ColumnHeadersBorderStyle = System.Windows.Forms.DataGridViewHeaderBorderStyle.None;
 			dataGridViewCellStyle5.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
-			dataGridViewCellStyle5.BackColor = System.Drawing.Color.DodgerBlue;
+			dataGridViewCellStyle5.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(187)))), ((int)(((byte)(187)))));
 			dataGridViewCellStyle5.Font = new System.Drawing.Font("Segoe UI Semibold", 11.75F, System.Drawing.FontStyle.Bold);
 			dataGridViewCellStyle5.ForeColor = System.Drawing.Color.White;
-			dataGridViewCellStyle5.SelectionBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(24)))), ((int)(((byte)(115)))), ((int)(((byte)(204)))));
+			dataGridViewCellStyle5.SelectionBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(187)))), ((int)(((byte)(187)))));
 			dataGridViewCellStyle5.SelectionForeColor = System.Drawing.Color.White;
 			dataGridViewCellStyle5.WrapMode = System.Windows.Forms.DataGridViewTriState.True;
 			this.dtgvDtTheoPhim.ColumnHeadersDefaultCellStyle = dataGridViewCellStyle5;
@@ -629,10 +542,10 @@
 			this.dtgvDtTheoPhim.CurrentTheme.AlternatingRowsStyle.SelectionForeColor = System.Drawing.Color.Black;
 			this.dtgvDtTheoPhim.CurrentTheme.BackColor = System.Drawing.Color.White;
 			this.dtgvDtTheoPhim.CurrentTheme.GridColor = System.Drawing.Color.FromArgb(((int)(((byte)(221)))), ((int)(((byte)(238)))), ((int)(((byte)(255)))));
-			this.dtgvDtTheoPhim.CurrentTheme.HeaderStyle.BackColor = System.Drawing.Color.DodgerBlue;
+			this.dtgvDtTheoPhim.CurrentTheme.HeaderStyle.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(187)))), ((int)(((byte)(187)))));
 			this.dtgvDtTheoPhim.CurrentTheme.HeaderStyle.Font = new System.Drawing.Font("Segoe UI Semibold", 11.75F, System.Drawing.FontStyle.Bold);
 			this.dtgvDtTheoPhim.CurrentTheme.HeaderStyle.ForeColor = System.Drawing.Color.White;
-			this.dtgvDtTheoPhim.CurrentTheme.HeaderStyle.SelectionBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(24)))), ((int)(((byte)(115)))), ((int)(((byte)(204)))));
+			this.dtgvDtTheoPhim.CurrentTheme.HeaderStyle.SelectionBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(187)))), ((int)(((byte)(187)))));
 			this.dtgvDtTheoPhim.CurrentTheme.HeaderStyle.SelectionForeColor = System.Drawing.Color.White;
 			this.dtgvDtTheoPhim.CurrentTheme.Name = null;
 			this.dtgvDtTheoPhim.CurrentTheme.RowsStyle.BackColor = System.Drawing.Color.White;
@@ -651,16 +564,24 @@
 			this.dtgvDtTheoPhim.Dock = System.Windows.Forms.DockStyle.Fill;
 			this.dtgvDtTheoPhim.EnableHeadersVisualStyles = false;
 			this.dtgvDtTheoPhim.GridColor = System.Drawing.Color.FromArgb(((int)(((byte)(221)))), ((int)(((byte)(238)))), ((int)(((byte)(255)))));
-			this.dtgvDtTheoPhim.HeaderBackColor = System.Drawing.Color.DodgerBlue;
+			this.dtgvDtTheoPhim.HeaderBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(187)))), ((int)(((byte)(187)))));
 			this.dtgvDtTheoPhim.HeaderBgColor = System.Drawing.Color.Empty;
 			this.dtgvDtTheoPhim.HeaderForeColor = System.Drawing.Color.White;
 			this.dtgvDtTheoPhim.Location = new System.Drawing.Point(3, 3);
 			this.dtgvDtTheoPhim.Name = "dtgvDtTheoPhim";
 			this.dtgvDtTheoPhim.ReadOnly = true;
+			dataGridViewCellStyle7.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
+			dataGridViewCellStyle7.BackColor = System.Drawing.SystemColors.Control;
+			dataGridViewCellStyle7.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+			dataGridViewCellStyle7.ForeColor = System.Drawing.SystemColors.WindowText;
+			dataGridViewCellStyle7.SelectionBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(187)))), ((int)(((byte)(187)))));
+			dataGridViewCellStyle7.SelectionForeColor = System.Drawing.SystemColors.HighlightText;
+			dataGridViewCellStyle7.WrapMode = System.Windows.Forms.DataGridViewTriState.True;
+			this.dtgvDtTheoPhim.RowHeadersDefaultCellStyle = dataGridViewCellStyle7;
 			this.dtgvDtTheoPhim.RowHeadersVisible = false;
 			this.dtgvDtTheoPhim.RowTemplate.Height = 40;
 			this.dtgvDtTheoPhim.SelectionMode = System.Windows.Forms.DataGridViewSelectionMode.FullRowSelect;
-			this.dtgvDtTheoPhim.Size = new System.Drawing.Size(1037, 412);
+			this.dtgvDtTheoPhim.Size = new System.Drawing.Size(1037, 426);
 			this.dtgvDtTheoPhim.TabIndex = 7;
 			this.dtgvDtTheoPhim.Theme = Bunifu.UI.WinForms.BunifuDataGridView.PresetThemes.Light;
 			// 
@@ -670,7 +591,7 @@
 			this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
 			this.ClientSize = new System.Drawing.Size(1115, 682);
 			this.Controls.Add(this.panel1);
-			this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.FixedDialog;
+			this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.None;
 			this.Name = "ThongKe";
 			this.Text = "Form1";
 			this.Load += new System.EventHandler(this.ThongKe_Load);
@@ -678,9 +599,7 @@
 			this.tableLayoutPanel1.ResumeLayout(false);
 			this.tableLayoutPanel2.ResumeLayout(false);
 			this.flowLayoutPanel2.ResumeLayout(false);
-			this.bunifuPanel2.ResumeLayout(false);
 			this.flowLayoutPanel1.ResumeLayout(false);
-			this.bunifuPanel1.ResumeLayout(false);
 			this.tableLayoutPanel3.ResumeLayout(false);
 			this.tabControl1.ResumeLayout(false);
 			this.tabPage1.ResumeLayout(false);
@@ -705,13 +624,9 @@
 		private System.Windows.Forms.FlowLayoutPanel flowLayoutPanel2;
 		private System.Windows.Forms.Label label3;
 		private System.Windows.Forms.Label labelDtHomnay;
-		private Bunifu.UI.WinForms.BunifuPanel bunifuPanel2;
-		private System.Windows.Forms.Label label6;
 		private System.Windows.Forms.FlowLayoutPanel flowLayoutPanel1;
 		private System.Windows.Forms.Label label1;
 		private System.Windows.Forms.Label labelTongDoanhthu;
-		private Bunifu.UI.WinForms.BunifuPanel bunifuPanel1;
-		private System.Windows.Forms.Label label5;
 		private System.Windows.Forms.TableLayoutPanel tableLayoutPanel3;
 		private System.Windows.Forms.TabControl tabControl1;
 		private System.Windows.Forms.TabPage tabPage1;
@@ -726,10 +641,8 @@
 		private System.Windows.Forms.Label label11;
 		private System.Windows.Forms.Label label12;
 		private System.Windows.Forms.Panel panel3;
-		private System.Windows.Forms.Label label10;
-		private System.Windows.Forms.Label label9;
-		private System.Windows.Forms.Label label8;
-		private System.Windows.Forms.Label label7;
+		private System.Windows.Forms.Label labelTien;
+		private System.Windows.Forms.Label lbDoanhthu;
 		private Bunifu.UI.WinForms.BunifuDataGridView dtGridviewThongKe;
 		private Bunifu.UI.WinForms.BunifuRadioButton RBNgay;
 		private Bunifu.UI.WinForms.BunifuRadioButton RBThang;
