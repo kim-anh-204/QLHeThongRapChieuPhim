@@ -76,7 +76,7 @@
             this.bunifuLabel3.AutoSize = false;
             this.bunifuLabel3.CursorType = null;
             this.bunifuLabel3.Font = new System.Drawing.Font("Segoe UI", 15F);
-            this.bunifuLabel3.ForeColor = System.Drawing.Color.LightGray;
+            this.bunifuLabel3.ForeColor = System.Drawing.Color.DimGray;
             this.bunifuLabel3.Location = new System.Drawing.Point(547, 316);
             this.bunifuLabel3.Name = "bunifuLabel3";
             this.bunifuLabel3.RightToLeft = System.Windows.Forms.RightToLeft.No;

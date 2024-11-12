@@ -22,36 +22,6 @@ namespace QuanLyRapChieuPhim.RegisterAndLogin
             InitializeComponent();
         }
 
-        private void bunifuTextBox3_TextChanged(object sender, EventArgs e)
-        {
-
-        }
-
-        private void bunifuTextBox4_TextChanged(object sender, EventArgs e)
-        {
-
-        }
-
-        private void RegisterForm_Load(object sender, EventArgs e)
-        {
-
-        }
-
-        private void bunifuTextBox5_TextChanged(object sender, EventArgs e)
-        {
-
-        }
-
-        private void bunifuLabel1_Click(object sender, EventArgs e)
-        {
-
-        }
-
-        private void bunifuThinButton21_Click(object sender, EventArgs e)
-        {
-
-        }
-
         private void lbLogin_Click(object sender, EventArgs e)
         {
             SwapToLoginForm?.Invoke();
@@ -117,12 +87,13 @@ namespace QuanLyRapChieuPhim.RegisterAndLogin
             string userId = (string)Connection.ExecuteScalar(getIdQuery, null);
             userId = Helper.GenerateNextId(userId, "U", 3);
             password = SecurityHelper.HashPassword(password);
-            string insertQuery = "INSERT INTO NGUOIDUNG VALUES (@MaNguoiDung, @TenNguoiDung, @Matkhau)";
+            string insertQuery = "INSERT INTO NGUOIDUNG VALUES (@MaNguoiDung, @TenNguoiDung, @Matkhau, @LoaiNguoiDung)";
             bool is_success = Connection.ExcuteNonQuery(insertQuery,
                                                         new (string, object)[] {
                                                             ("@MaNguoiDung", userId),
                                                             ("@TenNguoiDung", username),
-                                                            ("@Matkhau", password)
+                                                            ("@Matkhau", password),
+                                                            ("@LoaiNguoiDung", "User"),
                                                         });
             if (is_success == false)
                 return;

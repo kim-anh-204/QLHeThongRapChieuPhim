@@ -11,6 +11,7 @@ using System.Threading.Tasks;
 using System.Windows.Forms;
 using QuanLyRapChieuPhim.DashBoard;
 using QuanLyRapChieuPhim.Util;
+using QuanLyRapChieuPhim.HomePage;
 
 namespace QuanLyRapChieuPhim
 {
@@ -38,11 +39,21 @@ namespace QuanLyRapChieuPhim
             Helper.HideUI(_registerForm, this);
             _registerForm.SwapToLoginForm += SwapToLoginform;
         }
-        private void OnLoginSucceeded(string username)
+        private void OnLoginSucceeded(string username, string userType)
         {
-            DashboardForm dashboard = new DashboardForm(username);
-            dashboard.OnCloseClick += OnCloseClick;
-            dashboard.Show();
+            if (userType == "Admin")
+            {
+                DashboardForm dashboard = new DashboardForm(username);
+                dashboard.OnCloseClick += OnCloseClick;
+                dashboard.Show();
+            }
+            else
+            {
+                HomePageForm homePageForm = new HomePageForm(username);
+                homePageForm.OnCloseClick += OnCloseClick;
+                homePageForm.Show();
+            }
+
             this.Hide();
         }
         private void OnCloseClick()

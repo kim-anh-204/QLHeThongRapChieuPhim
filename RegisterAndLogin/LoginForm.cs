@@ -19,7 +19,7 @@ namespace QuanLyRapChieuPhim.RegisterAndLogin
         public delegate void Form_Changed();
         public Form_Changed SwapToRegisterForm;
 
-        public delegate void LoginSucceeded(string username);
+        public delegate void LoginSucceeded(string username, string userType);
         public event LoginSucceeded OnLoginSucceeded;
 
         public LoginForm()
@@ -68,25 +68,23 @@ namespace QuanLyRapChieuPhim.RegisterAndLogin
             }
 
             password = SecurityHelper.HashPassword(password);
-            string loginQuery = "SELECT COUNT(*) FROM NGUOIDUNG WHERE TenDangNhap = @TenDangNhap AND Matkhau = @Matkhau";
-            int log_count = Connection.ExecuteScalarInt32(loginQuery,
-                                                            new (string, object)[] {
-                                                                ("@TenDangNhap", username),
-                                                                ("@Matkhau", password)
-                                                            });
-            if (log_count == 0)
+            string loginQuery = "SELECT * FROM NGUOIDUNG WHERE TenDangNhap = @TenDangNhap AND Matkhau = @Matkhau";
+            DataTable dt = Connection.GetDataTable(loginQuery, new (string, object)[] {
+                ("@TenDangNhap", username),
+                ("@Matkhau", password) 
+            });
+            if (dt.Rows.Count == 0)
             {
                 MessageBox.Show("Tài khoản hoặc mật khẩu sai!", "Thông báo", MessageBoxButtons.OK, MessageBoxIcon.Error);
                 return;
             }
-            string userIdQuery = "SELECT MaNguoiDung FROM NGUOIDUNG WHERE TenDangNhap = @TenDangNhap";
-            string userId = (string)Connection.ExecuteScalar(userIdQuery, new (string, object)[] {
-                ("@TenDangNhap", username)
-            });
-            // Lưu tên đăng nhập vào dữ liệu chia sẻ
+
+            string userId = (string)dt.Rows[0][0];
+            string userType = (string)dt.Rows[0][3];
+            // Lưu mã người dùng vào dữ liệu chia sẻ
             SharedData.SetValue("MaNguoiDung", userId);
             //Tiến hành đăng nhập vào giao diện chính.
-            OnLoginSucceeded?.Invoke(username);
+            OnLoginSucceeded?.Invoke(username, userType);
         }
     }
 }

@@ -8,9 +8,13 @@ namespace QuanLyRapChieuPhim.HomePage
     public partial class HomePageForm : Form
     {
         private DatVeForm _datVeFormManager;
-        public HomePageForm()
+
+        public delegate void CloseEvent();
+        public CloseEvent OnCloseClick;
+        public HomePageForm(string username)
         {
             InitializeComponent();
+            labelTenDangNhap.Text = username;
         }
 
         private void HomePageForm_Load(object sender, EventArgs e)
@@ -23,6 +27,11 @@ namespace QuanLyRapChieuPhim.HomePage
             _datVeFormManager = new DatVeForm();
             Helper.HideUI(_datVeFormManager, this);
             Helper.OpenMdiChildForm(_datVeFormManager);
+        }
+
+        private void HomePageForm_FormClosed(object sender, FormClosedEventArgs e)
+        {
+            OnCloseClick?.Invoke();
         }
     }
 }

@@ -296,7 +296,6 @@
             this.textBoxMatKhau2.TextPlaceholder = "Nhập lại mật khẩu";
             this.textBoxMatKhau2.UseSystemPasswordChar = true;
             this.textBoxMatKhau2.WordWrap = true;
-            this.textBoxMatKhau2.TextChanged += new System.EventHandler(this.bunifuTextBox3_TextChanged);
             // 
             // bunifuLabel1
             // 
@@ -316,7 +315,6 @@
             this.bunifuLabel1.Text = "Đăng ký";
             this.bunifuLabel1.TextAlignment = System.Drawing.ContentAlignment.TopLeft;
             this.bunifuLabel1.TextFormat = Bunifu.UI.WinForms.BunifuLabel.TextFormattingOptions.Default;
-            this.bunifuLabel1.Click += new System.EventHandler(this.bunifuLabel1_Click);
             // 
             // bunifuLabel2
             // 
@@ -467,7 +465,6 @@
             this.Name = "RegisterForm";
             this.Text = "RegisterForm";
             this.Activated += new System.EventHandler(this.RegisterForm_Activated);
-            this.Load += new System.EventHandler(this.RegisterForm_Load);
             ((System.ComponentModel.ISupportInitialize)(this.bunifuPictureBox1)).EndInit();
             this.ResumeLayout(false);
             this.PerformLayout();
