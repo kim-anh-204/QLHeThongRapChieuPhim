@@ -266,28 +266,28 @@
     <Compile Include="Dashboard\DashboardForm.Designer.cs">
       <DependentUpon>DashboardForm.cs</DependentUpon>
     </Compile>
-    <Compile Include="Dashboard\DatVeForms\ChonChoNgoi.cs">
+    <Compile Include="HomePage\DatVeForms\ChonChoNgoi.cs">
       <SubType>Form</SubType>
     </Compile>
-    <Compile Include="Dashboard\DatVeForms\ChonChoNgoi.Designer.cs">
+    <Compile Include="HomePage\DatVeForms\ChonChoNgoi.Designer.cs">
       <DependentUpon>ChonChoNgoi.cs</DependentUpon>
     </Compile>
-    <Compile Include="Dashboard\DatVeForms\ChonGioChieu.cs">
+    <Compile Include="HomePage\DatVeForms\ChonGioChieu.cs">
       <SubType>Form</SubType>
     </Compile>
-    <Compile Include="Dashboard\DatVeForms\ChonGioChieu.Designer.cs">
+    <Compile Include="HomePage\DatVeForms\ChonGioChieu.Designer.cs">
       <DependentUpon>ChonGioChieu.cs</DependentUpon>
     </Compile>
-    <Compile Include="Dashboard\DatVeForms\DatVe.cs">
+    <Compile Include="HomePage\DatVeForms\DatVe.cs">
       <SubType>Form</SubType>
     </Compile>
-    <Compile Include="Dashboard\DatVeForms\DatVe.Designer.cs">
+    <Compile Include="HomePage\DatVeForms\DatVe.Designer.cs">
       <DependentUpon>DatVe.cs</DependentUpon>
     </Compile>
-    <Compile Include="Dashboard\DatVeForms\DatVeForm.cs">
+    <Compile Include="HomePage\DatVeForms\DatVeForm.cs">
       <SubType>Form</SubType>
     </Compile>
-    <Compile Include="Dashboard\DatVeForms\DatVeForm.Designer.cs">
+    <Compile Include="HomePage\DatVeForms\DatVeForm.Designer.cs">
       <DependentUpon>DatVeForm.cs</DependentUpon>
     </Compile>
     <Compile Include="Dashboard\QLPhongChieu\AddScreeningRoom.cs">
@@ -319,6 +319,12 @@
     </Compile>
     <Compile Include="Dashboard\QuanLyPhim\FilmManagementForm.Designer.cs">
       <DependentUpon>FilmManagementForm.cs</DependentUpon>
+    </Compile>
+    <Compile Include="HomePage\HomePageForm.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="HomePage\HomePageForm.Designer.cs">
+      <DependentUpon>HomePageForm.cs</DependentUpon>
     </Compile>
     <Compile Include="RegisterAndLogin\LoginAndRegisterForm.cs">
       <SubType>Form</SubType>
@@ -405,16 +411,16 @@
     <EmbeddedResource Include="Dashboard\DashboardForm.resx">
       <DependentUpon>DashboardForm.cs</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="Dashboard\DatVeForms\ChonChoNgoi.resx">
+    <EmbeddedResource Include="HomePage\DatVeForms\ChonChoNgoi.resx">
       <DependentUpon>ChonChoNgoi.cs</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="Dashboard\DatVeForms\ChonGioChieu.resx">
+    <EmbeddedResource Include="HomePage\DatVeForms\ChonGioChieu.resx">
       <DependentUpon>ChonGioChieu.cs</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="Dashboard\DatVeForms\DatVe.resx">
+    <EmbeddedResource Include="HomePage\DatVeForms\DatVe.resx">
       <DependentUpon>DatVe.cs</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="Dashboard\DatVeForms\DatVeForm.resx">
+    <EmbeddedResource Include="HomePage\DatVeForms\DatVeForm.resx">
       <DependentUpon>DatVeForm.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="Dashboard\QLPhongChieu\AddScreeningRoom.resx">
@@ -431,6 +437,9 @@
     </EmbeddedResource>
     <EmbeddedResource Include="Dashboard\QuanLyPhim\FilmManagementForm.resx">
       <DependentUpon>FilmManagementForm.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="HomePage\HomePageForm.resx">
+      <DependentUpon>HomePageForm.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="RegisterAndLogin\LoginAndRegisterForm.resx">
       <DependentUpon>LoginAndRegisterForm.cs</DependentUpon>

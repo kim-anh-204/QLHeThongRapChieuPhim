@@ -12,7 +12,6 @@ namespace QuanLyRapChieuPhim.DashBoard
 {
     public partial class DashboardForm : Form
     {
-        private DatVeForm _datVeFormManager;
         private ThongKe.ThongKe _thongKe;
         private UserManager _userManager;
         private Screening _screeningManager;
@@ -51,10 +50,6 @@ namespace QuanLyRapChieuPhim.DashBoard
 
             _reportManager = new ReportManagement();
             Helper.HideUI(_reportManager, this);
-
-            _datVeFormManager = new DatVeForm();
-            Helper.HideUI(_datVeFormManager, this);
-
         }
         private void DashboardForm_FormClosed(object sender, FormClosedEventArgs e)
         {
@@ -67,10 +62,6 @@ namespace QuanLyRapChieuPhim.DashBoard
         private void buttonPhim_Click(object sender, EventArgs e)
         {
             Helper.OpenMdiChildForm(_filmManager);
-        }
-        private void buttonDatVe_Click(object sender, EventArgs e)
-        {
-            Helper.OpenMdiChildForm(_datVeFormManager);
         }
 
         private void buttonSuatChieu_Click(object sender, EventArgs e)
