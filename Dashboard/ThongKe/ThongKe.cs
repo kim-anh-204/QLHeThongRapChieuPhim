@@ -46,6 +46,7 @@ namespace QuanLyRapChieuPhim.ThongKe
 
 				// Update the label with the total revenue value
 				labelDtHomnay.Text = $"Doanh thu hôm nay: {totalRevenue:N0} VNĐ";
+				labelTien.Text = $"{totalRevenue:N0} VNĐ";
 			}
 			else
 			{
