@@ -36,6 +36,7 @@
             Bunifu.UI.WinForms.BunifuButton.BunifuButton2.BorderEdges borderEdges5 = new Bunifu.UI.WinForms.BunifuButton.BunifuButton2.BorderEdges();
             Bunifu.UI.WinForms.BunifuButton.BunifuButton2.BorderEdges borderEdges6 = new Bunifu.UI.WinForms.BunifuButton.BunifuButton2.BorderEdges();
             this.bunifuPanel1 = new Bunifu.UI.WinForms.BunifuPanel();
+            this.label1 = new System.Windows.Forms.Label();
             this.tableLayoutPanel1 = new System.Windows.Forms.TableLayoutPanel();
             this.buttonBaoCao = new Bunifu.UI.WinForms.BunifuButton.BunifuButton2();
             this.buttonPhongChieu = new Bunifu.UI.WinForms.BunifuButton.BunifuButton2();
@@ -49,7 +50,6 @@
             this.labelQuyen = new System.Windows.Forms.Label();
             this.labelTenDangNhap = new System.Windows.Forms.Label();
             this.bunifuPictureBox1 = new Bunifu.UI.WinForms.BunifuPictureBox();
-            this.label1 = new System.Windows.Forms.Label();
             this.bunifuPanel1.SuspendLayout();
             this.tableLayoutPanel1.SuspendLayout();
             this.bunifuPanel2.SuspendLayout();
@@ -75,6 +75,17 @@
             this.bunifuPanel1.ShowBorders = false;
             this.bunifuPanel1.Size = new System.Drawing.Size(245, 768);
             this.bunifuPanel1.TabIndex = 0;
+            // 
+            // label1
+            // 
+            this.label1.Font = new System.Drawing.Font("Segoe UI", 42F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label1.ForeColor = System.Drawing.Color.Red;
+            this.label1.Location = new System.Drawing.Point(-1, 0);
+            this.label1.Name = "label1";
+            this.label1.Size = new System.Drawing.Size(246, 135);
+            this.label1.TabIndex = 4;
+            this.label1.Text = "GALA";
+            this.label1.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
             // 
             // tableLayoutPanel1
             // 
@@ -386,7 +397,7 @@
             this.buttonTaiKhoan.BackColor1 = System.Drawing.Color.White;
             this.buttonTaiKhoan.BackgroundImage = ((System.Drawing.Image)(resources.GetObject("buttonTaiKhoan.BackgroundImage")));
             this.buttonTaiKhoan.BorderStyle = Bunifu.UI.WinForms.BunifuButton.BunifuButton2.BorderStyles.Solid;
-            this.buttonTaiKhoan.ButtonText = "Quản lý tài khoản";
+            this.buttonTaiKhoan.ButtonText = "Quản lý nhân viên";
             this.buttonTaiKhoan.ButtonTextMarginLeft = 0;
             this.buttonTaiKhoan.ColorContrastOnClick = 45;
             this.buttonTaiKhoan.ColorContrastOnHover = 45;
@@ -731,17 +742,6 @@
             this.bunifuPictureBox1.TabIndex = 0;
             this.bunifuPictureBox1.TabStop = false;
             this.bunifuPictureBox1.Type = Bunifu.UI.WinForms.BunifuPictureBox.Types.Circle;
-            // 
-            // label1
-            // 
-            this.label1.Font = new System.Drawing.Font("Segoe UI", 42F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label1.ForeColor = System.Drawing.Color.Red;
-            this.label1.Location = new System.Drawing.Point(-1, 0);
-            this.label1.Name = "label1";
-            this.label1.Size = new System.Drawing.Size(246, 135);
-            this.label1.TabIndex = 4;
-            this.label1.Text = "GALA";
-            this.label1.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
             // 
             // DashboardForm
             // 
