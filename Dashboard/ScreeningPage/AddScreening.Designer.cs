@@ -74,11 +74,11 @@ namespace QuanLyRapChieuPhim.ScreeningPage
             this.bunifuDatePicker1.IconColor = System.Drawing.Color.Gray;
             this.bunifuDatePicker1.IconLocation = Bunifu.UI.WinForms.BunifuDatePicker.Indicator.Right;
             this.bunifuDatePicker1.LeftTextMargin = 5;
-            this.bunifuDatePicker1.Location = new System.Drawing.Point(76, 87);
-            this.bunifuDatePicker1.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.bunifuDatePicker1.Location = new System.Drawing.Point(101, 107);
+            this.bunifuDatePicker1.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.bunifuDatePicker1.MinimumSize = new System.Drawing.Size(4, 32);
             this.bunifuDatePicker1.Name = "bunifuDatePicker1";
-            this.bunifuDatePicker1.Size = new System.Drawing.Size(232, 32);
+            this.bunifuDatePicker1.Size = new System.Drawing.Size(308, 32);
             this.bunifuDatePicker1.TabIndex = 15;
             this.bunifuDatePicker1.Value = new System.DateTime(2024, 10, 15, 8, 41, 14, 253);
             // 
@@ -130,7 +130,8 @@ namespace QuanLyRapChieuPhim.ScreeningPage
             this.bunifuButton1.IdleIconLeftImage = null;
             this.bunifuButton1.IdleIconRightImage = null;
             this.bunifuButton1.IndicateFocus = false;
-            this.bunifuButton1.Location = new System.Drawing.Point(78, 313);
+            this.bunifuButton1.Location = new System.Drawing.Point(104, 385);
+            this.bunifuButton1.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
             this.bunifuButton1.Name = "bunifuButton1";
             this.bunifuButton1.OnDisabledState.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(191)))), ((int)(((byte)(191)))), ((int)(((byte)(191)))));
             this.bunifuButton1.OnDisabledState.BorderRadius = 20;
@@ -164,7 +165,7 @@ namespace QuanLyRapChieuPhim.ScreeningPage
             this.bunifuButton1.OnPressedState.ForeColor = System.Drawing.Color.White;
             this.bunifuButton1.OnPressedState.IconLeftImage = null;
             this.bunifuButton1.OnPressedState.IconRightImage = null;
-            this.bunifuButton1.Size = new System.Drawing.Size(229, 37);
+            this.bunifuButton1.Size = new System.Drawing.Size(305, 46);
             this.bunifuButton1.TabIndex = 10;
             this.bunifuButton1.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
             this.bunifuButton1.TextAlignment = System.Windows.Forms.HorizontalAlignment.Center;
@@ -182,10 +183,10 @@ namespace QuanLyRapChieuPhim.ScreeningPage
             "PC-02",
             "PC-03",
             "PC-04"});
-            this.comboBoxRoom.Location = new System.Drawing.Point(213, 141);
-            this.comboBoxRoom.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.comboBoxRoom.Location = new System.Drawing.Point(284, 174);
+            this.comboBoxRoom.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.comboBoxRoom.Name = "comboBoxRoom";
-            this.comboBoxRoom.Size = new System.Drawing.Size(95, 24);
+            this.comboBoxRoom.Size = new System.Drawing.Size(125, 28);
             this.comboBoxRoom.TabIndex = 16;
             this.comboBoxRoom.Text = "Chọn phòng ";
             // 
@@ -218,7 +219,8 @@ namespace QuanLyRapChieuPhim.ScreeningPage
             this.priceTextBox.IconRight = null;
             this.priceTextBox.IconRightCursor = System.Windows.Forms.Cursors.IBeam;
             this.priceTextBox.Lines = new string[0];
-            this.priceTextBox.Location = new System.Drawing.Point(76, 242);
+            this.priceTextBox.Location = new System.Drawing.Point(101, 298);
+            this.priceTextBox.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
             this.priceTextBox.MaxLength = 32767;
             this.priceTextBox.MinimumSize = new System.Drawing.Size(1, 1);
             this.priceTextBox.Modified = false;
@@ -244,7 +246,7 @@ namespace QuanLyRapChieuPhim.ScreeningPage
             stateProperties4.ForeColor = System.Drawing.Color.Empty;
             stateProperties4.PlaceholderForeColor = System.Drawing.Color.Empty;
             this.priceTextBox.OnIdleState = stateProperties4;
-            this.priceTextBox.Padding = new System.Windows.Forms.Padding(3, 3, 3, 3);
+            this.priceTextBox.Padding = new System.Windows.Forms.Padding(4, 4, 4, 4);
             this.priceTextBox.PasswordChar = '\0';
             this.priceTextBox.PlaceholderForeColor = System.Drawing.Color.Silver;
             this.priceTextBox.PlaceholderText = "Nhập giá vé";
@@ -254,7 +256,7 @@ namespace QuanLyRapChieuPhim.ScreeningPage
             this.priceTextBox.SelectionLength = 0;
             this.priceTextBox.SelectionStart = 0;
             this.priceTextBox.ShortcutsEnabled = true;
-            this.priceTextBox.Size = new System.Drawing.Size(231, 37);
+            this.priceTextBox.Size = new System.Drawing.Size(308, 46);
             this.priceTextBox.Style = Bunifu.UI.WinForms.BunifuTextBox._Style.Bunifu;
             this.priceTextBox.TabIndex = 17;
             this.priceTextBox.TextAlign = System.Windows.Forms.HorizontalAlignment.Left;
@@ -272,11 +274,11 @@ namespace QuanLyRapChieuPhim.ScreeningPage
             this.dateTimePicker1.CustomFormat = "HH:mm";
             this.dateTimePicker1.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F);
             this.dateTimePicker1.Format = System.Windows.Forms.DateTimePickerFormat.Custom;
-            this.dateTimePicker1.Location = new System.Drawing.Point(78, 141);
-            this.dateTimePicker1.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.dateTimePicker1.Location = new System.Drawing.Point(104, 174);
+            this.dateTimePicker1.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.dateTimePicker1.Name = "dateTimePicker1";
             this.dateTimePicker1.ShowUpDown = true;
-            this.dateTimePicker1.Size = new System.Drawing.Size(114, 26);
+            this.dateTimePicker1.Size = new System.Drawing.Size(151, 30);
             this.dateTimePicker1.TabIndex = 0;
             this.dateTimePicker1.Value = new System.DateTime(2024, 10, 14, 16, 6, 37, 527);
             // 
@@ -289,10 +291,10 @@ namespace QuanLyRapChieuPhim.ScreeningPage
             "PC-02",
             "PC-03",
             "PC-04"});
-            this.comboBoxMovies.Location = new System.Drawing.Point(76, 40);
-            this.comboBoxMovies.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.comboBoxMovies.Location = new System.Drawing.Point(101, 49);
+            this.comboBoxMovies.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.comboBoxMovies.Name = "comboBoxMovies";
-            this.comboBoxMovies.Size = new System.Drawing.Size(232, 24);
+            this.comboBoxMovies.Size = new System.Drawing.Size(308, 28);
             this.comboBoxMovies.TabIndex = 18;
             this.comboBoxMovies.Text = "Chọn tên phim";
             // 
@@ -304,19 +306,19 @@ namespace QuanLyRapChieuPhim.ScreeningPage
             this.movieType.Items.AddRange(new object[] {
             "2D",
             "3D"});
-            this.movieType.Location = new System.Drawing.Point(78, 191);
-            this.movieType.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.movieType.Location = new System.Drawing.Point(104, 235);
+            this.movieType.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.movieType.Name = "movieType";
-            this.movieType.Size = new System.Drawing.Size(114, 24);
+            this.movieType.Size = new System.Drawing.Size(151, 28);
             this.movieType.TabIndex = 20;
             this.movieType.Text = "Chọn loại chiếu";
             // 
             // AddScreening
             // 
-            this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
+            this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackColor = System.Drawing.Color.White;
-            this.ClientSize = new System.Drawing.Size(370, 393);
+            this.ClientSize = new System.Drawing.Size(493, 484);
             this.Controls.Add(this.movieType);
             this.Controls.Add(this.comboBoxMovies);
             this.Controls.Add(this.dateTimePicker1);
@@ -325,10 +327,10 @@ namespace QuanLyRapChieuPhim.ScreeningPage
             this.Controls.Add(this.bunifuDatePicker1);
             this.Controls.Add(this.bunifuButton1);
             this.ForeColor = System.Drawing.Color.Black;
-            this.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.Name = "AddScreening";
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
-            this.Text = "Form1";
+            this.Text = "Thêm suất chiếu";
             this.Load += new System.EventHandler(this.Add_Load);
             this.ResumeLayout(false);
 

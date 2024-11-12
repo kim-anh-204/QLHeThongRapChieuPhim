@@ -302,7 +302,7 @@
             this.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.Name = "Add";
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
-            this.Text = "Them nhan vien";
+            this.Text = "Thêm nhân viên";
             this.Load += new System.EventHandler(this.Add_Load);
             this.ResumeLayout(false);
 
