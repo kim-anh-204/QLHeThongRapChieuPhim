@@ -29,7 +29,7 @@ namespace QuanLyRapChieuPhim.DashBoard
         private void DashboardForm_Load(object sender, EventArgs e)
         {
             LoadForm();
-            buttonTrangChu.PerformClick();
+            buttonDoanhThu.PerformClick();
         }
 
         private void LoadForm()
@@ -57,7 +57,7 @@ namespace QuanLyRapChieuPhim.DashBoard
         {
             OnCloseClick?.Invoke();
         }
-        private void buttonTrangChu_Click(object sender, EventArgs e)
+        private void buttonDoanhThu_Click(object sender, EventArgs e)
         {
             Helper.OpenMdiChildForm(_thongKe);
         }
