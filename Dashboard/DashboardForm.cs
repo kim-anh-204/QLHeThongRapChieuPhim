@@ -57,10 +57,7 @@ namespace QuanLyRapChieuPhim.DashBoard
         }
         private void DashboardForm_FormClosed(object sender, FormClosedEventArgs e)
         {
-            DialogResult result = MessageBox.Show("Bạn có muốn đăng xuất không?", "Thông báo", MessageBoxButtons.OKCancel, MessageBoxIcon.Question);
-            if (result == DialogResult.Cancel)
-                return;
-            OnCloseClick?.Invoke();
+
         }
         private void buttonDoanhThu_Click(object sender, EventArgs e)
         {
@@ -88,6 +85,15 @@ namespace QuanLyRapChieuPhim.DashBoard
         private void buttonBaoCao_Click(object sender, EventArgs e)
         {
             Helper.OpenMdiChildForm(_reportManager);
+        }
+
+        private void DashboardForm_FormClosing(object sender, FormClosingEventArgs e)
+        {
+            DialogResult result = MessageBox.Show("Bạn có muốn đăng xuất không?", "Thông báo", MessageBoxButtons.OKCancel, MessageBoxIcon.Question);
+            if (result == DialogResult.OK)
+                OnCloseClick?.Invoke();
+            else
+                e.Cancel = true;
         }
     }
 }

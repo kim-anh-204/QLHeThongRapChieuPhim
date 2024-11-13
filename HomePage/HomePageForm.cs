@@ -29,12 +29,13 @@ namespace QuanLyRapChieuPhim.HomePage
             Helper.OpenMdiChildForm(_datVeFormManager);
         }
 
-        private void HomePageForm_FormClosed(object sender, FormClosedEventArgs e)
+        private void HomePageForm_FormClosing(object sender, FormClosingEventArgs e)
         {
             DialogResult result = MessageBox.Show("Bạn có muốn đăng xuất không?", "Thông báo", MessageBoxButtons.OKCancel, MessageBoxIcon.Question);
-            if (result == DialogResult.Cancel)
-                return;
-            OnCloseClick?.Invoke();
+            if (result == DialogResult.OK)
+                OnCloseClick?.Invoke();
+            else
+                e.Cancel = true;
         }
     }
 }

@@ -139,7 +139,7 @@
             this.Name = "HomePageForm";
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "HomePageForm";
-            this.FormClosed += new System.Windows.Forms.FormClosedEventHandler(this.HomePageForm_FormClosed);
+            this.FormClosing += new System.Windows.Forms.FormClosingEventHandler(this.HomePageForm_FormClosing);
             this.Load += new System.EventHandler(this.HomePageForm_Load);
             this.bunifuPanel2.ResumeLayout(false);
             this.tableLayoutPanel2.ResumeLayout(false);
