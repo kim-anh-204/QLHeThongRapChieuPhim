@@ -74,6 +74,7 @@ namespace QuanLyRapChieuPhim.QuanLyPhim
 				MessageBox.Show("Không tìm thấy phim.", "Thông báo", MessageBoxButtons.OK, MessageBoxIcon.Information);
 			}
 			DtGridViewQLP.DataSource = filteredTable;
+			TextBoxTimKiem.Clear();
 		}
 
 		private void ButtonDsPhim_Click(object sender, EventArgs e)

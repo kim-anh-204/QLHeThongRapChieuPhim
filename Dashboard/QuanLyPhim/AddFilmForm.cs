@@ -81,7 +81,7 @@ namespace QuanLyRapChieuPhim.QuanLyPhim
 
 			if (DatePickerNgaykc.Value < DateTime.Today.Date)
 			{
-				MessageBox.Show($"Ngày khởi chiếu bắt đầu phải sau ngày {DateTime.Today.Date}", "Thông báo");
+				MessageBox.Show($"Ngày khởi chiếu bắt đầu phải từ ngày {DateTime.Today.Date}", "Thông báo");
 				return false;
 			}
 

@@ -38,12 +38,10 @@ namespace QuanLyRapChieuPhim.ThongKe
 
 			DataTable temp = new DataTable();
 			temp = thongKeDoanhThu.GetDoanhThuHomNay();
-
+			BindDataToGrid(temp);
 			if (temp != null && temp.Rows.Count > 0)
 			{
-				BindDataToGrid(temp);
 				var totalRevenue = temp.Compute("SUM([Doanh Thu])", string.Empty);
-
 				// Update the label with the total revenue value
 				labelDtHomnay.Text = $"Doanh thu hôm nay: {totalRevenue:N0} VNĐ";
 				labelTien.Text = $"{totalRevenue:N0} VNĐ";
@@ -51,7 +49,6 @@ namespace QuanLyRapChieuPhim.ThongKe
 			else
 			{
 				labelDtHomnay.Text = "Doanh thu hôm nay: 0 VNĐ";
-				MessageBox.Show("Không có doanh thu cho ngày hôm nay", "Thông báo", MessageBoxButtons.OK, MessageBoxIcon.Information);
 			}
 		}
 
@@ -80,10 +77,9 @@ namespace QuanLyRapChieuPhim.ThongKe
 			{
 				dtGridviewThongKe.DataSource = null;  // Xóa dữ liệu cũ
 				dtTable = thongKeDoanhThu.GetDoanhThuHomNay();
-
+				BindDataToGrid(dtTable);
 				if (dtTable != null && dtTable.Rows.Count > 0)
 				{
-					BindDataToGrid(dtTable);
 					var totalRevenue = dtTable.Compute("SUM([Doanh Thu])", string.Empty);
 
 					// Update the label with the total revenue value
@@ -92,8 +88,8 @@ namespace QuanLyRapChieuPhim.ThongKe
 				}
 				else
 				{
-					labelDtHomnay.Text = "Doanh thu hôm nay: 0";
-					MessageBox.Show("Không có doanh thu cho ngày hôm nay", "Thông báo", MessageBoxButtons.OK, MessageBoxIcon.Information);
+					labelDtHomnay.Text = "Doanh thu hôm nay: 0 VNĐ";
+					MessageBox.Show("Chưa có doanh thu cho ngày hôm nay", "Thông báo", MessageBoxButtons.OK, MessageBoxIcon.Information);
 				}
 			}
 		}
@@ -105,10 +101,9 @@ namespace QuanLyRapChieuPhim.ThongKe
 			{
 				dtGridviewThongKe.DataSource = null;  // Xóa dữ liệu cũ
 				dtTable = thongKeDoanhThu.GetDoanhThuTheoTuan();
-
+				BindDataToGrid(dtTable);
 				if (dtTable != null && dtTable.Rows.Count > 0)
 				{
-					BindDataToGrid(dtTable);
 					UpdateLabel("tuần");
 				}
 				else
@@ -124,10 +119,9 @@ namespace QuanLyRapChieuPhim.ThongKe
 			{
 				dtGridviewThongKe.DataSource = null;  // Xóa dữ liệu cũ
 				dtTable = thongKeDoanhThu.GetDoanhThuTheoThang();
-
+				BindDataToGrid(dtTable);
 				if (dtTable != null && dtTable.Rows.Count > 0)
 				{
-					BindDataToGrid(dtTable);
 					UpdateLabel("tháng");
 				}
 				else
@@ -143,10 +137,9 @@ namespace QuanLyRapChieuPhim.ThongKe
 			{
 				dtGridviewThongKe.DataSource = null;  // Xóa dữ liệu cũ
 				dtTable = thongKeDoanhThu.GetDoanhThuTheoNam();
-
+				BindDataToGrid(dtTable);
 				if (dtTable != null && dtTable.Rows.Count > 0)
 				{
-					BindDataToGrid(dtTable);
 					UpdateLabel("năm");
 				}
 				else
