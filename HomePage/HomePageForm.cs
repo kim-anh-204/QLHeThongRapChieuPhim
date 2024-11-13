@@ -31,6 +31,9 @@ namespace QuanLyRapChieuPhim.HomePage
 
         private void HomePageForm_FormClosed(object sender, FormClosedEventArgs e)
         {
+            DialogResult result = MessageBox.Show("Bạn có muốn đăng xuất không?", "Thông báo", MessageBoxButtons.OKCancel, MessageBoxIcon.Question);
+            if (result == DialogResult.Cancel)
+                return;
             OnCloseClick?.Invoke();
         }
     }

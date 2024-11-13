@@ -21,6 +21,8 @@ namespace QuanLyRapChieuPhim.DashBoard
 
         public delegate void CloseEvent();
         public CloseEvent OnCloseClick;
+
+
         public DashboardForm(string username)
         {
             InitializeComponent();
@@ -55,6 +57,9 @@ namespace QuanLyRapChieuPhim.DashBoard
         }
         private void DashboardForm_FormClosed(object sender, FormClosedEventArgs e)
         {
+            DialogResult result = MessageBox.Show("Bạn có muốn đăng xuất không?", "Thông báo", MessageBoxButtons.OKCancel, MessageBoxIcon.Question);
+            if (result == DialogResult.Cancel)
+                return;
             OnCloseClick?.Invoke();
         }
         private void buttonDoanhThu_Click(object sender, EventArgs e)

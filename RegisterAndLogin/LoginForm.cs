@@ -86,5 +86,11 @@ namespace QuanLyRapChieuPhim.RegisterAndLogin
             //Tiến hành đăng nhập vào giao diện chính.
             OnLoginSucceeded?.Invoke(username, userType);
         }
+
+        public void ResetTextBox()
+        {
+            textBoxTenDangNhap.Clear();
+            textBoxMatKhau.Clear();
+        }
     }
 }

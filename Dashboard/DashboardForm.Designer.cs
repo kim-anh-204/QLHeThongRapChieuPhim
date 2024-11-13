@@ -155,7 +155,7 @@
             this.buttonBaoCao.IdleBorderRadius = 1;
             this.buttonBaoCao.IdleBorderThickness = 1;
             this.buttonBaoCao.IdleFillColor = System.Drawing.Color.White;
-            this.buttonBaoCao.IdleIconLeftImage = global::QuanLyRapChieuPhim.Properties.Resources.BaoCao_OFF;
+            this.buttonBaoCao.IdleIconLeftImage = null;
             this.buttonBaoCao.IdleIconRightImage = null;
             this.buttonBaoCao.IndicateFocus = true;
             this.buttonBaoCao.Location = new System.Drawing.Point(19, 223);
@@ -182,7 +182,7 @@
             this.buttonBaoCao.OnIdleState.BorderThickness = 1;
             this.buttonBaoCao.OnIdleState.FillColor = System.Drawing.Color.White;
             this.buttonBaoCao.OnIdleState.ForeColor = System.Drawing.Color.DimGray;
-            this.buttonBaoCao.OnIdleState.IconLeftImage = global::QuanLyRapChieuPhim.Properties.Resources.BaoCao_OFF;
+            this.buttonBaoCao.OnIdleState.IconLeftImage = null;
             this.buttonBaoCao.OnIdleState.IconRightImage = null;
             this.buttonBaoCao.OnPressedState.BorderColor = System.Drawing.Color.White;
             this.buttonBaoCao.OnPressedState.BorderRadius = 1;
@@ -190,7 +190,7 @@
             this.buttonBaoCao.OnPressedState.BorderThickness = 1;
             this.buttonBaoCao.OnPressedState.FillColor = System.Drawing.Color.White;
             this.buttonBaoCao.OnPressedState.ForeColor = System.Drawing.Color.Red;
-            this.buttonBaoCao.OnPressedState.IconLeftImage = global::QuanLyRapChieuPhim.Properties.Resources.BaoCao_ON;
+            this.buttonBaoCao.OnPressedState.IconLeftImage = null;
             this.buttonBaoCao.OnPressedState.IconRightImage = null;
             this.buttonBaoCao.Size = new System.Drawing.Size(223, 38);
             this.buttonBaoCao.TabIndex = 15;
@@ -246,7 +246,7 @@
             this.buttonPhongChieu.IdleBorderRadius = 1;
             this.buttonPhongChieu.IdleBorderThickness = 1;
             this.buttonPhongChieu.IdleFillColor = System.Drawing.Color.White;
-            this.buttonPhongChieu.IdleIconLeftImage = global::QuanLyRapChieuPhim.Properties.Resources.QuanLyPhongChieu_OFF;
+            this.buttonPhongChieu.IdleIconLeftImage = null;
             this.buttonPhongChieu.IdleIconRightImage = null;
             this.buttonPhongChieu.IndicateFocus = true;
             this.buttonPhongChieu.Location = new System.Drawing.Point(19, 179);
@@ -273,7 +273,7 @@
             this.buttonPhongChieu.OnIdleState.BorderThickness = 1;
             this.buttonPhongChieu.OnIdleState.FillColor = System.Drawing.Color.White;
             this.buttonPhongChieu.OnIdleState.ForeColor = System.Drawing.Color.DimGray;
-            this.buttonPhongChieu.OnIdleState.IconLeftImage = global::QuanLyRapChieuPhim.Properties.Resources.QuanLyPhongChieu_OFF;
+            this.buttonPhongChieu.OnIdleState.IconLeftImage = null;
             this.buttonPhongChieu.OnIdleState.IconRightImage = null;
             this.buttonPhongChieu.OnPressedState.BorderColor = System.Drawing.Color.White;
             this.buttonPhongChieu.OnPressedState.BorderRadius = 1;
@@ -281,7 +281,7 @@
             this.buttonPhongChieu.OnPressedState.BorderThickness = 1;
             this.buttonPhongChieu.OnPressedState.FillColor = System.Drawing.Color.White;
             this.buttonPhongChieu.OnPressedState.ForeColor = System.Drawing.Color.Red;
-            this.buttonPhongChieu.OnPressedState.IconLeftImage = global::QuanLyRapChieuPhim.Properties.Resources.QuanLyPhongChieu_ON;
+            this.buttonPhongChieu.OnPressedState.IconLeftImage = null;
             this.buttonPhongChieu.OnPressedState.IconRightImage = null;
             this.buttonPhongChieu.Size = new System.Drawing.Size(223, 38);
             this.buttonPhongChieu.TabIndex = 14;
@@ -337,7 +337,7 @@
             this.buttonPhim.IdleBorderRadius = 1;
             this.buttonPhim.IdleBorderThickness = 1;
             this.buttonPhim.IdleFillColor = System.Drawing.Color.White;
-            this.buttonPhim.IdleIconLeftImage = global::QuanLyRapChieuPhim.Properties.Resources.QuanLyPhim_OFF;
+            this.buttonPhim.IdleIconLeftImage = null;
             this.buttonPhim.IdleIconRightImage = null;
             this.buttonPhim.IndicateFocus = true;
             this.buttonPhim.Location = new System.Drawing.Point(19, 47);
@@ -364,7 +364,7 @@
             this.buttonPhim.OnIdleState.BorderThickness = 1;
             this.buttonPhim.OnIdleState.FillColor = System.Drawing.Color.White;
             this.buttonPhim.OnIdleState.ForeColor = System.Drawing.Color.DimGray;
-            this.buttonPhim.OnIdleState.IconLeftImage = global::QuanLyRapChieuPhim.Properties.Resources.QuanLyPhim_OFF;
+            this.buttonPhim.OnIdleState.IconLeftImage = null;
             this.buttonPhim.OnIdleState.IconRightImage = null;
             this.buttonPhim.OnPressedState.BorderColor = System.Drawing.Color.White;
             this.buttonPhim.OnPressedState.BorderRadius = 1;
@@ -372,7 +372,7 @@
             this.buttonPhim.OnPressedState.BorderThickness = 1;
             this.buttonPhim.OnPressedState.FillColor = System.Drawing.Color.White;
             this.buttonPhim.OnPressedState.ForeColor = System.Drawing.Color.Red;
-            this.buttonPhim.OnPressedState.IconLeftImage = global::QuanLyRapChieuPhim.Properties.Resources.QuanLyPhim_ON;
+            this.buttonPhim.OnPressedState.IconLeftImage = null;
             this.buttonPhim.OnPressedState.IconRightImage = null;
             this.buttonPhim.Size = new System.Drawing.Size(223, 38);
             this.buttonPhim.TabIndex = 11;
@@ -428,7 +428,7 @@
             this.buttonNhanVien.IdleBorderRadius = 1;
             this.buttonNhanVien.IdleBorderThickness = 1;
             this.buttonNhanVien.IdleFillColor = System.Drawing.Color.White;
-            this.buttonNhanVien.IdleIconLeftImage = global::QuanLyRapChieuPhim.Properties.Resources.QuanLyTaiKhoan_OFF;
+            this.buttonNhanVien.IdleIconLeftImage = null;
             this.buttonNhanVien.IdleIconRightImage = null;
             this.buttonNhanVien.IndicateFocus = true;
             this.buttonNhanVien.Location = new System.Drawing.Point(19, 135);
@@ -455,7 +455,7 @@
             this.buttonNhanVien.OnIdleState.BorderThickness = 1;
             this.buttonNhanVien.OnIdleState.FillColor = System.Drawing.Color.White;
             this.buttonNhanVien.OnIdleState.ForeColor = System.Drawing.Color.DimGray;
-            this.buttonNhanVien.OnIdleState.IconLeftImage = global::QuanLyRapChieuPhim.Properties.Resources.QuanLyTaiKhoan_OFF;
+            this.buttonNhanVien.OnIdleState.IconLeftImage = null;
             this.buttonNhanVien.OnIdleState.IconRightImage = null;
             this.buttonNhanVien.OnPressedState.BorderColor = System.Drawing.Color.White;
             this.buttonNhanVien.OnPressedState.BorderRadius = 1;
@@ -463,7 +463,7 @@
             this.buttonNhanVien.OnPressedState.BorderThickness = 1;
             this.buttonNhanVien.OnPressedState.FillColor = System.Drawing.Color.White;
             this.buttonNhanVien.OnPressedState.ForeColor = System.Drawing.Color.Red;
-            this.buttonNhanVien.OnPressedState.IconLeftImage = global::QuanLyRapChieuPhim.Properties.Resources.QuanLyTaiKhoan_ON;
+            this.buttonNhanVien.OnPressedState.IconLeftImage = null;
             this.buttonNhanVien.OnPressedState.IconRightImage = null;
             this.buttonNhanVien.Size = new System.Drawing.Size(223, 38);
             this.buttonNhanVien.TabIndex = 13;
@@ -519,7 +519,7 @@
             this.buttonSuatChieu.IdleBorderRadius = 1;
             this.buttonSuatChieu.IdleBorderThickness = 1;
             this.buttonSuatChieu.IdleFillColor = System.Drawing.Color.White;
-            this.buttonSuatChieu.IdleIconLeftImage = global::QuanLyRapChieuPhim.Properties.Resources.QuanLySuatChieu_OFF;
+            this.buttonSuatChieu.IdleIconLeftImage = null;
             this.buttonSuatChieu.IdleIconRightImage = null;
             this.buttonSuatChieu.IndicateFocus = true;
             this.buttonSuatChieu.Location = new System.Drawing.Point(19, 91);
@@ -546,7 +546,7 @@
             this.buttonSuatChieu.OnIdleState.BorderThickness = 1;
             this.buttonSuatChieu.OnIdleState.FillColor = System.Drawing.Color.White;
             this.buttonSuatChieu.OnIdleState.ForeColor = System.Drawing.Color.DimGray;
-            this.buttonSuatChieu.OnIdleState.IconLeftImage = global::QuanLyRapChieuPhim.Properties.Resources.QuanLySuatChieu_OFF;
+            this.buttonSuatChieu.OnIdleState.IconLeftImage = null;
             this.buttonSuatChieu.OnIdleState.IconRightImage = null;
             this.buttonSuatChieu.OnPressedState.BorderColor = System.Drawing.Color.White;
             this.buttonSuatChieu.OnPressedState.BorderRadius = 1;
@@ -554,7 +554,7 @@
             this.buttonSuatChieu.OnPressedState.BorderThickness = 1;
             this.buttonSuatChieu.OnPressedState.FillColor = System.Drawing.Color.White;
             this.buttonSuatChieu.OnPressedState.ForeColor = System.Drawing.Color.Red;
-            this.buttonSuatChieu.OnPressedState.IconLeftImage = global::QuanLyRapChieuPhim.Properties.Resources.QuanLySuatChieu_ON;
+            this.buttonSuatChieu.OnPressedState.IconLeftImage = null;
             this.buttonSuatChieu.OnPressedState.IconRightImage = null;
             this.buttonSuatChieu.Size = new System.Drawing.Size(223, 38);
             this.buttonSuatChieu.TabIndex = 12;
@@ -610,7 +610,7 @@
             this.buttonDoanhThu.IdleBorderRadius = 1;
             this.buttonDoanhThu.IdleBorderThickness = 1;
             this.buttonDoanhThu.IdleFillColor = System.Drawing.Color.White;
-            this.buttonDoanhThu.IdleIconLeftImage = global::QuanLyRapChieuPhim.Properties.Resources.DoanhThu_OFF;
+            this.buttonDoanhThu.IdleIconLeftImage = null;
             this.buttonDoanhThu.IdleIconRightImage = null;
             this.buttonDoanhThu.IndicateFocus = true;
             this.buttonDoanhThu.Location = new System.Drawing.Point(19, 3);
@@ -637,7 +637,7 @@
             this.buttonDoanhThu.OnIdleState.BorderThickness = 1;
             this.buttonDoanhThu.OnIdleState.FillColor = System.Drawing.Color.White;
             this.buttonDoanhThu.OnIdleState.ForeColor = System.Drawing.Color.DimGray;
-            this.buttonDoanhThu.OnIdleState.IconLeftImage = global::QuanLyRapChieuPhim.Properties.Resources.DoanhThu_OFF;
+            this.buttonDoanhThu.OnIdleState.IconLeftImage = null;
             this.buttonDoanhThu.OnIdleState.IconRightImage = null;
             this.buttonDoanhThu.OnPressedState.BorderColor = System.Drawing.Color.White;
             this.buttonDoanhThu.OnPressedState.BorderRadius = 1;
@@ -645,7 +645,7 @@
             this.buttonDoanhThu.OnPressedState.BorderThickness = 1;
             this.buttonDoanhThu.OnPressedState.FillColor = System.Drawing.Color.White;
             this.buttonDoanhThu.OnPressedState.ForeColor = System.Drawing.Color.Red;
-            this.buttonDoanhThu.OnPressedState.IconLeftImage = global::QuanLyRapChieuPhim.Properties.Resources.DoanhThu_ON;
+            this.buttonDoanhThu.OnPressedState.IconLeftImage = null;
             this.buttonDoanhThu.OnPressedState.IconRightImage = null;
             this.buttonDoanhThu.Size = new System.Drawing.Size(223, 38);
             this.buttonDoanhThu.TabIndex = 10;
@@ -685,6 +685,7 @@
             this.tableLayoutPanel2.Name = "tableLayoutPanel2";
             this.tableLayoutPanel2.RowCount = 1;
             this.tableLayoutPanel2.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 100F));
+            this.tableLayoutPanel2.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Absolute, 54F));
             this.tableLayoutPanel2.Size = new System.Drawing.Size(250, 54);
             this.tableLayoutPanel2.TabIndex = 3;
             // 

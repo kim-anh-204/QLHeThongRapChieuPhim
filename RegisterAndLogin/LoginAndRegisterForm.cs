@@ -44,21 +44,23 @@ namespace QuanLyRapChieuPhim
             if (userType == "Admin")
             {
                 DashboardForm dashboard = new DashboardForm(username);
-                dashboard.OnCloseClick += OnCloseClick;
+                dashboard.OnCloseClick += OnChildFormCloseClick;
                 dashboard.Show();
             }
             else
             {
                 HomePageForm homePageForm = new HomePageForm(username);
-                homePageForm.OnCloseClick += OnCloseClick;
+                homePageForm.OnCloseClick += OnChildFormCloseClick;
                 homePageForm.Show();
             }
 
             this.Hide();
         }
-        private void OnCloseClick()
+
+        private void OnChildFormCloseClick()
         {
-            this.Close();
+            _loginForm.ResetTextBox();
+            this.Show();
         }
         private void OpenLoginForm() { Helper.OpenMdiChildForm(_loginForm); }
         private void OpenRegisterForm() { Helper.OpenMdiChildForm(_registerForm); }
