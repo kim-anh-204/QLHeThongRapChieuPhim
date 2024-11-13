@@ -97,7 +97,14 @@ namespace QuanLyRapChieuPhim.ScreeningPage
                     var confirmResult = MessageBox.Show($"Bạn có chắc muốn xóa suất chiếu phim?", "Xác nhận xóa", MessageBoxButtons.YesNo, MessageBoxIcon.Warning);
                     if (confirmResult == DialogResult.Yes)
                     {
-                        string deleteGHEQuery = "DELETE FROM GHE WHERE MaSuatChieu = @MaSuatChieu";
+						string checkGHEQuery = "SELECT COUNT(*) FROM GHE WHERE MaSuatChieu = @MaSuatChieu AND TrangThai = 'True'";
+						int count = Connection.ExecuteScalarInt32(checkGHEQuery, new (string, object)[] { ("@MaSuatChieu", maSc) });
+						if (count > 0)
+						{
+							MessageBox.Show("Xóa không thành công vì đã có người đặt vé!");
+							return;
+						}
+						string deleteGHEQuery = "DELETE FROM GHE WHERE MaSuatChieu = @MaSuatChieu";
                         bool isDeletedGHE = Connection.ExcuteNonQuery(deleteGHEQuery, new (string, object)[] { ("@MaSuatChieu", maSc) });
                         string deleteQuery = "DELETE FROM SUATCHIEU WHERE MaSuatChieu = @MaSuatChieu";
                         bool isDeleted = Connection.ExcuteNonQuery(deleteQuery, new (string, object)[] { ("@MaSuatChieu", maSc) });
