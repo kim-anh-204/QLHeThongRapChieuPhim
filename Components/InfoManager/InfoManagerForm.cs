@@ -45,7 +45,7 @@ namespace QuanLyRapChieuPhim.InfoManager
             if (dr[1] != DBNull.Value)
                 textBoxName.Text = (string)dr[1];
             if (dr[2] != DBNull.Value)
-                comboBox1.SelectedIndex = Convert.ToInt32(dr[2]);
+                comboBoxGender.SelectedIndex = Convert.ToInt32(dr[2]);
             if (dr[3] != DBNull.Value)
                 datePickerBorn.Value = (DateTime)dr[3];
             if (dr[4] != DBNull.Value)
@@ -63,7 +63,7 @@ namespace QuanLyRapChieuPhim.InfoManager
                 MessageBox.Show("Tên không được bỏ trống hoặc quá dài.", "Thông báo", MessageBoxButtons.OK, MessageBoxIcon.Error);
                 return;
             }
-            if (comboBox1.SelectedIndex == -1)
+            if (comboBoxGender.SelectedIndex == -1)
             {
                 MessageBox.Show("Không được bỏ trống giới tính.", "Thông báo", MessageBoxButtons.OK, MessageBoxIcon.Error);
                 return;
@@ -89,7 +89,7 @@ namespace QuanLyRapChieuPhim.InfoManager
             bool result = Connection.ExcuteNonQuery(updateQuery, new (string, object)[]
             {
                 ("@HoVaTen", name),
-                ("GioiTinh", comboBox1.SelectedIndex),
+                ("GioiTinh", comboBoxGender.SelectedIndex),
                 ("@NgaySinh", datePickerBorn.Value),
                 ("@SoDienThoai",  phoneNumber),
                 ("@Email",  email),

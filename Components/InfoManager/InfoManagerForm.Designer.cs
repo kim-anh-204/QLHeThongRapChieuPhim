@@ -77,7 +77,7 @@
             this.label4 = new System.Windows.Forms.Label();
             this.textBoxName = new Bunifu.UI.WinForms.BunifuTextBox();
             this.datePickerBorn = new Bunifu.UI.WinForms.BunifuDatePicker();
-            this.comboBox1 = new System.Windows.Forms.ComboBox();
+            this.comboBoxGender = new System.Windows.Forms.ComboBox();
             this.checkBoxShowPassword = new System.Windows.Forms.CheckBox();
             this.tableLayoutPanel1.SuspendLayout();
             this.tableLayoutPanel3.SuspendLayout();
@@ -609,7 +609,7 @@
             this.tableLayoutPanel2.Controls.Add(this.label4, 0, 2);
             this.tableLayoutPanel2.Controls.Add(this.textBoxName, 1, 0);
             this.tableLayoutPanel2.Controls.Add(this.datePickerBorn, 1, 1);
-            this.tableLayoutPanel2.Controls.Add(this.comboBox1, 1, 3);
+            this.tableLayoutPanel2.Controls.Add(this.comboBoxGender, 1, 3);
             this.tableLayoutPanel2.Dock = System.Windows.Forms.DockStyle.Fill;
             this.tableLayoutPanel2.Location = new System.Drawing.Point(11, 11);
             this.tableLayoutPanel2.Name = "tableLayoutPanel2";
@@ -933,18 +933,19 @@
             this.datePickerBorn.TabIndex = 9;
             this.datePickerBorn.Value = new System.DateTime(2024, 11, 19, 19, 54, 0, 0);
             // 
-            // comboBox1
+            // comboBoxGender
             // 
-            this.comboBox1.Anchor = System.Windows.Forms.AnchorStyles.None;
-            this.comboBox1.Font = new System.Drawing.Font("Segoe UI", 9.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.comboBox1.FormattingEnabled = true;
-            this.comboBox1.Items.AddRange(new object[] {
+            this.comboBoxGender.Anchor = System.Windows.Forms.AnchorStyles.None;
+            this.comboBoxGender.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
+            this.comboBoxGender.Font = new System.Drawing.Font("Segoe UI", 9.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.comboBoxGender.FormattingEnabled = true;
+            this.comboBoxGender.Items.AddRange(new object[] {
             "Nam",
             "Nữ"});
-            this.comboBox1.Location = new System.Drawing.Point(306, 285);
-            this.comboBox1.Name = "comboBox1";
-            this.comboBox1.Size = new System.Drawing.Size(183, 23);
-            this.comboBox1.TabIndex = 8;
+            this.comboBoxGender.Location = new System.Drawing.Point(306, 285);
+            this.comboBoxGender.Name = "comboBoxGender";
+            this.comboBoxGender.Size = new System.Drawing.Size(183, 23);
+            this.comboBoxGender.TabIndex = 8;
             // 
             // checkBoxShowPassword
             // 
@@ -1004,7 +1005,7 @@
         private System.Windows.Forms.Label label3;
         private System.Windows.Forms.Label label4;
         private Bunifu.UI.WinForms.BunifuTextBox textBoxName;
-        private System.Windows.Forms.ComboBox comboBox1;
+        private System.Windows.Forms.ComboBox comboBoxGender;
         private Bunifu.UI.WinForms.BunifuDatePicker datePickerBorn;
         private System.Windows.Forms.CheckBox checkBoxShowPassword;
     }
