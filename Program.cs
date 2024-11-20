@@ -12,7 +12,8 @@ using System.Windows.Forms;
 using QuanLyRapChieuPhim.ScreeningPage;
 using QuanLyRapChieuPhim.UserPage;
 using QuanLyRapChieuPhim.BaoCao;
-using QuanLyRapChieuPhim.QLPhongChieu; 
+using QuanLyRapChieuPhim.QLPhongChieu;
+using QuanLyRapChieuPhim.Components.CustomerPage;
 namespace QuanLyRapChieuPhim
 {
     internal static class Program
@@ -25,7 +26,7 @@ namespace QuanLyRapChieuPhim
         {
             Application.EnableVisualStyles();
             Application.SetCompatibleTextRenderingDefault(false);
-            Application.Run(new LoginAndRegisterForm());
+            Application.Run(new CustomerManager());
         }
     }
 }

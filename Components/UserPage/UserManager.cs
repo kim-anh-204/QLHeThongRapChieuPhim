@@ -73,13 +73,13 @@ namespace QuanLyRapChieuPhim.UserPage
                         if (isUpdated)
                         {
                             bunifuDataGridView1.Rows.RemoveAt(e.RowIndex);
-                            MessageBox.Show("Cập nhật trạng thái thành công!", "Thành công", MessageBoxButtons.OK, MessageBoxIcon.Information);
+                            MessageBox.Show("Xóa nhân viên thành công!", "Thành công", MessageBoxButtons.OK, MessageBoxIcon.Information);
                             bunifuTextBox1.Text = "";
                             LoadNhanVienData();
                         }
                         else
                         {
-                            MessageBox.Show("Cập nhật trạng thái không thành công!", "Lỗi", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                            MessageBox.Show("Xóa nhân viên không thành công!", "Lỗi", MessageBoxButtons.OK, MessageBoxIcon.Error);
                         }
                     }
                 }
