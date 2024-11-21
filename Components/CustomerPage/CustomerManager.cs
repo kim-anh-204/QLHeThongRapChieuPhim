@@ -107,7 +107,7 @@ namespace QuanLyRapChieuPhim.Components.CustomerPage
        
                 if (bunifuDataGridView1.Columns[e.ColumnIndex].Name == "Xoa")
                 {
-                    var confirmResult = MessageBox.Show($"Bạn có chắc muốn xóa nhân viên với mã: {maKh}?", "Xác nhận xóa", MessageBoxButtons.YesNo, MessageBoxIcon.Warning);
+                    var confirmResult = MessageBox.Show($"Bạn có chắc muốn xóa khách hàng với mã: {maKh}?", "Xác nhận xóa", MessageBoxButtons.YesNo, MessageBoxIcon.Warning);
                     if (confirmResult == DialogResult.Yes)
                     {
                         string updateQuery = "UPDATE KHACHHANG SET TrangThai = 'XOA' WHERE MaKH = @MaKH";

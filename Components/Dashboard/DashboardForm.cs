@@ -1,4 +1,5 @@
 ﻿using QuanLyRapChieuPhim.BaoCao;
+using QuanLyRapChieuPhim.Components.CustomerPage;
 using QuanLyRapChieuPhim.Dashboard.DatVeForms;
 using QuanLyRapChieuPhim.QLPhongChieu;
 using QuanLyRapChieuPhim.QuanLyPhim;
@@ -13,11 +14,12 @@ namespace QuanLyRapChieuPhim.DashBoard
     public partial class DashboardForm : Form
     {
         private ThongKe.ThongKe _thongKe;
-        private UserManager _userManager;
+        private FilmManagementForm _filmManager;
         private Screening _screeningManager;
+        private UserManager _userManager;
+        private CustomerManager _customerManager;
         private ScreeningRoomManagement _roomManager;
         private ReportManagement _reportManager;
-        private FilmManagementForm _filmManager;
 
         public delegate void CloseEvent();
         public CloseEvent OnCloseClick;
@@ -48,6 +50,9 @@ namespace QuanLyRapChieuPhim.DashBoard
             _userManager = new UserManager();
             Helper.HideUI(_userManager, this);
 
+            _customerManager = new CustomerManager();
+            Helper.HideUI(_customerManager, this);
+
             _roomManager = new ScreeningRoomManagement();
             Helper.HideUI(_roomManager, this);
 
@@ -72,11 +77,14 @@ namespace QuanLyRapChieuPhim.DashBoard
         {
             Helper.OpenMdiChildForm(_screeningManager);
         }
-        private void buttonTaiKhoan_Click(object sender, EventArgs e)
+        private void buttonNhanVien_Click(object sender, EventArgs e)
         {
             Helper.OpenMdiChildForm(_userManager);
         }
-
+        private void buttonKhachHang_Click(object sender, EventArgs e)
+        {
+            Helper.OpenMdiChildForm(_customerManager);
+        }
         private void buttonPhongChieu_Click(object sender, EventArgs e)
         {
             Helper.OpenMdiChildForm(_roomManager);

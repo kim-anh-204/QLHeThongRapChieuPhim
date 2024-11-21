@@ -29,12 +29,13 @@
         private void InitializeComponent()
         {
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(DashboardForm));
+            Bunifu.UI.WinForms.BunifuButton.BunifuButton2.BorderEdges borderEdges6 = new Bunifu.UI.WinForms.BunifuButton.BunifuButton2.BorderEdges();
             Bunifu.UI.WinForms.BunifuButton.BunifuButton2.BorderEdges borderEdges7 = new Bunifu.UI.WinForms.BunifuButton.BunifuButton2.BorderEdges();
-            Bunifu.UI.WinForms.BunifuButton.BunifuButton2.BorderEdges borderEdges8 = new Bunifu.UI.WinForms.BunifuButton.BunifuButton2.BorderEdges();
-            Bunifu.UI.WinForms.BunifuButton.BunifuButton2.BorderEdges borderEdges9 = new Bunifu.UI.WinForms.BunifuButton.BunifuButton2.BorderEdges();
-            Bunifu.UI.WinForms.BunifuButton.BunifuButton2.BorderEdges borderEdges10 = new Bunifu.UI.WinForms.BunifuButton.BunifuButton2.BorderEdges();
-            Bunifu.UI.WinForms.BunifuButton.BunifuButton2.BorderEdges borderEdges11 = new Bunifu.UI.WinForms.BunifuButton.BunifuButton2.BorderEdges();
-            Bunifu.UI.WinForms.BunifuButton.BunifuButton2.BorderEdges borderEdges12 = new Bunifu.UI.WinForms.BunifuButton.BunifuButton2.BorderEdges();
+            Bunifu.UI.WinForms.BunifuButton.BunifuButton2.BorderEdges borderEdges2 = new Bunifu.UI.WinForms.BunifuButton.BunifuButton2.BorderEdges();
+            Bunifu.UI.WinForms.BunifuButton.BunifuButton2.BorderEdges borderEdges3 = new Bunifu.UI.WinForms.BunifuButton.BunifuButton2.BorderEdges();
+            Bunifu.UI.WinForms.BunifuButton.BunifuButton2.BorderEdges borderEdges4 = new Bunifu.UI.WinForms.BunifuButton.BunifuButton2.BorderEdges();
+            Bunifu.UI.WinForms.BunifuButton.BunifuButton2.BorderEdges borderEdges5 = new Bunifu.UI.WinForms.BunifuButton.BunifuButton2.BorderEdges();
+            Bunifu.UI.WinForms.BunifuButton.BunifuButton2.BorderEdges borderEdges1 = new Bunifu.UI.WinForms.BunifuButton.BunifuButton2.BorderEdges();
             this.bunifuPanel1 = new Bunifu.UI.WinForms.BunifuPanel();
             this.label1 = new System.Windows.Forms.Label();
             this.tableLayoutPanel1 = new System.Windows.Forms.TableLayoutPanel();
@@ -50,6 +51,7 @@
             this.labelQuyen = new System.Windows.Forms.Label();
             this.labelTenDangNhap = new System.Windows.Forms.Label();
             this.bunifuPictureBox1 = new Bunifu.UI.WinForms.BunifuPictureBox();
+            this.buttonKhachHang = new Bunifu.UI.WinForms.BunifuButton.BunifuButton2();
             this.bunifuPanel1.SuspendLayout();
             this.tableLayoutPanel1.SuspendLayout();
             this.bunifuPanel2.SuspendLayout();
@@ -91,23 +93,25 @@
             // 
             this.tableLayoutPanel1.ColumnCount = 1;
             this.tableLayoutPanel1.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 100F));
-            this.tableLayoutPanel1.Controls.Add(this.buttonBaoCao, 0, 5);
-            this.tableLayoutPanel1.Controls.Add(this.buttonPhongChieu, 0, 4);
+            this.tableLayoutPanel1.Controls.Add(this.buttonKhachHang, 0, 4);
             this.tableLayoutPanel1.Controls.Add(this.buttonPhim, 0, 1);
             this.tableLayoutPanel1.Controls.Add(this.buttonNhanVien, 0, 3);
             this.tableLayoutPanel1.Controls.Add(this.buttonSuatChieu, 0, 2);
             this.tableLayoutPanel1.Controls.Add(this.buttonDoanhThu, 0, 0);
+            this.tableLayoutPanel1.Controls.Add(this.buttonBaoCao, 0, 6);
+            this.tableLayoutPanel1.Controls.Add(this.buttonPhongChieu, 0, 5);
             this.tableLayoutPanel1.Location = new System.Drawing.Point(0, 138);
             this.tableLayoutPanel1.Name = "tableLayoutPanel1";
             this.tableLayoutPanel1.Padding = new System.Windows.Forms.Padding(16, 0, 0, 0);
-            this.tableLayoutPanel1.RowCount = 6;
-            this.tableLayoutPanel1.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 16.66667F));
-            this.tableLayoutPanel1.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 16.66667F));
-            this.tableLayoutPanel1.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 16.66667F));
-            this.tableLayoutPanel1.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 16.66667F));
-            this.tableLayoutPanel1.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 16.66667F));
-            this.tableLayoutPanel1.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 16.66667F));
-            this.tableLayoutPanel1.Size = new System.Drawing.Size(245, 264);
+            this.tableLayoutPanel1.RowCount = 7;
+            this.tableLayoutPanel1.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 14.28571F));
+            this.tableLayoutPanel1.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 14.28571F));
+            this.tableLayoutPanel1.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 14.28571F));
+            this.tableLayoutPanel1.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 14.28571F));
+            this.tableLayoutPanel1.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 14.28571F));
+            this.tableLayoutPanel1.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 14.28571F));
+            this.tableLayoutPanel1.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 14.28571F));
+            this.tableLayoutPanel1.Size = new System.Drawing.Size(245, 350);
             this.tableLayoutPanel1.TabIndex = 3;
             // 
             // buttonBaoCao
@@ -129,11 +133,11 @@
             this.buttonBaoCao.ColorContrastOnClick = 45;
             this.buttonBaoCao.ColorContrastOnHover = 45;
             this.buttonBaoCao.Cursor = System.Windows.Forms.Cursors.Hand;
-            borderEdges7.BottomLeft = true;
-            borderEdges7.BottomRight = true;
-            borderEdges7.TopLeft = true;
-            borderEdges7.TopRight = true;
-            this.buttonBaoCao.CustomizableEdges = borderEdges7;
+            borderEdges6.BottomLeft = true;
+            borderEdges6.BottomRight = true;
+            borderEdges6.TopLeft = true;
+            borderEdges6.TopRight = true;
+            this.buttonBaoCao.CustomizableEdges = borderEdges6;
             this.buttonBaoCao.DialogResult = System.Windows.Forms.DialogResult.None;
             this.buttonBaoCao.DisabledBorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(191)))), ((int)(((byte)(191)))), ((int)(((byte)(191)))));
             this.buttonBaoCao.DisabledFillColor = System.Drawing.Color.FromArgb(((int)(((byte)(204)))), ((int)(((byte)(204)))), ((int)(((byte)(204)))));
@@ -158,7 +162,7 @@
             this.buttonBaoCao.IdleIconLeftImage = global::QuanLyRapChieuPhim.Properties.Resources.BaoCao_OFF;
             this.buttonBaoCao.IdleIconRightImage = null;
             this.buttonBaoCao.IndicateFocus = true;
-            this.buttonBaoCao.Location = new System.Drawing.Point(19, 223);
+            this.buttonBaoCao.Location = new System.Drawing.Point(19, 303);
             this.buttonBaoCao.Name = "buttonBaoCao";
             this.buttonBaoCao.OnDisabledState.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(191)))), ((int)(((byte)(191)))), ((int)(((byte)(191)))));
             this.buttonBaoCao.OnDisabledState.BorderRadius = 1;
@@ -192,7 +196,7 @@
             this.buttonBaoCao.OnPressedState.ForeColor = System.Drawing.Color.Red;
             this.buttonBaoCao.OnPressedState.IconLeftImage = global::QuanLyRapChieuPhim.Properties.Resources.BaoCao_ON;
             this.buttonBaoCao.OnPressedState.IconRightImage = null;
-            this.buttonBaoCao.Size = new System.Drawing.Size(223, 38);
+            this.buttonBaoCao.Size = new System.Drawing.Size(223, 44);
             this.buttonBaoCao.TabIndex = 15;
             this.buttonBaoCao.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
             this.buttonBaoCao.TextAlignment = System.Windows.Forms.HorizontalAlignment.Center;
@@ -220,11 +224,11 @@
             this.buttonPhongChieu.ColorContrastOnClick = 45;
             this.buttonPhongChieu.ColorContrastOnHover = 45;
             this.buttonPhongChieu.Cursor = System.Windows.Forms.Cursors.Hand;
-            borderEdges8.BottomLeft = true;
-            borderEdges8.BottomRight = true;
-            borderEdges8.TopLeft = true;
-            borderEdges8.TopRight = true;
-            this.buttonPhongChieu.CustomizableEdges = borderEdges8;
+            borderEdges7.BottomLeft = true;
+            borderEdges7.BottomRight = true;
+            borderEdges7.TopLeft = true;
+            borderEdges7.TopRight = true;
+            this.buttonPhongChieu.CustomizableEdges = borderEdges7;
             this.buttonPhongChieu.DialogResult = System.Windows.Forms.DialogResult.None;
             this.buttonPhongChieu.DisabledBorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(191)))), ((int)(((byte)(191)))), ((int)(((byte)(191)))));
             this.buttonPhongChieu.DisabledFillColor = System.Drawing.Color.FromArgb(((int)(((byte)(204)))), ((int)(((byte)(204)))), ((int)(((byte)(204)))));
@@ -249,7 +253,7 @@
             this.buttonPhongChieu.IdleIconLeftImage = global::QuanLyRapChieuPhim.Properties.Resources.QuanLyPhongChieu_OFF;
             this.buttonPhongChieu.IdleIconRightImage = null;
             this.buttonPhongChieu.IndicateFocus = true;
-            this.buttonPhongChieu.Location = new System.Drawing.Point(19, 179);
+            this.buttonPhongChieu.Location = new System.Drawing.Point(19, 253);
             this.buttonPhongChieu.Name = "buttonPhongChieu";
             this.buttonPhongChieu.OnDisabledState.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(191)))), ((int)(((byte)(191)))), ((int)(((byte)(191)))));
             this.buttonPhongChieu.OnDisabledState.BorderRadius = 1;
@@ -283,7 +287,7 @@
             this.buttonPhongChieu.OnPressedState.ForeColor = System.Drawing.Color.Red;
             this.buttonPhongChieu.OnPressedState.IconLeftImage = global::QuanLyRapChieuPhim.Properties.Resources.QuanLyPhongChieu_ON;
             this.buttonPhongChieu.OnPressedState.IconRightImage = null;
-            this.buttonPhongChieu.Size = new System.Drawing.Size(223, 38);
+            this.buttonPhongChieu.Size = new System.Drawing.Size(223, 44);
             this.buttonPhongChieu.TabIndex = 14;
             this.buttonPhongChieu.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
             this.buttonPhongChieu.TextAlignment = System.Windows.Forms.HorizontalAlignment.Center;
@@ -311,11 +315,11 @@
             this.buttonPhim.ColorContrastOnClick = 45;
             this.buttonPhim.ColorContrastOnHover = 45;
             this.buttonPhim.Cursor = System.Windows.Forms.Cursors.Hand;
-            borderEdges9.BottomLeft = true;
-            borderEdges9.BottomRight = true;
-            borderEdges9.TopLeft = true;
-            borderEdges9.TopRight = true;
-            this.buttonPhim.CustomizableEdges = borderEdges9;
+            borderEdges2.BottomLeft = true;
+            borderEdges2.BottomRight = true;
+            borderEdges2.TopLeft = true;
+            borderEdges2.TopRight = true;
+            this.buttonPhim.CustomizableEdges = borderEdges2;
             this.buttonPhim.DialogResult = System.Windows.Forms.DialogResult.None;
             this.buttonPhim.DisabledBorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(191)))), ((int)(((byte)(191)))), ((int)(((byte)(191)))));
             this.buttonPhim.DisabledFillColor = System.Drawing.Color.FromArgb(((int)(((byte)(204)))), ((int)(((byte)(204)))), ((int)(((byte)(204)))));
@@ -340,7 +344,7 @@
             this.buttonPhim.IdleIconLeftImage = global::QuanLyRapChieuPhim.Properties.Resources.QuanLyPhim_OFF;
             this.buttonPhim.IdleIconRightImage = null;
             this.buttonPhim.IndicateFocus = true;
-            this.buttonPhim.Location = new System.Drawing.Point(19, 47);
+            this.buttonPhim.Location = new System.Drawing.Point(19, 53);
             this.buttonPhim.Name = "buttonPhim";
             this.buttonPhim.OnDisabledState.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(191)))), ((int)(((byte)(191)))), ((int)(((byte)(191)))));
             this.buttonPhim.OnDisabledState.BorderRadius = 1;
@@ -374,7 +378,7 @@
             this.buttonPhim.OnPressedState.ForeColor = System.Drawing.Color.Red;
             this.buttonPhim.OnPressedState.IconLeftImage = global::QuanLyRapChieuPhim.Properties.Resources.QuanLyPhim_ON;
             this.buttonPhim.OnPressedState.IconRightImage = null;
-            this.buttonPhim.Size = new System.Drawing.Size(223, 38);
+            this.buttonPhim.Size = new System.Drawing.Size(223, 44);
             this.buttonPhim.TabIndex = 11;
             this.buttonPhim.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
             this.buttonPhim.TextAlignment = System.Windows.Forms.HorizontalAlignment.Center;
@@ -402,11 +406,11 @@
             this.buttonNhanVien.ColorContrastOnClick = 45;
             this.buttonNhanVien.ColorContrastOnHover = 45;
             this.buttonNhanVien.Cursor = System.Windows.Forms.Cursors.Hand;
-            borderEdges10.BottomLeft = true;
-            borderEdges10.BottomRight = true;
-            borderEdges10.TopLeft = true;
-            borderEdges10.TopRight = true;
-            this.buttonNhanVien.CustomizableEdges = borderEdges10;
+            borderEdges3.BottomLeft = true;
+            borderEdges3.BottomRight = true;
+            borderEdges3.TopLeft = true;
+            borderEdges3.TopRight = true;
+            this.buttonNhanVien.CustomizableEdges = borderEdges3;
             this.buttonNhanVien.DialogResult = System.Windows.Forms.DialogResult.None;
             this.buttonNhanVien.DisabledBorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(191)))), ((int)(((byte)(191)))), ((int)(((byte)(191)))));
             this.buttonNhanVien.DisabledFillColor = System.Drawing.Color.FromArgb(((int)(((byte)(204)))), ((int)(((byte)(204)))), ((int)(((byte)(204)))));
@@ -431,7 +435,7 @@
             this.buttonNhanVien.IdleIconLeftImage = global::QuanLyRapChieuPhim.Properties.Resources.QuanLyTaiKhoan_OFF;
             this.buttonNhanVien.IdleIconRightImage = null;
             this.buttonNhanVien.IndicateFocus = true;
-            this.buttonNhanVien.Location = new System.Drawing.Point(19, 135);
+            this.buttonNhanVien.Location = new System.Drawing.Point(19, 153);
             this.buttonNhanVien.Name = "buttonNhanVien";
             this.buttonNhanVien.OnDisabledState.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(191)))), ((int)(((byte)(191)))), ((int)(((byte)(191)))));
             this.buttonNhanVien.OnDisabledState.BorderRadius = 1;
@@ -465,14 +469,14 @@
             this.buttonNhanVien.OnPressedState.ForeColor = System.Drawing.Color.Red;
             this.buttonNhanVien.OnPressedState.IconLeftImage = global::QuanLyRapChieuPhim.Properties.Resources.QuanLyTaiKhoan_ON;
             this.buttonNhanVien.OnPressedState.IconRightImage = null;
-            this.buttonNhanVien.Size = new System.Drawing.Size(223, 38);
+            this.buttonNhanVien.Size = new System.Drawing.Size(223, 44);
             this.buttonNhanVien.TabIndex = 13;
             this.buttonNhanVien.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
             this.buttonNhanVien.TextAlignment = System.Windows.Forms.HorizontalAlignment.Center;
             this.buttonNhanVien.TextMarginLeft = 0;
             this.buttonNhanVien.TextPadding = new System.Windows.Forms.Padding(45, 0, 0, 0);
             this.buttonNhanVien.UseDefaultRadiusAndThickness = true;
-            this.buttonNhanVien.Click += new System.EventHandler(this.buttonTaiKhoan_Click);
+            this.buttonNhanVien.Click += new System.EventHandler(this.buttonNhanVien_Click);
             // 
             // buttonSuatChieu
             // 
@@ -493,11 +497,11 @@
             this.buttonSuatChieu.ColorContrastOnClick = 45;
             this.buttonSuatChieu.ColorContrastOnHover = 45;
             this.buttonSuatChieu.Cursor = System.Windows.Forms.Cursors.Hand;
-            borderEdges11.BottomLeft = true;
-            borderEdges11.BottomRight = true;
-            borderEdges11.TopLeft = true;
-            borderEdges11.TopRight = true;
-            this.buttonSuatChieu.CustomizableEdges = borderEdges11;
+            borderEdges4.BottomLeft = true;
+            borderEdges4.BottomRight = true;
+            borderEdges4.TopLeft = true;
+            borderEdges4.TopRight = true;
+            this.buttonSuatChieu.CustomizableEdges = borderEdges4;
             this.buttonSuatChieu.DialogResult = System.Windows.Forms.DialogResult.None;
             this.buttonSuatChieu.DisabledBorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(191)))), ((int)(((byte)(191)))), ((int)(((byte)(191)))));
             this.buttonSuatChieu.DisabledFillColor = System.Drawing.Color.FromArgb(((int)(((byte)(204)))), ((int)(((byte)(204)))), ((int)(((byte)(204)))));
@@ -522,7 +526,7 @@
             this.buttonSuatChieu.IdleIconLeftImage = global::QuanLyRapChieuPhim.Properties.Resources.QuanLySuatChieu_OFF;
             this.buttonSuatChieu.IdleIconRightImage = null;
             this.buttonSuatChieu.IndicateFocus = true;
-            this.buttonSuatChieu.Location = new System.Drawing.Point(19, 91);
+            this.buttonSuatChieu.Location = new System.Drawing.Point(19, 103);
             this.buttonSuatChieu.Name = "buttonSuatChieu";
             this.buttonSuatChieu.OnDisabledState.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(191)))), ((int)(((byte)(191)))), ((int)(((byte)(191)))));
             this.buttonSuatChieu.OnDisabledState.BorderRadius = 1;
@@ -556,7 +560,7 @@
             this.buttonSuatChieu.OnPressedState.ForeColor = System.Drawing.Color.Red;
             this.buttonSuatChieu.OnPressedState.IconLeftImage = global::QuanLyRapChieuPhim.Properties.Resources.QuanLySuatChieu_ON;
             this.buttonSuatChieu.OnPressedState.IconRightImage = null;
-            this.buttonSuatChieu.Size = new System.Drawing.Size(223, 38);
+            this.buttonSuatChieu.Size = new System.Drawing.Size(223, 44);
             this.buttonSuatChieu.TabIndex = 12;
             this.buttonSuatChieu.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
             this.buttonSuatChieu.TextAlignment = System.Windows.Forms.HorizontalAlignment.Center;
@@ -584,11 +588,11 @@
             this.buttonDoanhThu.ColorContrastOnClick = 45;
             this.buttonDoanhThu.ColorContrastOnHover = 45;
             this.buttonDoanhThu.Cursor = System.Windows.Forms.Cursors.Hand;
-            borderEdges12.BottomLeft = true;
-            borderEdges12.BottomRight = true;
-            borderEdges12.TopLeft = true;
-            borderEdges12.TopRight = true;
-            this.buttonDoanhThu.CustomizableEdges = borderEdges12;
+            borderEdges5.BottomLeft = true;
+            borderEdges5.BottomRight = true;
+            borderEdges5.TopLeft = true;
+            borderEdges5.TopRight = true;
+            this.buttonDoanhThu.CustomizableEdges = borderEdges5;
             this.buttonDoanhThu.DialogResult = System.Windows.Forms.DialogResult.None;
             this.buttonDoanhThu.DisabledBorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(191)))), ((int)(((byte)(191)))), ((int)(((byte)(191)))));
             this.buttonDoanhThu.DisabledFillColor = System.Drawing.Color.FromArgb(((int)(((byte)(204)))), ((int)(((byte)(204)))), ((int)(((byte)(204)))));
@@ -647,7 +651,7 @@
             this.buttonDoanhThu.OnPressedState.ForeColor = System.Drawing.Color.Red;
             this.buttonDoanhThu.OnPressedState.IconLeftImage = global::QuanLyRapChieuPhim.Properties.Resources.DoanhThu_ON;
             this.buttonDoanhThu.OnPressedState.IconRightImage = null;
-            this.buttonDoanhThu.Size = new System.Drawing.Size(223, 38);
+            this.buttonDoanhThu.Size = new System.Drawing.Size(223, 44);
             this.buttonDoanhThu.TabIndex = 10;
             this.buttonDoanhThu.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
             this.buttonDoanhThu.TextAlignment = System.Windows.Forms.HorizontalAlignment.Center;
@@ -744,6 +748,97 @@
             this.bunifuPictureBox1.TabStop = false;
             this.bunifuPictureBox1.Type = Bunifu.UI.WinForms.BunifuPictureBox.Types.Circle;
             // 
+            // buttonKhachHang
+            // 
+            this.buttonKhachHang.AllowAnimations = true;
+            this.buttonKhachHang.AllowMouseEffects = true;
+            this.buttonKhachHang.AllowToggling = true;
+            this.buttonKhachHang.AnimationSpeed = 150;
+            this.buttonKhachHang.AutoGenerateColors = false;
+            this.buttonKhachHang.AutoRoundBorders = false;
+            this.buttonKhachHang.AutoSizeLeftIcon = false;
+            this.buttonKhachHang.AutoSizeRightIcon = true;
+            this.buttonKhachHang.BackColor = System.Drawing.Color.Transparent;
+            this.buttonKhachHang.BackColor1 = System.Drawing.Color.White;
+            this.buttonKhachHang.BackgroundImage = ((System.Drawing.Image)(resources.GetObject("buttonKhachHang.BackgroundImage")));
+            this.buttonKhachHang.BorderStyle = Bunifu.UI.WinForms.BunifuButton.BunifuButton2.BorderStyles.Solid;
+            this.buttonKhachHang.ButtonText = "Quản lý khách hàng";
+            this.buttonKhachHang.ButtonTextMarginLeft = 0;
+            this.buttonKhachHang.ColorContrastOnClick = 45;
+            this.buttonKhachHang.ColorContrastOnHover = 45;
+            this.buttonKhachHang.Cursor = System.Windows.Forms.Cursors.Hand;
+            borderEdges1.BottomLeft = true;
+            borderEdges1.BottomRight = true;
+            borderEdges1.TopLeft = true;
+            borderEdges1.TopRight = true;
+            this.buttonKhachHang.CustomizableEdges = borderEdges1;
+            this.buttonKhachHang.DialogResult = System.Windows.Forms.DialogResult.None;
+            this.buttonKhachHang.DisabledBorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(191)))), ((int)(((byte)(191)))), ((int)(((byte)(191)))));
+            this.buttonKhachHang.DisabledFillColor = System.Drawing.Color.FromArgb(((int)(((byte)(204)))), ((int)(((byte)(204)))), ((int)(((byte)(204)))));
+            this.buttonKhachHang.DisabledForecolor = System.Drawing.Color.FromArgb(((int)(((byte)(168)))), ((int)(((byte)(160)))), ((int)(((byte)(168)))));
+            this.buttonKhachHang.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.buttonKhachHang.FocusState = Bunifu.UI.WinForms.BunifuButton.BunifuButton2.ButtonStates.Hover;
+            this.buttonKhachHang.Font = new System.Drawing.Font("Segoe UI Semibold", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.buttonKhachHang.ForeColor = System.Drawing.Color.DimGray;
+            this.buttonKhachHang.IconLeftAlign = System.Drawing.ContentAlignment.MiddleLeft;
+            this.buttonKhachHang.IconLeftCursor = System.Windows.Forms.Cursors.Default;
+            this.buttonKhachHang.IconLeftPadding = new System.Windows.Forms.Padding(8, 3, 3, 3);
+            this.buttonKhachHang.IconMarginLeft = 11;
+            this.buttonKhachHang.IconPadding = 10;
+            this.buttonKhachHang.IconRightAlign = System.Drawing.ContentAlignment.MiddleRight;
+            this.buttonKhachHang.IconRightCursor = System.Windows.Forms.Cursors.Default;
+            this.buttonKhachHang.IconRightPadding = new System.Windows.Forms.Padding(3, 3, 7, 3);
+            this.buttonKhachHang.IconSize = 28;
+            this.buttonKhachHang.IdleBorderColor = System.Drawing.Color.White;
+            this.buttonKhachHang.IdleBorderRadius = 1;
+            this.buttonKhachHang.IdleBorderThickness = 1;
+            this.buttonKhachHang.IdleFillColor = System.Drawing.Color.White;
+            this.buttonKhachHang.IdleIconLeftImage = global::QuanLyRapChieuPhim.Properties.Resources.QuanLyTaiKhoan_OFF;
+            this.buttonKhachHang.IdleIconRightImage = null;
+            this.buttonKhachHang.IndicateFocus = true;
+            this.buttonKhachHang.Location = new System.Drawing.Point(19, 203);
+            this.buttonKhachHang.Name = "buttonKhachHang";
+            this.buttonKhachHang.OnDisabledState.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(191)))), ((int)(((byte)(191)))), ((int)(((byte)(191)))));
+            this.buttonKhachHang.OnDisabledState.BorderRadius = 1;
+            this.buttonKhachHang.OnDisabledState.BorderStyle = Bunifu.UI.WinForms.BunifuButton.BunifuButton2.BorderStyles.Solid;
+            this.buttonKhachHang.OnDisabledState.BorderThickness = 1;
+            this.buttonKhachHang.OnDisabledState.FillColor = System.Drawing.Color.FromArgb(((int)(((byte)(204)))), ((int)(((byte)(204)))), ((int)(((byte)(204)))));
+            this.buttonKhachHang.OnDisabledState.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(168)))), ((int)(((byte)(160)))), ((int)(((byte)(168)))));
+            this.buttonKhachHang.OnDisabledState.IconLeftImage = null;
+            this.buttonKhachHang.OnDisabledState.IconRightImage = null;
+            this.buttonKhachHang.onHoverState.BorderColor = System.Drawing.Color.White;
+            this.buttonKhachHang.onHoverState.BorderRadius = 1;
+            this.buttonKhachHang.onHoverState.BorderStyle = Bunifu.UI.WinForms.BunifuButton.BunifuButton2.BorderStyles.Solid;
+            this.buttonKhachHang.onHoverState.BorderThickness = 1;
+            this.buttonKhachHang.onHoverState.FillColor = System.Drawing.Color.White;
+            this.buttonKhachHang.onHoverState.ForeColor = System.Drawing.Color.Red;
+            this.buttonKhachHang.onHoverState.IconLeftImage = null;
+            this.buttonKhachHang.onHoverState.IconRightImage = null;
+            this.buttonKhachHang.OnIdleState.BorderColor = System.Drawing.Color.White;
+            this.buttonKhachHang.OnIdleState.BorderRadius = 1;
+            this.buttonKhachHang.OnIdleState.BorderStyle = Bunifu.UI.WinForms.BunifuButton.BunifuButton2.BorderStyles.Solid;
+            this.buttonKhachHang.OnIdleState.BorderThickness = 1;
+            this.buttonKhachHang.OnIdleState.FillColor = System.Drawing.Color.White;
+            this.buttonKhachHang.OnIdleState.ForeColor = System.Drawing.Color.DimGray;
+            this.buttonKhachHang.OnIdleState.IconLeftImage = global::QuanLyRapChieuPhim.Properties.Resources.QuanLyTaiKhoan_OFF;
+            this.buttonKhachHang.OnIdleState.IconRightImage = null;
+            this.buttonKhachHang.OnPressedState.BorderColor = System.Drawing.Color.White;
+            this.buttonKhachHang.OnPressedState.BorderRadius = 1;
+            this.buttonKhachHang.OnPressedState.BorderStyle = Bunifu.UI.WinForms.BunifuButton.BunifuButton2.BorderStyles.Solid;
+            this.buttonKhachHang.OnPressedState.BorderThickness = 1;
+            this.buttonKhachHang.OnPressedState.FillColor = System.Drawing.Color.White;
+            this.buttonKhachHang.OnPressedState.ForeColor = System.Drawing.Color.Red;
+            this.buttonKhachHang.OnPressedState.IconLeftImage = global::QuanLyRapChieuPhim.Properties.Resources.QuanLyTaiKhoan_ON;
+            this.buttonKhachHang.OnPressedState.IconRightImage = null;
+            this.buttonKhachHang.Size = new System.Drawing.Size(223, 44);
+            this.buttonKhachHang.TabIndex = 16;
+            this.buttonKhachHang.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
+            this.buttonKhachHang.TextAlignment = System.Windows.Forms.HorizontalAlignment.Center;
+            this.buttonKhachHang.TextMarginLeft = 0;
+            this.buttonKhachHang.TextPadding = new System.Windows.Forms.Padding(45, 0, 0, 0);
+            this.buttonKhachHang.UseDefaultRadiusAndThickness = true;
+            this.buttonKhachHang.Click += new System.EventHandler(this.buttonKhachHang_Click);
+            // 
             // DashboardForm
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
@@ -786,5 +881,6 @@
         private System.Windows.Forms.Label labelQuyen;
         private System.Windows.Forms.Label labelTenDangNhap;
         private System.Windows.Forms.Label label1;
+        private Bunifu.UI.WinForms.BunifuButton.BunifuButton2 buttonKhachHang;
     }
 }
