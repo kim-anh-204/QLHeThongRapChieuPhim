@@ -112,7 +112,7 @@
             this.textBoxTenDangNhap.IconRight = null;
             this.textBoxTenDangNhap.IconRightCursor = System.Windows.Forms.Cursors.IBeam;
             this.textBoxTenDangNhap.Lines = new string[0];
-            this.textBoxTenDangNhap.Location = new System.Drawing.Point(396, 148);
+            this.textBoxTenDangNhap.Location = new System.Drawing.Point(410, 148);
             this.textBoxTenDangNhap.MaxLength = 32767;
             this.textBoxTenDangNhap.MinimumSize = new System.Drawing.Size(1, 1);
             this.textBoxTenDangNhap.Modified = false;
@@ -188,7 +188,7 @@
             this.textBoxMatKhau.IconRight = null;
             this.textBoxMatKhau.IconRightCursor = System.Windows.Forms.Cursors.IBeam;
             this.textBoxMatKhau.Lines = new string[0];
-            this.textBoxMatKhau.Location = new System.Drawing.Point(396, 193);
+            this.textBoxMatKhau.Location = new System.Drawing.Point(410, 193);
             this.textBoxMatKhau.MaxLength = 32767;
             this.textBoxMatKhau.MinimumSize = new System.Drawing.Size(1, 1);
             this.textBoxMatKhau.Modified = false;
@@ -264,7 +264,7 @@
             this.textBoxMatKhau2.IconRight = null;
             this.textBoxMatKhau2.IconRightCursor = System.Windows.Forms.Cursors.IBeam;
             this.textBoxMatKhau2.Lines = new string[0];
-            this.textBoxMatKhau2.Location = new System.Drawing.Point(396, 238);
+            this.textBoxMatKhau2.Location = new System.Drawing.Point(410, 238);
             this.textBoxMatKhau2.MaxLength = 32767;
             this.textBoxMatKhau2.MinimumSize = new System.Drawing.Size(1, 1);
             this.textBoxMatKhau2.Modified = false;
@@ -418,7 +418,7 @@
             this.buttonDangKy.IdleIconLeftImage = null;
             this.buttonDangKy.IdleIconRightImage = null;
             this.buttonDangKy.IndicateFocus = false;
-            this.buttonDangKy.Location = new System.Drawing.Point(396, 302);
+            this.buttonDangKy.Location = new System.Drawing.Point(410, 302);
             this.buttonDangKy.Name = "buttonDangKy";
             this.buttonDangKy.OnDisabledState.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(191)))), ((int)(((byte)(191)))), ((int)(((byte)(191)))));
             this.buttonDangKy.OnDisabledState.BorderRadius = 20;
@@ -490,7 +490,7 @@
             this.textBoxName.IconRight = null;
             this.textBoxName.IconRightCursor = System.Windows.Forms.Cursors.IBeam;
             this.textBoxName.Lines = new string[0];
-            this.textBoxName.Location = new System.Drawing.Point(662, 148);
+            this.textBoxName.Location = new System.Drawing.Point(676, 148);
             this.textBoxName.MaxLength = 32767;
             this.textBoxName.MinimumSize = new System.Drawing.Size(1, 1);
             this.textBoxName.Modified = false;
@@ -566,7 +566,7 @@
             this.textBoxSDT.IconRight = null;
             this.textBoxSDT.IconRightCursor = System.Windows.Forms.Cursors.IBeam;
             this.textBoxSDT.Lines = new string[0];
-            this.textBoxSDT.Location = new System.Drawing.Point(662, 193);
+            this.textBoxSDT.Location = new System.Drawing.Point(676, 193);
             this.textBoxSDT.MaxLength = 32767;
             this.textBoxSDT.MinimumSize = new System.Drawing.Size(1, 1);
             this.textBoxSDT.Modified = false;
@@ -616,10 +616,11 @@
             // bunifuLabel3
             // 
             this.bunifuLabel3.AllowParentOverrides = false;
+            this.bunifuLabel3.Anchor = System.Windows.Forms.AnchorStyles.None;
             this.bunifuLabel3.AutoEllipsis = false;
             this.bunifuLabel3.CursorType = System.Windows.Forms.Cursors.Default;
             this.bunifuLabel3.Font = new System.Drawing.Font("Segoe UI", 9F);
-            this.bunifuLabel3.Location = new System.Drawing.Point(662, 238);
+            this.bunifuLabel3.Location = new System.Drawing.Point(676, 238);
             this.bunifuLabel3.Name = "bunifuLabel3";
             this.bunifuLabel3.Padding = new System.Windows.Forms.Padding(6, 0, 6, 0);
             this.bunifuLabel3.RightToLeft = System.Windows.Forms.RightToLeft.No;
@@ -632,10 +633,11 @@
             // bunifuLabel4
             // 
             this.bunifuLabel4.AllowParentOverrides = false;
+            this.bunifuLabel4.Anchor = System.Windows.Forms.AnchorStyles.None;
             this.bunifuLabel4.AutoEllipsis = false;
             this.bunifuLabel4.CursorType = null;
             this.bunifuLabel4.Font = new System.Drawing.Font("Segoe UI", 9F);
-            this.bunifuLabel4.Location = new System.Drawing.Point(662, 297);
+            this.bunifuLabel4.Location = new System.Drawing.Point(676, 297);
             this.bunifuLabel4.Name = "bunifuLabel4";
             this.bunifuLabel4.Padding = new System.Windows.Forms.Padding(6, 0, 6, 0);
             this.bunifuLabel4.RightToLeft = System.Windows.Forms.RightToLeft.No;
@@ -666,7 +668,7 @@
             this.datePickerBorn.IconColor = System.Drawing.Color.Gray;
             this.datePickerBorn.IconLocation = Bunifu.UI.WinForms.BunifuDatePicker.Indicator.Right;
             this.datePickerBorn.LeftTextMargin = 5;
-            this.datePickerBorn.Location = new System.Drawing.Point(662, 259);
+            this.datePickerBorn.Location = new System.Drawing.Point(676, 259);
             this.datePickerBorn.MinimumSize = new System.Drawing.Size(4, 32);
             this.datePickerBorn.Name = "datePickerBorn";
             this.datePickerBorn.Size = new System.Drawing.Size(260, 32);
@@ -682,7 +684,7 @@
             this.comboBoxGender.Items.AddRange(new object[] {
             "Nam",
             "Nữ"});
-            this.comboBoxGender.Location = new System.Drawing.Point(662, 318);
+            this.comboBoxGender.Location = new System.Drawing.Point(676, 318);
             this.comboBoxGender.Name = "comboBoxGender";
             this.comboBoxGender.Size = new System.Drawing.Size(260, 23);
             this.comboBoxGender.TabIndex = 17;
