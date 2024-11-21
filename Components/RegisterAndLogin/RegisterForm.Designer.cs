@@ -42,6 +42,14 @@
             Bunifu.UI.WinForms.BunifuTextBox.StateProperties stateProperties11 = new Bunifu.UI.WinForms.BunifuTextBox.StateProperties();
             Bunifu.UI.WinForms.BunifuTextBox.StateProperties stateProperties12 = new Bunifu.UI.WinForms.BunifuTextBox.StateProperties();
             Bunifu.UI.WinForms.BunifuButton.BunifuButton2.BorderEdges borderEdges1 = new Bunifu.UI.WinForms.BunifuButton.BunifuButton2.BorderEdges();
+            Bunifu.UI.WinForms.BunifuTextBox.StateProperties stateProperties13 = new Bunifu.UI.WinForms.BunifuTextBox.StateProperties();
+            Bunifu.UI.WinForms.BunifuTextBox.StateProperties stateProperties14 = new Bunifu.UI.WinForms.BunifuTextBox.StateProperties();
+            Bunifu.UI.WinForms.BunifuTextBox.StateProperties stateProperties15 = new Bunifu.UI.WinForms.BunifuTextBox.StateProperties();
+            Bunifu.UI.WinForms.BunifuTextBox.StateProperties stateProperties16 = new Bunifu.UI.WinForms.BunifuTextBox.StateProperties();
+            Bunifu.UI.WinForms.BunifuTextBox.StateProperties stateProperties17 = new Bunifu.UI.WinForms.BunifuTextBox.StateProperties();
+            Bunifu.UI.WinForms.BunifuTextBox.StateProperties stateProperties18 = new Bunifu.UI.WinForms.BunifuTextBox.StateProperties();
+            Bunifu.UI.WinForms.BunifuTextBox.StateProperties stateProperties19 = new Bunifu.UI.WinForms.BunifuTextBox.StateProperties();
+            Bunifu.UI.WinForms.BunifuTextBox.StateProperties stateProperties20 = new Bunifu.UI.WinForms.BunifuTextBox.StateProperties();
             this.bunifuPictureBox1 = new Bunifu.UI.WinForms.BunifuPictureBox();
             this.textBoxTenDangNhap = new Bunifu.UI.WinForms.BunifuTextBox();
             this.textBoxMatKhau = new Bunifu.UI.WinForms.BunifuTextBox();
@@ -50,6 +58,12 @@
             this.bunifuLabel2 = new Bunifu.UI.WinForms.BunifuLabel();
             this.labelLogin = new Bunifu.UI.WinForms.BunifuLabel();
             this.buttonDangKy = new Bunifu.UI.WinForms.BunifuButton.BunifuButton2();
+            this.textBoxName = new Bunifu.UI.WinForms.BunifuTextBox();
+            this.textBoxSDT = new Bunifu.UI.WinForms.BunifuTextBox();
+            this.bunifuLabel3 = new Bunifu.UI.WinForms.BunifuLabel();
+            this.bunifuLabel4 = new Bunifu.UI.WinForms.BunifuLabel();
+            this.datePickerBorn = new Bunifu.UI.WinForms.BunifuDatePicker();
+            this.comboBoxGender = new System.Windows.Forms.ComboBox();
             ((System.ComponentModel.ISupportInitialize)(this.bunifuPictureBox1)).BeginInit();
             this.SuspendLayout();
             // 
@@ -98,7 +112,7 @@
             this.textBoxTenDangNhap.IconRight = null;
             this.textBoxTenDangNhap.IconRightCursor = System.Windows.Forms.Cursors.IBeam;
             this.textBoxTenDangNhap.Lines = new string[0];
-            this.textBoxTenDangNhap.Location = new System.Drawing.Point(547, 221);
+            this.textBoxTenDangNhap.Location = new System.Drawing.Point(396, 148);
             this.textBoxTenDangNhap.MaxLength = 32767;
             this.textBoxTenDangNhap.MinimumSize = new System.Drawing.Size(1, 1);
             this.textBoxTenDangNhap.Modified = false;
@@ -174,7 +188,7 @@
             this.textBoxMatKhau.IconRight = null;
             this.textBoxMatKhau.IconRightCursor = System.Windows.Forms.Cursors.IBeam;
             this.textBoxMatKhau.Lines = new string[0];
-            this.textBoxMatKhau.Location = new System.Drawing.Point(547, 266);
+            this.textBoxMatKhau.Location = new System.Drawing.Point(396, 193);
             this.textBoxMatKhau.MaxLength = 32767;
             this.textBoxMatKhau.MinimumSize = new System.Drawing.Size(1, 1);
             this.textBoxMatKhau.Modified = false;
@@ -250,7 +264,7 @@
             this.textBoxMatKhau2.IconRight = null;
             this.textBoxMatKhau2.IconRightCursor = System.Windows.Forms.Cursors.IBeam;
             this.textBoxMatKhau2.Lines = new string[0];
-            this.textBoxMatKhau2.Location = new System.Drawing.Point(547, 311);
+            this.textBoxMatKhau2.Location = new System.Drawing.Point(396, 238);
             this.textBoxMatKhau2.MaxLength = 32767;
             this.textBoxMatKhau2.MinimumSize = new System.Drawing.Size(1, 1);
             this.textBoxMatKhau2.Modified = false;
@@ -306,7 +320,7 @@
             this.bunifuLabel1.CursorType = System.Windows.Forms.Cursors.Default;
             this.bunifuLabel1.Font = new System.Drawing.Font("Segoe UI", 19F, System.Drawing.FontStyle.Bold);
             this.bunifuLabel1.ForeColor = System.Drawing.Color.DimGray;
-            this.bunifuLabel1.Location = new System.Drawing.Point(547, 181);
+            this.bunifuLabel1.Location = new System.Drawing.Point(547, 108);
             this.bunifuLabel1.Margin = new System.Windows.Forms.Padding(2);
             this.bunifuLabel1.Name = "bunifuLabel1";
             this.bunifuLabel1.RightToLeft = System.Windows.Forms.RightToLeft.No;
@@ -345,7 +359,7 @@
             this.labelLogin.CursorType = System.Windows.Forms.Cursors.Default;
             this.labelLogin.Font = new System.Drawing.Font("Segoe UI", 10F);
             this.labelLogin.ForeColor = System.Drawing.Color.DimGray;
-            this.labelLogin.Location = new System.Drawing.Point(676, 191);
+            this.labelLogin.Location = new System.Drawing.Point(676, 118);
             this.labelLogin.Margin = new System.Windows.Forms.Padding(2);
             this.labelLogin.Name = "labelLogin";
             this.labelLogin.RightToLeft = System.Windows.Forms.RightToLeft.No;
@@ -404,7 +418,7 @@
             this.buttonDangKy.IdleIconLeftImage = null;
             this.buttonDangKy.IdleIconRightImage = null;
             this.buttonDangKy.IndicateFocus = false;
-            this.buttonDangKy.Location = new System.Drawing.Point(547, 356);
+            this.buttonDangKy.Location = new System.Drawing.Point(396, 302);
             this.buttonDangKy.Name = "buttonDangKy";
             this.buttonDangKy.OnDisabledState.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(191)))), ((int)(((byte)(191)))), ((int)(((byte)(191)))));
             this.buttonDangKy.OnDisabledState.BorderRadius = 20;
@@ -447,12 +461,244 @@
             this.buttonDangKy.UseDefaultRadiusAndThickness = true;
             this.buttonDangKy.Click += new System.EventHandler(this.buttonDangKy_Click);
             // 
+            // textBoxName
+            // 
+            this.textBoxName.AcceptsReturn = false;
+            this.textBoxName.AcceptsTab = false;
+            this.textBoxName.Anchor = System.Windows.Forms.AnchorStyles.None;
+            this.textBoxName.AnimationSpeed = 200;
+            this.textBoxName.AutoCompleteMode = System.Windows.Forms.AutoCompleteMode.None;
+            this.textBoxName.AutoCompleteSource = System.Windows.Forms.AutoCompleteSource.None;
+            this.textBoxName.AutoSizeHeight = true;
+            this.textBoxName.BackColor = System.Drawing.Color.Transparent;
+            this.textBoxName.BackgroundImage = ((System.Drawing.Image)(resources.GetObject("textBoxName.BackgroundImage")));
+            this.textBoxName.BorderColorActive = System.Drawing.Color.DodgerBlue;
+            this.textBoxName.BorderColorDisabled = System.Drawing.Color.FromArgb(((int)(((byte)(204)))), ((int)(((byte)(204)))), ((int)(((byte)(204)))));
+            this.textBoxName.BorderColorHover = System.Drawing.Color.FromArgb(((int)(((byte)(105)))), ((int)(((byte)(181)))), ((int)(((byte)(255)))));
+            this.textBoxName.BorderColorIdle = System.Drawing.Color.Silver;
+            this.textBoxName.BorderRadius = 20;
+            this.textBoxName.BorderThickness = 1;
+            this.textBoxName.CharacterCasing = System.Windows.Forms.CharacterCasing.Normal;
+            this.textBoxName.Cursor = System.Windows.Forms.Cursors.IBeam;
+            this.textBoxName.DefaultFont = new System.Drawing.Font("Segoe UI", 9.25F);
+            this.textBoxName.DefaultText = "";
+            this.textBoxName.FillColor = System.Drawing.Color.White;
+            this.textBoxName.HideSelection = true;
+            this.textBoxName.IconLeft = null;
+            this.textBoxName.IconLeftCursor = System.Windows.Forms.Cursors.IBeam;
+            this.textBoxName.IconPadding = 10;
+            this.textBoxName.IconRight = null;
+            this.textBoxName.IconRightCursor = System.Windows.Forms.Cursors.IBeam;
+            this.textBoxName.Lines = new string[0];
+            this.textBoxName.Location = new System.Drawing.Point(662, 148);
+            this.textBoxName.MaxLength = 32767;
+            this.textBoxName.MinimumSize = new System.Drawing.Size(1, 1);
+            this.textBoxName.Modified = false;
+            this.textBoxName.Multiline = false;
+            this.textBoxName.Name = "textBoxName";
+            stateProperties13.BorderColor = System.Drawing.Color.DodgerBlue;
+            stateProperties13.FillColor = System.Drawing.Color.Empty;
+            stateProperties13.ForeColor = System.Drawing.Color.Empty;
+            stateProperties13.PlaceholderForeColor = System.Drawing.Color.Empty;
+            this.textBoxName.OnActiveState = stateProperties13;
+            stateProperties14.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(204)))), ((int)(((byte)(204)))), ((int)(((byte)(204)))));
+            stateProperties14.FillColor = System.Drawing.Color.FromArgb(((int)(((byte)(240)))), ((int)(((byte)(240)))), ((int)(((byte)(240)))));
+            stateProperties14.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(109)))), ((int)(((byte)(109)))), ((int)(((byte)(109)))));
+            stateProperties14.PlaceholderForeColor = System.Drawing.Color.DarkGray;
+            this.textBoxName.OnDisabledState = stateProperties14;
+            stateProperties15.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(105)))), ((int)(((byte)(181)))), ((int)(((byte)(255)))));
+            stateProperties15.FillColor = System.Drawing.Color.Empty;
+            stateProperties15.ForeColor = System.Drawing.Color.Empty;
+            stateProperties15.PlaceholderForeColor = System.Drawing.Color.Empty;
+            this.textBoxName.OnHoverState = stateProperties15;
+            stateProperties16.BorderColor = System.Drawing.Color.Silver;
+            stateProperties16.FillColor = System.Drawing.Color.White;
+            stateProperties16.ForeColor = System.Drawing.Color.Empty;
+            stateProperties16.PlaceholderForeColor = System.Drawing.Color.Empty;
+            this.textBoxName.OnIdleState = stateProperties16;
+            this.textBoxName.Padding = new System.Windows.Forms.Padding(3);
+            this.textBoxName.PasswordChar = '\0';
+            this.textBoxName.PlaceholderForeColor = System.Drawing.Color.Silver;
+            this.textBoxName.PlaceholderText = "Nhập họ và tên";
+            this.textBoxName.ReadOnly = false;
+            this.textBoxName.ScrollBars = System.Windows.Forms.ScrollBars.None;
+            this.textBoxName.SelectedText = "";
+            this.textBoxName.SelectionLength = 0;
+            this.textBoxName.SelectionStart = 0;
+            this.textBoxName.ShortcutsEnabled = true;
+            this.textBoxName.Size = new System.Drawing.Size(260, 39);
+            this.textBoxName.Style = Bunifu.UI.WinForms.BunifuTextBox._Style.Bunifu;
+            this.textBoxName.TabIndex = 11;
+            this.textBoxName.TextAlign = System.Windows.Forms.HorizontalAlignment.Left;
+            this.textBoxName.TextMarginBottom = 0;
+            this.textBoxName.TextMarginLeft = 3;
+            this.textBoxName.TextMarginTop = 1;
+            this.textBoxName.TextPlaceholder = "Nhập họ và tên";
+            this.textBoxName.UseSystemPasswordChar = false;
+            this.textBoxName.WordWrap = true;
+            // 
+            // textBoxSDT
+            // 
+            this.textBoxSDT.AcceptsReturn = false;
+            this.textBoxSDT.AcceptsTab = false;
+            this.textBoxSDT.Anchor = System.Windows.Forms.AnchorStyles.None;
+            this.textBoxSDT.AnimationSpeed = 200;
+            this.textBoxSDT.AutoCompleteMode = System.Windows.Forms.AutoCompleteMode.None;
+            this.textBoxSDT.AutoCompleteSource = System.Windows.Forms.AutoCompleteSource.None;
+            this.textBoxSDT.AutoSizeHeight = true;
+            this.textBoxSDT.BackColor = System.Drawing.Color.Transparent;
+            this.textBoxSDT.BackgroundImage = ((System.Drawing.Image)(resources.GetObject("textBoxSDT.BackgroundImage")));
+            this.textBoxSDT.BorderColorActive = System.Drawing.Color.DodgerBlue;
+            this.textBoxSDT.BorderColorDisabled = System.Drawing.Color.FromArgb(((int)(((byte)(204)))), ((int)(((byte)(204)))), ((int)(((byte)(204)))));
+            this.textBoxSDT.BorderColorHover = System.Drawing.Color.FromArgb(((int)(((byte)(105)))), ((int)(((byte)(181)))), ((int)(((byte)(255)))));
+            this.textBoxSDT.BorderColorIdle = System.Drawing.Color.Silver;
+            this.textBoxSDT.BorderRadius = 20;
+            this.textBoxSDT.BorderThickness = 1;
+            this.textBoxSDT.CharacterCasing = System.Windows.Forms.CharacterCasing.Normal;
+            this.textBoxSDT.Cursor = System.Windows.Forms.Cursors.IBeam;
+            this.textBoxSDT.DefaultFont = new System.Drawing.Font("Segoe UI", 9.25F);
+            this.textBoxSDT.DefaultText = "";
+            this.textBoxSDT.FillColor = System.Drawing.Color.White;
+            this.textBoxSDT.HideSelection = true;
+            this.textBoxSDT.IconLeft = null;
+            this.textBoxSDT.IconLeftCursor = System.Windows.Forms.Cursors.IBeam;
+            this.textBoxSDT.IconPadding = 10;
+            this.textBoxSDT.IconRight = null;
+            this.textBoxSDT.IconRightCursor = System.Windows.Forms.Cursors.IBeam;
+            this.textBoxSDT.Lines = new string[0];
+            this.textBoxSDT.Location = new System.Drawing.Point(662, 193);
+            this.textBoxSDT.MaxLength = 32767;
+            this.textBoxSDT.MinimumSize = new System.Drawing.Size(1, 1);
+            this.textBoxSDT.Modified = false;
+            this.textBoxSDT.Multiline = false;
+            this.textBoxSDT.Name = "textBoxSDT";
+            stateProperties17.BorderColor = System.Drawing.Color.DodgerBlue;
+            stateProperties17.FillColor = System.Drawing.Color.Empty;
+            stateProperties17.ForeColor = System.Drawing.Color.Empty;
+            stateProperties17.PlaceholderForeColor = System.Drawing.Color.Empty;
+            this.textBoxSDT.OnActiveState = stateProperties17;
+            stateProperties18.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(204)))), ((int)(((byte)(204)))), ((int)(((byte)(204)))));
+            stateProperties18.FillColor = System.Drawing.Color.FromArgb(((int)(((byte)(240)))), ((int)(((byte)(240)))), ((int)(((byte)(240)))));
+            stateProperties18.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(109)))), ((int)(((byte)(109)))), ((int)(((byte)(109)))));
+            stateProperties18.PlaceholderForeColor = System.Drawing.Color.DarkGray;
+            this.textBoxSDT.OnDisabledState = stateProperties18;
+            stateProperties19.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(105)))), ((int)(((byte)(181)))), ((int)(((byte)(255)))));
+            stateProperties19.FillColor = System.Drawing.Color.Empty;
+            stateProperties19.ForeColor = System.Drawing.Color.Empty;
+            stateProperties19.PlaceholderForeColor = System.Drawing.Color.Empty;
+            this.textBoxSDT.OnHoverState = stateProperties19;
+            stateProperties20.BorderColor = System.Drawing.Color.Silver;
+            stateProperties20.FillColor = System.Drawing.Color.White;
+            stateProperties20.ForeColor = System.Drawing.Color.Empty;
+            stateProperties20.PlaceholderForeColor = System.Drawing.Color.Empty;
+            this.textBoxSDT.OnIdleState = stateProperties20;
+            this.textBoxSDT.Padding = new System.Windows.Forms.Padding(3);
+            this.textBoxSDT.PasswordChar = '\0';
+            this.textBoxSDT.PlaceholderForeColor = System.Drawing.Color.Silver;
+            this.textBoxSDT.PlaceholderText = "Nhập SDT";
+            this.textBoxSDT.ReadOnly = false;
+            this.textBoxSDT.ScrollBars = System.Windows.Forms.ScrollBars.None;
+            this.textBoxSDT.SelectedText = "";
+            this.textBoxSDT.SelectionLength = 0;
+            this.textBoxSDT.SelectionStart = 0;
+            this.textBoxSDT.ShortcutsEnabled = true;
+            this.textBoxSDT.Size = new System.Drawing.Size(260, 39);
+            this.textBoxSDT.Style = Bunifu.UI.WinForms.BunifuTextBox._Style.Bunifu;
+            this.textBoxSDT.TabIndex = 12;
+            this.textBoxSDT.TextAlign = System.Windows.Forms.HorizontalAlignment.Left;
+            this.textBoxSDT.TextMarginBottom = 0;
+            this.textBoxSDT.TextMarginLeft = 3;
+            this.textBoxSDT.TextMarginTop = 1;
+            this.textBoxSDT.TextPlaceholder = "Nhập SDT";
+            this.textBoxSDT.UseSystemPasswordChar = false;
+            this.textBoxSDT.WordWrap = true;
+            // 
+            // bunifuLabel3
+            // 
+            this.bunifuLabel3.AllowParentOverrides = false;
+            this.bunifuLabel3.AutoEllipsis = false;
+            this.bunifuLabel3.CursorType = System.Windows.Forms.Cursors.Default;
+            this.bunifuLabel3.Font = new System.Drawing.Font("Segoe UI", 9F);
+            this.bunifuLabel3.Location = new System.Drawing.Point(662, 238);
+            this.bunifuLabel3.Name = "bunifuLabel3";
+            this.bunifuLabel3.Padding = new System.Windows.Forms.Padding(6, 0, 6, 0);
+            this.bunifuLabel3.RightToLeft = System.Windows.Forms.RightToLeft.No;
+            this.bunifuLabel3.Size = new System.Drawing.Size(65, 15);
+            this.bunifuLabel3.TabIndex = 14;
+            this.bunifuLabel3.Text = "Ngày sinh";
+            this.bunifuLabel3.TextAlignment = System.Drawing.ContentAlignment.TopLeft;
+            this.bunifuLabel3.TextFormat = Bunifu.UI.WinForms.BunifuLabel.TextFormattingOptions.Default;
+            // 
+            // bunifuLabel4
+            // 
+            this.bunifuLabel4.AllowParentOverrides = false;
+            this.bunifuLabel4.AutoEllipsis = false;
+            this.bunifuLabel4.CursorType = null;
+            this.bunifuLabel4.Font = new System.Drawing.Font("Segoe UI", 9F);
+            this.bunifuLabel4.Location = new System.Drawing.Point(662, 297);
+            this.bunifuLabel4.Name = "bunifuLabel4";
+            this.bunifuLabel4.Padding = new System.Windows.Forms.Padding(6, 0, 6, 0);
+            this.bunifuLabel4.RightToLeft = System.Windows.Forms.RightToLeft.No;
+            this.bunifuLabel4.Size = new System.Drawing.Size(57, 15);
+            this.bunifuLabel4.TabIndex = 15;
+            this.bunifuLabel4.Text = "Giới tính";
+            this.bunifuLabel4.TextAlignment = System.Drawing.ContentAlignment.TopLeft;
+            this.bunifuLabel4.TextFormat = Bunifu.UI.WinForms.BunifuLabel.TextFormattingOptions.Default;
+            // 
+            // datePickerBorn
+            // 
+            this.datePickerBorn.Anchor = System.Windows.Forms.AnchorStyles.None;
+            this.datePickerBorn.BackColor = System.Drawing.Color.Transparent;
+            this.datePickerBorn.BorderColor = System.Drawing.Color.Silver;
+            this.datePickerBorn.BorderRadius = 1;
+            this.datePickerBorn.CalendarFont = new System.Drawing.Font("Segoe UI", 9.25F);
+            this.datePickerBorn.Color = System.Drawing.Color.Silver;
+            this.datePickerBorn.DateBorderThickness = Bunifu.UI.WinForms.BunifuDatePicker.BorderThickness.Thin;
+            this.datePickerBorn.DateTextAlign = Bunifu.UI.WinForms.BunifuDatePicker.TextAlign.Left;
+            this.datePickerBorn.DisabledColor = System.Drawing.Color.Gray;
+            this.datePickerBorn.DisplayWeekNumbers = false;
+            this.datePickerBorn.DPHeight = 0;
+            this.datePickerBorn.DropDownAlign = System.Windows.Forms.LeftRightAlignment.Right;
+            this.datePickerBorn.FillDatePicker = false;
+            this.datePickerBorn.Font = new System.Drawing.Font("Segoe UI", 9F);
+            this.datePickerBorn.ForeColor = System.Drawing.Color.Black;
+            this.datePickerBorn.Icon = ((System.Drawing.Image)(resources.GetObject("datePickerBorn.Icon")));
+            this.datePickerBorn.IconColor = System.Drawing.Color.Gray;
+            this.datePickerBorn.IconLocation = Bunifu.UI.WinForms.BunifuDatePicker.Indicator.Right;
+            this.datePickerBorn.LeftTextMargin = 5;
+            this.datePickerBorn.Location = new System.Drawing.Point(662, 259);
+            this.datePickerBorn.MinimumSize = new System.Drawing.Size(4, 32);
+            this.datePickerBorn.Name = "datePickerBorn";
+            this.datePickerBorn.Size = new System.Drawing.Size(260, 32);
+            this.datePickerBorn.TabIndex = 16;
+            this.datePickerBorn.Value = new System.DateTime(2024, 11, 19, 19, 54, 0, 0);
+            // 
+            // comboBoxGender
+            // 
+            this.comboBoxGender.Anchor = System.Windows.Forms.AnchorStyles.None;
+            this.comboBoxGender.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
+            this.comboBoxGender.Font = new System.Drawing.Font("Segoe UI", 9.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.comboBoxGender.FormattingEnabled = true;
+            this.comboBoxGender.Items.AddRange(new object[] {
+            "Nam",
+            "Nữ"});
+            this.comboBoxGender.Location = new System.Drawing.Point(662, 318);
+            this.comboBoxGender.Name = "comboBoxGender";
+            this.comboBoxGender.Size = new System.Drawing.Size(260, 23);
+            this.comboBoxGender.TabIndex = 17;
+            // 
             // RegisterForm
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackColor = System.Drawing.Color.Gainsboro;
             this.ClientSize = new System.Drawing.Size(960, 540);
+            this.Controls.Add(this.comboBoxGender);
+            this.Controls.Add(this.datePickerBorn);
+            this.Controls.Add(this.bunifuLabel4);
+            this.Controls.Add(this.bunifuLabel3);
+            this.Controls.Add(this.textBoxSDT);
+            this.Controls.Add(this.textBoxName);
             this.Controls.Add(this.buttonDangKy);
             this.Controls.Add(this.labelLogin);
             this.Controls.Add(this.bunifuLabel2);
@@ -481,5 +727,11 @@
         private Bunifu.UI.WinForms.BunifuLabel bunifuLabel2;
         private Bunifu.UI.WinForms.BunifuLabel labelLogin;
         private Bunifu.UI.WinForms.BunifuButton.BunifuButton2 buttonDangKy;
+        private Bunifu.UI.WinForms.BunifuTextBox textBoxName;
+        private Bunifu.UI.WinForms.BunifuTextBox textBoxSDT;
+        private Bunifu.UI.WinForms.BunifuLabel bunifuLabel3;
+        private Bunifu.UI.WinForms.BunifuLabel bunifuLabel4;
+        private Bunifu.UI.WinForms.BunifuDatePicker datePickerBorn;
+        private System.Windows.Forms.ComboBox comboBoxGender;
     }
 }

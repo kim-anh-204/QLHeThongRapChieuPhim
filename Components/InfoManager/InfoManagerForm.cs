@@ -1,13 +1,7 @@
 ﻿using QuanLyRapChieuPhim.Util;
 using System;
-using System.Collections.Generic;
-using System.ComponentModel;
 using System.Data;
-using System.Drawing;
-using System.Linq;
-using System.Text;
 using System.Text.RegularExpressions;
-using System.Threading.Tasks;
 using System.Windows.Forms;
 
 namespace QuanLyRapChieuPhim.InfoManager
@@ -79,6 +73,11 @@ namespace QuanLyRapChieuPhim.InfoManager
                 MessageBox.Show("Số điện thoại không được bỏ trống hoặc quá dài.", "Thông báo", MessageBoxButtons.OK, MessageBoxIcon.Error);
                 return;
             }
+            if (int.TryParse(phoneNumber, out _) == false)
+            {
+                MessageBox.Show("Số điện thoại chỉ có thể là số.", "Thông báo", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                return;
+            }
             string email = textBoxEmail.Text.Trim();
             if (email.Length > 0 && Regex.IsMatch(email, RegexPatternHelper.EmailPattern) == false)
             {
@@ -114,6 +113,11 @@ namespace QuanLyRapChieuPhim.InfoManager
                 if (newPassword != newPassword2)
                 {
                     MessageBox.Show("Mật khẩu mới không trùng nhau.", "Thông báo", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                    return;
+                }
+                if (Regex.IsMatch(newPassword, RegexPatternHelper.PasswordPattern) == false)
+                {
+                    MessageBox.Show("Mật khẩu mới phải có tối thiểu 8 ký tự, không có khoảng trắng và có ít nhất 1 chữ cái và 1 chữ số!", "Thông báo", MessageBoxButtons.OK, MessageBoxIcon.Error);
                     return;
                 }
 

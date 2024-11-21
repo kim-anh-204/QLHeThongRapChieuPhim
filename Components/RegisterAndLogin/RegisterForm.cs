@@ -9,7 +9,9 @@ using System.Media;
 using System.Text;
 using System.Text.RegularExpressions;
 using System.Threading.Tasks;
+using System.Windows.Controls.Primitives;
 using System.Windows.Forms;
+using static System.Windows.Forms.VisualStyles.VisualStyleElement.ListView;
 
 namespace QuanLyRapChieuPhim.RegisterAndLogin
 {
@@ -74,6 +76,34 @@ namespace QuanLyRapChieuPhim.RegisterAndLogin
                 MessageBox.Show("Mật khẩu phải có tối thiểu 8 ký tự, không có khoảng trắng và có ít nhất 1 chữ cái và 1 chữ số!", "Thông báo", MessageBoxButtons.OK, MessageBoxIcon.Error);
                 return;
             }
+            string name = textBoxName.Text.Trim();
+            if (name.Length == 0 || name.Length > 150)
+            {
+                MessageBox.Show("Tên không được bỏ trống hoặc quá dài.", "Thông báo", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                return;
+            }
+            string phoneNumber = textBoxSDT.Text.Trim();
+            if (phoneNumber.Length == 0 || phoneNumber.Length > 20)
+            {
+                MessageBox.Show("Số điện thoại không được bỏ trống hoặc quá dài.", "Thông báo", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                return;
+            }
+            if (int.TryParse(phoneNumber, out _) == false)
+            {
+                MessageBox.Show("Số điện thoại chỉ có thể là số.", "Thông báo", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                return;
+            }
+            if (datePickerBorn.Value > DateTime.Today)
+            {
+                MessageBox.Show("Tuổi không hợp lệ.", "Thông báo", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                return;
+            }
+            if (comboBoxGender.SelectedIndex == -1)
+            {
+                MessageBox.Show("Không được bỏ trống giới tính.", "Thông báo", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                return;
+            }
+
 
             string checkQuery = "SELECT COUNT(*) FROM NGUOIDUNG WHERE TenDangNhap = @TenDangNhap";
             int log_count = Connection.ExecuteScalarInt32(checkQuery, new (string, object)[] { ("@TenDangNhap", username) });
@@ -82,6 +112,7 @@ namespace QuanLyRapChieuPhim.RegisterAndLogin
                 MessageBox.Show("Tên người dùng đã tồn tại!", "Thông báo", MessageBoxButtons.OK, MessageBoxIcon.Error);
                 return;
             }
+
 
             string getIdQuery = "SELECT MAX(MaNguoiDung) FROM NGUOIDUNG";
             string userId = (string)Connection.ExecuteScalar(getIdQuery, null);
@@ -95,6 +126,18 @@ namespace QuanLyRapChieuPhim.RegisterAndLogin
                                                             ("@Matkhau", password),
                                                             ("@LoaiNguoiDung", "User"),
                                                         });
+
+            insertQuery = "INSERT INTO KHACHHANG (HoVaTen, GioiTinh, NgaySinh, SoDienThoai, TenDangNhap, TrangThai) VALUES (@HoVaTen, @GioiTinh, @NgaySinh, @SoDienThoai, @TenDangNhap, @TrangThai)";
+            Connection.ExcuteNonQuery(insertQuery, new (string, object)[]
+            {
+                ("@HoVaTen", name),
+                ("@GioiTinh", comboBoxGender.SelectedIndex),
+                ("@NgaySinh", datePickerBorn.Value),
+                ("@SoDienThoai", textBoxSDT.Text.Trim()),
+                ("@TenDangNhap", username),
+                ("@TrangThai", "CHUAXOA"),
+            });
+
             if (is_success == false)
                 return;
             //Sau khi đăng ký thành công sẽ chuyển về màn hình đăng nhập.
