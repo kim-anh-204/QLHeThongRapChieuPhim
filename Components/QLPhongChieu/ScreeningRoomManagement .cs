@@ -21,7 +21,7 @@ namespace QuanLyRapChieuPhim.QLPhongChieu
 
             // Khởi tạo nút "Thoát"
             this.btnExitSearch = new System.Windows.Forms.Button();
-            this.btnExitSearch.Location = new System.Drawing.Point(608, 90);
+            this.btnExitSearch.Location = new System.Drawing.Point(900, 90);
             this.btnExitSearch.Name = "btnExitSearch";
             this.btnExitSearch.Size = new System.Drawing.Size(75, 35);
             this.btnExitSearch.TabIndex = 3;
@@ -160,38 +160,11 @@ namespace QuanLyRapChieuPhim.QLPhongChieu
             }
 
         }
-
-        //private void LoadRoomData()
-        //{
-        //	// Logic để tải dữ liệu từ cơ sở dữ liệu và hiển thị vào DataGridView
-        //	string query = "SELECT * FROM PHONGCHIEUPHIM"; // Thay thế bằng truy vấn của bạn
-        //	DataTable roomData = Connection.GetDataTable(query);
-        //	bunifuDataGridView1.DataSource = roomData; // Giả sử bạn có dataGridView1
-        //}
-
         private void bunifuTextBox1_TextChanged(object sender, EventArgs e)
         {
 
         }
 
-        private void BunifuButton22_Click(object sender, EventArgs e)
-        {
-            // Kiểm tra xem DataGridView có dữ liệu không
-            if (bunifuDataGridView1.Rows.Count > 0)
-            {
-                // Ẩn tất cả các hàng trước khi hiển thị lại
-                foreach (DataGridViewRow row in bunifuDataGridView1.Rows)
-                {
-                    row.Visible = true;
-                }
-            }
-
-            // Ẩn nút "Thoát" sau khi hiển thị lại tất cả các hàng
-            this.btnExitSearch.Visible = false;
-
-            // Làm trống nội dung của TextBox tìm kiếm
-            txtSearch.Text = string.Empty;
-        }
 
         private void bunifuButton22_Click(object sender, EventArgs e)
         {
@@ -213,39 +186,22 @@ namespace QuanLyRapChieuPhim.QLPhongChieu
                 LoadScreeningData();
                 this.btnExitSearch.Visible = false; // Ẩn nút "Thoát"
             }
-            else
-            {
-                // Thực hiện lọc các hàng theo từ khóa chính xác
-                bool hasResult = false;
+			// Hiển thị nút "Thoát" khi có thao tác tìm kiếm, dù tìm thấy hay không
+			this.btnExitSearch.Visible = true;
 
-                for (int i = 0; i < bunifuDataGridView1.Rows.Count; i++)
-                {
-                    DataGridViewRow row = bunifuDataGridView1.Rows[i];
-                    string maPhong = row.Cells["Column2"]?.Value?.ToString().ToLower();
-                    string tenPhong = row.Cells["Column3"]?.Value?.ToString().ToLower();
+			// Duyệt qua tất cả các hàng trong DataGridView
+			foreach (DataGridViewRow row in bunifuDataGridView1.Rows)
+			{
+				if (row.IsNewRow) continue;  // Bỏ qua dòng mới (nếu có)
 
-                    // Kiểm tra khớp chính xác mã hoặc tên phòng
-                    if ((maPhong != null && maPhong.Equals(keyword)) ||
-                        (tenPhong != null && tenPhong.Equals(keyword)))
-                    {
-                        row.Visible = true;
-                        hasResult = true;
-                    }
-                    else
-                    {
-                        row.Visible = false;
-                    }
-                }
+				// Lấy giá trị từ các cột "Mã Phòng" và "Tên Phòng"
+				string maPhong = row.Cells["Column2"]?.Value?.ToString().ToLower();
+				string tenPhong = row.Cells["Column3"]?.Value?.ToString().ToLower();
 
-                // Hiển thị nút "Thoát" khi có thao tác tìm kiếm, dù tìm thấy hay không
-                this.btnExitSearch.Visible = true;
-
-                //if (!hasResult)
-                //{
-                //    MessageBox.Show("Không tìm thấy kết quả phù hợp", "Thông báo", MessageBoxButtons.OK, MessageBoxIcon.Information);
-                //}
-            }
-        }
+				// Kiểm tra nếu mã phòng hoặc tên phòng bắt đầu bằng chữ cái tìm kiếm
+				row.Visible = (maPhong != null && maPhong.Contains(keyword)) || (tenPhong != null && tenPhong.Contains(keyword));
+			}
+		}
 
         private void bunifuDataGridView2_CellContentClick(object sender, DataGridViewCellEventArgs e)
         {
