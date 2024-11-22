@@ -1,4 +1,5 @@
-﻿using QuanLyRapChieuPhim.Util;
+﻿using Bunifu.UI.WinForms;
+using QuanLyRapChieuPhim.Util;
 using System;
 using System.Collections.Generic;
 using System.Data;
@@ -110,14 +111,39 @@ namespace QuanLyRapChieuPhim.ScreeningPage
 
             var selectedMovie = (KeyValuePair<string, string>)comboBoxMovies.SelectedItem;
             string maPhim = selectedMovie.Key;
+            string queryPhim = @"SELECT TOP 1 NgayKhoiChieu,DATEADD(MONTH, 1, PHIM.NgayKhoiChieu) AS NgayKetThuc FROM PHIM WHERE MaPhim= @MaPhim";
+            var parameters = new (string, object)[] { ("@MaPhim", maPhim) };
+            DataTable resultPhim = Connection.GetDataTable(queryPhim, parameters);
+            string ngayKhoiChieu = resultPhim.Rows[0]["NgayKhoiChieu"].ToString();
+            string ngayKetThuc = resultPhim.Rows[0]["NgayKetThuc"].ToString();
             string tenPhim = selectedMovie.Value;
             var selectedRoom = (KeyValuePair<string, string>)comboBoxRoom.SelectedItem;
             string maPhong = selectedRoom.Key;
             string price = priceTextBox.Text;
             string type = movieType.SelectedItem.ToString();
             DateTime selectedTime = dateTimePicker1.Value;
+            DateTime today = DateTime.Now.Date;
+            DateTime now = DateTime.Now;
             string formattedDate = bunifuDatePicker1.Value.ToString("MM/dd/yyyy");
+            DateTime selectedDate = DateTime.ParseExact(ngayKetThuc, "M/d/yyyy h:mm:ss tt", null);
             DateTime NgayTao = DateTime.Now.Date;
+
+
+            if (selectedDate < today)
+            {
+                MessageBox.Show("Phim này đã hết hạn vui lòng chọn phim khác!");
+                return;
+            }
+            else if (selectedDate < bunifuDatePicker1.Value|| bunifuDatePicker1.Value< today)
+            {
+                MessageBox.Show("Thời gian chiếu phim đã vưọt quá ngày hết hạn phim hoặc nhỏ hơn ngày hiện tại!");
+                return;
+            }
+            else if (selectedTime < now)
+            {
+                MessageBox.Show("Giờ được chọn phải lớn hơn giờ hiện tại");
+                return;
+            }
             string queryInsert = "INSERT INTO SUATCHIEU (MaSuatChieu,MaPhim, MaPhong,MaNguoiDung,NgayChieu,GioBatDau,SoVeToiDa,LoaiChieu, GiaVe) VALUES (@MaSuatChieu,@MaPhim, @MaPhong,@MaNguoiDung,@NgayChieu,@GioBatDau,@SoVeToiDa,@LoaiChieu, @GiaVe)";
 
             Connection.ExcuteNonQuery(queryInsert, new (string, object)[]
@@ -145,7 +171,6 @@ namespace QuanLyRapChieuPhim.ScreeningPage
                 }
             }
 
-            // Chèn ghế vào bảng GHE
             foreach (string tenGhe in gheList)
             {
                 string queryInsertGhe = "INSERT INTO GHE (TenGhe, MaSuatChieu, TrangThai) VALUES (@TenGhe, @MaSuatChieu, @TrangThai)";
@@ -159,6 +184,7 @@ namespace QuanLyRapChieuPhim.ScreeningPage
             }
             this.Close();
             screening.LoadScreeningData();
+            screening.VisibleButton();
         }
 
         private void priceTextBox_KeyPress(object sender, KeyPressEventArgs e)

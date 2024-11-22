@@ -15,11 +15,15 @@ namespace QuanLyRapChieuPhim.UserPage
             InitializeComponent();          
             SetupDataGridView();
             LoadNhanVienData();
-          
+            thoat.Visible = false;
         }
         private void InitializeButton()
         {
             
+        }
+        public void VisibleButton()
+        {
+            thoat.Visible = false;
         }
         public void LoadNhanVienData()
         {
@@ -60,7 +64,8 @@ namespace QuanLyRapChieuPhim.UserPage
                     string sdtEdit = bunifuDataGridView1.Rows[rowIndex].Cells["SoDienThoai"].Value.ToString();
                     Update update = new Update(this, maNVEdit, tenNVEdit, sdtEdit);
                     update.Show();
-                    bunifuTextBox1.Text = "";
+                    bunifuTextBox1.Text = "";                  
+
                 }
                 else if (bunifuDataGridView1.Columns[e.ColumnIndex].Name == "Xoa")
                 {
@@ -76,6 +81,7 @@ namespace QuanLyRapChieuPhim.UserPage
                             MessageBox.Show("Xóa nhân viên thành công!", "Thành công", MessageBoxButtons.OK, MessageBoxIcon.Information);
                             bunifuTextBox1.Text = "";
                             LoadNhanVienData();
+                            thoat.Visible = false;
                         }
                         else
                         {
@@ -108,14 +114,18 @@ namespace QuanLyRapChieuPhim.UserPage
         private void timkiembtn_Click(object sender, EventArgs e)
         {
             string searchText = bunifuTextBox1.Text;
+            if (searchText.Trim() == "")
+            {
+                MessageBox.Show("Bạn chưa nhập thông tin cần tìm kiếm!");
+                return;
+
+            }
             string query = @"SELECT * FROM NHANVIEN              
                  WHERE TenNV LIKE @searchText";
 
-            // Thêm phần trăm (%) ở trước và sau từ khóa để tìm kiếm bất kỳ chuỗi nào có chứa từ khóa
             var parameters = new (string, object)[] { ("@searchText", "%" + searchText + "%") };
             bunifuDataGridView1.Rows.Clear();
             bunifuDataGridView1.DataSource = null;
-            // Gọi hàm GetDataTable để lấy dữ liệu từ database
             DataTable result = Connection.GetDataTable(query, parameters);
             if (result != null && result.Rows.Count > 0)
             {
@@ -124,14 +134,22 @@ namespace QuanLyRapChieuPhim.UserPage
                     string maNV = row["MaNV"]?.ToString();
                     string tenNV = row["TenNV"]?.ToString();
                     string sdt = row["SDT"]?.ToString();
-
                     bunifuDataGridView1.Rows.Add(maNV, tenNV, sdt);
+                    thoat.Visible = true;
+
                 }
             }
             else
             {
 
             }
+        }
+
+        private void thoat_Click(object sender, EventArgs e)
+        {
+            thoat.Visible = false;
+            bunifuTextBox1.Text = "";
+            LoadNhanVienData();
         }
     }
 }

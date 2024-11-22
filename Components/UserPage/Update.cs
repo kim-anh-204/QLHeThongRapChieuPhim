@@ -58,6 +58,7 @@ namespace QuanLyRapChieuPhim.UserPage
                 MessageBox.Show("Cập nhật thành công!", "Thông báo", MessageBoxButtons.OK, MessageBoxIcon.Information);
                 this.Close(); 
                 userManager.LoadNhanVienData();
+                userManager.VisibleButton();
             }
             else
             {
