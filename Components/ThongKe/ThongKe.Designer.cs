@@ -34,6 +34,9 @@
 			System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle4 = new System.Windows.Forms.DataGridViewCellStyle();
 			System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle5 = new System.Windows.Forms.DataGridViewCellStyle();
 			System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle6 = new System.Windows.Forms.DataGridViewCellStyle();
+			System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle7 = new System.Windows.Forms.DataGridViewCellStyle();
+			System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle8 = new System.Windows.Forms.DataGridViewCellStyle();
+			System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle9 = new System.Windows.Forms.DataGridViewCellStyle();
 			this.panel1 = new System.Windows.Forms.Panel();
 			this.tableLayoutPanel1 = new System.Windows.Forms.TableLayoutPanel();
 			this.tableLayoutPanel2 = new System.Windows.Forms.TableLayoutPanel();
@@ -63,6 +66,9 @@
 			this.dtGridviewThongKe = new Bunifu.UI.WinForms.BunifuDataGridView();
 			this.tabPage2 = new System.Windows.Forms.TabPage();
 			this.dtgvDtTheoPhim = new Bunifu.UI.WinForms.BunifuDataGridView();
+			this.tabPage3 = new System.Windows.Forms.TabPage();
+			this.dtgvLichsuDatve = new Bunifu.UI.WinForms.BunifuDataGridView();
+			this.buttonBaocao = new System.Windows.Forms.Button();
 			this.panel1.SuspendLayout();
 			this.tableLayoutPanel1.SuspendLayout();
 			this.tableLayoutPanel2.SuspendLayout();
@@ -78,6 +84,8 @@
 			((System.ComponentModel.ISupportInitialize)(this.dtGridviewThongKe)).BeginInit();
 			this.tabPage2.SuspendLayout();
 			((System.ComponentModel.ISupportInitialize)(this.dtgvDtTheoPhim)).BeginInit();
+			this.tabPage3.SuspendLayout();
+			((System.ComponentModel.ISupportInitialize)(this.dtgvLichsuDatve)).BeginInit();
 			this.SuspendLayout();
 			// 
 			// panel1
@@ -96,6 +104,7 @@
 			this.tableLayoutPanel1.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 100F));
 			this.tableLayoutPanel1.Controls.Add(this.tableLayoutPanel2, 0, 0);
 			this.tableLayoutPanel1.Controls.Add(this.tableLayoutPanel3, 0, 2);
+			this.tableLayoutPanel1.Controls.Add(this.buttonBaocao, 0, 1);
 			this.tableLayoutPanel1.Dock = System.Windows.Forms.DockStyle.Fill;
 			this.tableLayoutPanel1.Location = new System.Drawing.Point(32, 32);
 			this.tableLayoutPanel1.Margin = new System.Windows.Forms.Padding(0);
@@ -210,6 +219,7 @@
 			// 
 			this.tabControl1.Controls.Add(this.tabPage1);
 			this.tabControl1.Controls.Add(this.tabPage2);
+			this.tabControl1.Controls.Add(this.tabPage3);
 			this.tabControl1.Dock = System.Windows.Forms.DockStyle.Fill;
 			this.tabControl1.Location = new System.Drawing.Point(0, 0);
 			this.tabControl1.Margin = new System.Windows.Forms.Padding(0);
@@ -574,6 +584,91 @@
 			this.dtgvDtTheoPhim.TabIndex = 7;
 			this.dtgvDtTheoPhim.Theme = Bunifu.UI.WinForms.BunifuDataGridView.PresetThemes.Light;
 			// 
+			// tabPage3
+			// 
+			this.tabPage3.Controls.Add(this.dtgvLichsuDatve);
+			this.tabPage3.Location = new System.Drawing.Point(4, 22);
+			this.tabPage3.Name = "tabPage3";
+			this.tabPage3.Padding = new System.Windows.Forms.Padding(3);
+			this.tabPage3.Size = new System.Drawing.Size(1043, 418);
+			this.tabPage3.TabIndex = 2;
+			this.tabPage3.Text = "Lịch sử đặt vé";
+			this.tabPage3.UseVisualStyleBackColor = true;
+			// 
+			// dtgvLichsuDatve
+			// 
+			this.dtgvLichsuDatve.AllowCustomTheming = false;
+			this.dtgvLichsuDatve.AllowUserToAddRows = false;
+			this.dtgvLichsuDatve.AllowUserToDeleteRows = false;
+			dataGridViewCellStyle7.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(248)))), ((int)(((byte)(251)))), ((int)(((byte)(255)))));
+			dataGridViewCellStyle7.ForeColor = System.Drawing.Color.Black;
+			this.dtgvLichsuDatve.AlternatingRowsDefaultCellStyle = dataGridViewCellStyle7;
+			this.dtgvLichsuDatve.AutoSizeColumnsMode = System.Windows.Forms.DataGridViewAutoSizeColumnsMode.Fill;
+			this.dtgvLichsuDatve.BackgroundColor = System.Drawing.Color.Gainsboro;
+			this.dtgvLichsuDatve.BorderStyle = System.Windows.Forms.BorderStyle.None;
+			this.dtgvLichsuDatve.CellBorderStyle = System.Windows.Forms.DataGridViewCellBorderStyle.SingleHorizontal;
+			this.dtgvLichsuDatve.ColumnHeadersBorderStyle = System.Windows.Forms.DataGridViewHeaderBorderStyle.None;
+			dataGridViewCellStyle8.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
+			dataGridViewCellStyle8.BackColor = System.Drawing.Color.DodgerBlue;
+			dataGridViewCellStyle8.Font = new System.Drawing.Font("Segoe UI Semibold", 11.75F, System.Drawing.FontStyle.Bold);
+			dataGridViewCellStyle8.ForeColor = System.Drawing.Color.White;
+			dataGridViewCellStyle8.SelectionBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(24)))), ((int)(((byte)(115)))), ((int)(((byte)(204)))));
+			dataGridViewCellStyle8.SelectionForeColor = System.Drawing.Color.White;
+			dataGridViewCellStyle8.WrapMode = System.Windows.Forms.DataGridViewTriState.True;
+			this.dtgvLichsuDatve.ColumnHeadersDefaultCellStyle = dataGridViewCellStyle8;
+			this.dtgvLichsuDatve.ColumnHeadersHeight = 40;
+			this.dtgvLichsuDatve.CurrentTheme.AlternatingRowsStyle.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(248)))), ((int)(((byte)(251)))), ((int)(((byte)(255)))));
+			this.dtgvLichsuDatve.CurrentTheme.AlternatingRowsStyle.Font = new System.Drawing.Font("Segoe UI Semibold", 9.75F, System.Drawing.FontStyle.Bold);
+			this.dtgvLichsuDatve.CurrentTheme.AlternatingRowsStyle.ForeColor = System.Drawing.Color.Black;
+			this.dtgvLichsuDatve.CurrentTheme.AlternatingRowsStyle.SelectionBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(210)))), ((int)(((byte)(232)))), ((int)(((byte)(255)))));
+			this.dtgvLichsuDatve.CurrentTheme.AlternatingRowsStyle.SelectionForeColor = System.Drawing.Color.Black;
+			this.dtgvLichsuDatve.CurrentTheme.BackColor = System.Drawing.Color.White;
+			this.dtgvLichsuDatve.CurrentTheme.GridColor = System.Drawing.Color.FromArgb(((int)(((byte)(221)))), ((int)(((byte)(238)))), ((int)(((byte)(255)))));
+			this.dtgvLichsuDatve.CurrentTheme.HeaderStyle.BackColor = System.Drawing.Color.DodgerBlue;
+			this.dtgvLichsuDatve.CurrentTheme.HeaderStyle.Font = new System.Drawing.Font("Segoe UI Semibold", 11.75F, System.Drawing.FontStyle.Bold);
+			this.dtgvLichsuDatve.CurrentTheme.HeaderStyle.ForeColor = System.Drawing.Color.White;
+			this.dtgvLichsuDatve.CurrentTheme.HeaderStyle.SelectionBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(24)))), ((int)(((byte)(115)))), ((int)(((byte)(204)))));
+			this.dtgvLichsuDatve.CurrentTheme.HeaderStyle.SelectionForeColor = System.Drawing.Color.White;
+			this.dtgvLichsuDatve.CurrentTheme.Name = null;
+			this.dtgvLichsuDatve.CurrentTheme.RowsStyle.BackColor = System.Drawing.Color.White;
+			this.dtgvLichsuDatve.CurrentTheme.RowsStyle.Font = new System.Drawing.Font("Segoe UI Semibold", 9.75F, System.Drawing.FontStyle.Bold);
+			this.dtgvLichsuDatve.CurrentTheme.RowsStyle.ForeColor = System.Drawing.Color.Black;
+			this.dtgvLichsuDatve.CurrentTheme.RowsStyle.SelectionBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(210)))), ((int)(((byte)(232)))), ((int)(((byte)(255)))));
+			this.dtgvLichsuDatve.CurrentTheme.RowsStyle.SelectionForeColor = System.Drawing.Color.Black;
+			dataGridViewCellStyle9.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
+			dataGridViewCellStyle9.BackColor = System.Drawing.Color.White;
+			dataGridViewCellStyle9.Font = new System.Drawing.Font("Segoe UI Semibold", 9.75F, System.Drawing.FontStyle.Bold);
+			dataGridViewCellStyle9.ForeColor = System.Drawing.Color.Black;
+			dataGridViewCellStyle9.SelectionBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(210)))), ((int)(((byte)(232)))), ((int)(((byte)(255)))));
+			dataGridViewCellStyle9.SelectionForeColor = System.Drawing.Color.Black;
+			dataGridViewCellStyle9.WrapMode = System.Windows.Forms.DataGridViewTriState.False;
+			this.dtgvLichsuDatve.DefaultCellStyle = dataGridViewCellStyle9;
+			this.dtgvLichsuDatve.Dock = System.Windows.Forms.DockStyle.Fill;
+			this.dtgvLichsuDatve.EnableHeadersVisualStyles = false;
+			this.dtgvLichsuDatve.GridColor = System.Drawing.Color.FromArgb(((int)(((byte)(221)))), ((int)(((byte)(238)))), ((int)(((byte)(255)))));
+			this.dtgvLichsuDatve.HeaderBackColor = System.Drawing.Color.DodgerBlue;
+			this.dtgvLichsuDatve.HeaderBgColor = System.Drawing.Color.Empty;
+			this.dtgvLichsuDatve.HeaderForeColor = System.Drawing.Color.White;
+			this.dtgvLichsuDatve.Location = new System.Drawing.Point(3, 3);
+			this.dtgvLichsuDatve.Name = "dtgvLichsuDatve";
+			this.dtgvLichsuDatve.ReadOnly = true;
+			this.dtgvLichsuDatve.RowHeadersVisible = false;
+			this.dtgvLichsuDatve.RowTemplate.Height = 40;
+			this.dtgvLichsuDatve.SelectionMode = System.Windows.Forms.DataGridViewSelectionMode.FullRowSelect;
+			this.dtgvLichsuDatve.Size = new System.Drawing.Size(1037, 412);
+			this.dtgvLichsuDatve.TabIndex = 8;
+			this.dtgvLichsuDatve.Theme = Bunifu.UI.WinForms.BunifuDataGridView.PresetThemes.Light;
+			// 
+			// buttonBaocao
+			// 
+			this.buttonBaocao.Location = new System.Drawing.Point(3, 123);
+			this.buttonBaocao.Name = "buttonBaocao";
+			this.buttonBaocao.Size = new System.Drawing.Size(86, 23);
+			this.buttonBaocao.TabIndex = 2;
+			this.buttonBaocao.Text = "Xuất báo cáo";
+			this.buttonBaocao.UseVisualStyleBackColor = true;
+			this.buttonBaocao.Click += new System.EventHandler(this.buttonBaocao_Click);
+			// 
 			// ThongKe
 			// 
 			this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
@@ -601,6 +696,8 @@
 			((System.ComponentModel.ISupportInitialize)(this.dtGridviewThongKe)).EndInit();
 			this.tabPage2.ResumeLayout(false);
 			((System.ComponentModel.ISupportInitialize)(this.dtgvDtTheoPhim)).EndInit();
+			this.tabPage3.ResumeLayout(false);
+			((System.ComponentModel.ISupportInitialize)(this.dtgvLichsuDatve)).EndInit();
 			this.ResumeLayout(false);
 
 		}
@@ -636,5 +733,8 @@
 		private Bunifu.UI.WinForms.BunifuRadioButton RBNgay;
 		private Bunifu.UI.WinForms.BunifuRadioButton RBThang;
 		private Bunifu.UI.WinForms.BunifuDataGridView dtgvDtTheoPhim;
+		private System.Windows.Forms.TabPage tabPage3;
+		private Bunifu.UI.WinForms.BunifuDataGridView dtgvLichsuDatve;
+		private System.Windows.Forms.Button buttonBaocao;
 	}
 }

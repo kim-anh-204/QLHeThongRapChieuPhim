@@ -1,6 +1,7 @@
 ﻿using System;
 using System.Data;
 using System.Windows.Forms;
+using ClosedXML.Excel;
 
 namespace QuanLyRapChieuPhim.ThongKe
 {
@@ -19,6 +20,7 @@ namespace QuanLyRapChieuPhim.ThongKe
 			dtGridviewThongKe.AutoGenerateColumns = true;
 			dtGridviewThongKe.DataSource = dtTable;
 			dtgvDtTheoPhim.DataSource = thongKeDoanhThu.DoanhThuTheoPhim();
+			dtgvLichsuDatve.DataSource = thongKeDoanhThu.LichSuDatVe();
 		}
 
 		private void ThongKe_Load(object sender, EventArgs e)
@@ -149,5 +151,80 @@ namespace QuanLyRapChieuPhim.ThongKe
 			}
 		}
 
+		private void buttonBaocao_Click(object sender, EventArgs e)
+		{
+			// Chọn nơi lưu file qua SaveFileDialog
+			SaveFileDialog saveFileDialog = new SaveFileDialog();
+			saveFileDialog.Filter = "Excel Files (*.xlsx)|*.xlsx";
+			saveFileDialog.FileName = "BaoCaoDoanhThu.xlsx";
+
+			if (saveFileDialog.ShowDialog() == DialogResult.OK)
+			{
+				string filePath = saveFileDialog.FileName;
+
+				ExportToExcel(thongKeDoanhThu, filePath);
+
+				MessageBox.Show("Xuất báo cáo thành công!", "Thông báo", MessageBoxButtons.OK, MessageBoxIcon.Information);
+			}
+		}
+
+		private void ExportToExcel(ThongKeDoanhThu thongKe, string filePath)
+		{
+			using (XLWorkbook workbook = new XLWorkbook()) // Tạo một workbook (sổ làm việc) mới
+			{
+				// Sheet 1: Tổng quan doanh thu theo phim
+				var dtTongQuan = thongKe.DoanhThuTheoPhim();
+				var sheetTheoPhim = workbook.Worksheets.Add(dtTongQuan, "Doanh thu theo phim");
+				sheetTheoPhim.Row(1).InsertRowsAbove(1);
+
+				// Tính tổng doanh thu theo phim
+				var tongDTphim = dtTongQuan.Compute("SUM([Doanh Thu])", string.Empty);
+				sheetTheoPhim.Cell(1, 1).Value = "Tổng Doanh Thu";
+				sheetTheoPhim.Cell(1, 2).Value = string.Format("{0:N0} VNĐ", tongDTphim);
+
+				// Sheet 2: Doanh thu hôm nay
+				var dtTheoNgay = thongKe.GetDoanhThuHomNay();
+				var sheetTheoNgay = workbook.Worksheets.Add(dtTheoNgay, "Doanh thu hôm nay");
+				sheetTheoNgay.Row(1).InsertRowsAbove(1);
+
+				// Tính tổng doanh thu hôm nay
+				var tongDTNgay = dtTheoNgay.Compute("SUM([Doanh Thu])", string.Empty);				
+				sheetTheoNgay.Cell(1, 1).Value = "Tổng Doanh Thu";
+				sheetTheoNgay.Cell(1, 2).Value = string.Format("{0:N0} VNĐ", tongDTNgay);
+
+				// Sheet 3: Doanh thu theo tuần
+				var dtTheoTuan = thongKe.GetDoanhThuTheoTuan();
+				var sheetTheoTuan = workbook.Worksheets.Add(dtTheoTuan, "Doanh thu theo tuần");
+				sheetTheoTuan.Row(1).InsertRowsAbove(1);
+
+				// Tính tổng doanh thu theo tuần
+				var tongDTTuan = dtTheoTuan.Compute("SUM([Doanh Thu])", string.Empty);
+				sheetTheoTuan.Cell(1, 1).Value = "Tổng Doanh Thu";
+				sheetTheoTuan.Cell(1, 2).Value = string.Format("{0:N0} VNĐ", tongDTTuan);
+
+
+				// Sheet 4: Doanh thu theo tháng
+				var dtTheoThang = thongKe.GetDoanhThuTheoThang();
+				var sheetTheoThang = workbook.Worksheets.Add(dtTheoThang, "Doanh thu theo tháng");
+				sheetTheoThang.Row(1).InsertRowsAbove(1);
+
+				// Tính tổng doanh thu theo tháng
+				var tongDTThang = dtTheoThang.Compute("SUM([Doanh Thu])", string.Empty);
+				sheetTheoThang.Cell(1, 1).Value = "Tổng Doanh Thu";
+				sheetTheoThang.Cell(1, 2).Value = string.Format("{0:N0} VNĐ", tongDTThang);
+
+				// Sheet 5: Doanh thu theo năm
+				var dtTheoNam = thongKe.GetDoanhThuTheoNam();
+				var sheetTheoNam = workbook.Worksheets.Add(dtTheoNam, "Doanh thu theo năm");
+				sheetTheoNam.Row(1).InsertRowsAbove(1);
+
+				// Tính tổng doanh thu theo năm
+				var tongDTNam = dtTheoNam.Compute("SUM([Doanh Thu])", string.Empty);
+				sheetTheoNam.Cell(1, 1).Value = "Tổng Doanh Thu";
+				sheetTheoNam.Cell(1, 2).Value = string.Format("{0:N0} VNĐ", tongDTNam);
+				// Lưu file
+				workbook.SaveAs(filePath);
+			}
+		}
 	}
 }

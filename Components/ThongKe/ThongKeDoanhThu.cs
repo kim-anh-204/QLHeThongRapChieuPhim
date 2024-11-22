@@ -11,7 +11,23 @@ namespace QuanLyRapChieuPhim.ThongKe
 {
 	internal class ThongKeDoanhThu
 	{
-		// Phương thức gọi Stored Procedure và trả về DataTable
+        public DataTable LichSuDatVe()
+        {
+            string query = @"
+            SELECT 
+                MaSuatChieu AS [Mã Suất Chiếu],
+                MaNV AS [Mã Nhân Viên],
+                STRING_AGG(TenGhe, ', ') AS [Danh Sách Ghế],
+                FORMAT(ThoigianDatve, 'dd-MM-yyyy HH:mm:ss') AS [Thời Gian Đặt Vé]
+            FROM 
+                VEXEMPHIM
+            GROUP BY 
+                MaSuatChieu, MaNV, FORMAT(ThoigianDatve,'dd-MM-yyyy HH:mm:ss')
+            ORDER BY 
+                FORMAT(ThoigianDatve, 'dd-MM-yyyy HH:mm:ss') DESC;
+            ";
+            return Connection.GetDataTable(query);
+        }
 		public DataTable DoanhThuTheoPhim()
 		{
 			string query = @"WITH SoVeBanDuoc as(
@@ -19,7 +35,7 @@ namespace QuanLyRapChieuPhim.ThongKe
 	            from VEXEMPHIM
 	            group by MaSuatChieu
 	            )
-            SELECT p.MaPhim,p.TenPhim, ISNULL(SUM(svbd.SoVe*sc.GiaVe),0) AS DoanhThu
+            SELECT p.MaPhim,p.TenPhim, ISNULL(SUM(svbd.SoVe*sc.GiaVe),0) AS [Doanh Thu]
             FROM SUATCHIEU sc
             JOIN SoVeBanDuoc svbd ON svbd.MaSuatChieu = sc.MaSuatchieu
             RIGHT JOIN PHIM p on sc.MaPhim = p.MaPhim
@@ -51,18 +67,14 @@ namespace QuanLyRapChieuPhim.ThongKe
 			return Connection.GetDataTable(query);  // Sử dụng phương thức GetDataTable từ class Connection
 		}
 
-
 		public DataTable GetDoanhThuTheoTuan()
 		{
 			string query = @"
    -- Đảm bảo tuần bắt đầu từ thứ Hai
-SET DATEFIRST 1;
+    SET DATEFIRST 1;
     DECLARE @today DATE = GETDATE(); -- Ngày hiện tại
     DECLARE @startOfWeek DATE = DATEADD(DAY, 1 - DATEPART(WEEKDAY, @today), @today); 
     -- Ngày bắt đầu tuần (thứ Hai của tuần hiện tại)
-
- 
-    
 
     -- Tạo bảng tạm để lưu số vé bán được
     WITH SoVeBanDuoc AS (
@@ -118,7 +130,7 @@ SET DATEFIRST 1;
             LEFT JOIN SUATCHIEU sc ON CAST(sc.NgayChieu AS DATE) = DATEADD(DAY, Days.offset, @startOfMonth)
             LEFT JOIN SoVeBanDuoc svbd ON sc.MaSuatChieu = svbd.MaSuatChieu
             LEFT JOIN PHIM p ON sc.MaPhim = p.MaPhim
-           WHERE DATEADD(DAY, Days.offset, @startOfMonth) <= EOMONTH(@today)  -- Lọc đến ngày hiện tại
+           WHERE DATEADD(DAY, Days.offset, @startOfMonth) <= EOMONTH(@today)  -- Lọc đến ngày cuối cùng của tháng
             GROUP BY 
                 Days.offset, DATEADD(DAY, Days.offset, @startOfMonth) -- Đảm bảo nhóm theo ngày
             ORDER BY 
