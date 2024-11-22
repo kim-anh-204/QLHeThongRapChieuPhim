@@ -221,7 +221,6 @@
             this.Name = "ChonGioChieu";
             this.Padding = new System.Windows.Forms.Padding(32);
             this.Text = "ChonGioChieu";
-            this.Load += new System.EventHandler(this.ChonGioChieu_Load);
             this.panelContainer.ResumeLayout(false);
             this.flowPanelContent.ResumeLayout(false);
             this.panel2.ResumeLayout(false);

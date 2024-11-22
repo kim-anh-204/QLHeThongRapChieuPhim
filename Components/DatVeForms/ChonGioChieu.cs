@@ -22,9 +22,6 @@ namespace QuanLyRapChieuPhim.Dashboard.DatVeForms
         {
             InitializeComponent();
         }
-        private void ChonGioChieu_Load(object sender, EventArgs e)
-        {
-        }
         private void buttonQuayLai_Click(object sender, EventArgs e)
         {
             OnQuayLai_Click?.Invoke();
@@ -34,7 +31,18 @@ namespace QuanLyRapChieuPhim.Dashboard.DatVeForms
         {
             _selectedFilmName = filmName;
             flowPanelContent.Controls.Clear();
-            string query = "SELECT Ngaychieu, GioBatdau FROM SUATCHIEU JOIN PHIM on SUATCHIEU.MaPhim = PHIM.MaPhim WHERE TenPhim = @TenPhim ORDER BY Ngaychieu";
+            string query = @"
+                SELECT 
+	                Ngaychieu, 
+	                GioBatdau 
+                FROM 
+	                SUATCHIEU
+                JOIN 
+	                PHIM ON SUATCHIEU.MaPhim = PHIM.MaPhim 
+                WHERE 
+	                TenPhim = @TenPhim
+	                AND Ngaychieu >= GETDATE()
+                ORDER BY Ngaychieu";
             DataTable dt = Connection.GetDataTable(query, new (string, object)[]
             {
                 ("@TenPhim", filmName)

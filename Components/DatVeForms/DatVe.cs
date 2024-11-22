@@ -26,7 +26,18 @@ namespace QuanLyRapChieuPhim.Dashboard.DatVeForms
 
         private void LoadFilmCard()
         {
-            string query = "SELECT DISTINCT HinhAnh, TenPhim, Thoiluong, NgayKhoiChieu from SUATCHIEU join PHIM on SUATCHIEU.MaPhim = PHIM.MaPhim";
+            string query = @"
+                SELECT DISTINCT 
+	                HinhAnh, 
+	                TenPhim, 
+	                Thoiluong, 
+	                NgayKhoiChieu 
+                FROM 
+	                SUATCHIEU 
+                JOIN 
+	                PHIM ON SUATCHIEU.MaPhim = PHIM.MaPhim
+                WHERE Ngaychieu >= GETDATE()
+                ";
 
             _allFilmCards = Connection.GetDataTable(query);
             flowLayoutPanelPhim.Controls.Clear();
