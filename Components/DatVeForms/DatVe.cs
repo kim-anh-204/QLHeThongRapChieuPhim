@@ -39,6 +39,7 @@ namespace QuanLyRapChieuPhim.Dashboard.DatVeForms
                 WHERE 
 					Ngaychieu >= CAST(GETDATE() AS DATE)
 					AND GioBatdau >= CAST (GETDATE() AS TIME)
+                    AND SUATCHIEU.TrangThai = 'CHUAXOA'
                 ";
 
             _allFilmCards = Connection.GetDataTable(query);

@@ -61,6 +61,7 @@ namespace QuanLyRapChieuPhim.Dashboard.DatVeForms
 		                TenPhim = @TenPhim 
 		                AND Ngaychieu = @Ngaychieu 
 		                AND GioBatdau = @GioBatdau
+                        AND SUATCHIEU.TrangThai = 'CHUAXOA'
                 ";
             DataTable dt = Connection.GetDataTable(query, new (string, object)[]
             {

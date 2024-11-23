@@ -43,6 +43,7 @@ namespace QuanLyRapChieuPhim.Dashboard.DatVeForms
 	                TenPhim = @TenPhim
 	                AND Ngaychieu >= CAST(GETDATE() AS DATE)
 					AND GioBatdau >= CAST(GETDATE() AS TIME)
+                    AND SUATCHIEU.TrangThai = 'CHUAXOA'
                 ORDER BY Ngaychieu
             ";
             DataTable dt = Connection.GetDataTable(query, new (string, object)[]
