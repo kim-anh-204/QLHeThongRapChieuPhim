@@ -1,4 +1,7 @@
-﻿using System;
+﻿using QuanLyRapChieuPhim.Components.CustomerPage;
+using QuanLyRapChieuPhim.ScreeningPage;
+using QuanLyRapChieuPhim.UserPage;
+using System;
 using System.Windows.Forms;
 namespace QuanLyRapChieuPhim
 {
@@ -12,7 +15,7 @@ namespace QuanLyRapChieuPhim
         {
             Application.EnableVisualStyles();
             Application.SetCompatibleTextRenderingDefault(false);
-            //Application.Run(new CustomerManager());
+            //Application.Run(new Screening());
             Application.Run(new LoginAndRegisterForm());
         }
     }

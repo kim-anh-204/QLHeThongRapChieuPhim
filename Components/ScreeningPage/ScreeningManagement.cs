@@ -1,4 +1,5 @@
-﻿using QuanLyRapChieuPhim.Util;
+﻿using Bunifu.UI.WinForms;
+using QuanLyRapChieuPhim.Util;
 using System;
 using System.Data;
 using System.Drawing;
@@ -13,11 +14,13 @@ namespace QuanLyRapChieuPhim.ScreeningPage
             InitializeComponent();
             LoadScreeningData();
             SetupDataGridView();
+            thoat.Visible = false;
+
         }
 
         private void Form1_Load(object sender, EventArgs e)
         {
-
+            LoadScreeningData();
         }
         public void LoadScreeningData()
         {
@@ -91,6 +94,7 @@ namespace QuanLyRapChieuPhim.ScreeningPage
                     UpdateScreening updateScreening = new UpdateScreening(this, maSc, maPhim, maPhong, gioBatDau, ngayChieu, loaiChieu, giaVe);
                     updateScreening.Show();
                     bunifuTextBox1.Text = "";
+
                 }
                 else if (bunifuDataGridView1.Columns[e.ColumnIndex].Name == "Xoa")
                 {
@@ -114,6 +118,8 @@ namespace QuanLyRapChieuPhim.ScreeningPage
                             bunifuDataGridView1.Rows.RemoveAt(e.RowIndex);
                             MessageBox.Show("Xóa thành công!", "Thành công", MessageBoxButtons.OK, MessageBoxIcon.Information);
                             bunifuTextBox1.Text = "";
+                            thoat.Visible = false;
+                            LoadScreeningData();
                         }
                         else
                         {
@@ -147,20 +153,27 @@ namespace QuanLyRapChieuPhim.ScreeningPage
         {
 
         }
-
+        public void VisibleButton()
+        {
+            thoat.Visible = false;
+        }
         private void bunifuButton2_Click(object sender, EventArgs e)
         {
             string searchText= bunifuTextBox1.Text;
+            if (searchText.Trim() == "")
+            {
+                MessageBox.Show("Bạn chưa nhập thông tin cần tìm kiếm!");
+                return;
+
+            }
             string query = @"SELECT * FROM SUATCHIEU
                  join PHIM on PHIM.MaPhim=SUATCHIEU.MaPhim
                 join PHONGCHIEUPHIM on PHONGCHIEUPHIM.MaPhong= SUATCHIEU.MaPhong
                  WHERE TenPhim LIKE @searchText";
 
-            // Thêm phần trăm (%) ở trước và sau từ khóa để tìm kiếm bất kỳ chuỗi nào có chứa từ khóa
             var parameters = new (string, object)[] { ("@searchText", "%" + searchText + "%") };
             bunifuDataGridView1.Rows.Clear();
             bunifuDataGridView1.DataSource = null;
-            // Gọi hàm GetDataTable để lấy dữ liệu từ database
             DataTable result = Connection.GetDataTable(query, parameters);
             if (result != null && result.Rows.Count > 0)
             {
@@ -178,6 +191,8 @@ namespace QuanLyRapChieuPhim.ScreeningPage
                     }
                     bunifuDataGridView1.Rows.Add(maSc, tenPhim, tenPhong, ngayChieu, gioBatDau, giaVe);
                 }
+                thoat.Visible = true;
+
             }
             else
             {
@@ -188,6 +203,19 @@ namespace QuanLyRapChieuPhim.ScreeningPage
 
         private void bunifuTextBox1_TextChanged(object sender, EventArgs e)
         {
+
+        }
+
+        private void thoat_Click(object sender, EventArgs e)
+        {
+            thoat.Visible = false;
+            bunifuTextBox1.Text = "";
+            LoadScreeningData();
+        }
+
+        private void Screening_Shown(object sender, EventArgs e)
+        {
+            LoadScreeningData();
 
         }
     }

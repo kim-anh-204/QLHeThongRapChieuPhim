@@ -1,4 +1,5 @@
-﻿using QuanLyRapChieuPhim.UserPage;
+﻿using Bunifu.UI.WinForms;
+using QuanLyRapChieuPhim.UserPage;
 using QuanLyRapChieuPhim.Util;
 using System;
 using System.Collections.Generic;
@@ -18,6 +19,7 @@ namespace QuanLyRapChieuPhim.Components.CustomerPage
         {
             InitializeComponent();
             LoadCustomerData();
+            thoat.Visible = false;
         }
 
         public void LoadCustomerData()
@@ -57,7 +59,7 @@ namespace QuanLyRapChieuPhim.Components.CustomerPage
             }
 
         }
-
+       
         private void bunifuTextBox1_TextChanged(object sender, EventArgs e)
         {
 
@@ -66,6 +68,12 @@ namespace QuanLyRapChieuPhim.Components.CustomerPage
         private void timkiembtn_Click(object sender, EventArgs e)
         {
             string searchText = bunifuTextBox1.Text;
+            if(searchText.Trim() == "")
+            {
+                MessageBox.Show("Bạn chưa nhập thông tin cần tìm kiếm!");
+                return;
+
+            }
             string query = @"SELECT * FROM KHACHHANG              
                  WHERE HoVaTen LIKE @searchText";
 
@@ -90,6 +98,7 @@ namespace QuanLyRapChieuPhim.Components.CustomerPage
                     string sdt = row["SoDienThoai"]?.ToString();
                     string email = row["Email"]?.ToString();
                     bunifuDataGridView1.Rows.Add(maKh,hoTen, gioiTinh, ngaySinh, sdt, email);
+                    thoat.Visible = true;
                 }
             }
             else
@@ -119,6 +128,7 @@ namespace QuanLyRapChieuPhim.Components.CustomerPage
                             MessageBox.Show("Xóa khách hàng thành công!", "Thành công", MessageBoxButtons.OK, MessageBoxIcon.Information);
                             bunifuTextBox1.Text = "";
                             LoadCustomerData();
+                            thoat.Visible = false;
                         }
                         else
                         {
@@ -127,6 +137,15 @@ namespace QuanLyRapChieuPhim.Components.CustomerPage
                     }
                 }
             }
+        }
+
+
+
+        private void bunifuButton1_Click_1(object sender, EventArgs e)
+        {
+            thoat.Visible = false;
+            bunifuTextBox1.Text = "";
+            LoadCustomerData();
         }
     }
 }

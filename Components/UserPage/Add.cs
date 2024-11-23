@@ -60,6 +60,8 @@ namespace QuanLyRapChieuPhim.UserPage
             });
             this.Close();
             userManager.LoadNhanVienData();
+            userManager.VisibleButton();
+
         }
 
 
