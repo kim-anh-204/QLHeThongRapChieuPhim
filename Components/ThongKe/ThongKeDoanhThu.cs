@@ -48,14 +48,14 @@ namespace QuanLyRapChieuPhim.ThongKe
             GROUP BY p.MaPhim, p.TenPhim";
 			return Connection.GetDataTable(query);
 		}
-
+		//WHERE CAST(ThoigianDatve AS DATE) = CAST(GETDATE() AS DATE)
 		public DataTable GetDoanhThuHomNay()
 		{
 			string query = @"
             WITH SoVeBanDuoc AS (
             SELECT MaSuatChieu, COUNT(MaVe) AS SoVe
             FROM VEXEMPHIM
-            WHERE CAST(ThoigianDatve AS DATE) = CAST(GETDATE() AS DATE)  
+             
             GROUP BY MaSuatChieu
         )
         SELECT 
@@ -67,10 +67,9 @@ namespace QuanLyRapChieuPhim.ThongKe
         FROM SUATCHIEU sc
         JOIN SoVeBanDuoc svbd ON sc.MaSuatchieu = svbd.MaSuatChieu
         RIGHT JOIN PHIM p ON sc.MaPhim = p.MaPhim
-        WHERE CAST(sc.Ngaychieu AS DATE) >= CAST(GETDATE() AS DATE)
+        WHERE CAST(sc.Ngaychieu AS DATE) = CAST(GETDATE() AS DATE)
         GROUP BY p.MaPhim, p.TenPhim,sc.Ngaychieu, svbd.SoVe
     ";
-
 			return Connection.GetDataTable(query);  
 		}
 
