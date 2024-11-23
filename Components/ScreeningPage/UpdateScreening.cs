@@ -68,27 +68,26 @@ namespace QuanLyRapChieuPhim.ScreeningPage
             string queryPhim = @"SELECT TOP 1 NgayKhoiChieu,DATEADD(MONTH, 1, PHIM.NgayKhoiChieu) AS NgayKetThuc FROM PHIM WHERE MaPhim= @MaPhim";
             var parameters = new (string, object)[] { ("@MaPhim", maPhim) };
             DataTable resultPhim = Connection.GetDataTable(queryPhim, parameters);
-            string ngayKhoiChieu = resultPhim.Rows[0]["NgayKhoiChieu"].ToString();
-            string ngayKetThuc = resultPhim.Rows[0]["NgayKetThuc"].ToString();
+            DateTime ngayKhoiChieu = (DateTime)resultPhim.Rows[0]["NgayKhoiChieu"];
+            DateTime ngayKetThuc = (DateTime)resultPhim.Rows[0]["NgayKetThuc"];
             this.loaiChieu = movieType.SelectedItem.ToString();
             this.giaVe = priceTextBox.Text;
             DateTime today = DateTime.Now.Date;
             DateTime now = DateTime.Now;
-            DateTime selectedDate = DateTime.ParseExact(ngayKetThuc, "M/d/yyyy h:mm:ss tt", null);
             DateTime NgayTao = DateTime.Now.Date;
-            if (selectedDate < today)
+            if (ngayKetThuc < today)
             {
                 MessageBox.Show("Phim này đã hết hạn vui lòng chọn phim khác!");
                 return;
             }
-            else if (selectedDate < bunifuDatePicker1.Value || bunifuDatePicker1.Value < today)
+            else if (ngayKetThuc < bunifuDatePicker1.Value || bunifuDatePicker1.Value < today || bunifuDatePicker1.Value < ngayKhoiChieu)
             {
-                MessageBox.Show("Thời gian chiếu phim đã vưọt quá ngày hết hạn phim hoặc nhỏ hơn ngày hiện tại!");
+                MessageBox.Show("Thời gian chiếu phim không nằm trong thời gian chiếu của phim!");
                 return;
             }
-            else if (selectedTime < now)
+            else if (selectedTime.TimeOfDay < now.TimeOfDay)
             {
-                MessageBox.Show("Giờ được chọn phải lớn hơn giờ hiện tại");
+                MessageBox.Show("Giờ được chọn phải lớn hơn giờ hiện tại!");
                 return;
             }
             string query = "UPDATE SUATCHIEU SET MaPhim = @MaPhim,MaPhong=@MaPhong, LoaiChieu = @LoaiChieu,GioBatDau = @GioBatDau,NgayChieu = @NgayChieu,GiaVe=@GiaVe WHERE MaSuatChieu = @MaSuatChieu";

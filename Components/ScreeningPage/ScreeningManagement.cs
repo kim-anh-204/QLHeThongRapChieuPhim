@@ -37,7 +37,8 @@ namespace QuanLyRapChieuPhim.ScreeningPage
                 SUATCHIEU.GiaVe
                 FROM
                 SUATCHIEU join PHIM on PHIM.MaPhim=SUATCHIEU.MaPhim
-	            join PHONGCHIEUPHIM on PHONGCHIEUPHIM.MaPhong= SUATCHIEU.MaPhong       
+	            join PHONGCHIEUPHIM on PHONGCHIEUPHIM.MaPhong= SUATCHIEU.MaPhong
+                WHERE SUATCHIEU.TrangThai='CHUAXOA'
                 ";
 
             DataTable screeningData = Connection.GetDataTable(query);
@@ -71,50 +72,49 @@ namespace QuanLyRapChieuPhim.ScreeningPage
             if (e.RowIndex >= 0)
             {
                 string maSc = bunifuDataGridView1.Rows[e.RowIndex].Cells["maSC"].Value.ToString();
-
-                if (bunifuDataGridView1.Columns[e.ColumnIndex].Name == "Sua")
-                {
-                    string query = @"
+                string query = @"
                          SELECT MaPhim, MaPhong, Ngaychieu, GioBatdau, SoVeToida, LoaiChieu, GiaVe
                          FROM SUATCHIEU
                          WHERE MaSuatchieu = @MaSuatchieu ";
 
-                    var parameters = new (string, object)[]
-                        {
-                            ("@MaSuatchieu", maSc) 
-                        };
-                    DataTable screeningData = Connection.GetDataTable(query, parameters);
-                    string maPhim = screeningData.Rows[0]["MaPhim"].ToString();    
-                    string maPhong = screeningData.Rows[0]["MaPhong"].ToString();    
-                    string gioBatDau = screeningData.Rows[0]["GioBatDau"].ToString();   
-                    DateTime ngayChieu = Convert.ToDateTime(screeningData.Rows[0]["Ngaychieu"]); 
-                    string soVeToida = screeningData.Rows[0]["SoVeToida"].ToString(); 
-                    string loaiChieu = screeningData.Rows[0]["LoaiChieu"].ToString();    
-                    string giaVe =screeningData.Rows[0]["GiaVe"].ToString();
+                var parameters = new (string, object)[]
+                    {
+                            ("@MaSuatchieu", maSc)
+                    };
+                DataTable screeningData = Connection.GetDataTable(query, parameters);
+                string maPhim = screeningData.Rows[0]["MaPhim"].ToString();
+                string maPhong = screeningData.Rows[0]["MaPhong"].ToString();
+                string gioBatDau = screeningData.Rows[0]["GioBatDau"].ToString();
+                DateTime ngayChieu = Convert.ToDateTime(screeningData.Rows[0]["Ngaychieu"]);
+                string soVeToida = screeningData.Rows[0]["SoVeToida"].ToString();
+                string loaiChieu = screeningData.Rows[0]["LoaiChieu"].ToString();
+                string giaVe = screeningData.Rows[0]["GiaVe"].ToString();
+                DateTime today = DateTime.Now.Date;
+                if (bunifuDataGridView1.Columns[e.ColumnIndex].Name == "Sua")
+                {                    
+                    
                     UpdateScreening updateScreening = new UpdateScreening(this, maSc, maPhim, maPhong, gioBatDau, ngayChieu, loaiChieu, giaVe);
                     updateScreening.Show();
                     bunifuTextBox1.Text = "";
 
                 }
                 else if (bunifuDataGridView1.Columns[e.ColumnIndex].Name == "Xoa")
-                {
+                {                                
                     var confirmResult = MessageBox.Show($"Bạn có chắc muốn xóa suất chiếu phim?", "Xác nhận xóa", MessageBoxButtons.YesNo, MessageBoxIcon.Warning);
                     if (confirmResult == DialogResult.Yes)
                     {
 						string checkGHEQuery = "SELECT COUNT(*) FROM GHE WHERE MaSuatChieu = @MaSuatChieu AND TrangThai = 'True'";
 						int count = Connection.ExecuteScalarInt32(checkGHEQuery, new (string, object)[] { ("@MaSuatChieu", maSc) });
-						if (count > 0)
+						if (count > 0&& ngayChieu >= today)
 						{
 							MessageBox.Show("Xóa không thành công vì đã có người đặt vé!");
 							return;
-						}
-						string deleteGHEQuery = "DELETE FROM GHE WHERE MaSuatChieu = @MaSuatChieu";
-                        bool isDeletedGHE = Connection.ExcuteNonQuery(deleteGHEQuery, new (string, object)[] { ("@MaSuatChieu", maSc) });
-                        string deleteQuery = "DELETE FROM SUATCHIEU WHERE MaSuatChieu = @MaSuatChieu";
-                        bool isDeleted = Connection.ExcuteNonQuery(deleteQuery, new (string, object)[] { ("@MaSuatChieu", maSc) });
-                        
-                        if (isDeleted&& isDeletedGHE)
-                        {
+                        }                    
+                        string updateQuery = "UPDATE SUATCHIEU SET TRANGTHAI = 'XOA' WHERE MaSuatChieu = @MaSuatChieu";
+                        bool isUpdated = Connection.ExcuteNonQuery(updateQuery, new (string, object)[] { ("@MaSuatChieu", maSc) });
+;
+                        if (isUpdated )
+                        {                        
                             bunifuDataGridView1.Rows.RemoveAt(e.RowIndex);
                             MessageBox.Show("Xóa thành công!", "Thành công", MessageBoxButtons.OK, MessageBoxIcon.Information);
                             bunifuTextBox1.Text = "";

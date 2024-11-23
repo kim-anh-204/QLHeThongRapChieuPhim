@@ -114,8 +114,8 @@ namespace QuanLyRapChieuPhim.ScreeningPage
             string queryPhim = @"SELECT TOP 1 NgayKhoiChieu,DATEADD(MONTH, 1, PHIM.NgayKhoiChieu) AS NgayKetThuc FROM PHIM WHERE MaPhim= @MaPhim";
             var parameters = new (string, object)[] { ("@MaPhim", maPhim) };
             DataTable resultPhim = Connection.GetDataTable(queryPhim, parameters);
-            string ngayKhoiChieu = resultPhim.Rows[0]["NgayKhoiChieu"].ToString();
-            string ngayKetThuc = resultPhim.Rows[0]["NgayKetThuc"].ToString();
+            DateTime ngayKhoiChieu = (DateTime)resultPhim.Rows[0]["NgayKhoiChieu"];
+            DateTime ngayKetThuc = (DateTime)resultPhim.Rows[0]["NgayKetThuc"];
             string tenPhim = selectedMovie.Value;
             var selectedRoom = (KeyValuePair<string, string>)comboBoxRoom.SelectedItem;
             string maPhong = selectedRoom.Key;
@@ -125,28 +125,34 @@ namespace QuanLyRapChieuPhim.ScreeningPage
             DateTime today = DateTime.Now.Date;
             DateTime now = DateTime.Now;
             string formattedDate = bunifuDatePicker1.Value.ToString("MM/dd/yyyy");
-            DateTime selectedDate = DateTime.ParseExact(ngayKetThuc, "M/d/yyyy h:mm:ss tt", null);
             DateTime NgayTao = DateTime.Now.Date;
-
-
-            if (selectedDate < today)
+            string queryPC = @"SELECT TOP 1 * FROM PHONGCHIEUPHIM WHERE MaPhong= @MaPhong";
+            var parametersPC = new (string, object)[] { ("@MaPhong", maPhong) };
+            DataTable resultPC = Connection.GetDataTable(queryPC, parametersPC);
+            Boolean trangThaiPhong = (Boolean)resultPC.Rows[0]["TrangthaiPhongchieu"];        
+            if (ngayKetThuc < today)
             {
                 MessageBox.Show("Phim này đã hết hạn vui lòng chọn phim khác!");
                 return;
             }
-            else if (selectedDate < bunifuDatePicker1.Value|| bunifuDatePicker1.Value< today)
+            else if (ngayKetThuc < bunifuDatePicker1.Value|| bunifuDatePicker1.Value< today|| bunifuDatePicker1.Value<ngayKhoiChieu)
             {
-                MessageBox.Show("Thời gian chiếu phim đã vưọt quá ngày hết hạn phim hoặc nhỏ hơn ngày hiện tại!");
+                MessageBox.Show("Thời gian chiếu phim không nằm trong thời gian chiếu của phim!");
                 return;
             }
-            else if (selectedTime < now)
+            else if (selectedTime.TimeOfDay < now.TimeOfDay)
             {
-                MessageBox.Show("Giờ được chọn phải lớn hơn giờ hiện tại");
+                MessageBox.Show("Giờ được chọn phải lớn hơn giờ hiện tại!");
+                return;
+            }
+            else if (!trangThaiPhong)
+            {
+                MessageBox.Show("Phòng đang được bảo trì vui lòng chọn phòng khác!");
                 return;
             }
             string queryInsert = "INSERT INTO SUATCHIEU (MaSuatChieu,MaPhim, MaPhong,MaNguoiDung,NgayChieu,GioBatDau,SoVeToiDa,LoaiChieu, GiaVe) VALUES (@MaSuatChieu,@MaPhim, @MaPhong,@MaNguoiDung,@NgayChieu,@GioBatDau,@SoVeToiDa,@LoaiChieu, @GiaVe)";
 
-            Connection.ExcuteNonQuery(queryInsert, new (string, object)[]
+            var resultSC = Connection.ExcuteNonQuery(queryInsert, new (string, object)[]
              {
             ("@MaSuatChieu", newMaSC),
             ("@MaPhim", maPhim),
@@ -181,6 +187,16 @@ namespace QuanLyRapChieuPhim.ScreeningPage
                     ("@MaSuatChieu", newMaSC),
                     ("@TrangThai", false)
                 });
+            }
+            if (resultSC)
+            {
+                MessageBox.Show("Thêm thành công!", "Thông báo", MessageBoxButtons.OK, MessageBoxIcon.Information);
+                this.Close();
+                screening.LoadScreeningData();
+            }
+            else
+            {
+                MessageBox.Show("Thêm thất bại!", "Lỗi", MessageBoxButtons.OK, MessageBoxIcon.Error);
             }
             this.Close();
             screening.LoadScreeningData();
