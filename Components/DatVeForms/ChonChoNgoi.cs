@@ -38,7 +38,30 @@ namespace QuanLyRapChieuPhim.Dashboard.DatVeForms
             _ngayChieu = ngayChieu;
             _gioChieu = gioChieu;
             _selectedSeats.Clear();
-            string query = "SELECT HinhAnh, TenPhim, TenPhong, Ngaychieu, GioBatdau, GiaVe, TenGhe, TrangThai, SUATCHIEU.MaSuatchieu FROM SUATCHIEU JOIN PHIM ON SUATCHIEU.MaPhim = PHIM.MaPhim JOIN GHE ON SUATCHIEU.MaSuatchieu = GHE.MaSuatChieu JOIN PHONGCHIEUPHIM ON PHONGCHIEUPHIM.MaPhong = SUATCHIEU.MaPhong WHERE TenPhim = @TenPhim AND Ngaychieu = @Ngaychieu AND GioBatdau = @GioBatdau";
+            string query = @"
+                SELECT 
+	                HinhAnh, 
+	                TenPhim, 
+	                TenPhong, 
+	                Ngaychieu, 
+	                GioBatdau, 
+	                GiaVe, 
+	                TenGhe, 
+	                GHE.TrangThai, 
+	                SUATCHIEU.MaSuatchieu 
+                FROM 
+	                SUATCHIEU 
+	                JOIN PHIM 
+		                ON SUATCHIEU.MaPhim = PHIM.MaPhim 
+	                JOIN GHE 
+		                ON SUATCHIEU.MaSuatchieu = GHE.MaSuatChieu 
+	                JOIN PHONGCHIEUPHIM 
+		                ON PHONGCHIEUPHIM.MaPhong = SUATCHIEU.MaPhong 
+	                WHERE 
+		                TenPhim = @TenPhim 
+		                AND Ngaychieu = @Ngaychieu 
+		                AND GioBatdau = @GioBatdau
+                ";
             DataTable dt = Connection.GetDataTable(query, new (string, object)[]
             {
                 ("@TenPhim", tenPhim),
