@@ -41,8 +41,10 @@ namespace QuanLyRapChieuPhim.Dashboard.DatVeForms
 	                PHIM ON SUATCHIEU.MaPhim = PHIM.MaPhim 
                 WHERE 
 	                TenPhim = @TenPhim
-	                AND Ngaychieu >= GETDATE()
-                ORDER BY Ngaychieu";
+	                AND Ngaychieu >= CAST(GETDATE() AS DATE)
+					AND GioBatdau >= CAST(GETDATE() AS TIME)
+                ORDER BY Ngaychieu
+            ";
             DataTable dt = Connection.GetDataTable(query, new (string, object)[]
             {
                 ("@TenPhim", filmName)

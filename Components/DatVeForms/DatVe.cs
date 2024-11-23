@@ -36,7 +36,9 @@ namespace QuanLyRapChieuPhim.Dashboard.DatVeForms
 	                SUATCHIEU 
                 JOIN 
 	                PHIM ON SUATCHIEU.MaPhim = PHIM.MaPhim
-                WHERE Ngaychieu >= GETDATE()
+                WHERE 
+					Ngaychieu >= CAST(GETDATE() AS DATE)
+					AND GioBatdau >= CAST (GETDATE() AS TIME)
                 ";
 
             _allFilmCards = Connection.GetDataTable(query);
