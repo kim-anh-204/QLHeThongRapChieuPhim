@@ -75,6 +75,35 @@ namespace QuanLyRapChieuPhim.ScreeningPage
             DateTime today = DateTime.Now.Date;
             DateTime now = DateTime.Now;
             DateTime NgayTao = DateTime.Now.Date;
+            string queryPC = @"SELECT TOP 1 * FROM PHONGCHIEUPHIM WHERE MaPhong= @MaPhong";
+            var parametersPC = new (string, object)[] { ("@MaPhong", maPhong) };
+            DataTable resultPC = Connection.GetDataTable(queryPC, parametersPC);
+            Boolean trangThaiPhong = (Boolean)resultPC.Rows[0]["TrangthaiPhongchieu"];
+            string queryTrung = @"
+SELECT COUNT(*) 
+FROM SUATCHIEU 
+WHERE MaPhong = @MaPhong 
+  AND TrangThai = 'CHUAXOA'
+  AND (
+      (NgayChieu = @NgayChieu AND 
+       (
+           CAST(@NgayChieu AS DATETIME) + CAST(@GioDuocChon AS DATETIME) < CAST(NgayChieu AS DATETIME) + CAST(GioBatDau AS DATETIME) + 4.0/24 
+           AND 
+           CAST(@NgayChieu AS DATETIME) + CAST(@GioDuocChon AS DATETIME) + 4.0/24 > CAST(NgayChieu AS DATETIME) + CAST(GioBatDau AS DATETIME)
+       )
+      )
+      OR
+      (NgayChieu = DATEADD(DAY, -1, @NgayChieu) AND 
+       CAST(NgayChieu AS DATETIME) + CAST(GioBatDau AS DATETIME) + 4.0/24 > CAST(@NgayChieu AS DATETIME) + CAST(@GioDuocChon AS DATETIME)
+      )
+      OR
+      (NgayChieu = DATEADD(DAY, 1, @NgayChieu) AND 
+       CAST(@NgayChieu AS DATETIME) + CAST(@GioDuocChon AS DATETIME) + 4.0/24 > CAST(NgayChieu AS DATETIME) + CAST(GioBatDau AS DATETIME)
+      )
+  )";
+            var parametersTrung = new (string, object)[] { ("@MaPhong", maPhong), ("@Ngaychieu", formattedDate), ("@GioDuocChon", selectedTime.TimeOfDay) };
+            DataTable resultTrung = Connection.GetDataTable(queryTrung, parametersTrung);
+            int count = Convert.ToInt32(Connection.ExecuteScalar(queryTrung, parametersTrung));
             if (ngayKetThuc < today)
             {
                 MessageBox.Show("Phim này đã hết hạn vui lòng chọn phim khác!");
@@ -82,12 +111,22 @@ namespace QuanLyRapChieuPhim.ScreeningPage
             }
             else if (ngayKetThuc < bunifuDatePicker1.Value || bunifuDatePicker1.Value < today || bunifuDatePicker1.Value < ngayKhoiChieu)
             {
-                MessageBox.Show("Thời gian chiếu phim không nằm trong thời gian chiếu của phim!");
+                MessageBox.Show("Ngày chiếu phim không nằm trong thời gian chiếu của phim!");
                 return;
             }
-            else if (selectedTime.TimeOfDay < now.TimeOfDay)
+            else if (bunifuDatePicker1.Value.Date == today.Date && selectedTime.TimeOfDay < now.TimeOfDay)
             {
                 MessageBox.Show("Giờ được chọn phải lớn hơn giờ hiện tại!");
+                return;
+            }
+            else if (!trangThaiPhong)
+            {
+                MessageBox.Show("Phòng đang được bảo trì vui lòng chọn phòng khác!");
+                return;
+            }
+            else if (count > 0)
+            {
+                MessageBox.Show("Đã bị trùng lịch chiếu!");
                 return;
             }
             string query = "UPDATE SUATCHIEU SET MaPhim = @MaPhim,MaPhong=@MaPhong, LoaiChieu = @LoaiChieu,GioBatDau = @GioBatDau,NgayChieu = @NgayChieu,GiaVe=@GiaVe WHERE MaSuatChieu = @MaSuatChieu";
@@ -166,7 +205,7 @@ namespace QuanLyRapChieuPhim.ScreeningPage
         }
         private void LoadRoom()
         {
-            string query = "SELECT MaPhong, TenPhong FROM PHONGCHIEUPHIM";
+            string query = "SELECT MaPhong, TenPhong FROM PHONGCHIEUPHIM WHERE TrangThai='CHUAXOA'";
             DataTable moviesTable = QuanLyRapChieuPhim.Util.Connection.GetDataTable(query);
 
             if (moviesTable != null)
