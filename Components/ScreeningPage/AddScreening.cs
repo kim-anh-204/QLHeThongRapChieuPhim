@@ -93,7 +93,15 @@ namespace QuanLyRapChieuPhim.ScreeningPage
             }
             string queryID = "SELECT TOP 1 MaSuatChieu FROM SUATCHIEU ORDER BY MaSuatChieu DESC;";
             DataTable result = Connection.GetDataTable(queryID);
-            string maSC = result.Rows[0]["MaSuatChieu"].ToString();
+            string maSC;
+            if (result.Rows.Count > 0)
+            {
+                maSC = result.Rows[0]["MaSuatChieu"]?.ToString();
+            }
+            else
+            {
+                maSC = "S000";
+            }
             string prefix = maSC.Substring(0, 1); 
             string numberPart = maSC.Substring(1);
             int number = int.Parse(numberPart);
