@@ -15,6 +15,8 @@ namespace QuanLyRapChieuPhim.QuanLyPhim
 		private bool isEditing = false;
 		private string maPhimEditing;
 		public event EventHandler FilmUpdated;
+		private bool Trangthai = true; // Biến trạng thái mặc định là true
+
 		public FormAddFilm()
 		{
 			InitializeComponent();
@@ -51,54 +53,111 @@ namespace QuanLyRapChieuPhim.QuanLyPhim
 
 		private bool CheckCondition()
 		{
-			if (string.IsNullOrWhiteSpace(TBTenPhim.Text) || TBTenPhim.Text.Length <= 0)
+			if (!ValidateTenPhim(TBTenPhim.Text)) return false;
+			if (!ValidateNhaSanXuat(TBNsx.Text)) return false;
+			if (!ValidateHangSanXuat(TBHsx.Text)) return false;
+			if (!ValidateDaoDien(TBDaoDien.Text)) return false;
+			if (!ValidateTheLoai(clbTheLoai)) return false;
+			if (!ValidateNgayKhoiChieu(DatePickerNgaykc.Value)) return false;
+			if (!ValidateThoiLuong(TBThoiluong.Text)) return false;
+			if (!ValidateDienVien(TBDienVien.Text)) return false;
+
+			return true;
+		}
+
+		private bool ValidateTenPhim(string tenPhim)
+		{
+			if (string.IsNullOrWhiteSpace(tenPhim) || tenPhim.Length <= 0)
 			{
 				MessageBox.Show("Tên phim không hợp lệ", "Thông báo", MessageBoxButtons.OK, MessageBoxIcon.Error);
 				return false;
 			}
-			if (string.IsNullOrWhiteSpace(TBNsx.Text) || TBNsx.Text.Any(char.IsDigit))
+
+			// Kiểm tra trùng lặp trong cơ sở dữ liệu
+			string query = "SELECT COUNT(*) FROM PHIM WHERE TenPhim = @TenPhim";
+			var parameters = new (string, object)[] { ("@TenPhim", tenPhim) };
+
+			int count = Convert.ToInt32(Connection.ExecuteScalar(query, parameters));
+			if (count > 0)
 			{
-				MessageBox.Show("Nhà sản xuất không được chứa số hoặc để trống.", "Thông báo", MessageBoxButtons.OK, MessageBoxIcon.Error);
-				return false;
-			}
-			if (string.IsNullOrWhiteSpace(TBHsx.Text) || TBHsx.Text.Any(char.IsDigit))
-			{
-				MessageBox.Show("Hãng sản xuất không được chứa số hoặc để trống.", "Thông báo", MessageBoxButtons.OK, MessageBoxIcon.Error);
+				MessageBox.Show("Tên phim đã tồn tại trong hệ thống!", "Thông báo", MessageBoxButtons.OK, MessageBoxIcon.Error);
 				return false;
 			}
 
-			if (string.IsNullOrWhiteSpace(TBDaoDien.Text) || TBDaoDien.Text.Any(char.IsDigit))
+			return true;
+		}
+
+		private bool ValidateNhaSanXuat(string nhaSanXuat)
+		{
+			if (string.IsNullOrWhiteSpace(nhaSanXuat))
+			{
+				MessageBox.Show("Nhà sản xuất không được để trống.", "Thông báo", MessageBoxButtons.OK, MessageBoxIcon.Error);
+				return false;
+			}
+			return true;
+		}
+
+		private bool ValidateHangSanXuat(string hangSanXuat)
+		{
+			if (string.IsNullOrWhiteSpace(hangSanXuat))
+			{
+				MessageBox.Show("Hãng sản xuất không được để trống.", "Thông báo", MessageBoxButtons.OK, MessageBoxIcon.Error);
+				return false;
+			}
+			return true;
+		}
+
+		private bool ValidateDaoDien(string daoDien)
+		{
+			if (string.IsNullOrWhiteSpace(daoDien) || daoDien.Any(char.IsDigit))
 			{
 				MessageBox.Show("Tên đạo diễn không được chứa số hoặc để trống.", "Thông báo", MessageBoxButtons.OK, MessageBoxIcon.Error);
 				return false;
 			}
+			return true;
+		}
 
+		private bool ValidateTheLoai(CheckedListBox clbTheLoai)
+		{
 			if (clbTheLoai.CheckedItems.Count == 0)
 			{
 				MessageBox.Show("Vui lòng chọn ít nhất 1 thể loại phim.", "Thông báo", MessageBoxButtons.OK, MessageBoxIcon.Error);
 				return false;
 			}
+			return true;
+		}
 
-			if (DatePickerNgaykc.Value < DateTime.Today.Date)
+		private bool ValidateNgayKhoiChieu(DateTime ngayKhoiChieu)
+		{
+			if (ngayKhoiChieu < DateTime.Today.Date)
 			{
-				MessageBox.Show($"Ngày khởi chiếu bắt đầu phải từ ngày {DateTime.Today.Date}", "Thông báo");
+				MessageBox.Show($"Ngày khởi chiếu phải từ ngày {DateTime.Today.Date}.", "Thông báo");
 				return false;
 			}
+			return true;
+		}
 
-			if (!int.TryParse(TBThoiluong.Text, out _))
+		private bool ValidateThoiLuong(string thoiLuong)
+		{
+			if (!int.TryParse(thoiLuong, out _))
 			{
 				MessageBox.Show("Thời lượng phải là số hợp lệ!", "Lỗi nhập liệu", MessageBoxButtons.OK, MessageBoxIcon.Error);
 				TBThoiluong.Clear(); // Xóa nội dung không hợp lệ
 				return false;
 			}
+			return true;
+		}
 
-			if (string.IsNullOrWhiteSpace(TBDienVien.Text) || TBDienVien.Text.Any(char.IsDigit))
+		private bool ValidateDienVien(string dienVien)
+		{
+			if (string.IsNullOrWhiteSpace(dienVien) || dienVien.Any(char.IsDigit))
 			{
 				MessageBox.Show("Tên diễn viên chính không được chứa số hoặc để trống.", "Thông báo", MessageBoxButtons.OK, MessageBoxIcon.Error);
 				return false;
 			}
 			return true;
 		}
+
 		public void SetEditMode(string maPhim, string tenPhim, string nuocSX, string hangSX, string daoDien, string dienVienChinh, List<string> theLoai, DateTime ngayKhoiChieu, int thoiLuong, string moTa, byte[] hinhAnh)
 		{
 			ButtonThemPhimMoi.Text = "Lưu";
@@ -161,7 +220,7 @@ namespace QuanLyRapChieuPhim.QuanLyPhim
 			if (isEditing)
 			{
 				// Thực hiện cập nhật dữ liệu phim
-				bool result = UpdateFilmToDatabase(maPhimEditing, tenPhim, ngayKhoiChieu, thoiLuong, daoDien, dienVienChinh, hangSX, nuocSX, moTa, hinhAnh, selectedGenres);
+				bool result = UpdateFilmToDatabase(maPhimEditing, tenPhim, ngayKhoiChieu, thoiLuong, daoDien, dienVienChinh, hangSX, nuocSX, moTa, hinhAnh, selectedGenres, Trangthai);
 				if (result)
 				{
 					MessageBox.Show("Phim đã được cập nhật thành công!");
@@ -201,7 +260,7 @@ namespace QuanLyRapChieuPhim.QuanLyPhim
 				using (var transaction = Connection.BeginTransaction(out conn))
 				{
 					// Thêm phim vào bảng PHIM
-					string insert_Query = "INSERT INTO PHIM VALUES (@MaPhim, @TenPhim, @Thoiluong, @Daodien, @DienvienChinh, @HangSX, @NuocSX, @HinhAnh, @MoTa, @NgayKhoiChieu)";
+					string insert_Query = "INSERT INTO PHIM VALUES (@MaPhim, @TenPhim, @Thoiluong, @Daodien, @DienvienChinh, @HangSX, @NuocSX, @HinhAnh, @MoTa, @NgayKhoiChieu, @Trangthai)";
 					bool flag = Connection.ExcuteNonQuery(insert_Query, new (string, object)[] {
 					("@MaPhim", current_ID),
 					("@TenPhim", tenPhim),
@@ -212,7 +271,8 @@ namespace QuanLyRapChieuPhim.QuanLyPhim
 					("@NuocSX", nuocSX),
 					("@HinhAnh", hinhAnh),
 					("@MoTa", moTa),
-					("@NgayKhoiChieu", ngayKhoiChieu)
+					("@NgayKhoiChieu", ngayKhoiChieu),
+					("@Trangthai", Trangthai ? 1 : 0)
 				});
 
 					if (!flag) throw new Exception("Lỗi khi thêm phim");
@@ -242,14 +302,14 @@ namespace QuanLyRapChieuPhim.QuanLyPhim
 
 		private bool UpdateFilmToDatabase(string maPhim, string tenPhim, DateTime ngayKhoiChieu, int thoiLuong,
 								  string daoDien, string dienVienChinh, string hangSX, string nuocSX,
-								  string moTa, byte[] hinhAnh, List<string> theLoai)
+								  string moTa, byte[] hinhAnh, List<string> theLoai, bool Trangthai)
 		{
 			try
 			{
 				// Chuẩn bị truy vấn cập nhật thông tin phim trong bảng PHIM
 				string updateFilmQuery = "UPDATE PHIM SET TenPhim = @TenPhim, NgayKhoiChieu = @NgayKhoiChieu, Thoiluong = @ThoiLuong, " +
 										 "DaoDien = @DaoDien, DienVienChinh = @DienVienChinh, HangSanxuat = @HangSX, NuocSanxuat = @NuocSX, " +
-										 "MoTa = @MoTa, HinhAnh = @HinhAnh WHERE MaPhim = @MaPhim";
+										 "MoTa = @MoTa, HinhAnh = @HinhAnh, Trangthai = @Trangthai WHERE MaPhim = @MaPhim";
 
 				// Các tham số cho lệnh cập nhật
 				var filmParameters = new (string, object)[]
@@ -263,7 +323,8 @@ namespace QuanLyRapChieuPhim.QuanLyPhim
 			("@HangSX", hangSX),
 			("@NuocSX", nuocSX),
 			("@MoTa", moTa),
-			("@HinhAnh", hinhAnh)
+			("@HinhAnh", hinhAnh),
+			("@Trangthai", Trangthai ? 1 : 0)
 				};
 
 				SqlConnection conn;
@@ -335,8 +396,10 @@ namespace QuanLyRapChieuPhim.QuanLyPhim
 		{
 
 		}
-		
 
+		private void TBTenPhim_TextChange(object sender, EventArgs e)
+		{
 
+		}
 	}
 }

@@ -5,10 +5,12 @@ using System.Windows.Forms;
 using System.Data.SqlClient;
 
 using QuanLyRapChieuPhim.Util;
+using DocumentFormat.OpenXml.Bibliography;
+using DocumentFormat.OpenXml.Math;
 
 namespace QuanLyRapChieuPhim.QuanLyPhim
 {
-    public partial class FilmManagementForm : Form
+	public partial class FilmManagementForm : Form
 	{
 		private DataTable movieTable;
 		public FilmManagementForm()
@@ -18,10 +20,17 @@ namespace QuanLyRapChieuPhim.QuanLyPhim
 		//SqlConnection cnn = new SqlConnection(Connection.connectionString);
 		private DataTable LoadData()
 		{
-			return Connection.GetDataTable("SELECT PHIM.MaPhim, PHIM.TenPhim, PHIM.NgayKhoiChieu, PHIM.ThoiLuong, PHIM.DaoDien, PHIM.DienVienChinh, " +
-										   "PHIM.HangSanXuat, PHIM.NuocSanXuat, PHIM.MoTa, PHIM.HinhAnh, " +
-										   "DATEADD(MONTH, 1, PHIM.NgayKhoiChieu) AS NgayKetThuc " +
-										   "FROM PHIM");
+			return Connection.GetDataTable("SELECT " +
+				"PHIM.MaPhim, " + 
+				"PHIM.TenPhim, " +
+				"PHIM.NgayKhoiChieu, " +
+				"PHIM.ThoiLuong, " +
+				"PHIM.DaoDien, " +
+				"PHIM.DienVienChinh, " +
+				"PHIM.HangSanXuat, PHIM.NuocSanXuat, PHIM.MoTa, PHIM.HinhAnh, " +
+				"DATEADD(MONTH, 1, PHIM.NgayKhoiChieu) AS NgayKetThuc, " +
+				"CASE WHEN PHIM.Trangthai = 1 THEN N'Sử dụng' ELSE N'Không sử dụng' END as Trangthai " +
+				"FROM PHIM");
 		}
 		private void BindDataToGrid(DataTable dataTable)
 		{
@@ -46,7 +55,7 @@ namespace QuanLyRapChieuPhim.QuanLyPhim
 		{
 			FormAddFilm formThemPhim = new FormAddFilm();
 			formThemPhim.ShowDialog(); // Dạng modal dialog
-			// Làm mới dữ liệu trên DataGridView
+									   // Làm mới dữ liệu trên DataGridView
 			MovieManagementForm_Load(sender, e);
 		}
 
@@ -93,7 +102,22 @@ namespace QuanLyRapChieuPhim.QuanLyPhim
 				}
 				else if (colName == "Xoa")
 				{
-					XoaPhim(e.RowIndex);
+					DialogResult result = MessageBox.Show(
+						"Bạn muốn làm gì với phìm này?\n1. " +
+						"Xoá hoàn toàn. Chọn 'Yes'\n2 " +
+						"Đánh dấu là không sử dụng nữa. Chọn 'NO'",
+						"Xác nhận hành động",
+						MessageBoxButtons.YesNoCancel,
+						MessageBoxIcon.Question
+						);
+					if(result == DialogResult.Yes)
+					{
+						XoaPhim(e.RowIndex);
+					}
+					else if(result == DialogResult.No)
+					{
+						KhongSuDungPhim(e.RowIndex);
+					}		
 				}
 			}
 		}
@@ -128,7 +152,6 @@ namespace QuanLyRapChieuPhim.QuanLyPhim
 			List<string> theLoai = GetTheLoaiByPhim(maPhim);
 			string moTa = row["MoTa"].ToString();
 			byte[] hinhAnh = row["HinhAnh"] != DBNull.Value ? (byte[])row["HinhAnh"] : null;
-
 			// Gọi FormAddFilm với đầy đủ thông tin
 			FormAddFilm formAddFilm = new FormAddFilm();
 			formAddFilm.SetEditMode(maPhim, tenPhim, nuocSX, hangSX, daoDien, dienVienChinh, theLoai, ngayKhoiChieu, thoiLuong, moTa, hinhAnh);
@@ -136,6 +159,15 @@ namespace QuanLyRapChieuPhim.QuanLyPhim
 			formAddFilm.ShowDialog();
 		}
 
+		private void KhongSuDungPhim(int rowIndex)
+		{
+			DataRow row = movieTable.Rows[rowIndex];
+			string maPhim = row["MaPhim"].ToString();
+			string query = $"Update PHIM SET Trangthai = 0 WHERE MaPhim = '{maPhim}'";
+			Connection.ExcuteNonQuery(query);
+			DtGridViewQLP.Rows[rowIndex].Cells["Trangthai"].Value = "Không sử dụng";
+			MessageBox.Show("Phim đã được đánh dấu là 'Không sử dụng'.", "Thông báo", MessageBoxButtons.OK, MessageBoxIcon.Information);
+		}
 		private void XoaPhim(int rowIndex)
 		{
 			DataRow row = movieTable.Rows[rowIndex];

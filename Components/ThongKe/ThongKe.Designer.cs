@@ -257,6 +257,7 @@
 			// 
 			// panel2
 			// 
+			this.panel2.BackColor = System.Drawing.Color.White;
 			this.panel2.Controls.Add(this.tableLayoutPanel5);
 			this.panel2.Controls.Add(this.panel3);
 			this.panel2.Dock = System.Windows.Forms.DockStyle.Fill;

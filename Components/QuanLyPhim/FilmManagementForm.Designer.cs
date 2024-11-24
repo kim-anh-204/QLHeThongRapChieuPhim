@@ -30,30 +30,31 @@
 		{
 			this.components = new System.ComponentModel.Container();
 			System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(FilmManagementForm));
-			Bunifu.UI.WinForms.BunifuButton.BunifuButton.BorderEdges borderEdges3 = new Bunifu.UI.WinForms.BunifuButton.BunifuButton.BorderEdges();
-			Bunifu.UI.WinForms.BunifuButton.BunifuButton.BorderEdges borderEdges4 = new Bunifu.UI.WinForms.BunifuButton.BunifuButton.BorderEdges();
-			Bunifu.UI.WinForms.BunifuTextBox.StateProperties stateProperties5 = new Bunifu.UI.WinForms.BunifuTextBox.StateProperties();
-			Bunifu.UI.WinForms.BunifuTextBox.StateProperties stateProperties6 = new Bunifu.UI.WinForms.BunifuTextBox.StateProperties();
-			Bunifu.UI.WinForms.BunifuTextBox.StateProperties stateProperties7 = new Bunifu.UI.WinForms.BunifuTextBox.StateProperties();
-			Bunifu.UI.WinForms.BunifuTextBox.StateProperties stateProperties8 = new Bunifu.UI.WinForms.BunifuTextBox.StateProperties();
-			System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle5 = new System.Windows.Forms.DataGridViewCellStyle();
-			System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle6 = new System.Windows.Forms.DataGridViewCellStyle();
-			System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle7 = new System.Windows.Forms.DataGridViewCellStyle();
-			System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle8 = new System.Windows.Forms.DataGridViewCellStyle();
+			Bunifu.UI.WinForms.BunifuButton.BunifuButton.BorderEdges borderEdges1 = new Bunifu.UI.WinForms.BunifuButton.BunifuButton.BorderEdges();
+			Bunifu.UI.WinForms.BunifuButton.BunifuButton.BorderEdges borderEdges2 = new Bunifu.UI.WinForms.BunifuButton.BunifuButton.BorderEdges();
+			Bunifu.UI.WinForms.BunifuTextBox.StateProperties stateProperties1 = new Bunifu.UI.WinForms.BunifuTextBox.StateProperties();
+			Bunifu.UI.WinForms.BunifuTextBox.StateProperties stateProperties2 = new Bunifu.UI.WinForms.BunifuTextBox.StateProperties();
+			Bunifu.UI.WinForms.BunifuTextBox.StateProperties stateProperties3 = new Bunifu.UI.WinForms.BunifuTextBox.StateProperties();
+			Bunifu.UI.WinForms.BunifuTextBox.StateProperties stateProperties4 = new Bunifu.UI.WinForms.BunifuTextBox.StateProperties();
+			System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle1 = new System.Windows.Forms.DataGridViewCellStyle();
+			System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle2 = new System.Windows.Forms.DataGridViewCellStyle();
+			System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle3 = new System.Windows.Forms.DataGridViewCellStyle();
+			System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle4 = new System.Windows.Forms.DataGridViewCellStyle();
 			this.tableLayoutPanel1 = new System.Windows.Forms.TableLayoutPanel();
 			this.ThemPhim = new Bunifu.UI.WinForms.BunifuButton.BunifuButton();
 			this.ButtonTim = new Bunifu.UI.WinForms.BunifuButton.BunifuButton();
 			this.TextBoxTimKiem = new Bunifu.UI.WinForms.BunifuTextBox();
 			this.bunifuPanel1 = new Bunifu.UI.WinForms.BunifuPanel();
 			this.DtGridViewQLP = new Bunifu.UI.WinForms.BunifuDataGridView();
+			this.pHIMBindingSource1 = new System.Windows.Forms.BindingSource(this.components);
+			this.ButtonDsPhim = new System.Windows.Forms.Button();
 			this.TenPhim = new System.Windows.Forms.DataGridViewTextBoxColumn();
 			this.NgayBatdau = new System.Windows.Forms.DataGridViewTextBoxColumn();
 			this.Ngayketthuc = new System.Windows.Forms.DataGridViewTextBoxColumn();
 			this.Thoiluong = new System.Windows.Forms.DataGridViewTextBoxColumn();
+			this.Trangthai = new System.Windows.Forms.DataGridViewTextBoxColumn();
 			this.Sua = new System.Windows.Forms.DataGridViewButtonColumn();
 			this.Xoa = new System.Windows.Forms.DataGridViewButtonColumn();
-			this.pHIMBindingSource1 = new System.Windows.Forms.BindingSource(this.components);
-			this.ButtonDsPhim = new System.Windows.Forms.Button();
 			this.tableLayoutPanel1.SuspendLayout();
 			this.bunifuPanel1.SuspendLayout();
 			((System.ComponentModel.ISupportInitialize)(this.DtGridViewQLP)).BeginInit();
@@ -95,11 +96,11 @@
 			this.ThemPhim.ColorContrastOnClick = 45;
 			this.ThemPhim.ColorContrastOnHover = 45;
 			this.ThemPhim.Cursor = System.Windows.Forms.Cursors.Default;
-			borderEdges3.BottomLeft = true;
-			borderEdges3.BottomRight = true;
-			borderEdges3.TopLeft = true;
-			borderEdges3.TopRight = true;
-			this.ThemPhim.CustomizableEdges = borderEdges3;
+			borderEdges1.BottomLeft = true;
+			borderEdges1.BottomRight = true;
+			borderEdges1.TopLeft = true;
+			borderEdges1.TopRight = true;
+			this.ThemPhim.CustomizableEdges = borderEdges1;
 			this.ThemPhim.DialogResult = System.Windows.Forms.DialogResult.None;
 			this.ThemPhim.DisabledBorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(191)))), ((int)(((byte)(191)))), ((int)(((byte)(191)))));
 			this.ThemPhim.DisabledFillColor = System.Drawing.Color.Empty;
@@ -188,11 +189,11 @@
 			this.ButtonTim.ColorContrastOnClick = 45;
 			this.ButtonTim.ColorContrastOnHover = 45;
 			this.ButtonTim.Cursor = System.Windows.Forms.Cursors.Default;
-			borderEdges4.BottomLeft = true;
-			borderEdges4.BottomRight = true;
-			borderEdges4.TopLeft = true;
-			borderEdges4.TopRight = true;
-			this.ButtonTim.CustomizableEdges = borderEdges4;
+			borderEdges2.BottomLeft = true;
+			borderEdges2.BottomRight = true;
+			borderEdges2.TopLeft = true;
+			borderEdges2.TopRight = true;
+			this.ButtonTim.CustomizableEdges = borderEdges2;
 			this.ButtonTim.DialogResult = System.Windows.Forms.DialogResult.None;
 			this.ButtonTim.DisabledBorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(191)))), ((int)(((byte)(191)))), ((int)(((byte)(191)))));
 			this.ButtonTim.DisabledFillColor = System.Drawing.Color.Empty;
@@ -295,26 +296,26 @@
 			this.TextBoxTimKiem.Modified = false;
 			this.TextBoxTimKiem.Multiline = false;
 			this.TextBoxTimKiem.Name = "TextBoxTimKiem";
-			stateProperties5.BorderColor = System.Drawing.Color.DodgerBlue;
-			stateProperties5.FillColor = System.Drawing.Color.Empty;
-			stateProperties5.ForeColor = System.Drawing.Color.Empty;
-			stateProperties5.PlaceholderForeColor = System.Drawing.Color.Empty;
-			this.TextBoxTimKiem.OnActiveState = stateProperties5;
-			stateProperties6.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(204)))), ((int)(((byte)(204)))), ((int)(((byte)(204)))));
-			stateProperties6.FillColor = System.Drawing.Color.FromArgb(((int)(((byte)(240)))), ((int)(((byte)(240)))), ((int)(((byte)(240)))));
-			stateProperties6.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(109)))), ((int)(((byte)(109)))), ((int)(((byte)(109)))));
-			stateProperties6.PlaceholderForeColor = System.Drawing.Color.DarkGray;
-			this.TextBoxTimKiem.OnDisabledState = stateProperties6;
-			stateProperties7.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(105)))), ((int)(((byte)(181)))), ((int)(((byte)(255)))));
-			stateProperties7.FillColor = System.Drawing.SystemColors.Control;
-			stateProperties7.ForeColor = System.Drawing.Color.Black;
-			stateProperties7.PlaceholderForeColor = System.Drawing.Color.Empty;
-			this.TextBoxTimKiem.OnHoverState = stateProperties7;
-			stateProperties8.BorderColor = System.Drawing.Color.Silver;
-			stateProperties8.FillColor = System.Drawing.Color.FromArgb(((int)(((byte)(247)))), ((int)(((byte)(248)))), ((int)(((byte)(250)))));
-			stateProperties8.ForeColor = System.Drawing.Color.Empty;
-			stateProperties8.PlaceholderForeColor = System.Drawing.Color.Empty;
-			this.TextBoxTimKiem.OnIdleState = stateProperties8;
+			stateProperties1.BorderColor = System.Drawing.Color.DodgerBlue;
+			stateProperties1.FillColor = System.Drawing.Color.Empty;
+			stateProperties1.ForeColor = System.Drawing.Color.Empty;
+			stateProperties1.PlaceholderForeColor = System.Drawing.Color.Empty;
+			this.TextBoxTimKiem.OnActiveState = stateProperties1;
+			stateProperties2.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(204)))), ((int)(((byte)(204)))), ((int)(((byte)(204)))));
+			stateProperties2.FillColor = System.Drawing.Color.FromArgb(((int)(((byte)(240)))), ((int)(((byte)(240)))), ((int)(((byte)(240)))));
+			stateProperties2.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(109)))), ((int)(((byte)(109)))), ((int)(((byte)(109)))));
+			stateProperties2.PlaceholderForeColor = System.Drawing.Color.DarkGray;
+			this.TextBoxTimKiem.OnDisabledState = stateProperties2;
+			stateProperties3.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(105)))), ((int)(((byte)(181)))), ((int)(((byte)(255)))));
+			stateProperties3.FillColor = System.Drawing.SystemColors.Control;
+			stateProperties3.ForeColor = System.Drawing.Color.Black;
+			stateProperties3.PlaceholderForeColor = System.Drawing.Color.Empty;
+			this.TextBoxTimKiem.OnHoverState = stateProperties3;
+			stateProperties4.BorderColor = System.Drawing.Color.Silver;
+			stateProperties4.FillColor = System.Drawing.Color.FromArgb(((int)(((byte)(247)))), ((int)(((byte)(248)))), ((int)(((byte)(250)))));
+			stateProperties4.ForeColor = System.Drawing.Color.Empty;
+			stateProperties4.PlaceholderForeColor = System.Drawing.Color.Empty;
+			this.TextBoxTimKiem.OnIdleState = stateProperties4;
 			this.TextBoxTimKiem.Padding = new System.Windows.Forms.Padding(3);
 			this.TextBoxTimKiem.PasswordChar = '\0';
 			this.TextBoxTimKiem.PlaceholderForeColor = System.Drawing.Color.Silver;
@@ -359,28 +360,29 @@
 			this.DtGridViewQLP.AllowUserToDeleteRows = false;
 			this.DtGridViewQLP.AllowUserToResizeColumns = false;
 			this.DtGridViewQLP.AllowUserToResizeRows = false;
-			dataGridViewCellStyle5.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(248)))), ((int)(((byte)(251)))), ((int)(((byte)(255)))));
-			dataGridViewCellStyle5.ForeColor = System.Drawing.Color.Black;
-			this.DtGridViewQLP.AlternatingRowsDefaultCellStyle = dataGridViewCellStyle5;
+			dataGridViewCellStyle1.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(248)))), ((int)(((byte)(251)))), ((int)(((byte)(255)))));
+			dataGridViewCellStyle1.ForeColor = System.Drawing.Color.Black;
+			this.DtGridViewQLP.AlternatingRowsDefaultCellStyle = dataGridViewCellStyle1;
 			this.DtGridViewQLP.AutoSizeColumnsMode = System.Windows.Forms.DataGridViewAutoSizeColumnsMode.Fill;
 			this.DtGridViewQLP.BackgroundColor = System.Drawing.Color.White;
 			this.DtGridViewQLP.BorderStyle = System.Windows.Forms.BorderStyle.None;
 			this.DtGridViewQLP.CellBorderStyle = System.Windows.Forms.DataGridViewCellBorderStyle.SingleHorizontal;
 			this.DtGridViewQLP.ColumnHeadersBorderStyle = System.Windows.Forms.DataGridViewHeaderBorderStyle.None;
-			dataGridViewCellStyle6.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
-			dataGridViewCellStyle6.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(187)))), ((int)(((byte)(187)))));
-			dataGridViewCellStyle6.Font = new System.Drawing.Font("Segoe UI Semibold", 11.75F, System.Drawing.FontStyle.Bold);
-			dataGridViewCellStyle6.ForeColor = System.Drawing.Color.Black;
-			dataGridViewCellStyle6.SelectionBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(187)))), ((int)(((byte)(187)))));
-			dataGridViewCellStyle6.SelectionForeColor = System.Drawing.Color.Black;
-			dataGridViewCellStyle6.WrapMode = System.Windows.Forms.DataGridViewTriState.True;
-			this.DtGridViewQLP.ColumnHeadersDefaultCellStyle = dataGridViewCellStyle6;
+			dataGridViewCellStyle2.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
+			dataGridViewCellStyle2.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(187)))), ((int)(((byte)(187)))));
+			dataGridViewCellStyle2.Font = new System.Drawing.Font("Segoe UI Semibold", 11.75F, System.Drawing.FontStyle.Bold);
+			dataGridViewCellStyle2.ForeColor = System.Drawing.Color.Black;
+			dataGridViewCellStyle2.SelectionBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(187)))), ((int)(((byte)(187)))));
+			dataGridViewCellStyle2.SelectionForeColor = System.Drawing.Color.Black;
+			dataGridViewCellStyle2.WrapMode = System.Windows.Forms.DataGridViewTriState.True;
+			this.DtGridViewQLP.ColumnHeadersDefaultCellStyle = dataGridViewCellStyle2;
 			this.DtGridViewQLP.ColumnHeadersHeight = 40;
 			this.DtGridViewQLP.Columns.AddRange(new System.Windows.Forms.DataGridViewColumn[] {
             this.TenPhim,
             this.NgayBatdau,
             this.Ngayketthuc,
             this.Thoiluong,
+            this.Trangthai,
             this.Sua,
             this.Xoa});
 			this.DtGridViewQLP.CurrentTheme.AlternatingRowsStyle.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(248)))), ((int)(((byte)(251)))), ((int)(((byte)(255)))));
@@ -401,14 +403,14 @@
 			this.DtGridViewQLP.CurrentTheme.RowsStyle.ForeColor = System.Drawing.Color.Black;
 			this.DtGridViewQLP.CurrentTheme.RowsStyle.SelectionBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(216)))), ((int)(((byte)(216)))));
 			this.DtGridViewQLP.CurrentTheme.RowsStyle.SelectionForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(216)))), ((int)(((byte)(216)))));
-			dataGridViewCellStyle7.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
-			dataGridViewCellStyle7.BackColor = System.Drawing.Color.White;
-			dataGridViewCellStyle7.Font = new System.Drawing.Font("Segoe UI Semibold", 9.75F, System.Drawing.FontStyle.Bold);
-			dataGridViewCellStyle7.ForeColor = System.Drawing.Color.Black;
-			dataGridViewCellStyle7.SelectionBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(216)))), ((int)(((byte)(216)))));
-			dataGridViewCellStyle7.SelectionForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(216)))), ((int)(((byte)(216)))));
-			dataGridViewCellStyle7.WrapMode = System.Windows.Forms.DataGridViewTriState.False;
-			this.DtGridViewQLP.DefaultCellStyle = dataGridViewCellStyle7;
+			dataGridViewCellStyle3.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
+			dataGridViewCellStyle3.BackColor = System.Drawing.Color.White;
+			dataGridViewCellStyle3.Font = new System.Drawing.Font("Segoe UI Semibold", 9.75F, System.Drawing.FontStyle.Bold);
+			dataGridViewCellStyle3.ForeColor = System.Drawing.Color.Black;
+			dataGridViewCellStyle3.SelectionBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(216)))), ((int)(((byte)(216)))));
+			dataGridViewCellStyle3.SelectionForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(216)))), ((int)(((byte)(216)))));
+			dataGridViewCellStyle3.WrapMode = System.Windows.Forms.DataGridViewTriState.False;
+			this.DtGridViewQLP.DefaultCellStyle = dataGridViewCellStyle3;
 			this.DtGridViewQLP.Dock = System.Windows.Forms.DockStyle.Fill;
 			this.DtGridViewQLP.EnableHeadersVisualStyles = false;
 			this.DtGridViewQLP.GridColor = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(216)))), ((int)(((byte)(216)))));
@@ -420,69 +422,15 @@
 			this.DtGridViewQLP.ReadOnly = true;
 			this.DtGridViewQLP.RowHeadersVisible = false;
 			this.DtGridViewQLP.RowHeadersWidth = 51;
-			dataGridViewCellStyle8.SelectionBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(216)))), ((int)(((byte)(216)))));
-			dataGridViewCellStyle8.SelectionForeColor = System.Drawing.Color.Black;
-			this.DtGridViewQLP.RowsDefaultCellStyle = dataGridViewCellStyle8;
+			dataGridViewCellStyle4.SelectionBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(216)))), ((int)(((byte)(216)))));
+			dataGridViewCellStyle4.SelectionForeColor = System.Drawing.Color.Black;
+			this.DtGridViewQLP.RowsDefaultCellStyle = dataGridViewCellStyle4;
 			this.DtGridViewQLP.RowTemplate.Height = 40;
 			this.DtGridViewQLP.SelectionMode = System.Windows.Forms.DataGridViewSelectionMode.FullRowSelect;
 			this.DtGridViewQLP.Size = new System.Drawing.Size(1051, 533);
 			this.DtGridViewQLP.TabIndex = 0;
 			this.DtGridViewQLP.Theme = Bunifu.UI.WinForms.BunifuDataGridView.PresetThemes.Crimson;
 			this.DtGridViewQLP.CellContentClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.DtGridViewQLP_CellContentClick);
-			// 
-			// TenPhim
-			// 
-			this.TenPhim.DataPropertyName = "TenPhim";
-			this.TenPhim.FillWeight = 3F;
-			this.TenPhim.HeaderText = "Tên phim";
-			this.TenPhim.MinimumWidth = 6;
-			this.TenPhim.Name = "TenPhim";
-			this.TenPhim.ReadOnly = true;
-			// 
-			// NgayBatdau
-			// 
-			this.NgayBatdau.DataPropertyName = "NgayKhoiChieu";
-			this.NgayBatdau.FillWeight = 2F;
-			this.NgayBatdau.HeaderText = "Ngày bắt đầu";
-			this.NgayBatdau.MinimumWidth = 6;
-			this.NgayBatdau.Name = "NgayBatdau";
-			this.NgayBatdau.ReadOnly = true;
-			// 
-			// Ngayketthuc
-			// 
-			this.Ngayketthuc.DataPropertyName = "NgayKetThuc";
-			this.Ngayketthuc.FillWeight = 2F;
-			this.Ngayketthuc.HeaderText = "Ngày kết thúc";
-			this.Ngayketthuc.MinimumWidth = 6;
-			this.Ngayketthuc.Name = "Ngayketthuc";
-			this.Ngayketthuc.ReadOnly = true;
-			// 
-			// Thoiluong
-			// 
-			this.Thoiluong.DataPropertyName = "ThoiLuong";
-			this.Thoiluong.FillWeight = 2F;
-			this.Thoiluong.HeaderText = "Thời lượng";
-			this.Thoiluong.MinimumWidth = 6;
-			this.Thoiluong.Name = "Thoiluong";
-			this.Thoiluong.ReadOnly = true;
-			// 
-			// Sua
-			// 
-			this.Sua.FillWeight = 1F;
-			this.Sua.HeaderText = "Sửa";
-			this.Sua.Name = "Sua";
-			this.Sua.ReadOnly = true;
-			this.Sua.Text = "Sửa";
-			this.Sua.UseColumnTextForButtonValue = true;
-			// 
-			// Xoa
-			// 
-			this.Xoa.FillWeight = 1F;
-			this.Xoa.HeaderText = "Xoá";
-			this.Xoa.Name = "Xoa";
-			this.Xoa.ReadOnly = true;
-			this.Xoa.Text = "Xoá";
-			this.Xoa.UseColumnTextForButtonValue = true;
 			// 
 			// pHIMBindingSource1
 			// 
@@ -497,6 +445,69 @@
 			this.ButtonDsPhim.Text = "Danh sách phim";
 			this.ButtonDsPhim.UseVisualStyleBackColor = true;
 			this.ButtonDsPhim.Click += new System.EventHandler(this.ButtonDsPhim_Click);
+			// 
+			// TenPhim
+			// 
+			this.TenPhim.DataPropertyName = "TenPhim";
+			this.TenPhim.FillWeight = 27.35302F;
+			this.TenPhim.HeaderText = "Tên phim";
+			this.TenPhim.MinimumWidth = 6;
+			this.TenPhim.Name = "TenPhim";
+			this.TenPhim.ReadOnly = true;
+			// 
+			// NgayBatdau
+			// 
+			this.NgayBatdau.DataPropertyName = "NgayKhoiChieu";
+			this.NgayBatdau.FillWeight = 18.23535F;
+			this.NgayBatdau.HeaderText = "Ngày bắt đầu";
+			this.NgayBatdau.MinimumWidth = 6;
+			this.NgayBatdau.Name = "NgayBatdau";
+			this.NgayBatdau.ReadOnly = true;
+			// 
+			// Ngayketthuc
+			// 
+			this.Ngayketthuc.DataPropertyName = "NgayKetThuc";
+			this.Ngayketthuc.FillWeight = 18.23535F;
+			this.Ngayketthuc.HeaderText = "Ngày kết thúc";
+			this.Ngayketthuc.MinimumWidth = 6;
+			this.Ngayketthuc.Name = "Ngayketthuc";
+			this.Ngayketthuc.ReadOnly = true;
+			// 
+			// Thoiluong
+			// 
+			this.Thoiluong.DataPropertyName = "ThoiLuong";
+			this.Thoiluong.FillWeight = 10F;
+			this.Thoiluong.HeaderText = "Thời lượng";
+			this.Thoiluong.MinimumWidth = 6;
+			this.Thoiluong.Name = "Thoiluong";
+			this.Thoiluong.ReadOnly = true;
+			// 
+			// Trangthai
+			// 
+			this.Trangthai.DataPropertyName = "Trangthai";
+			this.Trangthai.FillWeight = 18F;
+			this.Trangthai.HeaderText = "Trạng thái";
+			this.Trangthai.MinimumWidth = 6;
+			this.Trangthai.Name = "Trangthai";
+			this.Trangthai.ReadOnly = true;
+			// 
+			// Sua
+			// 
+			this.Sua.FillWeight = 9.117675F;
+			this.Sua.HeaderText = "Sửa";
+			this.Sua.Name = "Sua";
+			this.Sua.ReadOnly = true;
+			this.Sua.Text = "Sửa";
+			this.Sua.UseColumnTextForButtonValue = true;
+			// 
+			// Xoa
+			// 
+			this.Xoa.FillWeight = 9.117675F;
+			this.Xoa.HeaderText = "Xoá";
+			this.Xoa.Name = "Xoa";
+			this.Xoa.ReadOnly = true;
+			this.Xoa.Text = "Xoá";
+			this.Xoa.UseColumnTextForButtonValue = true;
 			// 
 			// FilmManagementForm
 			// 
@@ -532,6 +543,7 @@
 		private System.Windows.Forms.DataGridViewTextBoxColumn NgayBatdau;
 		private System.Windows.Forms.DataGridViewTextBoxColumn Ngayketthuc;
 		private System.Windows.Forms.DataGridViewTextBoxColumn Thoiluong;
+		private System.Windows.Forms.DataGridViewTextBoxColumn Trangthai;
 		private System.Windows.Forms.DataGridViewButtonColumn Sua;
 		private System.Windows.Forms.DataGridViewButtonColumn Xoa;
 	}
