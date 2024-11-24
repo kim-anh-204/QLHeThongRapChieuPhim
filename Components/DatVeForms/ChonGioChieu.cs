@@ -32,19 +32,20 @@ namespace QuanLyRapChieuPhim.Dashboard.DatVeForms
             _selectedFilmName = filmName;
             flowPanelContent.Controls.Clear();
             string query = @"
-                SELECT 
-	                Ngaychieu, 
-	                GioBatdau 
-                FROM 
-	                SUATCHIEU
-                JOIN 
-	                PHIM ON SUATCHIEU.MaPhim = PHIM.MaPhim 
-                WHERE 
-	                TenPhim = @TenPhim
-	                AND Ngaychieu >= CAST(GETDATE() AS DATE)
-					AND GioBatdau >= CAST(GETDATE() AS TIME)
-                    AND SUATCHIEU.TrangThai = 'CHUAXOA'
-                ORDER BY Ngaychieu
+				SELECT 
+					Ngaychieu, 
+					GioBatdau 
+				FROM 
+					SUATCHIEU
+				JOIN 
+					PHIM ON SUATCHIEU.MaPhim = PHIM.MaPhim 
+				WHERE 
+					TenPhim = @TenPhim
+					AND (Ngaychieu > CAST(GETDATE() AS DATE) OR 
+						(Ngaychieu = CAST(GETDATE() AS DATE) AND GioBatdau >= CAST(GETDATE() AS TIME)))
+					AND SUATCHIEU.TrangThai = 'CHUAXOA'
+				ORDER BY 
+					Ngaychieu
             ";
             DataTable dt = Connection.GetDataTable(query, new (string, object)[]
             {
