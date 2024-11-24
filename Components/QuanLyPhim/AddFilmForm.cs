@@ -122,9 +122,9 @@ namespace QuanLyRapChieuPhim.QuanLyPhim
 
 		private bool ValidateDaoDien(string daoDien)
 		{
-			if (string.IsNullOrWhiteSpace(daoDien) || daoDien.Any(char.IsDigit))
+			if (string.IsNullOrWhiteSpace(daoDien))
 			{
-				MessageBox.Show("Tên đạo diễn không được chứa số hoặc để trống.", "Thông báo", MessageBoxButtons.OK, MessageBoxIcon.Error);
+				MessageBox.Show("Tên đạo diễn không được để trống.", "Thông báo", MessageBoxButtons.OK, MessageBoxIcon.Error);
 				return false;
 			}
 			return true;
@@ -163,9 +163,9 @@ namespace QuanLyRapChieuPhim.QuanLyPhim
 
 		private bool ValidateDienVien(string dienVien)
 		{
-			if (string.IsNullOrWhiteSpace(dienVien) || dienVien.Any(char.IsDigit))
+			if (string.IsNullOrWhiteSpace(dienVien) )
 			{
-				MessageBox.Show("Tên diễn viên chính không được chứa số hoặc để trống.", "Thông báo", MessageBoxButtons.OK, MessageBoxIcon.Error);
+				MessageBox.Show("Tên diễn viên chính không được để trống.", "Thông báo", MessageBoxButtons.OK, MessageBoxIcon.Error);
 				return false;
 			}
 			return true;
