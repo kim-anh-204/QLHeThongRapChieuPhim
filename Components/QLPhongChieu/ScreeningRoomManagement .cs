@@ -1,7 +1,9 @@
 ﻿using QuanLyRapChieuPhim.ScreeningPage;
 using QuanLyRapChieuPhim.Util;
 using System;
+using System.Configuration;
 using System.Data;
+using System.Data.SqlClient;
 using System.Windows.Forms;
 
 namespace QuanLyRapChieuPhim.QLPhongChieu
@@ -55,7 +57,8 @@ namespace QuanLyRapChieuPhim.QLPhongChieu
         {  // Ẩn nút "Thoát"
             this.btnExitSearch.Visible = false;
 
-            // Hiển thị lại tất cả các hàng trong DataGridView
+			// Hiển thị lại tất cả các hàng trong DataGridView
+			LoadScreeningData();
             foreach (DataGridViewRow row in bunifuDataGridView1.Rows)
             {
                 row.Visible = true;
@@ -75,82 +78,76 @@ namespace QuanLyRapChieuPhim.QLPhongChieu
 
 
 
-        public void LoadScreeningData()
-        {
+		public void LoadScreeningData()
+		{
+			bunifuDataGridView1.Rows.Clear(); // Xóa tất cả các hàng
+			bunifuDataGridView1.DataSource = null; // Đặt DataSource về null để làm mới
 
-            bunifuDataGridView1.Rows.Clear(); // Xóa tất cả các hàng
-            bunifuDataGridView1.DataSource = null; // Đặt DataSource về null để làm mới
-
-            string query = @"
+			string query = @"
         SELECT
             MaPhong, TenPhong, TrangThaiPhongChieu
         FROM
             PHONGCHIEUPHIM
-    ";
+        WHERE
+            TrangThai <> 'XOA'";  // Điều kiện này để chỉ lấy các phòng có trạng thái khác 'XOA'
 
-            DataTable screeningData = Connection.GetDataTable(query);
+			DataTable screeningData = Connection.GetDataTable(query);
 
-            if (screeningData != null && screeningData.Rows.Count > 0)
-            {
-                // Tạm ngừng cập nhật giao diện
-                bunifuDataGridView1.SuspendLayout();
+			if (screeningData != null && screeningData.Rows.Count > 0)
+			{
+				// Tạm ngừng cập nhật giao diện
+				bunifuDataGridView1.SuspendLayout();
 
-                bunifuDataGridView1.AllowUserToAddRows = false;
+				bunifuDataGridView1.AllowUserToAddRows = false;
 
-                // Kiểm tra nếu các cột "Sửa" và "Xóa" đã tồn tại chưa, chỉ thêm nếu chưa có
-                if (bunifuDataGridView1.Columns["Sua"] == null)
-                {
-                    DataGridViewButtonColumn editButtonColumn = new DataGridViewButtonColumn();
-                    editButtonColumn.Name = "Sua";
-                    editButtonColumn.HeaderText = "";
-                    editButtonColumn.Text = "Sửa";
-                    editButtonColumn.UseColumnTextForButtonValue = true;
-                    bunifuDataGridView1.Columns.Add(editButtonColumn);
-                }
+				// Kiểm tra nếu các cột "Sửa" và "Xóa" đã tồn tại chưa, chỉ thêm nếu chưa có
+				if (bunifuDataGridView1.Columns["Sua"] == null)
+				{
+					DataGridViewButtonColumn editButtonColumn = new DataGridViewButtonColumn();
+					editButtonColumn.Name = "Sua";
+					editButtonColumn.HeaderText = "";
+					editButtonColumn.Text = "Sửa";
+					editButtonColumn.UseColumnTextForButtonValue = true;
+					bunifuDataGridView1.Columns.Add(editButtonColumn);
+				}
 
-                if (bunifuDataGridView1.Columns["Xoa"] == null)
-                {
-                    DataGridViewButtonColumn deleteButtonColumn = new DataGridViewButtonColumn();
-                    deleteButtonColumn.Name = "Xoa";
-                    deleteButtonColumn.HeaderText = "";
-                    deleteButtonColumn.Text = "Xóa";
-                    deleteButtonColumn.UseColumnTextForButtonValue = true;
-                    bunifuDataGridView1.Columns.Add(deleteButtonColumn);
-                }
+				if (bunifuDataGridView1.Columns["Xoa"] == null)
+				{
+					DataGridViewButtonColumn deleteButtonColumn = new DataGridViewButtonColumn();
+					deleteButtonColumn.Name = "Xoa";
+					deleteButtonColumn.HeaderText = "";
+					deleteButtonColumn.Text = "Xóa";
+					deleteButtonColumn.UseColumnTextForButtonValue = true;
+					bunifuDataGridView1.Columns.Add(deleteButtonColumn);
+				}
 
-                // Thêm các hàng từ dữ liệu
-                for (int i = 0; i < screeningData.Rows.Count; i++)
-                {
-                    DataRow row = screeningData.Rows[i];
-                    string maSc = row["MaPhong"]?.ToString();
-                    string tenPhong = row["TenPhong"]?.ToString();
-                    string trangThai = Convert.ToBoolean(row["TrangthaiPhongchieu"]).ToString(); ;
-                    string trangThai1;
-                    if (trangThai == "True")
-                    {
-                        trangThai1 = "Đang hoạt động"; // Set status to 1 for "Active"
-                    }
-                    else // Assuming the only other state is "Không hoạt động"
-                    {
-                        trangThai1 = "Không hoạt động"; // Set status to 0 for "Inactive"
-                    }
-                    if (maSc != null && tenPhong != null)
-                    {
-                        bunifuDataGridView1.Rows.Add(i + 1, maSc, tenPhong, trangThai1);
-                    }
-                }
+				// Thêm các hàng từ dữ liệu
+				for (int i = 0; i < screeningData.Rows.Count; i++)
+				{
+					DataRow row = screeningData.Rows[i];
+					string maSc = row["MaPhong"]?.ToString();
+					string tenPhong = row["TenPhong"]?.ToString();
+					string trangThai = Convert.ToBoolean(row["TrangthaiPhongchieu"]).ToString();
+					string trangThai1 = trangThai == "True" ? "Đang hoạt động" : "Không hoạt động";
 
-                // Kết thúc tạm ngừng cập nhật giao diện
-                bunifuDataGridView1.ResumeLayout();
-            }
-            else
-            {
-                MessageBox.Show("No data available.");
-            }
-        }
+					if (maSc != null && tenPhong != null)
+					{
+						bunifuDataGridView1.Rows.Add(i + 1, maSc, tenPhong, trangThai1);
+					}
+				}
+
+				// Kết thúc tạm ngừng cập nhật giao diện
+				bunifuDataGridView1.ResumeLayout();
+			}
+			else
+			{
+				MessageBox.Show("No data available.");
+			}
+		}
 
 
-        private void bunifuButton21_Click(object sender, EventArgs e)
+
+		private void bunifuButton21_Click(object sender, EventArgs e)
         {
 
             AddScreeningRoom addScreeningForm = new AddScreeningRoom(this);
@@ -166,26 +163,29 @@ namespace QuanLyRapChieuPhim.QLPhongChieu
         }
 
 
-        private void bunifuButton22_Click(object sender, EventArgs e)
-        {
-            if(txtSearch.Text == "Tìm kiếm")
-            {
-                txtSearch.Text = "";
-            }
-            if (string.IsNullOrEmpty(txtSearch.Text))
-            {
-                MessageBox.Show("Vui lòng nhập mã phòng hoặc tên phòng vào thanh tìm kiếm", "Thông báo", MessageBoxButtons.OK, MessageBoxIcon.Error);
-                return;
-            }
+		private void bunifuButton22_Click(object sender, EventArgs e)
+		{
+			if (txtSearch.Text == "Tìm kiếm")
+			{
+				txtSearch.Text = "";
+			}
 
-            string keyword = txtSearch.Text.Trim().ToLower();
+			if (string.IsNullOrEmpty(txtSearch.Text))
+			{
+				MessageBox.Show("Vui lòng nhập mã phòng hoặc tên phòng vào thanh tìm kiếm", "Thông báo", MessageBoxButtons.OK, MessageBoxIcon.Error);
+				return;
+			}
 
-            if (string.IsNullOrEmpty(keyword))
-            {
-                // Nạp lại toàn bộ dữ liệu nếu từ khóa tìm kiếm trống
-                LoadScreeningData();
-                this.btnExitSearch.Visible = false; // Ẩn nút "Thoát"
-            }
+			string keyword = txtSearch.Text.Trim().ToLower();
+
+			// Điều kiện tìm kiếm khi có từ khóa và không có phòng có trạng thái 'XOA'
+			if (string.IsNullOrEmpty(keyword))
+			{
+				// Nạp lại toàn bộ dữ liệu nếu từ khóa tìm kiếm trống
+				LoadScreeningData();
+				this.btnExitSearch.Visible = false; // Ẩn nút "Thoát"
+			}
+
 			// Hiển thị nút "Thoát" khi có thao tác tìm kiếm, dù tìm thấy hay không
 			this.btnExitSearch.Visible = true;
 
@@ -198,60 +198,52 @@ namespace QuanLyRapChieuPhim.QLPhongChieu
 				string maPhong = row.Cells["Column2"]?.Value?.ToString().ToLower();
 				string tenPhong = row.Cells["Column3"]?.Value?.ToString().ToLower();
 
-				// Kiểm tra nếu mã phòng hoặc tên phòng bắt đầu bằng chữ cái tìm kiếm
-				row.Visible = (maPhong != null && maPhong.Contains(keyword)) || (tenPhong != null && tenPhong.Contains(keyword));
+				// Kiểm tra trạng thái 'XOA' từ cơ sở dữ liệu (hoặc giá trị nào đó đã lưu)
+				bool isDeleted = row.Cells["TrangThai"]?.Value?.ToString() == "XOA";
+
+				// Kiểm tra nếu mã phòng hoặc tên phòng bắt đầu bằng chữ cái tìm kiếm và trạng thái không phải 'XOA'
+				row.Visible = !isDeleted && ((maPhong != null && maPhong.Contains(keyword)) || (tenPhong != null && tenPhong.Contains(keyword)));
 			}
 		}
 
-        private void bunifuDataGridView2_CellContentClick(object sender, DataGridViewCellEventArgs e)
+		private void bunifuDataGridView2_CellContentClick(object sender, DataGridViewCellEventArgs e)
         {
 
             int rowIndex = e.RowIndex;
             if (e.RowIndex >= 0)
             {
                 string mapc = bunifuDataGridView1.Rows[e.RowIndex].Cells["Column2"].Value.ToString();
+				if (bunifuDataGridView1.Columns[e.ColumnIndex].Name == "Xoa")
+				{
+					var confirmResult = MessageBox.Show("Bạn có chắc muốn xóa phòng chiếu phim?",
+														"Xác nhận xóa",
+														MessageBoxButtons.YesNo,
+														MessageBoxIcon.Warning);
+					if (confirmResult == DialogResult.Yes)
+					{
+						//string mapc = bunifuDataGridView1.Rows[e.RowIndex].Cells["Column2"].Value.ToString();
 
-                if (bunifuDataGridView1.Columns[e.ColumnIndex].Name == "Xoa")
-                {
-                    var confirmResult = MessageBox.Show("Bạn có chắc muốn xóa phòng chiếu phim?",
-                                                        "Xác nhận xóa",
-                                                        MessageBoxButtons.YesNo,
-                                                        MessageBoxIcon.Warning);
-                    if (confirmResult == DialogResult.Yes)
-                    {
-                        // Xóa từ bảng VEXEMPHIM
-                        string deleteVXPQuery = "DELETE FROM VEXEMPHIM WHERE MaSuatChieu IN (SELECT MaSuatChieu FROM SUATCHIEU WHERE MaPhong = @MaPhong)";
-                        bool isDeletedVXP = Connection.ExcuteNonQuery(deleteVXPQuery, new (string, object)[] { ("@MaPhong", mapc) });
+						// Cập nhật trạng thái của phòng chiếu thành 'XOA'
+						string updateTrangThaiQuery = "UPDATE PHONGCHIEUPHIM SET TrangThai = 'XOA' WHERE MaPhong = @MaPhong";
+						bool isUpdatedTrangThai = Connection.ExcuteNonQuery(updateTrangThaiQuery, new (string, object)[] { ("@MaPhong", mapc) });
 
-                        // Xóa từ bảng GHE
-                        string deleteGheQuery = "DELETE FROM GHE WHERE MaSuatChieu IN (SELECT MaSuatChieu FROM SUATCHIEU WHERE MaPhong = @MaPhong)";
-                        bool isDeletedGhe = Connection.ExcuteNonQuery(deleteGheQuery, new (string, object)[] { ("@MaPhong", mapc) });
+						if (isUpdatedTrangThai)
+						{
+							// Ẩn dòng trong DataGridView
+							bunifuDataGridView1.Rows[e.RowIndex].Visible = false;
 
-                        // Xóa từ bảng SUATCHIEU
-                        string deleteSuatChieuQuery = "DELETE FROM SUATCHIEU WHERE MaPhong = @MaPhong";
-                        bool isDeletedSuatChieu = Connection.ExcuteNonQuery(deleteSuatChieuQuery, new (string, object)[] { ("@MaPhong", mapc) });
-
-                        // Cuối cùng, xóa từ bảng PHONGCHIEUPHIM
-                        string deletePhongChieuQuery = "DELETE FROM PHONGCHIEUPHIM WHERE MaPhong = @MaPhong";
-                        bool isDeletedPhongChieu = Connection.ExcuteNonQuery(deletePhongChieuQuery, new (string, object)[] { ("@MaPhong", mapc) });
-
-                        // Thông báo kết quả
-                        if (isDeletedVXP && isDeletedGhe && isDeletedSuatChieu && isDeletedPhongChieu)
-                        {
-                            bunifuDataGridView1.Rows.RemoveAt(e.RowIndex);
-                            MessageBox.Show("Xóa thành công!", "Thành công", MessageBoxButtons.OK, MessageBoxIcon.Information);
-                        }
-                        else
-                        {
-                            MessageBox.Show("Xóa không thành công!", "Lỗi", MessageBoxButtons.OK, MessageBoxIcon.Error);
-                        }
-                    }
-               
+							MessageBox.Show("Phòng chiếu đã được xóa!", "Thành công", MessageBoxButtons.OK, MessageBoxIcon.Information);
+						}
+						else
+						{
+							MessageBox.Show("Xóa không thành công!", "Lỗi", MessageBoxButtons.OK, MessageBoxIcon.Error);
+						}
+					}
+				}
 
 
 
-            }
-            if (bunifuDataGridView1.Columns[e.ColumnIndex].Name == "Sua")
+				if (bunifuDataGridView1.Columns[e.ColumnIndex].Name == "Sua")
                 {
 
                     string query = @"SELECT MaPhong, TenPhong, TrangthaiPhongchieu FROM PHONGCHIEUPHIM WHERE MaPhong = @MaPhong";
