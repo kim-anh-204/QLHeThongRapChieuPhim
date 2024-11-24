@@ -12,9 +12,6 @@ namespace QuanLyRapChieuPhim.ScreeningPage
     {
         private Screening screening;
         private string maSc, maPhim, maPhong, gioBatDau, loaiChieu, giaVe;
-
-      
-
         private DateTime ngayChieu;
         public UpdateScreening(Screening screening,string maSc, string maPhim, string maPhong, string gioBatDau, DateTime ngayChieu, string loaiChieu, string giaVe)
         {
@@ -166,7 +163,7 @@ WHERE MaPhong = @MaPhong
                 if (item.Key == maPhim)
                 {
                     comboBoxMovies.SelectedIndex = i;
-                    break;
+                    return;
                 }
             }
         }
@@ -183,7 +180,7 @@ WHERE MaPhong = @MaPhong
         }
         private void getMovies()
         {
-            string query = "SELECT MaPhim, TenPhim FROM PHIM";
+            string query = "SELECT MaPhim, TenPhim FROM PHIM  WHERE TrangThai='True'";
             DataTable moviesTable = QuanLyRapChieuPhim.Util.Connection.GetDataTable(query);
 
             if (moviesTable != null)

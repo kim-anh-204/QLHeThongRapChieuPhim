@@ -21,7 +21,7 @@ namespace QuanLyRapChieuPhim.ScreeningPage
         }
         private void getMovies()
         {
-            string query = "SELECT MaPhim, TenPhim FROM PHIM"; 
+            string query = "SELECT MaPhim, TenPhim FROM PHIM  WHERE TrangThai='True'"; 
             DataTable moviesTable = Connection.GetDataTable(query);
 
             if (moviesTable != null)
