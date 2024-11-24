@@ -81,6 +81,7 @@ SELECT COUNT(*)
 FROM SUATCHIEU 
 WHERE MaPhong = @MaPhong 
   AND TrangThai = 'CHUAXOA'
+  AND MaSuatChieu NOT IN (@MaSC)
   AND (
       (NgayChieu = @NgayChieu AND 
        (
@@ -98,7 +99,7 @@ WHERE MaPhong = @MaPhong
        CAST(@NgayChieu AS DATETIME) + CAST(@GioDuocChon AS DATETIME) + 4.0/24 > CAST(NgayChieu AS DATETIME) + CAST(GioBatDau AS DATETIME)
       )
   )";
-            var parametersTrung = new (string, object)[] { ("@MaPhong", maPhong), ("@Ngaychieu", formattedDate), ("@GioDuocChon", selectedTime.TimeOfDay) };
+            var parametersTrung = new (string, object)[] { ("@MaPhong", maPhong), ("@Ngaychieu", formattedDate), ("@GioDuocChon", selectedTime.TimeOfDay), ("@MaSC", maSc) };
             DataTable resultTrung = Connection.GetDataTable(queryTrung, parametersTrung);
             int count = Convert.ToInt32(Connection.ExecuteScalar(queryTrung, parametersTrung));
             if (ngayKetThuc < today)
