@@ -2,6 +2,7 @@
 using QuanLyRapChieuPhim.Util;
 using System;
 using System.Data;
+using System.Diagnostics;
 using System.Drawing;
 using System.Windows.Forms;
 
@@ -213,10 +214,9 @@ namespace QuanLyRapChieuPhim.ScreeningPage
             LoadScreeningData();
         }
 
-        private void Screening_Shown(object sender, EventArgs e)
+        private void Screening_Activated(object sender, EventArgs e)
         {
             LoadScreeningData();
-
         }
     }
 }

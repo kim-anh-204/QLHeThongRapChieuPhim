@@ -143,15 +143,15 @@ namespace QuanLyRapChieuPhim.ScreeningPage
             this.bunifuDataGridView1.HeaderBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(216)))), ((int)(((byte)(216)))));
             this.bunifuDataGridView1.HeaderBgColor = System.Drawing.Color.Empty;
             this.bunifuDataGridView1.HeaderForeColor = System.Drawing.Color.Black;
-            this.bunifuDataGridView1.Location = new System.Drawing.Point(35, 121);
-            this.bunifuDataGridView1.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
+            this.bunifuDataGridView1.Location = new System.Drawing.Point(26, 98);
+            this.bunifuDataGridView1.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
             this.bunifuDataGridView1.Name = "bunifuDataGridView1";
             this.bunifuDataGridView1.ReadOnly = true;
             this.bunifuDataGridView1.RowHeadersVisible = false;
             this.bunifuDataGridView1.RowHeadersWidth = 51;
             this.bunifuDataGridView1.RowTemplate.Height = 40;
             this.bunifuDataGridView1.SelectionMode = System.Windows.Forms.DataGridViewSelectionMode.FullRowSelect;
-            this.bunifuDataGridView1.Size = new System.Drawing.Size(1431, 690);
+            this.bunifuDataGridView1.Size = new System.Drawing.Size(1073, 561);
             this.bunifuDataGridView1.TabIndex = 0;
             this.bunifuDataGridView1.Theme = Bunifu.UI.WinForms.BunifuDataGridView.PresetThemes.Light;
             this.bunifuDataGridView1.CellContentClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.bunifuDataGridView1_CellContentClick);
@@ -164,7 +164,7 @@ namespace QuanLyRapChieuPhim.ScreeningPage
             this.maSC.MinimumWidth = 2;
             this.maSC.Name = "maSC";
             this.maSC.ReadOnly = true;
-            this.maSC.Width = 96;
+            this.maSC.Width = 79;
             // 
             // tenPhim
             // 
@@ -183,7 +183,7 @@ namespace QuanLyRapChieuPhim.ScreeningPage
             this.tenPhong.MinimumWidth = 6;
             this.tenPhong.Name = "tenPhong";
             this.tenPhong.ReadOnly = true;
-            this.tenPhong.Width = 137;
+            this.tenPhong.Width = 109;
             // 
             // ngayChieu
             // 
@@ -193,7 +193,7 @@ namespace QuanLyRapChieuPhim.ScreeningPage
             this.ngayChieu.MinimumWidth = 6;
             this.ngayChieu.Name = "ngayChieu";
             this.ngayChieu.ReadOnly = true;
-            this.ngayChieu.Width = 144;
+            this.ngayChieu.Width = 116;
             // 
             // gioBatDau
             // 
@@ -203,7 +203,7 @@ namespace QuanLyRapChieuPhim.ScreeningPage
             this.gioBatDau.MinimumWidth = 6;
             this.gioBatDau.Name = "gioBatDau";
             this.gioBatDau.ReadOnly = true;
-            this.gioBatDau.Width = 147;
+            this.gioBatDau.Width = 118;
             // 
             // giaVe
             // 
@@ -213,7 +213,7 @@ namespace QuanLyRapChieuPhim.ScreeningPage
             this.giaVe.MinimumWidth = 6;
             this.giaVe.Name = "giaVe";
             this.giaVe.ReadOnly = true;
-            this.giaVe.Width = 97;
+            this.giaVe.Width = 78;
             // 
             // Sua
             // 
@@ -322,8 +322,7 @@ namespace QuanLyRapChieuPhim.ScreeningPage
             this.bunifuButton1.IdleIconLeftImage = null;
             this.bunifuButton1.IdleIconRightImage = null;
             this.bunifuButton1.IndicateFocus = false;
-            this.bunifuButton1.Location = new System.Drawing.Point(35, 33);
-            this.bunifuButton1.Margin = new System.Windows.Forms.Padding(4);
+            this.bunifuButton1.Location = new System.Drawing.Point(26, 27);
             this.bunifuButton1.Name = "bunifuButton1";
             this.bunifuButton1.OnDisabledState.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(191)))), ((int)(((byte)(191)))), ((int)(((byte)(191)))));
             this.bunifuButton1.OnDisabledState.BorderRadius = 20;
@@ -357,7 +356,7 @@ namespace QuanLyRapChieuPhim.ScreeningPage
             this.bunifuButton1.OnPressedState.ForeColor = System.Drawing.Color.White;
             this.bunifuButton1.OnPressedState.IconLeftImage = null;
             this.bunifuButton1.OnPressedState.IconRightImage = null;
-            this.bunifuButton1.Size = new System.Drawing.Size(173, 46);
+            this.bunifuButton1.Size = new System.Drawing.Size(130, 37);
             this.bunifuButton1.TabIndex = 5;
             this.bunifuButton1.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
             this.bunifuButton1.TextAlignment = System.Windows.Forms.HorizontalAlignment.Center;
@@ -394,8 +393,8 @@ namespace QuanLyRapChieuPhim.ScreeningPage
             this.bunifuTextBox1.IconRight = null;
             this.bunifuTextBox1.IconRightCursor = System.Windows.Forms.Cursors.IBeam;
             this.bunifuTextBox1.Lines = new string[0];
-            this.bunifuTextBox1.Location = new System.Drawing.Point(552, 33);
-            this.bunifuTextBox1.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
+            this.bunifuTextBox1.Location = new System.Drawing.Point(414, 27);
+            this.bunifuTextBox1.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
             this.bunifuTextBox1.MaxLength = 32767;
             this.bunifuTextBox1.MinimumSize = new System.Drawing.Size(1, 1);
             this.bunifuTextBox1.Modified = false;
@@ -421,7 +420,7 @@ namespace QuanLyRapChieuPhim.ScreeningPage
             stateProperties4.ForeColor = System.Drawing.Color.Empty;
             stateProperties4.PlaceholderForeColor = System.Drawing.Color.Empty;
             this.bunifuTextBox1.OnIdleState = stateProperties4;
-            this.bunifuTextBox1.Padding = new System.Windows.Forms.Padding(3, 2, 3, 2);
+            this.bunifuTextBox1.Padding = new System.Windows.Forms.Padding(2, 2, 2, 2);
             this.bunifuTextBox1.PasswordChar = '\0';
             this.bunifuTextBox1.PlaceholderForeColor = System.Drawing.Color.Silver;
             this.bunifuTextBox1.PlaceholderText = "Nhập tên phim ";
@@ -431,7 +430,7 @@ namespace QuanLyRapChieuPhim.ScreeningPage
             this.bunifuTextBox1.SelectionLength = 0;
             this.bunifuTextBox1.SelectionStart = 0;
             this.bunifuTextBox1.ShortcutsEnabled = true;
-            this.bunifuTextBox1.Size = new System.Drawing.Size(351, 43);
+            this.bunifuTextBox1.Size = new System.Drawing.Size(263, 35);
             this.bunifuTextBox1.Style = Bunifu.UI.WinForms.BunifuTextBox._Style.Bunifu;
             this.bunifuTextBox1.TabIndex = 6;
             this.bunifuTextBox1.TextAlign = System.Windows.Forms.HorizontalAlignment.Left;
@@ -492,8 +491,8 @@ namespace QuanLyRapChieuPhim.ScreeningPage
             this.timkiembtn.IdleIconLeftImage = null;
             this.timkiembtn.IdleIconRightImage = null;
             this.timkiembtn.IndicateFocus = false;
-            this.timkiembtn.Location = new System.Drawing.Point(908, 33);
-            this.timkiembtn.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
+            this.timkiembtn.Location = new System.Drawing.Point(681, 27);
+            this.timkiembtn.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
             this.timkiembtn.Name = "timkiembtn";
             this.timkiembtn.OnDisabledState.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(191)))), ((int)(((byte)(191)))), ((int)(((byte)(191)))));
             this.timkiembtn.OnDisabledState.BorderRadius = 30;
@@ -527,7 +526,7 @@ namespace QuanLyRapChieuPhim.ScreeningPage
             this.timkiembtn.OnPressedState.ForeColor = System.Drawing.Color.White;
             this.timkiembtn.OnPressedState.IconLeftImage = null;
             this.timkiembtn.OnPressedState.IconRightImage = null;
-            this.timkiembtn.Size = new System.Drawing.Size(113, 43);
+            this.timkiembtn.Size = new System.Drawing.Size(85, 35);
             this.timkiembtn.TabIndex = 7;
             this.timkiembtn.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
             this.timkiembtn.TextAlignment = System.Windows.Forms.HorizontalAlignment.Center;
@@ -583,8 +582,7 @@ namespace QuanLyRapChieuPhim.ScreeningPage
             this.thoat.IdleIconLeftImage = null;
             this.thoat.IdleIconRightImage = null;
             this.thoat.IndicateFocus = false;
-            this.thoat.Location = new System.Drawing.Point(1143, 33);
-            this.thoat.Margin = new System.Windows.Forms.Padding(4);
+            this.thoat.Location = new System.Drawing.Point(857, 27);
             this.thoat.Name = "thoat";
             this.thoat.OnDisabledState.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(191)))), ((int)(((byte)(191)))), ((int)(((byte)(191)))));
             this.thoat.OnDisabledState.BorderRadius = 20;
@@ -618,7 +616,7 @@ namespace QuanLyRapChieuPhim.ScreeningPage
             this.thoat.OnPressedState.ForeColor = System.Drawing.Color.White;
             this.thoat.OnPressedState.IconLeftImage = null;
             this.thoat.OnPressedState.IconRightImage = null;
-            this.thoat.Size = new System.Drawing.Size(117, 46);
+            this.thoat.Size = new System.Drawing.Size(88, 37);
             this.thoat.TabIndex = 13;
             this.thoat.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
             this.thoat.TextAlignment = System.Windows.Forms.HorizontalAlignment.Center;
@@ -629,22 +627,21 @@ namespace QuanLyRapChieuPhim.ScreeningPage
             // 
             // Screening
             // 
-            this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
+            this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(1487, 839);
+            this.ClientSize = new System.Drawing.Size(1115, 682);
             this.Controls.Add(this.thoat);
             this.Controls.Add(this.timkiembtn);
             this.Controls.Add(this.bunifuTextBox1);
             this.Controls.Add(this.bunifuButton1);
             this.Controls.Add(this.bunifuDataGridView1);
             this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.None;
-            this.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
+            this.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
             this.Name = "Screening";
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "Form1";
-            this.Activated += new System.EventHandler(this.Screening_Shown);
+            this.Activated += new System.EventHandler(this.Screening_Activated);
             this.Load += new System.EventHandler(this.UserManager_Load);
-            this.Shown += new System.EventHandler(this.Screening_Shown);
             ((System.ComponentModel.ISupportInitialize)(this.bunifuDataGridView1)).EndInit();
             this.ResumeLayout(false);
 
