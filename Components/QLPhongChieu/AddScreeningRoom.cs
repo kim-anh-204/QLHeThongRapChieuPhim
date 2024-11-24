@@ -45,50 +45,51 @@ namespace QuanLyRapChieuPhim.QLPhongChieu
 
         }
 
-        private string GenerateNewRoomID()
-        {
-            string prefix = "PXP-"; // Đặt cố định prefix
-            string queryID = "SELECT TOP 1 MaPhong FROM PhongChieuPhim WHERE MaPhong LIKE 'PXP-%' ORDER BY MaPhong DESC;";
-            DataTable result = Connection.GetDataTable(queryID);
+		private string GenerateNewRoomID()
+		{
+			string prefix = "PXP-"; // Đặt cố định prefix
+			string queryID = "SELECT TOP 1 MaPhong FROM PhongChieuPhim WHERE MaPhong LIKE 'PXP-%' ORDER BY MaPhong DESC;";
+			DataTable result = Connection.GetDataTable(queryID);
 
-            // Nếu không có mã phòng nào tồn tại, bắt đầu với mã "PXP-1"
-            if (result.Rows.Count == 0)
-            {
-                return prefix + "1";
-            }
+			// Nếu không có mã phòng nào tồn tại, bắt đầu với mã "PXP-01"
+			if (result.Rows.Count == 0)
+			{
+				return prefix + "01";
+			}
 
-            // Lấy mã phòng cuối cùng từ kết quả truy vấn
-            string maPC = result.Rows[0]["MaPhong"].ToString(); // e.g., PXP-3
+			// Lấy mã phòng cuối cùng từ kết quả truy vấn
+			string maPC = result.Rows[0]["MaPhong"].ToString(); // e.g., PXP-3
 
-            // Kiểm tra xem mã phòng có đúng định dạng "PXP-###" hay không
-            if (maPC.StartsWith(prefix))
-            {
-                // Lấy phần số từ mã phòng, ví dụ: '3' từ 'PXP-3'
-                string numberPart = maPC.Substring(prefix.Length);
+			// Kiểm tra xem mã phòng có đúng định dạng "PXP-###" hay không
+			if (maPC.StartsWith(prefix))
+			{
+				// Lấy phần số từ mã phòng, ví dụ: '3' từ 'PXP-3'
+				string numberPart = maPC.Substring(prefix.Length);
 
-                // Cố gắng chuyển đổi phần số thành số nguyên
-                if (int.TryParse(numberPart, out int number))
-                {
-                    // Tăng giá trị của số
-                    number += 1;
+				// Cố gắng chuyển đổi phần số thành số nguyên
+				if (int.TryParse(numberPart, out int number))
+				{
+					// Tăng giá trị của số
+					number += 1;
 
-                    // Trả về mã phòng mới: ví dụ 'PXP-4'
-                    return prefix + number.ToString();
-                }
-                else
-                {
-                    // Nếu phần số không phải là số hợp lệ, ném ra ngoại lệ
-                    throw new Exception("Invalid MaPhong number format");
-                }
-            }
-            else
-            {
-                // Nếu mã không bắt đầu bằng "PXP-", ném ra ngoại lệ
-                throw new Exception("Invalid MaPhong format");
-            }
-        }
+					// Trả về mã phòng mới với định dạng "PXP-01"
+					return prefix + number.ToString("D2");  // Đảm bảo số có 2 chữ số
+				}
+				else
+				{
+					// Nếu phần số không phải là số hợp lệ, ném ra ngoại lệ
+					throw new Exception("Invalid MaPhong number format");
+				}
+			}
+			else
+			{
+				// Nếu mã không bắt đầu bằng "PXP-", ném ra ngoại lệ
+				throw new Exception("Invalid MaPhong format");
+			}
+		}
 
-        private void bunifuButton21_Click(object sender, EventArgs e)
+
+		private void bunifuButton21_Click(object sender, EventArgs e)
         {
 
             // Kiểm tra dữ liệu nhập
@@ -105,7 +106,7 @@ namespace QuanLyRapChieuPhim.QLPhongChieu
 
             // Kiểm tra xem phòng chiếu đã tồn tại hay chưa
             string TenPhong = bunifuTextBox2.Text;
-            string queryCheck = "SELECT COUNT(*) FROM PhongChieuPhim WHERE TenPhong = @TenPhong";
+            string queryCheck = "SELECT COUNT(*) FROM PhongChieuPhim WHERE TenPhong = @TenPhong and TRANGTHAI = 'CHUAXOA'";
             DataTable result = Connection.GetDataTable(queryCheck, new (string, object)[] { ("@TenPhong", TenPhong) });
 
             if (result != null && result.Rows.Count > 0 && Convert.ToInt32(result.Rows[0][0]) > 0)
