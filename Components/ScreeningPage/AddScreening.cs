@@ -17,7 +17,7 @@ namespace QuanLyRapChieuPhim.ScreeningPage
             this.ActiveControl = null;
             bunifuDatePicker1.Value = DateTime.Now;
             getMovies();
-            LoadRoom();
+            LoadRoom();          
         }
         private void getMovies()
         {
@@ -116,7 +116,8 @@ namespace QuanLyRapChieuPhim.ScreeningPage
                 newNumberPart = "0" + newNumberPart; 
             }
             string newMaSC = prefix + newNumberPart;
-
+            string maNguoiDDung = (String)SharedData.GetValue("MaNguoiDung");
+            
             var selectedMovie = (KeyValuePair<string, string>)comboBoxMovies.SelectedItem;
             string maPhim = selectedMovie.Key;
             string queryPhim = @"SELECT TOP 1 NgayKhoiChieu,DATEADD(MONTH, 1, PHIM.NgayKhoiChieu) AS NgayKetThuc FROM PHIM WHERE MaPhim= @MaPhim";
@@ -196,7 +197,7 @@ WHERE MaPhong = @MaPhong
             ("@MaSuatChieu", newMaSC),
             ("@MaPhim", maPhim),
             ("@MaPhong", maPhong),
-            ("@MaNguoiDung", "U001"),
+            ("@MaNguoiDung", maNguoiDDung),
             ("@NgayChieu", formattedDate),
             ("@GioBatDau", selectedTime.ToString("HH:mm")),
             ("@SoVeToiDa", 48),
