@@ -7,6 +7,7 @@ using System.Data.SqlClient;
 using QuanLyRapChieuPhim.Util;
 using DocumentFormat.OpenXml.Bibliography;
 using DocumentFormat.OpenXml.Math;
+using QuanLyRapChieuPhim.QLPhongChieu;
 
 namespace QuanLyRapChieuPhim.QuanLyPhim
 {
@@ -103,7 +104,7 @@ namespace QuanLyRapChieuPhim.QuanLyPhim
 				else if (colName == "Xoa")
 				{
 					DialogResult result = MessageBox.Show(
-						"Bạn muốn làm gì với phìm này?\n1. " +
+						"Bạn muốn làm gì với phim này?\n1. " +
 						"Xoá hoàn toàn. Chọn 'Yes'\n2 " +
 						"Đánh dấu là không sử dụng nữa. Chọn 'NO'",
 						"Xác nhận hành động",
@@ -163,18 +164,70 @@ namespace QuanLyRapChieuPhim.QuanLyPhim
 		{
 			DataRow row = movieTable.Rows[rowIndex];
 			string maPhim = row["MaPhim"].ToString();
-			string query = $"Update PHIM SET Trangthai = 0 WHERE MaPhim = '{maPhim}'";
-			Connection.ExcuteNonQuery(query);
+
+			// Lấy danh sách các suất chiếu của phim
+			string getSuatChieuQuery = "SELECT MaSuatChieu, NgayChieu FROM SUATCHIEU WHERE MaPhim = @MaPhim";
+			DataTable suatChieuTable = Connection.GetDataTable(getSuatChieuQuery, new (string, object)[] { ("@MaPhim", maPhim) });
+
+			bool hasActiveShowtimes = false;
+
+			foreach (DataRow suatChieuRow in suatChieuTable.Rows)
+			{
+				string maSuatChieu = suatChieuRow["MaSuatChieu"].ToString();
+				DateTime ngayChieu = Convert.ToDateTime(suatChieuRow["NgayChieu"]);
+				DateTime today = DateTime.Today;
+
+				if (ngayChieu >= today) // Nếu suất chiếu chưa qua ngày
+				{
+					// Kiểm tra xem suất chiếu có vé được đặt hay không
+					string checkVeQuery = "SELECT COUNT(*) FROM GHE WHERE MaSuatChieu = @MaSuatChieu AND TrangThai = 'True'";
+					int veCount = Connection.ExecuteScalarInt32(checkVeQuery, new (string, object)[] { ("@MaSuatChieu", maSuatChieu) });
+
+					if (veCount > 0)
+					{
+						// Nếu suất chiếu có ghế được đặt, đánh dấu suất chiếu đang hoạt động
+						hasActiveShowtimes = true;
+						continue; // Bỏ qua suất chiếu này
+					}
+				}
+
+				// Ẩn suất chiếu nếu không có ghế đặt hoặc suất chiếu đã qua ngày
+				string updateSuatChieuQuery = "UPDATE SUATCHIEU SET TrangThai = 'XOA' WHERE MaSuatChieu = @MaSuatChieu";
+				Connection.ExcuteNonQuery(updateSuatChieuQuery, new (string, object)[] { ("@MaSuatChieu", maSuatChieu) });
+			}
+
+			// Nếu vẫn còn suất chiếu hoạt động, không cho phép ẩn phim
+			if (hasActiveShowtimes)
+			{
+				MessageBox.Show("Không thể ẩn phim vì vẫn còn suất chiếu có người đặt vé hoặc chưa kết thúc.", "Thông báo", MessageBoxButtons.OK, MessageBoxIcon.Warning);
+				return;
+			}
+
+			// Ẩn phim nếu tất cả suất chiếu đã được xử lý
+			string updatePhimQuery = "UPDATE PHIM SET TrangThai = 0 WHERE MaPhim = @MaPhim";
+			Connection.ExcuteNonQuery(updatePhimQuery, new (string, object)[] { ("@MaPhim", maPhim) });
+
+			// Cập nhật giao diện
 			DtGridViewQLP.Rows[rowIndex].Cells["Trangthai"].Value = "Không sử dụng";
+
 			MessageBox.Show("Phim đã được đánh dấu là 'Không sử dụng'.", "Thông báo", MessageBoxButtons.OK, MessageBoxIcon.Information);
 		}
+
+
 		private void XoaPhim(int rowIndex)
 		{
 			DataRow row = movieTable.Rows[rowIndex];
 			string maPhim = row["MaPhim"].ToString();
 			string tenPhim = row["TenPhim"].ToString();
 
-			DialogResult result = MessageBox.Show("Bạn có chắc chắn muốn xoá phim " + tenPhim + "?", "Xác nhận xoá", MessageBoxButtons.YesNo, MessageBoxIcon.Question);
+			// Hiển thị hộp thoại xác nhận
+			DialogResult result = MessageBox.Show(
+				$"Bạn có chắc chắn muốn xoá phim \"{tenPhim}\" không?",
+				"Xác nhận xoá",
+				MessageBoxButtons.YesNo,
+				MessageBoxIcon.Question
+			);
+
 			if (result == DialogResult.Yes)
 			{
 				using (SqlConnection connection = new SqlConnection(Connection.connectionString))
@@ -183,61 +236,72 @@ namespace QuanLyRapChieuPhim.QuanLyPhim
 					SqlTransaction transaction = connection.BeginTransaction();
 					try
 					{
-						// Xoá trong bảng PHIM_LOAIPHIM
+						// Kiểm tra xem phim có liên quan đến các bảng khác không
+						string checkQuery = @"
+                    SELECT COUNT(*) 
+                    FROM SuatChieu 
+                    WHERE MaPhim = @MaPhim";
+
+						using (SqlCommand checkCmd = new SqlCommand(checkQuery, connection, transaction))
+						{
+							checkCmd.Parameters.AddWithValue("@MaPhim", maPhim);
+							int relatedCount = Convert.ToInt32(checkCmd.ExecuteScalar());
+
+							if (relatedCount > 0)
+							{
+								// Nếu có liên kết, thông báo không thể xoá
+								MessageBox.Show(
+									$"Không thể xoá phim \"{tenPhim}\" vì có liên quan đến suất chiếu.",
+									"Thông báo",
+									MessageBoxButtons.OK,
+									MessageBoxIcon.Warning
+								);
+								transaction.Rollback();
+								return;
+							}
+						}
+						// Nếu không có liên kết, tiến hành xoá phim, phim_loaiphim
 						string queryLoaiPhim = "DELETE FROM PHIM_LOAIPHIM WHERE MaPhim = @MaPhim";
 						using (SqlCommand cmdLoaiPhim = new SqlCommand(queryLoaiPhim, connection, transaction))
 						{
 							cmdLoaiPhim.Parameters.AddWithValue("@MaPhim", maPhim);
 							cmdLoaiPhim.ExecuteNonQuery();
 						}
-
-						// Xoá VEXEMPHIM
-						string queryVeXemPhim = "DELETE FROM VeXemPhim WHERE MaSuatChieu IN (SELECT MaSuatChieu FROM SuatChieu WHERE MaPhim = @MaPhim)";
-						using (SqlCommand cmdVe = new SqlCommand(queryVeXemPhim, connection, transaction))
+						string deleteQuery = "DELETE FROM PHIM WHERE MaPhim = @MaPhim";
+						using (SqlCommand deleteCmd = new SqlCommand(deleteQuery, connection, transaction))
 						{
-							cmdVe.Parameters.AddWithValue("@MaPhim", maPhim);
-							cmdVe.ExecuteNonQuery();
+							deleteCmd.Parameters.AddWithValue("@MaPhim", maPhim);
+							deleteCmd.ExecuteNonQuery();
 						}
 
-						// Xoá GHE
-						string queryGhe = "DELETE FROM Ghe WHERE MaSuatChieu IN (SELECT MaSuatChieu FROM SuatChieu WHERE MaPhim = @MaPhim)";
-						using (SqlCommand cmdGhe = new SqlCommand(queryGhe, connection, transaction))
-						{
-							cmdGhe.Parameters.AddWithValue("@MaPhim", maPhim);
-							cmdGhe.ExecuteNonQuery();
-						}
-
-						// Xoá các suất chiếu trong bảng SuatChieu có liên quan đến phim
-						string queryXuatChieu = "DELETE FROM SuatChieu WHERE MaPhim = @MaPhim";
-						using (SqlCommand cmdXuatChieu = new SqlCommand(queryXuatChieu, connection, transaction))
-						{
-							cmdXuatChieu.Parameters.AddWithValue("@MaPhim", maPhim);
-							cmdXuatChieu.ExecuteNonQuery();
-						}
-
-						// Xoá phim trong bảng PHIM
-						string queryPhim = "DELETE FROM PHIM WHERE MaPhim = @MaPhim";
-						using (SqlCommand cmdPhim = new SqlCommand(queryPhim, connection, transaction))
-						{
-							cmdPhim.Parameters.AddWithValue("@MaPhim", maPhim);
-							cmdPhim.ExecuteNonQuery();
-						}
-
-						// Cam kết giao dịch nếu xoá thành công
+						// Cam kết giao dịch
 						transaction.Commit();
+
+						// Cập nhật giao diện
 						DtGridViewQLP.Rows.RemoveAt(rowIndex);
-						movieTable.AcceptChanges(); // Cập nhật lại DataTable để không còn chứa dòng đã xóa
-						MessageBox.Show("Xoá phim thành công", "Thông báo", MessageBoxButtons.OK, MessageBoxIcon.Warning);
+						movieTable.AcceptChanges();
+						MessageBox.Show(
+							$"Xoá phim \"{tenPhim}\" thành công.",
+							"Thông báo",
+							MessageBoxButtons.OK,
+							MessageBoxIcon.Information
+						);
 					}
 					catch (Exception ex)
 					{
-						// Khôi phục lại dữ liệu nếu có lỗi
+						// Khôi phục dữ liệu nếu xảy ra lỗi
 						transaction.Rollback();
-						MessageBox.Show("Lỗi khi xoá phim: " + ex.Message, "Thông báo", MessageBoxButtons.OK, MessageBoxIcon.Error);
+						MessageBox.Show(
+							"Lỗi khi xoá phim: " + ex.Message,
+							"Thông báo",
+							MessageBoxButtons.OK,
+							MessageBoxIcon.Error
+						);
 					}
 				}
 			}
 		}
+
 
 		private void TextBoxTimKiem_TextChanged(object sender, EventArgs e)
 		{

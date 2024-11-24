@@ -54,7 +54,7 @@ namespace QuanLyRapChieuPhim.QuanLyPhim
 		private bool CheckCondition()
 		{
 			if (!ValidateTenPhim(TBTenPhim.Text)) return false;
-			if (!ValidateNhaSanXuat(TBNsx.Text)) return false;
+			if (!ValidateNuocSanXuat(TBNsx.Text)) return false;
 			if (!ValidateHangSanXuat(TBHsx.Text)) return false;
 			if (!ValidateDaoDien(TBDaoDien.Text)) return false;
 			if (!ValidateTheLoai(clbTheLoai)) return false;
@@ -66,28 +66,41 @@ namespace QuanLyRapChieuPhim.QuanLyPhim
 		}
 
 		private bool ValidateTenPhim(string tenPhim)
+{
+    if (string.IsNullOrWhiteSpace(tenPhim) || tenPhim.Length <= 0)
+    {
+        MessageBox.Show("Tên phim không hợp lệ", "Thông báo", MessageBoxButtons.OK, MessageBoxIcon.Error);
+        return false;
+    }
+
+    // Truy vấn kiểm tra tên phim trùng
+		string query;
+		var parameters = new List<(string, object)>();
+
+		if (isEditing) // Trường hợp đang chỉnh sửa
 		{
-			if (string.IsNullOrWhiteSpace(tenPhim) || tenPhim.Length <= 0)
-			{
-				MessageBox.Show("Tên phim không hợp lệ", "Thông báo", MessageBoxButtons.OK, MessageBoxIcon.Error);
-				return false;
-			}
-
-			// Kiểm tra trùng lặp trong cơ sở dữ liệu
-			string query = "SELECT COUNT(*) FROM PHIM WHERE TenPhim = @TenPhim";
-			var parameters = new (string, object)[] { ("@TenPhim", tenPhim) };
-
-			int count = Convert.ToInt32(Connection.ExecuteScalar(query, parameters));
-			if (count > 0)
-			{
-				MessageBox.Show("Tên phim đã tồn tại trong hệ thống!", "Thông báo", MessageBoxButtons.OK, MessageBoxIcon.Error);
-				return false;
-			}
-
-			return true;
+			query = "SELECT COUNT(*) FROM PHIM WHERE TenPhim = @TenPhim AND MaPhim != @MaPhim";
+			parameters.Add(("@TenPhim", tenPhim));
+			parameters.Add(("@MaPhim", maPhimEditing)); // Bỏ qua dòng đang được sửa
+		}
+		else // Trường hợp thêm mới
+		{
+			query = "SELECT COUNT(*) FROM PHIM WHERE TenPhim = @TenPhim";
+			parameters.Add(("@TenPhim", tenPhim));
 		}
 
-		private bool ValidateNhaSanXuat(string nhaSanXuat)
+		// Thực thi truy vấn
+		int count = Convert.ToInt32(Connection.ExecuteScalar(query, parameters.ToArray()));
+		if (count > 0)
+		{
+			MessageBox.Show("Tên phim đã tồn tại trong hệ thống!", "Thông báo", MessageBoxButtons.OK, MessageBoxIcon.Error);
+			return false;
+		}
+		return true;
+	}
+
+
+		private bool ValidateNuocSanXuat(string nhaSanXuat)
 		{
 			if (string.IsNullOrWhiteSpace(nhaSanXuat))
 			{
@@ -219,6 +232,7 @@ namespace QuanLyRapChieuPhim.QuanLyPhim
 
 			if (isEditing)
 			{
+				Trangthai = true;
 				// Thực hiện cập nhật dữ liệu phim
 				bool result = UpdateFilmToDatabase(maPhimEditing, tenPhim, ngayKhoiChieu, thoiLuong, daoDien, dienVienChinh, hangSX, nuocSX, moTa, hinhAnh, selectedGenres, Trangthai);
 				if (result)
@@ -366,31 +380,6 @@ namespace QuanLyRapChieuPhim.QuanLyPhim
 			}
 		}
 
-		private void HienThiThongTinPhim(string maPhim)
-		{
-			// Truy vấn thông tin phim vừa thêm
-			string query = "Select * from PHIM where MaPhim = @MaPhim";
-			DataTable phimTable = Connection.GetDataTable(query, new (string, object)[] { ("@MaPhim", maPhim) });
-
-			if (phimTable.Rows.Count > 0)
-			{
-				DataRow phim = phimTable.Rows[0];
-
-				// Hiển thị thông tin phim (ví dụ qua MessageBox hoặc RichTextBox)
-				string thongTinPhim = $"Tên phim: {phim["TenPhim"]}\n" +
-									  $"Thời lượng: {phim["Thoiluong"]} phút\n" +
-									  $"Đạo diễn: {phim["Daodien"]}\n" +
-									  $"Diễn viên chính: {phim["DienvienChinh"]}\n" +
-									  $"Hãng sản xuất: {phim["HangSanXuat"]}\n" +
-									  $"Nước sản xuất: {phim["NuocSanXuat"]}\n" +
-									  $"Ngày khởi chiếu: {Convert.ToDateTime(phim["NgayKhoiChieu"]).ToString("dd-MM-yyyy")}\n" +
-									  $"Mô tả: {phim["MoTa"]}\n";
-
-				// Ví dụ: Hiển thị qua MessageBox
-				MessageBox.Show(thongTinPhim, "Thông tin phim");
-			}
-
-		}
 
 		private void FormAddFilm_Load(object sender, EventArgs e)
 		{
