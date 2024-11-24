@@ -45,10 +45,9 @@
             // 
             // bunifuButton1
             // 
-            this.bunifuButton1.AllowAnimations = true;
+            this.bunifuButton1.AllowAnimations = false;
             this.bunifuButton1.AllowMouseEffects = true;
             this.bunifuButton1.AllowToggling = false;
-            this.bunifuButton1.Anchor = System.Windows.Forms.AnchorStyles.None;
             this.bunifuButton1.AnimationSpeed = 200;
             this.bunifuButton1.AutoGenerateColors = false;
             this.bunifuButton1.AutoRoundBorders = false;
@@ -92,7 +91,7 @@
             this.bunifuButton1.IdleIconRightImage = null;
             this.bunifuButton1.IndicateFocus = false;
             this.bunifuButton1.Location = new System.Drawing.Point(91, 231);
-            this.bunifuButton1.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.bunifuButton1.Margin = new System.Windows.Forms.Padding(4);
             this.bunifuButton1.Name = "bunifuButton1";
             this.bunifuButton1.OnDisabledState.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(191)))), ((int)(((byte)(191)))), ((int)(((byte)(191)))));
             this.bunifuButton1.OnDisabledState.BorderRadius = 20;
@@ -102,11 +101,11 @@
             this.bunifuButton1.OnDisabledState.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(168)))), ((int)(((byte)(160)))), ((int)(((byte)(168)))));
             this.bunifuButton1.OnDisabledState.IconLeftImage = null;
             this.bunifuButton1.OnDisabledState.IconRightImage = null;
-            this.bunifuButton1.onHoverState.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(105)))), ((int)(((byte)(181)))), ((int)(((byte)(255)))));
+            this.bunifuButton1.onHoverState.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(192)))), ((int)(((byte)(192)))));
             this.bunifuButton1.onHoverState.BorderRadius = 20;
             this.bunifuButton1.onHoverState.BorderStyle = Bunifu.UI.WinForms.BunifuButton.BunifuButton2.BorderStyles.Solid;
             this.bunifuButton1.onHoverState.BorderThickness = 1;
-            this.bunifuButton1.onHoverState.FillColor = System.Drawing.Color.FromArgb(((int)(((byte)(105)))), ((int)(((byte)(181)))), ((int)(((byte)(255)))));
+            this.bunifuButton1.onHoverState.FillColor = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(179)))), ((int)(((byte)(179)))));
             this.bunifuButton1.onHoverState.ForeColor = System.Drawing.Color.White;
             this.bunifuButton1.onHoverState.IconLeftImage = null;
             this.bunifuButton1.onHoverState.IconRightImage = null;
@@ -118,11 +117,11 @@
             this.bunifuButton1.OnIdleState.ForeColor = System.Drawing.Color.White;
             this.bunifuButton1.OnIdleState.IconLeftImage = null;
             this.bunifuButton1.OnIdleState.IconRightImage = null;
-            this.bunifuButton1.OnPressedState.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(40)))), ((int)(((byte)(96)))), ((int)(((byte)(144)))));
+            this.bunifuButton1.OnPressedState.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(179)))), ((int)(((byte)(179)))));
             this.bunifuButton1.OnPressedState.BorderRadius = 20;
             this.bunifuButton1.OnPressedState.BorderStyle = Bunifu.UI.WinForms.BunifuButton.BunifuButton2.BorderStyles.Solid;
             this.bunifuButton1.OnPressedState.BorderThickness = 1;
-            this.bunifuButton1.OnPressedState.FillColor = System.Drawing.Color.FromArgb(((int)(((byte)(40)))), ((int)(((byte)(96)))), ((int)(((byte)(144)))));
+            this.bunifuButton1.OnPressedState.FillColor = System.Drawing.Color.Salmon;
             this.bunifuButton1.OnPressedState.ForeColor = System.Drawing.Color.White;
             this.bunifuButton1.OnPressedState.IconLeftImage = null;
             this.bunifuButton1.OnPressedState.IconRightImage = null;
@@ -165,7 +164,7 @@
             this.SdtBtn.IconRightCursor = System.Windows.Forms.Cursors.IBeam;
             this.SdtBtn.Lines = new string[0];
             this.SdtBtn.Location = new System.Drawing.Point(91, 124);
-            this.SdtBtn.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.SdtBtn.Margin = new System.Windows.Forms.Padding(4);
             this.SdtBtn.MaxLength = 32767;
             this.SdtBtn.MinimumSize = new System.Drawing.Size(1, 1);
             this.SdtBtn.Modified = false;
@@ -191,7 +190,7 @@
             stateProperties4.ForeColor = System.Drawing.Color.Empty;
             stateProperties4.PlaceholderForeColor = System.Drawing.Color.Empty;
             this.SdtBtn.OnIdleState = stateProperties4;
-            this.SdtBtn.Padding = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.SdtBtn.Padding = new System.Windows.Forms.Padding(4);
             this.SdtBtn.PasswordChar = '\0';
             this.SdtBtn.PlaceholderForeColor = System.Drawing.Color.Silver;
             this.SdtBtn.PlaceholderText = "Nhập số điện thoại";
@@ -243,7 +242,7 @@
             this.NameBtn.IconRightCursor = System.Windows.Forms.Cursors.IBeam;
             this.NameBtn.Lines = new string[0];
             this.NameBtn.Location = new System.Drawing.Point(91, 50);
-            this.NameBtn.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.NameBtn.Margin = new System.Windows.Forms.Padding(4);
             this.NameBtn.MaxLength = 32767;
             this.NameBtn.MinimumSize = new System.Drawing.Size(1, 1);
             this.NameBtn.Modified = false;
@@ -269,7 +268,7 @@
             stateProperties8.ForeColor = System.Drawing.Color.Empty;
             stateProperties8.PlaceholderForeColor = System.Drawing.Color.Empty;
             this.NameBtn.OnIdleState = stateProperties8;
-            this.NameBtn.Padding = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.NameBtn.Padding = new System.Windows.Forms.Padding(4);
             this.NameBtn.PasswordChar = '\0';
             this.NameBtn.PlaceholderForeColor = System.Drawing.Color.Silver;
             this.NameBtn.PlaceholderText = "Nhập tên nhân viên";
