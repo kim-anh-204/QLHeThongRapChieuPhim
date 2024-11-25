@@ -73,7 +73,7 @@ namespace QuanLyRapChieuPhim.RegisterAndLogin
             }
             if (Regex.IsMatch(password, RegexPatternHelper.PasswordPattern) == false)
             {
-                MessageBox.Show("Mật khẩu phải có tối thiểu 8 ký tự, không có khoảng trắng và có ít nhất 1 chữ cái và 1 chữ số!", "Thông báo", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                MessageBox.Show("Mật khẩu phải có tối thiểu 8 ký tự, không có khoảng trắng, không chứa ký tự đặc biệt và có ít nhất 1 chữ cái và 1 chữ số!", "Thông báo", MessageBoxButtons.OK, MessageBoxIcon.Error);
                 return;
             }
             string name = textBoxName.Text.Trim();

@@ -105,7 +105,7 @@ namespace QuanLyRapChieuPhim.InfoManager
                 }
                 string newPassword = textBoxPassword.Text.Trim();
                 string newPassword2 = textBoxPassword2.Text.Trim();
-                if (newPassword.Length == 0 || newPassword.Length > 150)
+                if (newPassword.Length == 0 || newPassword.Length > 150 || newPassword2.Length == 0 || newPassword2.Length > 150)
                 {
                     MessageBox.Show("Mật khẩu mới không được bỏ trống hoặc quá dài.", "Thông báo", MessageBoxButtons.OK, MessageBoxIcon.Error);
                     return;
@@ -117,7 +117,7 @@ namespace QuanLyRapChieuPhim.InfoManager
                 }
                 if (Regex.IsMatch(newPassword, RegexPatternHelper.PasswordPattern) == false)
                 {
-                    MessageBox.Show("Mật khẩu mới phải có tối thiểu 8 ký tự, không có khoảng trắng và có ít nhất 1 chữ cái và 1 chữ số!", "Thông báo", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                    MessageBox.Show("Mật khẩu phải có tối thiểu 8 ký tự, không có khoảng trắng, không chứa ký tự đặc biệt và có ít nhất 1 chữ cái và 1 chữ số!", "Thông báo", MessageBoxButtons.OK, MessageBoxIcon.Error);
                     return;
                 }
 
