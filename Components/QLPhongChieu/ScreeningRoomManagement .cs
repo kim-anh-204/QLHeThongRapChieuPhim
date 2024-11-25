@@ -207,22 +207,41 @@ namespace QuanLyRapChieuPhim.QLPhongChieu
 		}
 
 		private void bunifuDataGridView2_CellContentClick(object sender, DataGridViewCellEventArgs e)
-        {
+		{
+			int rowIndex = e.RowIndex;
+			if (rowIndex >= 0)
+			{
+				string mapc = bunifuDataGridView1.Rows[rowIndex].Cells["Column2"].Value.ToString();
 
-            int rowIndex = e.RowIndex;
-            if (e.RowIndex >= 0)
-            {
-                string mapc = bunifuDataGridView1.Rows[e.RowIndex].Cells["Column2"].Value.ToString();
+				// Kiểm tra nếu nhấn nút Xóa
 				if (bunifuDataGridView1.Columns[e.ColumnIndex].Name == "Xoa")
 				{
+					// Kiểm tra nếu có vé đã đặt cho các suất chiếu còn hoạt động của phòng này
+					string checkVeQuery = @"
+                SELECT COUNT(*)
+                FROM VeXemPhim
+                WHERE MaSuatChieu IN (
+                    SELECT sc.MaSuatChieu
+                    FROM SuatChieu sc
+                    JOIN Phim p ON sc.MaPhim = p.MaPhim
+                    WHERE sc.MaPhong = @MaPhong
+                        AND sc.TrangThai = 'CHUAXOA' -- các suất chiếu còn hoạt động
+                        AND DATEADD(MINUTE, p.ThoiLuong, CAST(sc.GioBatDau AS DATETIME)) + CAST(sc.NgayChieu AS DATETIME) > GETDATE() -- thời gian chiếu chưa kết thúc
+                )";
+					int veCount = Connection.ExecuteScalarInt32(checkVeQuery, new (string, object)[] { ("@MaPhong", mapc) });
+
+					if (veCount > 0)
+					{
+						MessageBox.Show("Không thể xóa vì còn suất chiếu chưa kết thúc hoặc có người đặt vé trong phòng này!", "Thông báo", MessageBoxButtons.OK, MessageBoxIcon.Warning);
+						return;
+					}
+
 					var confirmResult = MessageBox.Show("Bạn có chắc muốn xóa phòng chiếu phim?",
 														"Xác nhận xóa",
 														MessageBoxButtons.YesNo,
 														MessageBoxIcon.Warning);
 					if (confirmResult == DialogResult.Yes)
 					{
-						//string mapc = bunifuDataGridView1.Rows[e.RowIndex].Cells["Column2"].Value.ToString();
-
 						// Cập nhật trạng thái của phòng chiếu thành 'XOA'
 						string updateTrangThaiQuery = "UPDATE PHONGCHIEUPHIM SET TrangThai = 'XOA' WHERE MaPhong = @MaPhong";
 						bool isUpdatedTrangThai = Connection.ExcuteNonQuery(updateTrangThaiQuery, new (string, object)[] { ("@MaPhong", mapc) });
@@ -230,8 +249,7 @@ namespace QuanLyRapChieuPhim.QLPhongChieu
 						if (isUpdatedTrangThai)
 						{
 							// Ẩn dòng trong DataGridView
-							bunifuDataGridView1.Rows[e.RowIndex].Visible = false;
-
+							bunifuDataGridView1.Rows[rowIndex].Visible = false;
 							MessageBox.Show("Phòng chiếu đã được xóa!", "Thành công", MessageBoxButtons.OK, MessageBoxIcon.Information);
 						}
 						else
@@ -241,45 +259,54 @@ namespace QuanLyRapChieuPhim.QLPhongChieu
 					}
 				}
 
-
-
+				// Kiểm tra nếu nhấn nút Sửa
 				if (bunifuDataGridView1.Columns[e.ColumnIndex].Name == "Sua")
-                {
+				{
+					// Kiểm tra nếu có vé đã đặt cho các suất chiếu còn hoạt động của phòng này
+					string checkVeQuery = @"
+                SELECT COUNT(*)
+                FROM VeXemPhim
+                WHERE MaSuatChieu IN (
+                    SELECT sc.MaSuatChieu
+                    FROM SuatChieu sc
+                    JOIN Phim p ON sc.MaPhim = p.MaPhim
+                    WHERE sc.MaPhong = @MaPhong
+                        AND sc.TrangThai = 'CHUAXOA' -- các suất chiếu còn hoạt động
+                        AND DATEADD(MINUTE, p.ThoiLuong, CAST(sc.GioBatDau AS DATETIME)) + CAST(sc.NgayChieu AS DATETIME) > GETDATE() -- thời gian chiếu chưa kết thúc
+                )";
+					int veCount = Connection.ExecuteScalarInt32(checkVeQuery, new (string, object)[] { ("@MaPhong", mapc) });
 
-                    string query = @"SELECT MaPhong, TenPhong, TrangthaiPhongchieu FROM PHONGCHIEUPHIM WHERE MaPhong = @MaPhong";
-                    var parameters = new (string, object)[] { ("@MaPhong", mapc) };
-                    DataTable screeningData = Connection.GetDataTable(query, parameters);
+					if (veCount > 0)
+					{
+						MessageBox.Show("Không thể sửa vì còn suất chiếu chưa kết thúc hoặc có người đặt vé trong phòng này!", "Thông báo", MessageBoxButtons.OK, MessageBoxIcon.Warning);
+						return;
+					}
 
-                    if (screeningData.Rows.Count > 0)
-                    {
-                        string maPhong = screeningData.Rows[0]["MaPhong"].ToString();
-                        string tenPhong = screeningData.Rows[0]["TenPhong"].ToString();
-                        string trangThai = screeningData.Rows[0]["TrangthaiPhongchieu"].ToString();
-                        //MessageBox.Show($"{trangThai}");
-                        string trangThai1;
-                        if (trangThai == "True")
-                        {
-                            trangThai1 = "Đang hoạt động"; // Set status to 1 for "Active"
-                        }
-                        else // Assuming the only other state is "Không hoạt động"
-                        {
-                            trangThai1 = "Không hoạt động"; // Set status to 0 for "Inactive"
-                        }
+					// Truy vấn thông tin phòng để sửa
+					string query = @"SELECT MaPhong, TenPhong, TrangthaiPhongchieu FROM PHONGCHIEUPHIM WHERE MaPhong = @MaPhong";
+					var parameters = new (string, object)[] { ("@MaPhong", mapc) };
+					DataTable screeningData = Connection.GetDataTable(query, parameters);
 
+					if (screeningData.Rows.Count > 0)
+					{
+						string maPhong = screeningData.Rows[0]["MaPhong"].ToString();
+						string tenPhong = screeningData.Rows[0]["TenPhong"].ToString();
+						string trangThai = screeningData.Rows[0]["TrangthaiPhongchieu"].ToString();
+						string trangThai1 = trangThai == "True" ? "Đang hoạt động" : "Không hoạt động";
 
-                        // Pass the data to the update form
-                        UpdateScreeningRoom updateScreening = new UpdateScreeningRoom(this, maPhong, tenPhong, trangThai1);
+						// Pass the data to the update form
+						UpdateScreeningRoom updateScreening = new UpdateScreeningRoom(this, maPhong, tenPhong, trangThai1);
 
-                        if (updateScreening.ShowDialog() == DialogResult.OK)
-                        {
-                            LoadScreeningData(); // Tải lại dữ liệu khi sửa phòng thành công
-                        }
-                    }
-                }
-            }
-        }
+						if (updateScreening.ShowDialog() == DialogResult.OK)
+						{
+							LoadScreeningData(); // Tải lại dữ liệu khi sửa phòng thành công
+						}
+					}
+				}
+			}
+		}
 
-        private void bunifuDataGridView1_CellClick_1(object sender, DataGridViewCellEventArgs e)
+		private void bunifuDataGridView1_CellClick_1(object sender, DataGridViewCellEventArgs e)
         {
 
         }
