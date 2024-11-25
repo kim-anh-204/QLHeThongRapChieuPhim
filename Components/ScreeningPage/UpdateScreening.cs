@@ -77,29 +77,56 @@ namespace QuanLyRapChieuPhim.ScreeningPage
             var parametersPC = new (string, object)[] { ("@MaPhong", maPhong) };
             DataTable resultPC = Connection.GetDataTable(queryPC, parametersPC);
             Boolean trangThaiPhong = (Boolean)resultPC.Rows[0]["TrangthaiPhongchieu"];
+//            string queryTrung = @"
+//SELECT COUNT(*) 
+//FROM SUATCHIEU 
+//JOIN PHIM ON SUATCHIEU.MaPhim = PHIM.MaPhim
+//WHERE MaPhong = @MaPhong 
+//  AND TrangThai = 'CHUAXOA'
+//  AND MaSuatChieu NOT IN (@MaSC)
+//  AND (
+//      (NgayChieu = @NgayChieu AND 
+//       (
+//           CAST(@NgayChieu AS DATETIME) + CAST(@GioDuocChon AS DATETIME) < CAST(NgayChieu AS DATETIME) + CAST(GioBatDau AS DATETIME) + 4.0/24 
+//           AND 
+//           CAST(@NgayChieu AS DATETIME) + CAST(@GioDuocChon AS DATETIME) + 4.0/24 > CAST(NgayChieu AS DATETIME) + CAST(GioBatDau AS DATETIME)
+//       )
+//      )
+//      OR
+//      (NgayChieu = DATEADD(DAY, -1, @NgayChieu) AND 
+//       CAST(NgayChieu AS DATETIME) + CAST(GioBatDau AS DATETIME) + 4.0/24 > CAST(@NgayChieu AS DATETIME) + CAST(@GioDuocChon AS DATETIME)
+//      )
+//      OR
+//      (NgayChieu = DATEADD(DAY, 1, @NgayChieu) AND 
+//       CAST(@NgayChieu AS DATETIME) + CAST(@GioDuocChon AS DATETIME) + 4.0/24 > CAST(NgayChieu AS DATETIME) + CAST(GioBatDau AS DATETIME)
+//      )
+//  )";
             string queryTrung = @"
 SELECT COUNT(*) 
 FROM SUATCHIEU 
+JOIN PHIM ON SUATCHIEU.MaPhim = PHIM.MaPhim
 WHERE MaPhong = @MaPhong 
-  AND TrangThai = 'CHUAXOA'
+  AND SUATCHIEU.TrangThai = 'CHUAXOA'
   AND MaSuatChieu NOT IN (@MaSC)
   AND (
       (NgayChieu = @NgayChieu AND 
        (
-           CAST(@NgayChieu AS DATETIME) + CAST(@GioDuocChon AS DATETIME) < CAST(NgayChieu AS DATETIME) + CAST(GioBatDau AS DATETIME) + 4.0/24 
+           CAST(@NgayChieu AS DATETIME) + CAST(@GioDuocChon AS DATETIME) < CAST(NgayChieu AS DATETIME) + CAST(GioBatDau AS DATETIME) + DATEADD(MINUTE, PHIM.ThoiLuong+30, '1900-01-01')
            AND 
-           CAST(@NgayChieu AS DATETIME) + CAST(@GioDuocChon AS DATETIME) + 4.0/24 > CAST(NgayChieu AS DATETIME) + CAST(GioBatDau AS DATETIME)
+           CAST(@NgayChieu AS DATETIME) + CAST(@GioDuocChon AS DATETIME) + DATEADD(MINUTE, PHIM.ThoiLuong+30, '1900-01-01') > CAST(NgayChieu AS DATETIME) + CAST(GioBatDau AS DATETIME)
        )
       )
       OR
       (NgayChieu = DATEADD(DAY, -1, @NgayChieu) AND 
-       CAST(NgayChieu AS DATETIME) + CAST(GioBatDau AS DATETIME) + 4.0/24 > CAST(@NgayChieu AS DATETIME) + CAST(@GioDuocChon AS DATETIME)
+       CAST(NgayChieu AS DATETIME) + CAST(GioBatDau AS DATETIME) + DATEADD(MINUTE, PHIM.ThoiLuong+30, '1900-01-01') > CAST(@NgayChieu AS DATETIME) + CAST(@GioDuocChon AS DATETIME)
       )
       OR
       (NgayChieu = DATEADD(DAY, 1, @NgayChieu) AND 
-       CAST(@NgayChieu AS DATETIME) + CAST(@GioDuocChon AS DATETIME) + 4.0/24 > CAST(NgayChieu AS DATETIME) + CAST(GioBatDau AS DATETIME)
+       CAST(@NgayChieu AS DATETIME) + CAST(@GioDuocChon AS DATETIME) + DATEADD(MINUTE, PHIM.ThoiLuong+30, '1900-01-01') > CAST(NgayChieu AS DATETIME) + CAST(GioBatDau AS DATETIME)
       )
-  )";
+  )
+
+";
             var parametersTrung = new (string, object)[] { ("@MaPhong", maPhong), ("@Ngaychieu", formattedDate), ("@GioDuocChon", selectedTime.TimeOfDay), ("@MaSC", maSc) };
             DataTable resultTrung = Connection.GetDataTable(queryTrung, parametersTrung);
             int count = Convert.ToInt32(Connection.ExecuteScalar(queryTrung, parametersTrung));

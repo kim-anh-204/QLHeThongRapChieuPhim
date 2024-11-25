@@ -120,11 +120,12 @@ namespace QuanLyRapChieuPhim.ScreeningPage
             
             var selectedMovie = (KeyValuePair<string, string>)comboBoxMovies.SelectedItem;
             string maPhim = selectedMovie.Key;
-            string queryPhim = @"SELECT TOP 1 NgayKhoiChieu,DATEADD(MONTH, 1, PHIM.NgayKhoiChieu) AS NgayKetThuc FROM PHIM WHERE MaPhim= @MaPhim";
+            string queryPhim = @"SELECT TOP 1 NgayKhoiChieu,DATEADD(MONTH, 1, PHIM.NgayKhoiChieu) AS NgayKetThuc,Thoiluong FROM PHIM WHERE MaPhim= @MaPhim";
             var parameters = new (string, object)[] { ("@MaPhim", maPhim) };
             DataTable resultPhim = Connection.GetDataTable(queryPhim, parameters);
             DateTime ngayKhoiChieu = (DateTime)resultPhim.Rows[0]["NgayKhoiChieu"];
             DateTime ngayKetThuc = (DateTime)resultPhim.Rows[0]["NgayKetThuc"];
+            var thoiluong = Convert.ToInt32(resultPhim.Rows[0]["Thoiluong"]);
             string tenPhim = selectedMovie.Value;
             var selectedRoom = (KeyValuePair<string, string>)comboBoxRoom.SelectedItem;
             string maPhong = selectedRoom.Key;
@@ -140,29 +141,57 @@ namespace QuanLyRapChieuPhim.ScreeningPage
             DataTable resultPC = Connection.GetDataTable(queryPC, parametersPC);
             Boolean trangThaiPhong = (Boolean)resultPC.Rows[0]["TrangthaiPhongchieu"];
 
+//            string queryTrung = @"
+//SELECT COUNT(*) 
+//FROM SUATCHIEU 
+//WHERE MaPhong = @MaPhong 
+//  AND TrangThai = 'CHUAXOA'
+//  AND (
+//      (NgayChieu = @NgayChieu AND 
+//       (
+//           CAST(@NgayChieu AS DATETIME) + CAST(@GioDuocChon AS DATETIME) < CAST(NgayChieu AS DATETIME) + CAST(GioBatDau AS DATETIME) + 4.0/24 
+//           AND 
+//           CAST(@NgayChieu AS DATETIME) + CAST(@GioDuocChon AS DATETIME) + 4.0/24 > CAST(NgayChieu AS DATETIME) + CAST(GioBatDau AS DATETIME)
+//       )
+//      )
+//      OR
+//      (NgayChieu = DATEADD(DAY, -1, @NgayChieu) AND 
+//       CAST(NgayChieu AS DATETIME) + CAST(GioBatDau AS DATETIME) + 4.0/24 > CAST(@NgayChieu AS DATETIME) + CAST(@GioDuocChon AS DATETIME)
+//      )
+//      OR
+//      (NgayChieu = DATEADD(DAY, 1, @NgayChieu) AND 
+//       CAST(@NgayChieu AS DATETIME) + CAST(@GioDuocChon AS DATETIME) + 4.0/24 > CAST(NgayChieu AS DATETIME) + CAST(GioBatDau AS DATETIME)
+//      )
+//  )";
+
+
+
             string queryTrung = @"
 SELECT COUNT(*) 
 FROM SUATCHIEU 
+JOIN PHIM ON SUATCHIEU.MaPhim = PHIM.MaPhim
 WHERE MaPhong = @MaPhong 
-  AND TrangThai = 'CHUAXOA'
+  AND SUATCHIEU.TrangThai = 'CHUAXOA'
   AND (
       (NgayChieu = @NgayChieu AND 
        (
-           CAST(@NgayChieu AS DATETIME) + CAST(@GioDuocChon AS DATETIME) < CAST(NgayChieu AS DATETIME) + CAST(GioBatDau AS DATETIME) + 4.0/24 
+           CAST(@NgayChieu AS DATETIME) + CAST(@GioDuocChon AS DATETIME) < CAST(NgayChieu AS DATETIME) + CAST(GioBatDau AS DATETIME) + DATEADD(MINUTE, PHIM.ThoiLuong+30, '1900-01-01')
            AND 
-           CAST(@NgayChieu AS DATETIME) + CAST(@GioDuocChon AS DATETIME) + 4.0/24 > CAST(NgayChieu AS DATETIME) + CAST(GioBatDau AS DATETIME)
+           CAST(@NgayChieu AS DATETIME) + CAST(@GioDuocChon AS DATETIME) + DATEADD(MINUTE, @ThoiLuong+30, '1900-01-01') > CAST(NgayChieu AS DATETIME) + CAST(GioBatDau AS DATETIME)
        )
       )
       OR
       (NgayChieu = DATEADD(DAY, -1, @NgayChieu) AND 
-       CAST(NgayChieu AS DATETIME) + CAST(GioBatDau AS DATETIME) + 4.0/24 > CAST(@NgayChieu AS DATETIME) + CAST(@GioDuocChon AS DATETIME)
+       CAST(NgayChieu AS DATETIME) + CAST(GioBatDau AS DATETIME) + DATEADD(MINUTE, PHIM.ThoiLuong+30, '1900-01-01') > CAST(@NgayChieu AS DATETIME) + CAST(@GioDuocChon AS DATETIME)
       )
       OR
       (NgayChieu = DATEADD(DAY, 1, @NgayChieu) AND 
-       CAST(@NgayChieu AS DATETIME) + CAST(@GioDuocChon AS DATETIME) + 4.0/24 > CAST(NgayChieu AS DATETIME) + CAST(GioBatDau AS DATETIME)
+       CAST(@NgayChieu AS DATETIME) + CAST(@GioDuocChon AS DATETIME) + DATEADD(MINUTE, @ThoiLuong+30, '1900-01-01') > CAST(NgayChieu AS DATETIME) + CAST(GioBatDau AS DATETIME)
       )
   )";
-            var parametersTrung = new (string, object)[] { ("@MaPhong", maPhong), ("@Ngaychieu", formattedDate), ("@GioDuocChon", selectedTime.TimeOfDay) };
+
+            
+            var parametersTrung = new (string, object)[] { ("@MaPhong", maPhong), ("@Ngaychieu", formattedDate), ("@GioDuocChon", selectedTime.TimeOfDay), ("@ThoiLuong", thoiluong) };
             DataTable resultTrung = Connection.GetDataTable(queryTrung, parametersTrung);
             int count = Convert.ToInt32(Connection.ExecuteScalar(queryTrung, parametersTrung));
             if (ngayKetThuc < today)
