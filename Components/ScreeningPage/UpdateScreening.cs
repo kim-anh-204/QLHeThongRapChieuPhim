@@ -64,6 +64,7 @@ namespace QuanLyRapChieuPhim.ScreeningPage
             string formattedDate = bunifuDatePicker1.Value.ToString("MM/dd/yyyy"); ;
             string queryPhim = @"SELECT TOP 1 NgayKhoiChieu,DATEADD(MONTH, 1, PHIM.NgayKhoiChieu) AS NgayKetThuc FROM PHIM WHERE MaPhim= @MaPhim";
             var parameters = new (string, object)[] { ("@MaPhim", maPhim) };
+            string maNguoiDDung = (String)SharedData.GetValue("MaNguoiDung");
             DataTable resultPhim = Connection.GetDataTable(queryPhim, parameters);
             DateTime ngayKhoiChieu = (DateTime)resultPhim.Rows[0]["NgayKhoiChieu"];
             DateTime ngayKetThuc = (DateTime)resultPhim.Rows[0]["NgayKetThuc"];
@@ -127,13 +128,20 @@ WHERE MaPhong = @MaPhong
                 MessageBox.Show("Đã bị trùng lịch chiếu!");
                 return;
             }
+            string checkGHEQuery = "SELECT COUNT(*) FROM GHE WHERE MaSuatChieu = @MaSuatChieu AND TrangThai = 'True'";
+            int count1 = Connection.ExecuteScalarInt32(checkGHEQuery, new (string, object)[] { ("@MaSuatChieu", maSc) });
+            if (count1 > 0 && ngayChieu >= today)
+            {
+                MessageBox.Show("Cập nhật không thành công vì đã có người đặt vé!");
+                return;
+            }
             string query = "UPDATE SUATCHIEU SET MaPhim = @MaPhim,MaPhong=@MaPhong, LoaiChieu = @LoaiChieu,GioBatDau = @GioBatDau,NgayChieu = @NgayChieu,GiaVe=@GiaVe WHERE MaSuatChieu = @MaSuatChieu";
             var result = Connection.ExcuteNonQuery(query, new (string, object)[]
            {
             ("@MaSuatChieu", maSc),
             ("@MaPhim", maPhim),
             ("@MaPhong", maPhong),
-            ("@MaNguoiDung", "U001"),
+            ("@MaNguoiDung", maNguoiDDung),
             ("@NgayChieu", formattedDate),
             ("@GioBatDau", selectedTime.ToString("HH:mm")),
             ("@LoaiChieu", loaiChieu),

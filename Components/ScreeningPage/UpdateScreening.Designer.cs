@@ -134,7 +134,7 @@
             this.priceTextBox.IconRightCursor = System.Windows.Forms.Cursors.IBeam;
             this.priceTextBox.Lines = new string[0];
             this.priceTextBox.Location = new System.Drawing.Point(89, 286);
-            this.priceTextBox.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.priceTextBox.Margin = new System.Windows.Forms.Padding(4);
             this.priceTextBox.MaxLength = 32767;
             this.priceTextBox.MinimumSize = new System.Drawing.Size(1, 1);
             this.priceTextBox.Modified = false;
@@ -160,7 +160,7 @@
             stateProperties4.ForeColor = System.Drawing.Color.Empty;
             stateProperties4.PlaceholderForeColor = System.Drawing.Color.Empty;
             this.priceTextBox.OnIdleState = stateProperties4;
-            this.priceTextBox.Padding = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.priceTextBox.Padding = new System.Windows.Forms.Padding(4);
             this.priceTextBox.PasswordChar = '\0';
             this.priceTextBox.PlaceholderForeColor = System.Drawing.Color.Silver;
             this.priceTextBox.PlaceholderText = "Nhập giá vé";
@@ -215,7 +215,7 @@
             // 
             // bunifuButton1
             // 
-            this.bunifuButton1.AllowAnimations = true;
+            this.bunifuButton1.AllowAnimations = false;
             this.bunifuButton1.AllowMouseEffects = true;
             this.bunifuButton1.AllowToggling = false;
             this.bunifuButton1.Anchor = System.Windows.Forms.AnchorStyles.None;
@@ -261,8 +261,8 @@
             this.bunifuButton1.IdleIconLeftImage = null;
             this.bunifuButton1.IdleIconRightImage = null;
             this.bunifuButton1.IndicateFocus = false;
-            this.bunifuButton1.Location = new System.Drawing.Point(89, 370);
-            this.bunifuButton1.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.bunifuButton1.Location = new System.Drawing.Point(89, 366);
+            this.bunifuButton1.Margin = new System.Windows.Forms.Padding(4);
             this.bunifuButton1.Name = "bunifuButton1";
             this.bunifuButton1.OnDisabledState.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(191)))), ((int)(((byte)(191)))), ((int)(((byte)(191)))));
             this.bunifuButton1.OnDisabledState.BorderRadius = 20;
@@ -272,11 +272,11 @@
             this.bunifuButton1.OnDisabledState.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(168)))), ((int)(((byte)(160)))), ((int)(((byte)(168)))));
             this.bunifuButton1.OnDisabledState.IconLeftImage = null;
             this.bunifuButton1.OnDisabledState.IconRightImage = null;
-            this.bunifuButton1.onHoverState.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(105)))), ((int)(((byte)(181)))), ((int)(((byte)(255)))));
+            this.bunifuButton1.onHoverState.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(179)))), ((int)(((byte)(179)))));
             this.bunifuButton1.onHoverState.BorderRadius = 20;
             this.bunifuButton1.onHoverState.BorderStyle = Bunifu.UI.WinForms.BunifuButton.BunifuButton2.BorderStyles.Solid;
             this.bunifuButton1.onHoverState.BorderThickness = 1;
-            this.bunifuButton1.onHoverState.FillColor = System.Drawing.Color.FromArgb(((int)(((byte)(105)))), ((int)(((byte)(181)))), ((int)(((byte)(255)))));
+            this.bunifuButton1.onHoverState.FillColor = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(179)))), ((int)(((byte)(179)))));
             this.bunifuButton1.onHoverState.ForeColor = System.Drawing.Color.White;
             this.bunifuButton1.onHoverState.IconLeftImage = null;
             this.bunifuButton1.onHoverState.IconRightImage = null;
@@ -288,11 +288,11 @@
             this.bunifuButton1.OnIdleState.ForeColor = System.Drawing.Color.White;
             this.bunifuButton1.OnIdleState.IconLeftImage = null;
             this.bunifuButton1.OnIdleState.IconRightImage = null;
-            this.bunifuButton1.OnPressedState.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(40)))), ((int)(((byte)(96)))), ((int)(((byte)(144)))));
+            this.bunifuButton1.OnPressedState.BorderColor = System.Drawing.Color.Salmon;
             this.bunifuButton1.OnPressedState.BorderRadius = 20;
             this.bunifuButton1.OnPressedState.BorderStyle = Bunifu.UI.WinForms.BunifuButton.BunifuButton2.BorderStyles.Solid;
             this.bunifuButton1.OnPressedState.BorderThickness = 1;
-            this.bunifuButton1.OnPressedState.FillColor = System.Drawing.Color.FromArgb(((int)(((byte)(40)))), ((int)(((byte)(96)))), ((int)(((byte)(144)))));
+            this.bunifuButton1.OnPressedState.FillColor = System.Drawing.Color.Salmon;
             this.bunifuButton1.OnPressedState.ForeColor = System.Drawing.Color.White;
             this.bunifuButton1.OnPressedState.IconLeftImage = null;
             this.bunifuButton1.OnPressedState.IconRightImage = null;
