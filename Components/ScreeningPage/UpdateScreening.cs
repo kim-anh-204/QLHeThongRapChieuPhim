@@ -148,8 +148,12 @@ WHERE MaPhong = @MaPhong
             ("@GiaVe", giaVe)
 
            });
-
-            if (result)
+            string queryGhe = "UPDATE GHE SET TrangThai = 'False' WHERE MaSuatChieu = @MaSuatChieu";
+            var resultGhe = Connection.ExcuteNonQuery(queryGhe, new (string, object)[]
+           {
+            ("@MaSuatChieu", maSc)          
+           });
+            if (result&& resultGhe)
             {
                 MessageBox.Show("Cập nhật thành công!", "Thông báo", MessageBoxButtons.OK, MessageBoxIcon.Information);
                 this.Close();
