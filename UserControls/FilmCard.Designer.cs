@@ -51,7 +51,7 @@
             this.label4.Location = new System.Drawing.Point(3, 20);
             this.label4.MaximumSize = new System.Drawing.Size(175, 0);
             this.label4.Name = "label4";
-            this.label4.Size = new System.Drawing.Size(69, 15);
+            this.label4.Size = new System.Drawing.Size(72, 15);
             this.label4.TabIndex = 4;
             this.label4.Text = "Khởi chiếu: ";
             // 
@@ -86,8 +86,8 @@
             // tableLayoutPanel2
             // 
             this.tableLayoutPanel2.ColumnCount = 2;
-            this.tableLayoutPanel2.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 45F));
-            this.tableLayoutPanel2.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 55F));
+            this.tableLayoutPanel2.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 50F));
+            this.tableLayoutPanel2.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 50F));
             this.tableLayoutPanel2.Controls.Add(this.labelKhoiChieu, 1, 1);
             this.tableLayoutPanel2.Controls.Add(this.labelThoiLuong, 1, 0);
             this.tableLayoutPanel2.Controls.Add(this.label3, 0, 0);
@@ -98,7 +98,6 @@
             this.tableLayoutPanel2.RowCount = 2;
             this.tableLayoutPanel2.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 50F));
             this.tableLayoutPanel2.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 50F));
-            this.tableLayoutPanel2.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Absolute, 20F));
             this.tableLayoutPanel2.Size = new System.Drawing.Size(171, 40);
             this.tableLayoutPanel2.TabIndex = 6;
             // 
@@ -106,7 +105,7 @@
             // 
             this.labelKhoiChieu.AutoSize = true;
             this.labelKhoiChieu.Font = new System.Drawing.Font("Segoe UI", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.labelKhoiChieu.Location = new System.Drawing.Point(79, 20);
+            this.labelKhoiChieu.Location = new System.Drawing.Point(88, 20);
             this.labelKhoiChieu.MaximumSize = new System.Drawing.Size(175, 0);
             this.labelKhoiChieu.Name = "labelKhoiChieu";
             this.labelKhoiChieu.Size = new System.Drawing.Size(65, 15);
@@ -117,7 +116,7 @@
             // 
             this.labelThoiLuong.AutoSize = true;
             this.labelThoiLuong.Font = new System.Drawing.Font("Segoe UI", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.labelThoiLuong.Location = new System.Drawing.Point(79, 0);
+            this.labelThoiLuong.Location = new System.Drawing.Point(88, 0);
             this.labelThoiLuong.MaximumSize = new System.Drawing.Size(175, 0);
             this.labelThoiLuong.Name = "labelThoiLuong";
             this.labelThoiLuong.Size = new System.Drawing.Size(47, 15);
@@ -131,7 +130,7 @@
             this.label3.Location = new System.Drawing.Point(3, 0);
             this.label3.MaximumSize = new System.Drawing.Size(175, 0);
             this.label3.Name = "label3";
-            this.label3.Size = new System.Drawing.Size(43, 20);
+            this.label3.Size = new System.Drawing.Size(71, 15);
             this.label3.TabIndex = 3;
             this.label3.Text = "Thời lượng:";
             // 
