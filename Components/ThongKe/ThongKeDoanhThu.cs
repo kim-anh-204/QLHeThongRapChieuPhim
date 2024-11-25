@@ -55,7 +55,6 @@ namespace QuanLyRapChieuPhim.ThongKe
             WITH SoVeBanDuoc AS (
             SELECT MaSuatChieu, COUNT(MaVe) AS SoVe
             FROM VEXEMPHIM
-             
             GROUP BY MaSuatChieu
         )
         SELECT 

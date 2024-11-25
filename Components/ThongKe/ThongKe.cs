@@ -44,7 +44,6 @@ namespace QuanLyRapChieuPhim.ThongKe
 			if (temp != null && temp.Rows.Count > 0)
 			{
 				var totalRevenue = temp.Compute("SUM([Doanh Thu])", string.Empty);
-				// Update the label with the total revenue value
 				labelDtHomnay.Text = $"Doanh thu hôm nay: {totalRevenue:N0} VNĐ";
 				labelTien.Text = $"{totalRevenue:N0} VNĐ";
 			}
@@ -60,7 +59,6 @@ namespace QuanLyRapChieuPhim.ThongKe
 			{
 				var totalRevenue = dtTable.Compute("SUM([Doanh Thu])", string.Empty);
 
-				// Update the label with the total revenue value
 				lbDoanhthu.Text = $"Doanh thu {txt}";
 				labelTien.Text = $"{totalRevenue:N0} VNĐ";
 			}

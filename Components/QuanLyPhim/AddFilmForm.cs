@@ -58,7 +58,7 @@ namespace QuanLyRapChieuPhim.QuanLyPhim
 			if (!ValidateHangSanXuat(TBHsx.Text)) return false;
 			if (!ValidateDaoDien(TBDaoDien.Text)) return false;
 			if (!ValidateTheLoai(clbTheLoai)) return false;
-			if (!ValidateNgayKhoiChieu(DatePickerNgaykc.Value)) return false;
+			//if (!ValidateNgayKhoiChieu(DatePickerNgaykc.Value)) return false;
 			if (!ValidateThoiLuong(TBThoiluong.Text)) return false;
 			if (!ValidateDienVien(TBDienVien.Text)) return false;
 
@@ -205,6 +205,22 @@ namespace QuanLyRapChieuPhim.QuanLyPhim
 				ptBoxPoster.SizeMode = PictureBoxSizeMode.Zoom; // Tùy chỉnh hiển thị nếu cần
 			}
 		}
+		private bool IsTicketBooked(string maPhim)
+		{
+			// Lấy danh sách các suất chiếu của phim
+			string getSuatChieuQuery = "SELECT MaSuatChieu, NgayChieu FROM SUATCHIEU WHERE MaPhim = @MaPhim";
+			DataTable suatChieuTable = Connection.GetDataTable(getSuatChieuQuery, new (string, object)[] { ("@MaPhim", maPhim) });
+			int veCount = 0;
+			foreach (DataRow suatChieuRow in suatChieuTable.Rows)
+			{
+				string maSuatChieu = suatChieuRow["MaSuatChieu"].ToString();
+				string checkVeQuery = "SELECT COUNT(*) FROM GHE WHERE MaSuatChieu = @MaSuatChieu AND TrangThai = 'True'";
+					veCount = Connection.ExecuteScalarInt32(checkVeQuery, new (string, object)[] { ("@MaSuatChieu", maSuatChieu) });
+					if (veCount > 0) return true;
+			}
+			return false;
+		}
+
 		private void ButtonThemPhimMoi_Click(object sender, EventArgs e)
 		{
 			if (!CheckCondition())
@@ -232,6 +248,11 @@ namespace QuanLyRapChieuPhim.QuanLyPhim
 
 			if (isEditing)
 			{
+				if (IsTicketBooked(maPhimEditing))
+				{
+					MessageBox.Show("Phim này đã có vé được đặt. Bạn không thể sửa thông tin phim.", "Cảnh báo", MessageBoxButtons.OK, MessageBoxIcon.Warning);
+					return;
+				}
 				Trangthai = true;
 				// Thực hiện cập nhật dữ liệu phim
 				bool result = UpdateFilmToDatabase(maPhimEditing, tenPhim, ngayKhoiChieu, thoiLuong, daoDien, dienVienChinh, hangSX, nuocSX, moTa, hinhAnh, selectedGenres, Trangthai);
