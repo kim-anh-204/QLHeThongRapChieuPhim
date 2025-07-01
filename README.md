@@ -87,5 +87,8 @@ Dù nhóm đã nỗ lực hoàn thiện phần mềm, vẫn còn một số hạ
 
 ## 📄 Báo cáo cuối kỳ
 
-🔗 **File PDF:** [Nhóm 9 - CNTT4 - K63.pdf](Nhóm%209%20-%20CNTT4%20-%20K63.pdf)
+🔗 **Tải xuống báo cáo tại đây:** [📥 Nhóm 9 - CNTT4 - K63.pdf](Nhóm%209%20-%20CNTT4%20-%20K63.pdf)
+
+> *(Nếu file không hiển thị trực tiếp, vui lòng click phải → Save As để tải về.)*
+
 
