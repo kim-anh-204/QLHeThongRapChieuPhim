@@ -177,7 +177,7 @@ WHERE MaPhong = @MaPhong
        (
            CAST(@NgayChieu AS DATETIME) + CAST(@GioDuocChon AS DATETIME) < CAST(NgayChieu AS DATETIME) + CAST(GioBatDau AS DATETIME) + DATEADD(MINUTE, PHIM.ThoiLuong+30, '1900-01-01')
            AND 
-           CAST(@NgayChieu AS DATETIME) + CAST(@GioDuocChon AS DATETIME) + DATEADD(MINUTE, @ThoiLuong+30, '1900-01-01') > CAST(NgayChieu AS DATETIME) + CAST(GioBatDau AS DATETIME)
+           CAST(@NgayChieu AS DATETIME) + CAST(@GioDuocChon AS DATETIME) + DATEADD(MINUTE, @ThoiLuong+29, '1900-01-01') > CAST(NgayChieu AS DATETIME) + CAST(GioBatDau AS DATETIME)
        )
       )
       OR
@@ -186,7 +186,7 @@ WHERE MaPhong = @MaPhong
       )
       OR
       (NgayChieu = DATEADD(DAY, 1, @NgayChieu) AND 
-       CAST(@NgayChieu AS DATETIME) + CAST(@GioDuocChon AS DATETIME) + DATEADD(MINUTE, @ThoiLuong+30, '1900-01-01') > CAST(NgayChieu AS DATETIME) + CAST(GioBatDau AS DATETIME)
+       CAST(@NgayChieu AS DATETIME) + CAST(@GioDuocChon AS DATETIME) + DATEADD(MINUTE, @ThoiLuong+29, '1900-01-01') > CAST(NgayChieu AS DATETIME) + CAST(GioBatDau AS DATETIME)
       )
   )";
 
