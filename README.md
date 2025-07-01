@@ -73,6 +73,18 @@ Dưới đây là một số giao diện chính của phần mềm Quản lý R�
 | 📊 Giao diện doanh thu(admin)  | ![](revenue)         |
 | 📈 Thống kê(admin)            | ![](thongke.png)         |
 
+---
+
+## ⚠️ Hạn chế hiện tại
+
+Dù nhóm đã nỗ lực hoàn thiện phần mềm, vẫn còn một số hạn chế nhất định do giới hạn về thời gian và kinh nghiệm:
+
+- **Chức năng khuyến mãi**: chưa được triển khai trong phiên bản hiện tại.
+- **Quản lý phim**: một số trường như thể loại, đạo diễn, diễn viên đang phải nhập **thủ công**, chưa hỗ trợ **chọn từ danh sách có sẵn**, dễ gây ra lỗi nhập sai hoặc trùng dữ liệu.
+- **Chức năng đặt vé**: được tích hợp trực tiếp trong ứng dụng WinForms. Khách hàng đặt vé ngay trên phần mềm desktop, chưa có hệ thống web hoặc mobile riêng biệt.
+
+> Nhóm mong muốn sẽ tiếp tục cải tiến các chức năng này trong tương lai nếu có cơ hội phát triển thêm.
+
 ## 📄 Báo cáo cuối kỳ
 
 🔗 **File PDF:** [Nhóm 9 - CNTT4 - K63.pdf](Nhóm%209%20-%20CNTT4%20-%20K63.pdf)
