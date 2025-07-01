@@ -72,3 +72,8 @@ Dưới đây là một số giao diện chính của phần mềm Quản lý R�
 | 🏢 Quản lý phòng chiếu(admin) | ![](qlphong)         |
 | 📊 Giao diện doanh thu(admin)  | ![](revenue)         |
 | 📈 Thống kê(admin)            | ![](thongke.png)         |
+
+## 📄 Báo cáo cuối kỳ
+
+🔗 **File PDF:** [Nhóm 9 - CNTT4 - K63.pdf](Nhóm%209%20-%20CNTT4%20-%20K63.pdf)
+
