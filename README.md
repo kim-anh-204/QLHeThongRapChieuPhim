@@ -1,4 +1,4 @@
-# 🎬 Quản Lý Rạp Chiếu Phim
+# 🎬 Ứng Dụng Quản Lý Rạp Chiếu Phim **GALA**
 
 Đây là phần mềm **quản lý rạp chiếu phim** được xây dựng bởi **Nhóm 9 - CNTT4 - K63** trong môn học **Lập trình trực quan**. Ứng dụng hỗ trợ cả khách hàng lẫn quản lý trong việc đặt vé, theo dõi suất chiếu, doanh thu và thống kê hoạt động kinh doanh.
 
